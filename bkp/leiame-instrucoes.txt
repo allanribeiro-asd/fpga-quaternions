@@ -1,0 +1,52 @@
+EXECUTAR O PROJETO ----------------------------------------------------------------------------
+
+Para rodar o projeto, é necessário ter instalado o Quartus II 13.0sp1 e Python 3 na máquina, devendo-se seguir os passos adiante enumerados:
+1)	Descompactar o arquivo ‘projeto_final_wave_gen.zip’, obtendo-se as pastas ‘DE_NET’, ‘bin’ e o arquivo ‘wg_tcp_server.py’;
+2)	Carregar o ‘sof’ na placa:
+	a.	Ligar a placa;
+	b.	Iniciar o Quartus;
+	c.	No menu Tools, iniciar o Programmer;
+	d.	Clicar em ‘Add File’ e selecionar o arquivo ‘DE2_NET_time_limited.sof’ na pasta ‘...\WG2\bin’ (clicar em Ok, se aparecer uma janela);
+	e.	Marcar a caixa ‘Program/Configure’ e clicar em ‘Start’;
+3)	Iniciar o servidor Python (no terminal, navegar até a pasta e utilizar o comando ‘python wg_tcp_server.py’);
+4)	Carregar o ‘.elf’ na placa:
+	a.	Abrir o ‘Nios II 13.0sp1 Command Shell’ (não iniciar o Eclipse, realizar busca no menu iniciar)
+	b.	Na janela de “terminal” aberta, navegar até a pasta ‘...\WG2\bin’
+	c.	Executar o comando ‘nios2-download -g wgen.elf && nios2-terminal.exe’
+	d.	Digitar o endereço IP e a porta do servidor quando solicitado (não há feedback visual no Shell);
+5)	Pronto! Caso esteja tudo certo, uma mensagem de conexão será exibida no console do servidor e a data aparecerá nos displays da placa.
+
+
+MODIFICAR O PROJETO ----------------------------------------------------------------------------
+
+Para recompilar o código ou fazer alterações no software, o procedimento é um pouco diferente:
+1)	Descompactar o arquivo “projeto_final_wave_gen.zip”, obtendo-se as pastas “DE_NET”, “bin” e o arquivo “wg_tcp_server.py”;
+2)	Abrir o projeto “DE_NET.qpf” no Quartus;
+3)	No menu “Tools”, abrir o “Qsys”:
+	a.	Selecionar o arquivo “system_0.qsys” (na pasta “DE2_NET”);
+	b.	Na aba “Generation”, clicar em “Generate”;
+	c.	Após o final da geração, clicar em “close” e fechar o Qsys.
+4)	No “Project navigator”, na aba “Files”, clicar com o botão direito na pasta e clicar em “Add/Remove files in Project”:
+	a.	Navegar até a pasta “DE2_NET\system_0”, selecionar o arquivo “system_0.qip” e clicar em Abrir, Add, Apply e Ok.
+5)	Compilar o projeto todo (Ctrl + L);
+6)	No menu Tools, iniciar o Programmer (clicar em Ok, se aparecer uma janela) e clicar em Start;
+7)	Com o Programmer e a janela OpenCore Plus Status ainda abertos, iniciar (no menu Tools) o Nios II STB for Eclipse;
+8)	O workspace deve ser a pasta ...\DE2_NET\software;
+9)	A aplicação simple_socket e simple_socket_bsp devem aparecer no workspace (caso não apareçam, importar no menu File);
+10)	 Dar build nos projetos (Build All = Ctrl +B);
+11)	 Criar um novo projeto em File -> New -> New Nios Application and BSP from Template:
+	a.	 Selecionar o “.sopcinfo” correspondente (atenção para a pasta correta!);
+	b.	 Definir um nome qualquer para o projeto (não precisa ser relacionado com as entidades VHDL);
+	c.	 Utilizar a mesma pasta do workspace para o projeto;
+	d.	 Selecionar o "Simple Socket Server" (1ª opção - não o RGMII);
+	e.	 Clicar em "Finish".
+12)	 Criado o projeto, copiar os arquivos da pasta “base” (em software) para a pasta do projeto criado substituindo os arquivos existentes (apenas da aplicação, pois o BSP deve permanecer inalterado);
+13)	 Dar build no novo projeto e seu bsp;
+14)	 Iniciar o servidor Python (no terminal, navegar até a pasta e utilizar o comando “python wg_tcp_server.py”;
+15)	 No Eclipse, no menu Run -> Run Configurations:
+	a.	 Clicar 2x em Nios II hardware para gerar “New Configuration”;
+	b.	 Na guia Project, selecionar o projeto e seu .elf;
+	c.	 Na guia Target Connection selecionar a placa e marcar todas as caixas de seleção exceto “Disable ‘Nios II Console’ view”;
+16)	 Clicar em Apply e Run;
+17)	 O projeto deverá ser executado, e no console será necessário digitar o endereço IP e a porta do servidor quando solicitado.
+	a.	 Caso não ocorra a conexão nas primeiras tentativas, repetir os passos 6, 10 e 15.

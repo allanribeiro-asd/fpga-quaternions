@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project swgen ****
+
+make all 
+Info: Building ../swgen_bsp/
+make --no-print-directory -C ../swgen_bsp/
+[BSP build complete]
+[swgen build complete]
+
+**** Build Finished ****
