@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'system_0'
- * SOPC Builder design path: C:/altera/projeto_final_wave_gen/DE2_NET/system_0.sopcinfo
+ * SOPC Builder design path: J:/Altera/13.0sp1/projects/DE2_CD/DE2_demonstrations_Qsys/DE2_NET/system_0.sopcinfo
  *
- * Generated: Wed Dec 07 10:29:34 BRST 2022
+ * Generated: Thu Jul 05 22:54:04 BRT 2018
  */
 
 /*
@@ -169,7 +169,6 @@
 #define __ISP1362_IF
 #define __SEG7_LUT_8
 #define __SRAM_16BIT_512K
-#define __WG
 
 
 /*
@@ -605,7 +604,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1605985459
+#define SYSID_QSYS_0_TIMESTAMP 1530840655
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -762,19 +761,5 @@
 #define OS_TMR_CFG_TICKS_PER_SEC 10
 #define OS_TMR_CFG_WHEEL_SIZE 2
 #define OS_TMR_EN 0
-
-
-/*
- * wg_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_wg_0 wg
-#define WG_0_BASE 0x0
-#define WG_0_IRQ -1
-#define WG_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define WG_0_NAME "/dev/wg_0"
-#define WG_0_SPAN 8
-#define WG_0_TYPE "wg"
 
 #endif /* __SYSTEM_H_ */

@@ -4,14 +4,6 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1881920358;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1881920358.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.141836503;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.335223088">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/h"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/h/nios2"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/nios2"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/UCOSII/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/HAL/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/drivers/inc"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/inc"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/src/h"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/src/h/nios2"/>
@@ -270,14 +262,6 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1881920358;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1881920358.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.136173896;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.379288164">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/h"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/h/nios2"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/iniche/src/nios2"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/UCOSII/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/HAL/inc"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/"/>
-<includePath path="C:/altera/projeto_final_wave_gen/DE2_NET/software/simple_socket_bsp/drivers/inc"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/inc"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/src/h"/>
 <includePath path="D:/WG2/DE2_NET/software/simple_socket_bsp/iniche/src/h/nios2"/>

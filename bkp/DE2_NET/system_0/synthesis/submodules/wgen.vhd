@@ -5,13 +5,10 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
---library ieee_proposed;
---use ieee_proposed.fixed_pkg.all;
 
 ENTITY wgen IS
 	port
 	(
-		--nn		:  sfixed(0 downto -15) := -0.20;
 		rst			: 	IN STD_LOGIC ;
 		clk			: 	IN STD_LOGIC ;
 		wr_en		:	 IN STD_LOGIC ;

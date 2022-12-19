@@ -31,49 +31,45 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_pubnames 000055ca  00000000  00000000  00050b98  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   0007d5d7  00000000  00000000  00056162  2**0
+  9 .debug_info   0007c90b  00000000  00000000  00056162  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 000125ac  00000000  00000000  000d3739  2**0
+ 10 .debug_abbrev 000125ac  00000000  00000000  000d2a6d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   000421bc  00000000  00000000  000e5ce5  2**0
+ 11 .debug_line   000421bc  00000000  00000000  000e5019  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  0000673c  00000000  00000000  00127ea4  2**2
+ 12 .debug_frame  0000673c  00000000  00000000  001271d8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00003622  00000000  00000000  0012e5e0  2**0
+ 13 .debug_str    00003622  00000000  00000000  0012d914  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00013df9  00000000  00000000  00131c02  2**0
+ 14 .debug_loc    00013df9  00000000  00000000  00130f36  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000050  00000000  00000000  001459fc  2**2
+ 15 .debug_alt_sim_info 00000050  00000000  00000000  00144d30  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 000009a0  00000000  00000000  00145a50  2**3
+ 16 .debug_ranges 000009a0  00000000  00000000  00144d80  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000006  00000000  00000000  00150b4e  2**0
+ 17 .thread_model 00000006  00000000  00000000  0014fe1f  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000005  00000000  00000000  00150b54  2**0
+ 18 .cpu          00000005  00000000  00000000  0014fe25  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  00150b59  2**0
+ 19 .qsys         00000001  00000000  00000000  0014fe2a  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  00150b5a  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  0014fe2b  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  00150b5b  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  0014fe2c  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  00150b5f  2**0
+ 22 .sysid_base   00000004  00000000  00000000  0014fe30  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  00150b63  2**0
+ 23 .sysid_time   00000004  00000000  00000000  0014fe34  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  00150b67  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  0014fe38  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  00150b72  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  0014fe43  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  00150b7d  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  0014fe4e  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 00000008  00000000  00000000  00150b88  2**0
+ 27 .sopc_system_name 00000008  00000000  00000000  0014fe59  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 00000028  00000000  00000000  00150b90  2**0
-                  CONTENTS, READONLY
- 29 .jdi          00005f1d  00000000  00000000  00150bb8  2**0
-                  CONTENTS, READONLY
- 30 .sopcinfo     000ae4f3  00000000  00000000  00156ad5  2**0
+ 28 .quartus_project_dir 0000000e  00000000  00000000  0014fe61  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 01400000 l    d  .entry	00000000 .entry
@@ -34676,40 +34672,67 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8179a4:	f800283a 	ret
 
 008179a8 <alt_flash_cfi_init>:
+ * Read the CFI table and fill out the alt_flash_cfi_dev structure with all the 
+ * information we need to program the flash.
+ * 
+ */
+int alt_flash_cfi_init( alt_flash_cfi_dev* flash  )
+{
   8179a8:	defffc04 	addi	sp,sp,-16
   8179ac:	dfc00315 	stw	ra,12(sp)
   8179b0:	df000215 	stw	fp,8(sp)
   8179b4:	df000204 	addi	fp,sp,8
   8179b8:	e13fff15 	stw	r4,-4(fp)
+  int ret_code = 0;
   8179bc:	e03ffe15 	stw	zero,-8(fp)
+ 
+  ret_code = alt_read_cfi_width( flash );
   8179c0:	e13fff17 	ldw	r4,-4(fp)
   8179c4:	0818e900 	call	818e90 <alt_read_cfi_width>
   8179c8:	e0bffe15 	stw	r2,-8(fp)
+  
+  if (!ret_code)
   8179cc:	e0bffe17 	ldw	r2,-8(fp)
   8179d0:	1004c03a 	cmpne	r2,r2,zero
   8179d4:	1000031e 	bne	r2,zero,8179e4 <alt_flash_cfi_init+0x3c>
+    ret_code = alt_set_flash_width_func( flash );
   8179d8:	e13fff17 	ldw	r4,-4(fp)
   8179dc:	08185a80 	call	8185a8 <alt_set_flash_width_func>
   8179e0:	e0bffe15 	stw	r2,-8(fp)
+  
+  if (!ret_code)
   8179e4:	e0bffe17 	ldw	r2,-8(fp)
   8179e8:	1004c03a 	cmpne	r2,r2,zero
   8179ec:	1000031e 	bne	r2,zero,8179fc <alt_flash_cfi_init+0x54>
+    ret_code = alt_read_cfi_table( flash );
   8179f0:	e13fff17 	ldw	r4,-4(fp)
   8179f4:	08188b00 	call	8188b0 <alt_read_cfi_table>
   8179f8:	e0bffe15 	stw	r2,-8(fp)
+
+  if (!ret_code) 
   8179fc:	e0bffe17 	ldw	r2,-8(fp)
   817a00:	1004c03a 	cmpne	r2,r2,zero
   817a04:	1000031e 	bne	r2,zero,817a14 <alt_flash_cfi_init+0x6c>
+    ret_code = alt_set_flash_algorithm_func( flash);
   817a08:	e13fff17 	ldw	r4,-4(fp)
   817a0c:	08187880 	call	818788 <alt_set_flash_algorithm_func>
   817a10:	e0bffe15 	stw	r2,-8(fp)
+
+  /*
+  *  Register this device as a valid flash device type
+  */ 
+  if (!ret_code)
   817a14:	e0bffe17 	ldw	r2,-8(fp)
   817a18:	1004c03a 	cmpne	r2,r2,zero
   817a1c:	1000031e 	bne	r2,zero,817a2c <alt_flash_cfi_init+0x84>
+    ret_code = alt_flash_device_register(&(flash->dev));
   817a20:	e13fff17 	ldw	r4,-4(fp)
   817a24:	0817a440 	call	817a44 <alt_flash_device_register>
   817a28:	e0bffe15 	stw	r2,-8(fp)
+ 
+  return ret_code;
   817a2c:	e0bffe17 	ldw	r2,-8(fp)
+}
   817a30:	e037883a 	mov	sp,fp
   817a34:	dfc00117 	ldw	ra,4(sp)
   817a38:	df000017 	ldw	fp,0(sp)
@@ -34717,15 +34740,25 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817a40:	f800283a 	ret
 
 00817a44 <alt_flash_device_register>:
+
+typedef struct alt_flash_dev alt_flash_dev; 
+typedef alt_flash_dev alt_flash_fd;
+
+static ALT_INLINE int alt_flash_device_register( alt_flash_fd* fd)
+{
   817a44:	defffd04 	addi	sp,sp,-12
   817a48:	dfc00215 	stw	ra,8(sp)
   817a4c:	df000115 	stw	fp,4(sp)
   817a50:	df000104 	addi	fp,sp,4
   817a54:	e13fff15 	stw	r4,-4(fp)
+  extern alt_llist alt_flash_dev_list;
+
+  return alt_dev_llist_insert ((alt_dev_llist*) fd, &alt_flash_dev_list);
   817a58:	e13fff17 	ldw	r4,-4(fp)
   817a5c:	01402174 	movhi	r5,133
   817a60:	29753b04 	addi	r5,r5,-11028
   817a64:	0835c140 	call	835c14 <alt_dev_llist_insert>
+}
   817a68:	e037883a 	mov	sp,fp
   817a6c:	dfc00117 	ldw	ra,4(sp)
   817a70:	df000017 	ldw	fp,0(sp)
@@ -34733,6 +34766,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817a78:	f800283a 	ret
 
 00817a7c <alt_flash_cfi_write>:
+ * large buffer to tie up in our programming library, when not all users will 
+ * want that functionality.
+ */
+ int alt_flash_cfi_write( alt_flash_dev* flash_info, int offset, 
+                          const void* src_addr, int length )
+ {
   817a7c:	deffef04 	addi	sp,sp,-68
   817a80:	dfc01015 	stw	ra,64(sp)
   817a84:	df000f15 	stw	fp,60(sp)
@@ -34741,15 +34780,30 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817a90:	e17ffb15 	stw	r5,-20(fp)
   817a94:	e1bffc15 	stw	r6,-16(fp)
   817a98:	e1fffd15 	stw	r7,-12(fp)
+  int         ret_code = 0;
   817a9c:	e03ff915 	stw	zero,-28(fp)
+  int         i,j;
+  int         data_to_write;
+  int         full_length = length;
   817aa0:	e0bffd17 	ldw	r2,-12(fp)
   817aa4:	e0bff515 	stw	r2,-44(fp)
+  int         current_offset;
+  int         start_offset = offset;
   817aa8:	e0bffb17 	ldw	r2,-20(fp)
   817aac:	e0bff315 	stw	r2,-52(fp)
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   817ab0:	e0bffa17 	ldw	r2,-24(fp)
   817ab4:	e0bff215 	stw	r2,-56(fp)
+
+  /*
+   * First and foremost which sectors are affected?
+   */   
+  for(i=0;i<flash->dev.number_of_regions;i++)
   817ab8:	e03ff815 	stw	zero,-32(fp)
   817abc:	00008e06 	br	817cf8 <alt_flash_cfi_write+0x27c>
+  {
+    /* Is it in this erase block region?*/
+    if((offset >= flash->dev.region_info[i].offset) &&
   817ac0:	e0bff817 	ldw	r2,-32(fp)
   817ac4:	e0fff217 	ldw	r3,-56(fp)
   817ac8:	1004913a 	slli	r2,r2,4
@@ -34773,6 +34827,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817b10:	2087883a 	add	r3,r4,r2
   817b14:	e0bffb17 	ldw	r2,-20(fp)
   817b18:	10c0740e 	bge	r2,r3,817cec <alt_flash_cfi_write+0x270>
+      (offset < (flash->dev.region_info[i].offset + 
+      flash->dev.region_info[i].region_size)))
+    {
+      current_offset = flash->dev.region_info[i].offset;
   817b1c:	e0bff817 	ldw	r2,-32(fp)
   817b20:	e0fff217 	ldw	r3,-56(fp)
   817b24:	1004913a 	slli	r2,r2,4
@@ -34780,8 +34838,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817b2c:	10800d04 	addi	r2,r2,52
   817b30:	10800017 	ldw	r2,0(r2)
   817b34:	e0bff415 	stw	r2,-48(fp)
+
+      for(j=0;j<flash->dev.region_info[i].number_of_blocks;j++)
   817b38:	e03ff715 	stw	zero,-36(fp)
   817b3c:	00006306 	br	817ccc <alt_flash_cfi_write+0x250>
+      {
+        if ((offset >= current_offset ) && 
   817b40:	e0fffb17 	ldw	r3,-20(fp)
   817b44:	e0bff417 	ldw	r2,-48(fp)
   817b48:	18805416 	blt	r3,r2,817c9c <alt_flash_cfi_write+0x220>
@@ -34795,6 +34857,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817b68:	1887883a 	add	r3,r3,r2
   817b6c:	e0bffb17 	ldw	r2,-20(fp)
   817b70:	10c04a0e 	bge	r2,r3,817c9c <alt_flash_cfi_write+0x220>
+        {
+          /*
+           * Check if the contents of the block are different
+           * from the data we wish to put there
+           */
+          data_to_write = ( current_offset + flash->dev.region_info[i].block_size 
   817b74:	e0bff817 	ldw	r2,-32(fp)
   817b78:	e0fff217 	ldw	r3,-56(fp)
   817b7c:	1004913a 	slli	r2,r2,4
@@ -34806,6 +34874,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817b94:	e0bffb17 	ldw	r2,-20(fp)
   817b98:	1885c83a 	sub	r2,r3,r2
   817b9c:	e0bff615 	stw	r2,-40(fp)
+                            - offset); 
+          data_to_write = MIN(data_to_write, length);
   817ba0:	e0bff617 	ldw	r2,-40(fp)
   817ba4:	e0bfff15 	stw	r2,-4(fp)
   817ba8:	e0fffd17 	ldw	r3,-12(fp)
@@ -34817,6 +34887,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817bc0:	e0bffe15 	stw	r2,-8(fp)
   817bc4:	e0fffe17 	ldw	r3,-8(fp)
   817bc8:	e0fff615 	stw	r3,-40(fp)
+          if(memcmp(src_addr, 
   817bcc:	e0bff217 	ldw	r2,-56(fp)
   817bd0:	10800a17 	ldw	r2,40(r2)
   817bd4:	1007883a 	mov	r3,r2
@@ -34827,15 +34898,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817be8:	0846a840 	call	846a84 <memcmp>
   817bec:	1005003a 	cmpeq	r2,r2,zero
   817bf0:	1000131e 	bne	r2,zero,817c40 <alt_flash_cfi_write+0x1c4>
+                    (alt_u8*)flash->dev.base_addr+offset,
+                    data_to_write))
+          {
+            ret_code = (*flash->dev.erase_block)( &flash->dev, current_offset);
   817bf4:	e0bff217 	ldw	r2,-56(fp)
   817bf8:	10800817 	ldw	r2,32(r2)
   817bfc:	e13ff217 	ldw	r4,-56(fp)
   817c00:	e17ff417 	ldw	r5,-48(fp)
   817c04:	103ee83a 	callr	r2
   817c08:	e0bff915 	stw	r2,-28(fp)
+
+            if (!ret_code)
   817c0c:	e0bff917 	ldw	r2,-28(fp)
   817c10:	1004c03a 	cmpne	r2,r2,zero
   817c14:	10000a1e 	bne	r2,zero,817c40 <alt_flash_cfi_write+0x1c4>
+            {
+              ret_code = (*flash->dev.write_block)( 
   817c18:	e0bff217 	ldw	r2,-56(fp)
   817c1c:	10c00917 	ldw	r3,36(r2)
   817c20:	e13ff217 	ldw	r4,-56(fp)
@@ -34846,16 +34925,28 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817c34:	e1fffc17 	ldw	r7,-16(fp)
   817c38:	183ee83a 	callr	r3
   817c3c:	e0bff915 	stw	r2,-28(fp)
+                                                  data_to_write);
+            }
+          }    
+    
+          /* Was this the last block? */    
+          if ((length == data_to_write) || ret_code)
   817c40:	e0fffd17 	ldw	r3,-12(fp)
   817c44:	e0bff617 	ldw	r2,-40(fp)
   817c48:	18802f26 	beq	r3,r2,817d08 <alt_flash_cfi_write+0x28c>
   817c4c:	e0bff917 	ldw	r2,-28(fp)
   817c50:	1004c03a 	cmpne	r2,r2,zero
   817c54:	10002c1e 	bne	r2,zero,817d08 <alt_flash_cfi_write+0x28c>
+          {
+            goto finished;
+          }
+          
+          length -= data_to_write;
   817c58:	e0fffd17 	ldw	r3,-12(fp)
   817c5c:	e0bff617 	ldw	r2,-40(fp)
   817c60:	1885c83a 	sub	r2,r3,r2
   817c64:	e0bffd15 	stw	r2,-12(fp)
+          offset = current_offset + flash->dev.region_info[i].block_size;
   817c68:	e0bff817 	ldw	r2,-32(fp)
   817c6c:	e0fff217 	ldw	r3,-56(fp)
   817c70:	1004913a 	slli	r2,r2,4
@@ -34865,10 +34956,13 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817c80:	e0bff417 	ldw	r2,-48(fp)
   817c84:	1885883a 	add	r2,r3,r2
   817c88:	e0bffb15 	stw	r2,-20(fp)
+          src_addr = (alt_u8*)src_addr + data_to_write;
   817c8c:	e0fffc17 	ldw	r3,-16(fp)
   817c90:	e0bff617 	ldw	r2,-40(fp)
   817c94:	1885883a 	add	r2,r3,r2
   817c98:	e0bffc15 	stw	r2,-16(fp)
+        }
+        current_offset += flash->dev.region_info[i].block_size;
   817c9c:	e0bff817 	ldw	r2,-32(fp)
   817ca0:	e0fff217 	ldw	r3,-56(fp)
   817ca4:	1004913a 	slli	r2,r2,4
@@ -34878,6 +34972,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817cb4:	e0bff417 	ldw	r2,-48(fp)
   817cb8:	10c5883a 	add	r2,r2,r3
   817cbc:	e0bff415 	stw	r2,-48(fp)
+      (offset < (flash->dev.region_info[i].offset + 
+      flash->dev.region_info[i].region_size)))
+    {
+      current_offset = flash->dev.region_info[i].offset;
+
+      for(j=0;j<flash->dev.region_info[i].number_of_blocks;j++)
   817cc0:	e0bff717 	ldw	r2,-36(fp)
   817cc4:	10800044 	addi	r2,r2,1
   817cc8:	e0bff715 	stw	r2,-36(fp)
@@ -34889,6 +34989,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817ce0:	10c00017 	ldw	r3,0(r2)
   817ce4:	e0bff717 	ldw	r2,-36(fp)
   817ce8:	10ff9516 	blt	r2,r3,817b40 <alt_flash_cfi_write+0xc4>
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
+
+  /*
+   * First and foremost which sectors are affected?
+   */   
+  for(i=0;i<flash->dev.number_of_regions;i++)
   817cec:	e0bff817 	ldw	r2,-32(fp)
   817cf0:	10800044 	addi	r2,r2,1
   817cf4:	e0bff815 	stw	r2,-32(fp)
@@ -34896,6 +35002,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817cfc:	10c00c17 	ldw	r3,48(r2)
   817d00:	e0bff817 	ldw	r2,-32(fp)
   817d04:	10ff6e16 	blt	r2,r3,817ac0 <alt_flash_cfi_write+0x44>
+      }     
+    } 
+  }
+finished:    
+
+  alt_dcache_flush((alt_u8*)flash->dev.base_addr+start_offset, full_length);
   817d08:	e0bff217 	ldw	r2,-56(fp)
   817d0c:	10800a17 	ldw	r2,40(r2)
   817d10:	1007883a 	mov	r3,r2
@@ -34903,7 +35015,9 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817d18:	1889883a 	add	r4,r3,r2
   817d1c:	e17ff517 	ldw	r5,-44(fp)
   817d20:	0835b700 	call	835b70 <alt_dcache_flush>
+  return ret_code;
   817d24:	e0bff917 	ldw	r2,-28(fp)
+}
   817d28:	e037883a 	mov	sp,fp
   817d2c:	dfc00117 	ldw	ra,4(sp)
   817d30:	df000017 	ldw	fp,0(sp)
@@ -34911,44 +35025,76 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817d38:	f800283a 	ret
 
 00817d3c <alt_flash_cfi_get_info>:
+ * 
+ *  Pass the table of erase blocks to the user
+ */
+int alt_flash_cfi_get_info( alt_flash_fd* fd, flash_region** info, 
+                            int* number_of_regions)
+{
   817d3c:	defffa04 	addi	sp,sp,-24
   817d40:	df000515 	stw	fp,20(sp)
   817d44:	df000504 	addi	fp,sp,20
   817d48:	e13ffd15 	stw	r4,-12(fp)
   817d4c:	e17ffe15 	stw	r5,-8(fp)
   817d50:	e1bfff15 	stw	r6,-4(fp)
+  int ret_code = 0;
   817d54:	e03ffc15 	stw	zero,-16(fp)
+  alt_flash_dev* flash = (alt_flash_dev*)fd;
   817d58:	e0bffd17 	ldw	r2,-12(fp)
   817d5c:	e0bffb15 	stw	r2,-20(fp)
+
+  *number_of_regions = flash->number_of_regions;
   817d60:	e0bffb17 	ldw	r2,-20(fp)
   817d64:	10c00c17 	ldw	r3,48(r2)
   817d68:	e0bfff17 	ldw	r2,-4(fp)
   817d6c:	10c00015 	stw	r3,0(r2)
+
+  if (!flash->number_of_regions)
   817d70:	e0bffb17 	ldw	r2,-20(fp)
   817d74:	10800c17 	ldw	r2,48(r2)
   817d78:	1004c03a 	cmpne	r2,r2,zero
   817d7c:	1000031e 	bne	r2,zero,817d8c <alt_flash_cfi_get_info+0x50>
+  {
+    ret_code = -EIO;
   817d80:	00bffec4 	movi	r2,-5
   817d84:	e0bffc15 	stw	r2,-16(fp)
   817d88:	00000b06 	br	817db8 <alt_flash_cfi_get_info+0x7c>
+  }
+  else if (flash->number_of_regions > ALT_MAX_NUMBER_OF_FLASH_REGIONS)
   817d8c:	e0bffb17 	ldw	r2,-20(fp)
   817d90:	10800c17 	ldw	r2,48(r2)
   817d94:	10800250 	cmplti	r2,r2,9
   817d98:	1000031e 	bne	r2,zero,817da8 <alt_flash_cfi_get_info+0x6c>
+  {
+    ret_code = -ENOMEM;
   817d9c:	00bffd04 	movi	r2,-12
   817da0:	e0bffc15 	stw	r2,-16(fp)
   817da4:	00000406 	br	817db8 <alt_flash_cfi_get_info+0x7c>
+  }
+  else
+  {
+    *info = &flash->region_info[0];
   817da8:	e0bffb17 	ldw	r2,-20(fp)
   817dac:	10c00d04 	addi	r3,r2,52
   817db0:	e0bffe17 	ldw	r2,-8(fp)
   817db4:	10c00015 	stw	r3,0(r2)
+  }
+
+  return ret_code;
   817db8:	e0bffc17 	ldw	r2,-16(fp)
+}
   817dbc:	e037883a 	mov	sp,fp
   817dc0:	df000017 	ldw	fp,0(sp)
   817dc4:	dec00104 	addi	sp,sp,4
   817dc8:	f800283a 	ret
 
 00817dcc <alt_flash_cfi_read>:
+ *  Read from an area in flash, you could use memcopy yourself
+ *  for these flash types, but we're trying to be generic and future proof
+ */
+int alt_flash_cfi_read( alt_flash_dev* flash_info, int offset, 
+                        void* dest_addr, int length )
+{
   817dcc:	defff904 	addi	sp,sp,-28
   817dd0:	dfc00615 	stw	ra,24(sp)
   817dd4:	df000515 	stw	fp,20(sp)
@@ -34957,8 +35103,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817de0:	e17ffd15 	stw	r5,-12(fp)
   817de4:	e1bffe15 	stw	r6,-8(fp)
   817de8:	e1ffff15 	stw	r7,-4(fp)
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   817dec:	e0bffc17 	ldw	r2,-16(fp)
   817df0:	e0bffb15 	stw	r2,-20(fp)
+  memcpy(dest_addr, (alt_u8*)flash->dev.base_addr+offset, length);
   817df4:	e0bffb17 	ldw	r2,-20(fp)
   817df8:	10800a17 	ldw	r2,40(r2)
   817dfc:	1007883a 	mov	r3,r2
@@ -34969,7 +35117,9 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817e10:	1009883a 	mov	r4,r2
   817e14:	180b883a 	mov	r5,r3
   817e18:	08052fc0 	call	8052fc <memcpy>
+  return 0;
   817e1c:	0005883a 	mov	r2,zero
+}
   817e20:	e037883a 	mov	sp,fp
   817e24:	dfc00117 	ldw	ra,4(sp)
   817e28:	df000017 	ldw	fp,0(sp)
@@ -34977,16 +35127,28 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817e30:	f800283a 	ret
 
 00817e34 <alt_write_value_to_flash>:
+* It writes the largest word size that the flash can support
+* so if it's an 8 bit flash it writes bytes
+* 16 bit half word etc.
+*/
+void alt_write_value_to_flash(alt_flash_cfi_dev* flash, int offset, const alt_u8* src_addr)
+{
   817e34:	defffa04 	addi	sp,sp,-24
   817e38:	df000515 	stw	fp,20(sp)
   817e3c:	df000504 	addi	fp,sp,20
   817e40:	e13ffd15 	stw	r4,-12(fp)
   817e44:	e17ffe15 	stw	r5,-8(fp)
   817e48:	e1bfff15 	stw	r6,-4(fp)
+  alt_u16 half_word_value;
+  alt_u32 word_value;
+
+  if (flash->mode_width == 1)
   817e4c:	e0bffd17 	ldw	r2,-12(fp)
   817e50:	10802e17 	ldw	r2,184(r2)
   817e54:	10800058 	cmpnei	r2,r2,1
   817e58:	10000b1e 	bne	r2,zero,817e88 <alt_write_value_to_flash+0x54>
+  {
+    IOWR_8DIRECT(flash->dev.base_addr, offset, *src_addr);
   817e5c:	e0bffd17 	ldw	r2,-12(fp)
   817e60:	10800a17 	ldw	r2,40(r2)
   817e64:	1007883a 	mov	r3,r2
@@ -34998,14 +35160,19 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817e7c:	2005883a 	mov	r2,r4
   817e80:	10c00025 	stbio	r3,0(r2)
   817e84:	00004006 	br	817f88 <alt_write_value_to_flash+0x154>
+  }
+  else if (flash->mode_width == 2)
   817e88:	e0bffd17 	ldw	r2,-12(fp)
   817e8c:	10802e17 	ldw	r2,184(r2)
   817e90:	10800098 	cmpnei	r2,r2,2
   817e94:	1000151e 	bne	r2,zero,817eec <alt_write_value_to_flash+0xb8>
+  {
+    half_word_value = (alt_u16)(*src_addr);
   817e98:	e0bfff17 	ldw	r2,-4(fp)
   817e9c:	10800003 	ldbu	r2,0(r2)
   817ea0:	10803fcc 	andi	r2,r2,255
   817ea4:	e0bffc0d 	sth	r2,-16(fp)
+    half_word_value |= (alt_u16)(*(src_addr + 1)) << 8;
   817ea8:	e0bfff17 	ldw	r2,-4(fp)
   817eac:	10800044 	addi	r2,r2,1
   817eb0:	10800003 	ldbu	r2,0(r2)
@@ -35015,6 +35182,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817ec0:	e0bffc0b 	ldhu	r2,-16(fp)
   817ec4:	1884b03a 	or	r2,r3,r2
   817ec8:	e0bffc0d 	sth	r2,-16(fp)
+    IOWR_16DIRECT(flash->dev.base_addr, offset, half_word_value);
   817ecc:	e0bffd17 	ldw	r2,-12(fp)
   817ed0:	10800a17 	ldw	r2,40(r2)
   817ed4:	1007883a 	mov	r3,r2
@@ -35023,14 +35191,19 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817ee0:	e0fffc0b 	ldhu	r3,-16(fp)
   817ee4:	10c0002d 	sthio	r3,0(r2)
   817ee8:	00002706 	br	817f88 <alt_write_value_to_flash+0x154>
+  }
+  else if (flash->mode_width == 4)
   817eec:	e0bffd17 	ldw	r2,-12(fp)
   817ef0:	10802e17 	ldw	r2,184(r2)
   817ef4:	10800118 	cmpnei	r2,r2,4
   817ef8:	1000231e 	bne	r2,zero,817f88 <alt_write_value_to_flash+0x154>
+  {
+    word_value = (alt_u32)(*src_addr);
   817efc:	e0bfff17 	ldw	r2,-4(fp)
   817f00:	10800003 	ldbu	r2,0(r2)
   817f04:	10803fcc 	andi	r2,r2,255
   817f08:	e0bffb15 	stw	r2,-20(fp)
+    word_value |= ((alt_u32)(*(src_addr + 1)) << 8);
   817f0c:	e0bfff17 	ldw	r2,-4(fp)
   817f10:	10800044 	addi	r2,r2,1
   817f14:	10800003 	ldbu	r2,0(r2)
@@ -35039,6 +35212,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817f20:	e0bffb17 	ldw	r2,-20(fp)
   817f24:	10c4b03a 	or	r2,r2,r3
   817f28:	e0bffb15 	stw	r2,-20(fp)
+    word_value |= ((alt_u32)(*(src_addr + 2)) << 16);
   817f2c:	e0bfff17 	ldw	r2,-4(fp)
   817f30:	10800084 	addi	r2,r2,2
   817f34:	10800003 	ldbu	r2,0(r2)
@@ -35047,6 +35221,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817f40:	e0bffb17 	ldw	r2,-20(fp)
   817f44:	10c4b03a 	or	r2,r2,r3
   817f48:	e0bffb15 	stw	r2,-20(fp)
+    word_value |= ((alt_u32)(*(src_addr + 3)) << 24);
   817f4c:	e0bfff17 	ldw	r2,-4(fp)
   817f50:	108000c4 	addi	r2,r2,3
   817f54:	10800003 	ldbu	r2,0(r2)
@@ -35055,6 +35230,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817f60:	e0bffb17 	ldw	r2,-20(fp)
   817f64:	10c4b03a 	or	r2,r2,r3
   817f68:	e0bffb15 	stw	r2,-20(fp)
+    IOWR_32DIRECT(flash->dev.base_addr, offset, word_value);
   817f6c:	e0bffd17 	ldw	r2,-12(fp)
   817f70:	10800a17 	ldw	r2,40(r2)
   817f74:	1007883a 	mov	r3,r2
@@ -35062,12 +35238,22 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817f7c:	1885883a 	add	r2,r3,r2
   817f80:	e0fffb17 	ldw	r3,-20(fp)
   817f84:	10c00035 	stwio	r3,0(r2)
+  }
+
+  return;
+}
   817f88:	e037883a 	mov	sp,fp
   817f8c:	df000017 	ldw	fp,0(sp)
   817f90:	dec00104 	addi	sp,sp,4
   817f94:	f800283a 	ret
 
 00817f98 <alt_flash_program_block>:
+*/
+int alt_flash_program_block(  alt_flash_cfi_dev* flash, const int offset, 
+                        const alt_u8* src_addr, 
+                        const int length,
+                        alt_program_word_fn program_word_func)
+{
   817f98:	defff304 	addi	sp,sp,-52
   817f9c:	dfc00c15 	stw	ra,48(sp)
   817fa0:	df000b15 	stw	fp,44(sp)
@@ -35076,7 +35262,14 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817fac:	e17ffd15 	stw	r5,-12(fp)
   817fb0:	e1bffe15 	stw	r6,-8(fp)
   817fb4:	e1ffff15 	stw	r7,-4(fp)
+  int     ret_code = 0;
   817fb8:	e03ffa15 	stw	zero,-24(fp)
+
+  /*
+   * First take care of any writes which are on none native boundaries
+   * as far as the flash is concerned.
+   */
+  bytes_to_preserve = ((int)((alt_u8*)flash->dev.base_addr + offset) % 
   817fbc:	e0bffc17 	ldw	r2,-16(fp)
   817fc0:	10800a17 	ldw	r2,40(r2)
   817fc4:	1007883a 	mov	r3,r2
@@ -35087,16 +35280,26 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   817fd8:	11402e17 	ldw	r5,184(r2)
   817fdc:	080e8600 	call	80e860 <__modsi3>
   817fe0:	e0bff915 	stw	r2,-28(fp)
+                      flash->mode_width);
+  if ( bytes_to_preserve != 0)
   817fe4:	e0bff917 	ldw	r2,-28(fp)
   817fe8:	1005003a 	cmpeq	r2,r2,zero
   817fec:	10003a1e 	bne	r2,zero,8180d8 <alt_flash_program_block+0x140>
+  {
+    unaligned_bytes = flash->mode_width - bytes_to_preserve;
   817ff0:	e0bffc17 	ldw	r2,-16(fp)
   817ff4:	10c02e17 	ldw	r3,184(r2)
   817ff8:	e0bff917 	ldw	r2,-28(fp)
   817ffc:	1885c83a 	sub	r2,r3,r2
   818000:	e0bff815 	stw	r2,-32(fp)
+    /*
+     * Read the bytes we wish to preserve out of flash
+     */
+    for (i=0;i<bytes_to_preserve;i++)
   818004:	e03ff615 	stw	zero,-40(fp)
   818008:	00001206 	br	818054 <alt_flash_program_block+0xbc>
+    {
+      unaligned[i] = IORD_8DIRECT(flash->dev.base_addr, 
   81800c:	e17ff617 	ldw	r5,-40(fp)
   818010:	e0bffc17 	ldw	r2,-16(fp)
   818014:	10800a17 	ldw	r2,40(r2)
@@ -35112,14 +35315,28 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81803c:	e0bffb04 	addi	r2,fp,-20
   818040:	1145883a 	add	r2,r2,r5
   818044:	10c00005 	stb	r3,0(r2)
+  {
+    unaligned_bytes = flash->mode_width - bytes_to_preserve;
+    /*
+     * Read the bytes we wish to preserve out of flash
+     */
+    for (i=0;i<bytes_to_preserve;i++)
   818048:	e0bff617 	ldw	r2,-40(fp)
   81804c:	10800044 	addi	r2,r2,1
   818050:	e0bff615 	stw	r2,-40(fp)
   818054:	e0fff617 	ldw	r3,-40(fp)
   818058:	e0bff917 	ldw	r2,-28(fp)
   81805c:	18bfeb16 	blt	r3,r2,81800c <alt_flash_program_block+0x74>
+    {
+      unaligned[i] = IORD_8DIRECT(flash->dev.base_addr, 
+                                offset-bytes_to_preserve+i);
+    }
+
+    for (i=0;i<unaligned_bytes;i++)
   818060:	e03ff615 	stw	zero,-40(fp)
   818064:	00000e06 	br	8180a0 <alt_flash_program_block+0x108>
+    {
+      unaligned[bytes_to_preserve + i] = *(alt_u8*)(src_addr + i);
   818068:	e0fff917 	ldw	r3,-28(fp)
   81806c:	e0bff617 	ldw	r2,-40(fp)
   818070:	1889883a 	add	r4,r3,r2
@@ -35131,12 +35348,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818088:	e0bffb04 	addi	r2,fp,-20
   81808c:	1105883a 	add	r2,r2,r4
   818090:	10c00005 	stb	r3,0(r2)
+    {
+      unaligned[i] = IORD_8DIRECT(flash->dev.base_addr, 
+                                offset-bytes_to_preserve+i);
+    }
+
+    for (i=0;i<unaligned_bytes;i++)
   818094:	e0bff617 	ldw	r2,-40(fp)
   818098:	10800044 	addi	r2,r2,1
   81809c:	e0bff615 	stw	r2,-40(fp)
   8180a0:	e0fff617 	ldw	r3,-40(fp)
   8180a4:	e0bff817 	ldw	r2,-32(fp)
   8180a8:	18bfef16 	blt	r3,r2,818068 <alt_flash_program_block+0xd0>
+    {
+      unaligned[bytes_to_preserve + i] = *(alt_u8*)(src_addr + i);
+    }
+    
+    ret_code = (*program_word_func)(flash, offset-bytes_to_preserve, unaligned);
   8180ac:	e0fffd17 	ldw	r3,-12(fp)
   8180b0:	e0bff917 	ldw	r2,-28(fp)
   8180b4:	188bc83a 	sub	r5,r3,r2
@@ -35145,10 +35373,18 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8180c0:	e13ffc17 	ldw	r4,-16(fp)
   8180c4:	103ee83a 	callr	r2
   8180c8:	e0bffa15 	stw	r2,-24(fp)
+    i = unaligned_bytes;
   8180cc:	e0bff817 	ldw	r2,-32(fp)
   8180d0:	e0bff615 	stw	r2,-40(fp)
   8180d4:	00000106 	br	8180dc <alt_flash_program_block+0x144>
+  }
+  else
+  {
+    i = 0;
   8180d8:	e03ff615 	stw	zero,-40(fp)
+  }
+
+  unaligned_end_bytes = (offset+length) % flash->mode_width;
   8180dc:	e0fffd17 	ldw	r3,-12(fp)
   8180e0:	e0bfff17 	ldw	r2,-4(fp)
   8180e4:	1889883a 	add	r4,r3,r2
@@ -35156,7 +35392,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8180ec:	11402e17 	ldw	r5,184(r2)
   8180f0:	080e8600 	call	80e860 <__modsi3>
   8180f4:	e0bff715 	stw	r2,-36(fp)
+  while ((ret_code == 0) && (i < (length-unaligned_end_bytes)))
   8180f8:	00001006 	br	81813c <alt_flash_program_block+0x1a4>
+  {
+    ret_code = (*program_word_func)(flash, offset+i, src_addr+i);
   8180fc:	e0fffd17 	ldw	r3,-12(fp)
   818100:	e0bff617 	ldw	r2,-40(fp)
   818104:	188b883a 	add	r5,r3,r2
@@ -35168,11 +35407,18 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81811c:	e13ffc17 	ldw	r4,-16(fp)
   818120:	103ee83a 	callr	r2
   818124:	e0bffa15 	stw	r2,-24(fp)
+    i += flash->mode_width;     
   818128:	e0bffc17 	ldw	r2,-16(fp)
   81812c:	10c02e17 	ldw	r3,184(r2)
   818130:	e0bff617 	ldw	r2,-40(fp)
   818134:	10c5883a 	add	r2,r2,r3
   818138:	e0bff615 	stw	r2,-40(fp)
+  {
+    i = 0;
+  }
+
+  unaligned_end_bytes = (offset+length) % flash->mode_width;
+  while ((ret_code == 0) && (i < (length-unaligned_end_bytes)))
   81813c:	e0bffa17 	ldw	r2,-24(fp)
   818140:	1004c03a 	cmpne	r2,r2,zero
   818144:	1000051e 	bne	r2,zero,81815c <alt_flash_program_block+0x1c4>
@@ -35181,19 +35427,31 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818150:	1887c83a 	sub	r3,r3,r2
   818154:	e0bff617 	ldw	r2,-40(fp)
   818158:	10ffe816 	blt	r2,r3,8180fc <alt_flash_program_block+0x164>
+
+  /*
+   * Now take care of any writes at the end of the buffer which are on none 
+   * native boundaries as far as the flash is concerned.
+   */
+  if (unaligned_end_bytes && !ret_code)
   81815c:	e0bff717 	ldw	r2,-36(fp)
   818160:	1005003a 	cmpeq	r2,r2,zero
   818164:	10003c1e 	bne	r2,zero,818258 <alt_flash_program_block+0x2c0>
   818168:	e0bffa17 	ldw	r2,-24(fp)
   81816c:	1004c03a 	cmpne	r2,r2,zero
   818170:	1000391e 	bne	r2,zero,818258 <alt_flash_program_block+0x2c0>
+  {
+    bytes_to_preserve = flash->mode_width - unaligned_end_bytes;
   818174:	e0bffc17 	ldw	r2,-16(fp)
   818178:	10c02e17 	ldw	r3,184(r2)
   81817c:	e0bff717 	ldw	r2,-36(fp)
   818180:	1885c83a 	sub	r2,r3,r2
   818184:	e0bff915 	stw	r2,-28(fp)
+    
+    for (j=0;j<unaligned_end_bytes;j++)
   818188:	e03ff515 	stw	zero,-44(fp)
   81818c:	00000e06 	br	8181c8 <alt_flash_program_block+0x230>
+    {
+      unaligned[j] = *(alt_u8*)(src_addr+i+j);
   818190:	e13ff517 	ldw	r4,-44(fp)
   818194:	e0bff617 	ldw	r2,-40(fp)
   818198:	1007883a 	mov	r3,r2
@@ -35205,14 +35463,27 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8181b0:	e0bffb04 	addi	r2,fp,-20
   8181b4:	1105883a 	add	r2,r2,r4
   8181b8:	10c00005 	stb	r3,0(r2)
+   */
+  if (unaligned_end_bytes && !ret_code)
+  {
+    bytes_to_preserve = flash->mode_width - unaligned_end_bytes;
+    
+    for (j=0;j<unaligned_end_bytes;j++)
   8181bc:	e0bff517 	ldw	r2,-44(fp)
   8181c0:	10800044 	addi	r2,r2,1
   8181c4:	e0bff515 	stw	r2,-44(fp)
   8181c8:	e0fff517 	ldw	r3,-44(fp)
   8181cc:	e0bff717 	ldw	r2,-36(fp)
   8181d0:	18bfef16 	blt	r3,r2,818190 <alt_flash_program_block+0x1f8>
+    {
+      unaligned[j] = *(alt_u8*)(src_addr+i+j);
+    }
+    
+    for (j=0;j<bytes_to_preserve;j++)
   8181d4:	e03ff515 	stw	zero,-44(fp)
   8181d8:	00001406 	br	81822c <alt_flash_program_block+0x294>
+    {
+      unaligned[unaligned_end_bytes+j] = IORD_8DIRECT(flash->dev.base_addr, 
   8181dc:	e0fff717 	ldw	r3,-36(fp)
   8181e0:	e0bff517 	ldw	r2,-44(fp)
   8181e4:	188b883a 	add	r5,r3,r2
@@ -35230,12 +35501,24 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818214:	e0bffb04 	addi	r2,fp,-20
   818218:	1145883a 	add	r2,r2,r5
   81821c:	10c00005 	stb	r3,0(r2)
+    for (j=0;j<unaligned_end_bytes;j++)
+    {
+      unaligned[j] = *(alt_u8*)(src_addr+i+j);
+    }
+    
+    for (j=0;j<bytes_to_preserve;j++)
   818220:	e0bff517 	ldw	r2,-44(fp)
   818224:	10800044 	addi	r2,r2,1
   818228:	e0bff515 	stw	r2,-44(fp)
   81822c:	e0fff517 	ldw	r3,-44(fp)
   818230:	e0bff917 	ldw	r2,-28(fp)
   818234:	18bfe916 	blt	r3,r2,8181dc <alt_flash_program_block+0x244>
+    {
+      unaligned[unaligned_end_bytes+j] = IORD_8DIRECT(flash->dev.base_addr, 
+                                                      offset+length+j);
+    }
+
+    ret_code = (*program_word_func)(flash, offset+i, unaligned);      
   818238:	e0fffd17 	ldw	r3,-12(fp)
   81823c:	e0bff617 	ldw	r2,-40(fp)
   818240:	188b883a 	add	r5,r3,r2
@@ -35244,7 +35527,11 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81824c:	e13ffc17 	ldw	r4,-16(fp)
   818250:	103ee83a 	callr	r2
   818254:	e0bffa15 	stw	r2,-24(fp)
+  }
+
+  return ret_code;
   818258:	e0bffa17 	ldw	r2,-24(fp)
+}
   81825c:	e037883a 	mov	sp,fp
   818260:	dfc00117 	ldw	ra,4(sp)
   818264:	df000017 	ldw	fp,0(sp)
@@ -35252,11 +35539,18 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81826c:	f800283a 	ret
 
 00818270 <alt_read_query_entry_8bit>:
+
+/*
+ *  Read an 8 bit value from the CFI query table in flash
+ */
+alt_u8 alt_read_query_entry_8bit( alt_flash_cfi_dev* flash, int address)
+{
   818270:	defffd04 	addi	sp,sp,-12
   818274:	df000215 	stw	fp,8(sp)
   818278:	df000204 	addi	fp,sp,8
   81827c:	e13ffe15 	stw	r4,-8(fp)
   818280:	e17fff15 	stw	r5,-4(fp)
+  return IORD_8DIRECT((alt_u8*)flash->dev.base_addr, address);
   818284:	e0bffe17 	ldw	r2,-8(fp)
   818288:	10800a17 	ldw	r2,40(r2)
   81828c:	1007883a 	mov	r3,r2
@@ -35264,17 +35558,22 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818294:	1885883a 	add	r2,r3,r2
   818298:	10800023 	ldbuio	r2,0(r2)
   81829c:	10803fcc 	andi	r2,r2,255
+}
   8182a0:	e037883a 	mov	sp,fp
   8182a4:	df000017 	ldw	fp,0(sp)
   8182a8:	dec00104 	addi	sp,sp,4
   8182ac:	f800283a 	ret
 
 008182b0 <alt_read_query_entry_16bit>:
+
+alt_u8 alt_read_query_entry_16bit( alt_flash_cfi_dev* flash, int address)
+{
   8182b0:	defffd04 	addi	sp,sp,-12
   8182b4:	df000215 	stw	fp,8(sp)
   8182b8:	df000204 	addi	fp,sp,8
   8182bc:	e13ffe15 	stw	r4,-8(fp)
   8182c0:	e17fff15 	stw	r5,-4(fp)
+  return (IORD_16DIRECT((alt_u8*)flash->dev.base_addr, address*2) & 0xff);
   8182c4:	e0bffe17 	ldw	r2,-8(fp)
   8182c8:	10800a17 	ldw	r2,40(r2)
   8182cc:	1007883a 	mov	r3,r2
@@ -35283,17 +35582,22 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8182d8:	1885883a 	add	r2,r3,r2
   8182dc:	1080002b 	ldhuio	r2,0(r2)
   8182e0:	10803fcc 	andi	r2,r2,255
+}
   8182e4:	e037883a 	mov	sp,fp
   8182e8:	df000017 	ldw	fp,0(sp)
   8182ec:	dec00104 	addi	sp,sp,4
   8182f0:	f800283a 	ret
 
 008182f4 <alt_read_query_entry_32bit>:
+
+alt_u8 alt_read_query_entry_32bit( alt_flash_cfi_dev* flash, int address)
+{
   8182f4:	defffd04 	addi	sp,sp,-12
   8182f8:	df000215 	stw	fp,8(sp)
   8182fc:	df000204 	addi	fp,sp,8
   818300:	e13ffe15 	stw	r4,-8(fp)
   818304:	e17fff15 	stw	r5,-4(fp)
+  return (IORD_32DIRECT((alt_u8*)flash->dev.base_addr, address*4) & 0xff);
   818308:	e0bffe17 	ldw	r2,-8(fp)
   81830c:	10800a17 	ldw	r2,40(r2)
   818310:	1007883a 	mov	r3,r2
@@ -35303,40 +35607,56 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818320:	1885883a 	add	r2,r3,r2
   818324:	10800037 	ldwio	r2,0(r2)
   818328:	10803fcc 	andi	r2,r2,255
+}
   81832c:	e037883a 	mov	sp,fp
   818330:	df000017 	ldw	fp,0(sp)
   818334:	dec00104 	addi	sp,sp,4
   818338:	f800283a 	ret
 
 0081833c <alt_write_flash_command_8bit_device_8bit_mode>:
+
+/*
+ * Write an 8 bit command to a flash
+ */
+void alt_write_flash_command_8bit_device_8bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   81833c:	defffc04 	addi	sp,sp,-16
   818340:	df000315 	stw	fp,12(sp)
   818344:	df000304 	addi	fp,sp,12
   818348:	e13ffd15 	stw	r4,-12(fp)
   81834c:	e17ffe15 	stw	r5,-8(fp)
   818350:	e1bfff05 	stb	r6,-4(fp)
+  IOWR_8DIRECT(base_addr, offset, value);
   818354:	e0fffd17 	ldw	r3,-12(fp)
   818358:	e0bffe17 	ldw	r2,-8(fp)
   81835c:	1885883a 	add	r2,r3,r2
   818360:	e0ffff03 	ldbu	r3,-4(fp)
   818364:	10c00025 	stbio	r3,0(r2)
+  return;
+}
   818368:	e037883a 	mov	sp,fp
   81836c:	df000017 	ldw	fp,0(sp)
   818370:	dec00104 	addi	sp,sp,4
   818374:	f800283a 	ret
 
 00818378 <alt_write_flash_command_16bit_device_8bit_mode>:
+
+void alt_write_flash_command_16bit_device_8bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   818378:	defffc04 	addi	sp,sp,-16
   81837c:	df000315 	stw	fp,12(sp)
   818380:	df000304 	addi	fp,sp,12
   818384:	e13ffd15 	stw	r4,-12(fp)
   818388:	e17ffe15 	stw	r5,-8(fp)
   81838c:	e1bfff05 	stb	r6,-4(fp)
+  if (offset % 2)
   818390:	e0bffe17 	ldw	r2,-8(fp)
   818394:	1080004c 	andi	r2,r2,1
   818398:	10803fcc 	andi	r2,r2,255
   81839c:	1005003a 	cmpeq	r2,r2,zero
   8183a0:	1000081e 	bne	r2,zero,8183c4 <alt_write_flash_command_16bit_device_8bit_mode+0x4c>
+  {
+    IOWR_8DIRECT(base_addr, offset*2, value);
   8183a4:	e0bffe17 	ldw	r2,-8(fp)
   8183a8:	1085883a 	add	r2,r2,r2
   8183ac:	1007883a 	mov	r3,r2
@@ -35345,6 +35665,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8183b8:	e0ffff03 	ldbu	r3,-4(fp)
   8183bc:	10c00025 	stbio	r3,0(r2)
   8183c0:	00000806 	br	8183e4 <alt_write_flash_command_16bit_device_8bit_mode+0x6c>
+  }
+  else
+  {
+    IOWR_8DIRECT(base_addr, (offset*2)+1, value);
   8183c4:	e0bffe17 	ldw	r2,-8(fp)
   8183c8:	1085883a 	add	r2,r2,r2
   8183cc:	1007883a 	mov	r3,r2
@@ -35353,18 +35677,25 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8183d8:	10800044 	addi	r2,r2,1
   8183dc:	e0ffff03 	ldbu	r3,-4(fp)
   8183e0:	10c00025 	stbio	r3,0(r2)
+  }
+  return;
+}
   8183e4:	e037883a 	mov	sp,fp
   8183e8:	df000017 	ldw	fp,0(sp)
   8183ec:	dec00104 	addi	sp,sp,4
   8183f0:	f800283a 	ret
 
 008183f4 <alt_write_flash_command_32bit_device_8bit_mode>:
+
+void alt_write_flash_command_32bit_device_8bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   8183f4:	defffc04 	addi	sp,sp,-16
   8183f8:	df000315 	stw	fp,12(sp)
   8183fc:	df000304 	addi	fp,sp,12
   818400:	e13ffd15 	stw	r4,-12(fp)
   818404:	e17ffe15 	stw	r5,-8(fp)
   818408:	e1bfff05 	stb	r6,-4(fp)
+  IOWR_8DIRECT(base_addr, offset*4, value);
   81840c:	e0bffe17 	ldw	r2,-8(fp)
   818410:	1085883a 	add	r2,r2,r2
   818414:	1085883a 	add	r2,r2,r2
@@ -35373,18 +35704,24 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818420:	1885883a 	add	r2,r3,r2
   818424:	e0ffff03 	ldbu	r3,-4(fp)
   818428:	10c00025 	stbio	r3,0(r2)
+  return;
+}
   81842c:	e037883a 	mov	sp,fp
   818430:	df000017 	ldw	fp,0(sp)
   818434:	dec00104 	addi	sp,sp,4
   818438:	f800283a 	ret
 
 0081843c <alt_write_flash_command_16bit_device_16bit_mode>:
+
+void alt_write_flash_command_16bit_device_16bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   81843c:	defffc04 	addi	sp,sp,-16
   818440:	df000315 	stw	fp,12(sp)
   818444:	df000304 	addi	fp,sp,12
   818448:	e13ffd15 	stw	r4,-12(fp)
   81844c:	e17ffe15 	stw	r5,-8(fp)
   818450:	e1bfff05 	stb	r6,-4(fp)
+  IOWR_16DIRECT(base_addr, offset*2, ((alt_u16)value)& 0x00ff);
   818454:	e0bffe17 	ldw	r2,-8(fp)
   818458:	1085883a 	add	r2,r2,r2
   81845c:	1007883a 	mov	r3,r2
@@ -35392,18 +35729,24 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818464:	1885883a 	add	r2,r3,r2
   818468:	e0ffff03 	ldbu	r3,-4(fp)
   81846c:	10c0002d 	sthio	r3,0(r2)
+  return;
+}
   818470:	e037883a 	mov	sp,fp
   818474:	df000017 	ldw	fp,0(sp)
   818478:	dec00104 	addi	sp,sp,4
   81847c:	f800283a 	ret
 
 00818480 <alt_write_flash_command_32bit_device_16bit_mode>:
+
+void alt_write_flash_command_32bit_device_16bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   818480:	defffc04 	addi	sp,sp,-16
   818484:	df000315 	stw	fp,12(sp)
   818488:	df000304 	addi	fp,sp,12
   81848c:	e13ffd15 	stw	r4,-12(fp)
   818490:	e17ffe15 	stw	r5,-8(fp)
   818494:	e1bfff05 	stb	r6,-4(fp)
+  IOWR_16DIRECT(base_addr, offset*4, ((alt_u16)value)& 0x00ff);
   818498:	e0bffe17 	ldw	r2,-8(fp)
   81849c:	1085883a 	add	r2,r2,r2
   8184a0:	1085883a 	add	r2,r2,r2
@@ -35412,18 +35755,24 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8184ac:	1885883a 	add	r2,r3,r2
   8184b0:	e0ffff03 	ldbu	r3,-4(fp)
   8184b4:	10c0002d 	sthio	r3,0(r2)
+  return;
+}
   8184b8:	e037883a 	mov	sp,fp
   8184bc:	df000017 	ldw	fp,0(sp)
   8184c0:	dec00104 	addi	sp,sp,4
   8184c4:	f800283a 	ret
 
 008184c8 <alt_write_flash_command_32bit_device_32bit_mode>:
+
+void alt_write_flash_command_32bit_device_32bit_mode( void* base_addr, int offset, alt_u8 value)
+{
   8184c8:	defffc04 	addi	sp,sp,-16
   8184cc:	df000315 	stw	fp,12(sp)
   8184d0:	df000304 	addi	fp,sp,12
   8184d4:	e13ffd15 	stw	r4,-12(fp)
   8184d8:	e17ffe15 	stw	r5,-8(fp)
   8184dc:	e1bfff05 	stb	r6,-4(fp)
+  IOWR_32DIRECT(base_addr, offset*4, ((alt_u32)value)& 0x000000ff);
   8184e0:	e0bffe17 	ldw	r2,-8(fp)
   8184e4:	1085883a 	add	r2,r2,r2
   8184e8:	1085883a 	add	r2,r2,r2
@@ -35432,61 +35781,93 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8184f4:	1885883a 	add	r2,r3,r2
   8184f8:	e0ffff03 	ldbu	r3,-4(fp)
   8184fc:	10c00035 	stwio	r3,0(r2)
+  return;
+}
   818500:	e037883a 	mov	sp,fp
   818504:	df000017 	ldw	fp,0(sp)
   818508:	dec00104 	addi	sp,sp,4
   81850c:	f800283a 	ret
 
 00818510 <alt_write_native_8bit>:
+
+/*
+ * Write the value passed to the flash
+ */
+void alt_write_native_8bit( void* address, alt_u32 value)
+{
   818510:	defffd04 	addi	sp,sp,-12
   818514:	df000215 	stw	fp,8(sp)
   818518:	df000204 	addi	fp,sp,8
   81851c:	e13ffe15 	stw	r4,-8(fp)
   818520:	e17fff15 	stw	r5,-4(fp)
+  IOWR_8DIRECT(address, 0, (alt_u8)(value&0xff));
   818524:	e0bfff17 	ldw	r2,-4(fp)
   818528:	10c03fcc 	andi	r3,r2,255
   81852c:	e0bffe17 	ldw	r2,-8(fp)
   818530:	10c00025 	stbio	r3,0(r2)
+  return;
+}
   818534:	e037883a 	mov	sp,fp
   818538:	df000017 	ldw	fp,0(sp)
   81853c:	dec00104 	addi	sp,sp,4
   818540:	f800283a 	ret
 
 00818544 <alt_write_native_16bit>:
+
+void alt_write_native_16bit( void* address, alt_u32 value)
+{
   818544:	defffd04 	addi	sp,sp,-12
   818548:	df000215 	stw	fp,8(sp)
   81854c:	df000204 	addi	fp,sp,8
   818550:	e13ffe15 	stw	r4,-8(fp)
   818554:	e17fff15 	stw	r5,-4(fp)
+  IOWR_16DIRECT(address, 0, ((alt_u16)value)& 0xffff);
   818558:	e0bfff17 	ldw	r2,-4(fp)
   81855c:	10ffffcc 	andi	r3,r2,65535
   818560:	e0bffe17 	ldw	r2,-8(fp)
   818564:	10c0002d 	sthio	r3,0(r2)
+  return;
+}
   818568:	e037883a 	mov	sp,fp
   81856c:	df000017 	ldw	fp,0(sp)
   818570:	dec00104 	addi	sp,sp,4
   818574:	f800283a 	ret
 
 00818578 <alt_write_native_32bit>:
+
+void alt_write_native_32bit( void* address, alt_u32 value)
+{
   818578:	defffd04 	addi	sp,sp,-12
   81857c:	df000215 	stw	fp,8(sp)
   818580:	df000204 	addi	fp,sp,8
   818584:	e13ffe15 	stw	r4,-8(fp)
   818588:	e17fff15 	stw	r5,-4(fp)
+  IOWR_32DIRECT(address, 0, value);
   81858c:	e0ffff17 	ldw	r3,-4(fp)
   818590:	e0bffe17 	ldw	r2,-8(fp)
   818594:	10c00035 	stwio	r3,0(r2)
+  return;
+}
   818598:	e037883a 	mov	sp,fp
   81859c:	df000017 	ldw	fp,0(sp)
   8185a0:	dec00104 	addi	sp,sp,4
   8185a4:	f800283a 	ret
 
 008185a8 <alt_set_flash_width_func>:
+ * 
+ * Setup the function pointers for writing a byte to the flash for the width
+ * of the device
+ */
+int alt_set_flash_width_func( alt_flash_cfi_dev* flash)
+{ 
   8185a8:	defffb04 	addi	sp,sp,-20
   8185ac:	df000415 	stw	fp,16(sp)
   8185b0:	df000404 	addi	fp,sp,16
   8185b4:	e13ffd15 	stw	r4,-12(fp)
+  int ret_code = 0;
   8185b8:	e03ffc15 	stw	zero,-16(fp)
+  
+  switch(flash->mode_width)
   8185bc:	e0bffd17 	ldw	r2,-12(fp)
   8185c0:	10802e17 	ldw	r2,184(r2)
   8185c4:	e0bfff15 	stw	r2,-4(fp)
@@ -35500,73 +35881,122 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8185e4:	18800060 	cmpeqi	r2,r3,1
   8185e8:	1000011e 	bne	r2,zero,8185f0 <alt_set_flash_width_func+0x48>
   8185ec:	00003e06 	br	8186e8 <alt_set_flash_width_func+0x140>
+  {
+    case 1:
+    {
+      flash->write_native = alt_write_native_8bit;
   8185f0:	e0fffd17 	ldw	r3,-12(fp)
   8185f4:	008020b4 	movhi	r2,130
   8185f8:	10a14404 	addi	r2,r2,-31472
   8185fc:	18803515 	stw	r2,212(r3)
+
+      if (flash->device_width == 1)
   818600:	e0bffd17 	ldw	r2,-12(fp)
   818604:	10802f17 	ldw	r2,188(r2)
   818608:	10800058 	cmpnei	r2,r2,1
   81860c:	1000051e 	bne	r2,zero,818624 <alt_set_flash_width_func+0x7c>
+      {
+        flash->write_command = alt_write_flash_command_8bit_device_8bit_mode;
   818610:	e0fffd17 	ldw	r3,-12(fp)
   818614:	008020b4 	movhi	r2,130
   818618:	10a0cf04 	addi	r2,r2,-31940
   81861c:	18803315 	stw	r2,204(r3)
   818620:	00003306 	br	8186f0 <alt_set_flash_width_func+0x148>
+      }
+      else if (flash->device_width == 2)
   818624:	e0bffd17 	ldw	r2,-12(fp)
   818628:	10802f17 	ldw	r2,188(r2)
   81862c:	10800098 	cmpnei	r2,r2,2
   818630:	1000051e 	bne	r2,zero,818648 <alt_set_flash_width_func+0xa0>
+      {
+        flash->write_command = alt_write_flash_command_16bit_device_8bit_mode;
   818634:	e0fffd17 	ldw	r3,-12(fp)
   818638:	008020b4 	movhi	r2,130
   81863c:	10a0de04 	addi	r2,r2,-31880
   818640:	18803315 	stw	r2,204(r3)
   818644:	00002a06 	br	8186f0 <alt_set_flash_width_func+0x148>
+      }
+      else if (flash->device_width == 4)
   818648:	e0bffd17 	ldw	r2,-12(fp)
   81864c:	10802f17 	ldw	r2,188(r2)
   818650:	10800118 	cmpnei	r2,r2,4
   818654:	1000261e 	bne	r2,zero,8186f0 <alt_set_flash_width_func+0x148>
+      {
+        flash->write_command = alt_write_flash_command_32bit_device_8bit_mode;
   818658:	e0fffd17 	ldw	r3,-12(fp)
   81865c:	008020b4 	movhi	r2,130
   818660:	10a0fd04 	addi	r2,r2,-31756
   818664:	18803315 	stw	r2,204(r3)
+      }
+      break;
   818668:	00002106 	br	8186f0 <alt_set_flash_width_func+0x148>
+    }
+    case 2:
+    {
+      flash->write_native = alt_write_native_16bit;
   81866c:	e0fffd17 	ldw	r3,-12(fp)
   818670:	008020b4 	movhi	r2,130
   818674:	10a15104 	addi	r2,r2,-31420
   818678:	18803515 	stw	r2,212(r3)
+
+      if (flash->device_width == 2)
   81867c:	e0bffd17 	ldw	r2,-12(fp)
   818680:	10802f17 	ldw	r2,188(r2)
   818684:	10800098 	cmpnei	r2,r2,2
   818688:	1000051e 	bne	r2,zero,8186a0 <alt_set_flash_width_func+0xf8>
+      {
+        flash->write_command = alt_write_flash_command_16bit_device_16bit_mode;
   81868c:	e0fffd17 	ldw	r3,-12(fp)
   818690:	008020b4 	movhi	r2,130
   818694:	10a10f04 	addi	r2,r2,-31684
   818698:	18803315 	stw	r2,204(r3)
   81869c:	00001406 	br	8186f0 <alt_set_flash_width_func+0x148>
+      }
+      else if (flash->device_width == 4)
   8186a0:	e0bffd17 	ldw	r2,-12(fp)
   8186a4:	10802f17 	ldw	r2,188(r2)
   8186a8:	10800118 	cmpnei	r2,r2,4
   8186ac:	1000101e 	bne	r2,zero,8186f0 <alt_set_flash_width_func+0x148>
+      {
+        flash->write_command = alt_write_flash_command_32bit_device_16bit_mode;
   8186b0:	e0fffd17 	ldw	r3,-12(fp)
   8186b4:	008020b4 	movhi	r2,130
   8186b8:	10a12004 	addi	r2,r2,-31616
   8186bc:	18803315 	stw	r2,204(r3)
+      }
+
+      break;
   8186c0:	00000b06 	br	8186f0 <alt_set_flash_width_func+0x148>
+    }
+    case 4:
+    {
+      flash->write_native = alt_write_native_32bit;
   8186c4:	e0fffd17 	ldw	r3,-12(fp)
   8186c8:	008020b4 	movhi	r2,130
   8186cc:	10a15e04 	addi	r2,r2,-31368
   8186d0:	18803515 	stw	r2,212(r3)
+      flash->write_command = alt_write_flash_command_32bit_device_32bit_mode;
   8186d4:	e0fffd17 	ldw	r3,-12(fp)
   8186d8:	008020b4 	movhi	r2,130
   8186dc:	10a13204 	addi	r2,r2,-31544
   8186e0:	18803315 	stw	r2,204(r3)
+      break;
   8186e4:	00000206 	br	8186f0 <alt_set_flash_width_func+0x148>
+    }
+    default:
+    {
+      ret_code = -EACCES;
   8186e8:	00bffcc4 	movi	r2,-13
   8186ec:	e0bffc15 	stw	r2,-16(fp)
+    }
+  }
+
+  if (!ret_code)
   8186f0:	e0bffc17 	ldw	r2,-16(fp)
   8186f4:	1004c03a 	cmpne	r2,r2,zero
   8186f8:	10001e1e 	bne	r2,zero,818774 <alt_set_flash_width_func+0x1cc>
+  {
+    switch(flash->device_width)
   8186fc:	e0bffd17 	ldw	r2,-12(fp)
   818700:	10802f17 	ldw	r2,188(r2)
   818704:	e0bffe15 	stw	r2,-8(fp)
@@ -35580,35 +36010,69 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818724:	18800060 	cmpeqi	r2,r3,1
   818728:	1000011e 	bne	r2,zero,818730 <alt_set_flash_width_func+0x188>
   81872c:	00000f06 	br	81876c <alt_set_flash_width_func+0x1c4>
+    {
+      case 1:
+      {
+        flash->read_query = alt_read_query_entry_8bit;
   818730:	e0fffd17 	ldw	r3,-12(fp)
   818734:	008020b4 	movhi	r2,130
   818738:	10a09c04 	addi	r2,r2,-32144
   81873c:	18803415 	stw	r2,208(r3)
+        break;
   818740:	00000c06 	br	818774 <alt_set_flash_width_func+0x1cc>
+      }
+      case 2:
+      {
+        flash->read_query = alt_read_query_entry_16bit;
   818744:	e0fffd17 	ldw	r3,-12(fp)
   818748:	008020b4 	movhi	r2,130
   81874c:	10a0ac04 	addi	r2,r2,-32080
   818750:	18803415 	stw	r2,208(r3)
+        break;
   818754:	00000706 	br	818774 <alt_set_flash_width_func+0x1cc>
+      }
+      case 4:
+      {
+        flash->read_query = alt_read_query_entry_32bit;
   818758:	e0fffd17 	ldw	r3,-12(fp)
   81875c:	008020b4 	movhi	r2,130
   818760:	10a0bd04 	addi	r2,r2,-32012
   818764:	18803415 	stw	r2,208(r3)
+        break;
   818768:	00000206 	br	818774 <alt_set_flash_width_func+0x1cc>
+      }
+      default:
+      {
+        ret_code = -EACCES;
   81876c:	00bffcc4 	movi	r2,-13
   818770:	e0bffc15 	stw	r2,-16(fp)
+      }
+    }
+  }
+
+  return ret_code;
   818774:	e0bffc17 	ldw	r2,-16(fp)
+}
   818778:	e037883a 	mov	sp,fp
   81877c:	df000017 	ldw	fp,0(sp)
   818780:	dec00104 	addi	sp,sp,4
   818784:	f800283a 	ret
 
 00818788 <alt_set_flash_algorithm_func>:
+ * 
+ * Setup the function pointers to the functions for this algorithm
+ * 
+ */
+int alt_set_flash_algorithm_func( alt_flash_cfi_dev* flash)
+{
   818788:	defffc04 	addi	sp,sp,-16
   81878c:	df000315 	stw	fp,12(sp)
   818790:	df000304 	addi	fp,sp,12
   818794:	e13ffe15 	stw	r4,-8(fp)
+  int ret_code = 0;
   818798:	e03ffd15 	stw	zero,-12(fp)
+ 
+  switch(flash->algorithm)
   81879c:	e0bffe17 	ldw	r2,-8(fp)
   8187a0:	10802d17 	ldw	r2,180(r2)
   8187a4:	e0bfff15 	stw	r2,-4(fp)
@@ -35622,39 +36086,69 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8187c4:	18800060 	cmpeqi	r2,r3,1
   8187c8:	10000a1e 	bne	r2,zero,8187f4 <alt_set_flash_algorithm_func+0x6c>
   8187cc:	00001206 	br	818818 <alt_set_flash_algorithm_func+0x90>
+  {
+    case CFI_ALG_AMD:
+    {
+      flash->dev.erase_block = alt_erase_block_amd;
   8187d0:	e0fffe17 	ldw	r3,-8(fp)
   8187d4:	008020f4 	movhi	r2,131
   8187d8:	109c1304 	addi	r2,r2,28748
   8187dc:	18800815 	stw	r2,32(r3)
+      flash->dev.write_block = alt_program_amd;
   8187e0:	e0fffe17 	ldw	r3,-8(fp)
   8187e4:	008020f4 	movhi	r2,131
   8187e8:	109bf904 	addi	r2,r2,28644
   8187ec:	18800915 	stw	r2,36(r3)
+      break;
   8187f0:	00000b06 	br	818820 <alt_set_flash_algorithm_func+0x98>
+    }
+    case CFI_ALG_INTEL:
+    case CFI_ALG_INTEL_STRATA:
+    {
+      flash->dev.erase_block = alt_erase_block_intel;
   8187f4:	e0fffe17 	ldw	r3,-8(fp)
   8187f8:	008020f4 	movhi	r2,131
   8187fc:	109d3204 	addi	r2,r2,29896
   818800:	18800815 	stw	r2,32(r3)
+      flash->dev.write_block = alt_program_intel;
   818804:	e0fffe17 	ldw	r3,-8(fp)
   818808:	008020f4 	movhi	r2,131
   81880c:	109d1104 	addi	r2,r2,29764
   818810:	18800915 	stw	r2,36(r3)
+      break;
   818814:	00000206 	br	818820 <alt_set_flash_algorithm_func+0x98>
+    }
+    default:
+    {
+      ret_code = -EIO;
   818818:	00bffec4 	movi	r2,-5
   81881c:	e0bffd15 	stw	r2,-12(fp)
+    }
+  } 
+  return ret_code;  
   818820:	e0bffd17 	ldw	r2,-12(fp)
+}
   818824:	e037883a 	mov	sp,fp
   818828:	df000017 	ldw	fp,0(sp)
   81882c:	dec00104 	addi	sp,sp,4
   818830:	f800283a 	ret
 
 00818834 <alt_read_16bit_query_entry>:
+ * read_16bit_query_entry
+ * 
+ * Read a 16 bit entry from the CFI Query table
+ */
+static alt_u16 alt_read_16bit_query_entry(alt_flash_cfi_dev* flash, int address)
+{
   818834:	defffb04 	addi	sp,sp,-20
   818838:	dfc00415 	stw	ra,16(sp)
   81883c:	df000315 	stw	fp,12(sp)
   818840:	df000304 	addi	fp,sp,12
   818844:	e13ffe15 	stw	r4,-8(fp)
   818848:	e17fff15 	stw	r5,-4(fp)
+  alt_u16 ret_code;
+
+  ret_code = (*flash->read_query)( flash, address);
   81884c:	e0bffe17 	ldw	r2,-8(fp)
   818850:	10803417 	ldw	r2,208(r2)
   818854:	e13ffe17 	ldw	r4,-8(fp)
@@ -35662,6 +36156,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81885c:	103ee83a 	callr	r2
   818860:	10803fcc 	andi	r2,r2,255
   818864:	e0bffd0d 	sth	r2,-12(fp)
+  ret_code |= (((int)(*flash->read_query)(flash, address+1)) << 8);                   
   818868:	e0bffe17 	ldw	r2,-8(fp)
   81886c:	10c03417 	ldw	r3,208(r2)
   818870:	e0bfff17 	ldw	r2,-4(fp)
@@ -35674,7 +36169,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81888c:	e0bffd0b 	ldhu	r2,-12(fp)
   818890:	1884b03a 	or	r2,r3,r2
   818894:	e0bffd0d 	sth	r2,-12(fp)
+
+  return ret_code;
   818898:	e0bffd0b 	ldhu	r2,-12(fp)
+}
   81889c:	e037883a 	mov	sp,fp
   8188a0:	dfc00117 	ldw	ra,4(sp)
   8188a4:	df000017 	ldw	fp,0(sp)
@@ -35682,21 +36180,45 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8188ac:	f800283a 	ret
 
 008188b0 <alt_read_cfi_table>:
+ * read_cfi_table
+ * 
+ * Read the CFI Table
+ */
+int alt_read_cfi_table(alt_flash_cfi_dev* flash)
+{
   8188b0:	defff104 	addi	sp,sp,-60
   8188b4:	dfc00e15 	stw	ra,56(sp)
   8188b8:	df000d15 	stw	fp,52(sp)
   8188bc:	dc000c15 	stw	r16,48(sp)
   8188c0:	df000c04 	addi	fp,sp,48
   8188c4:	e13ffe15 	stw	r4,-8(fp)
+  int   i,j;
+  int   device_size;
+  int   ret_code = 0;
   8188c8:	e03ffa15 	stw	zero,-24(fp)
+  int   size = 0;
   8188cc:	e03ff915 	stw	zero,-28(fp)
+  int   swap;
+  int   typical_timeout;
+  int   max_timeout;
+  int   offset = 0;
   8188d0:	e03ff515 	stw	zero,-44(fp)
+   
+  /*
+  * Check that the Primary Vendor Specific table
+  * starts with the letters PRI                                                         
+  */
+  ret_code = alt_check_primary_table(flash);
   8188d4:	e13ffe17 	ldw	r4,-8(fp)
   8188d8:	081963c0 	call	81963c <alt_check_primary_table>
   8188dc:	e0bffa15 	stw	r2,-24(fp)
+
+  if (!ret_code)
   8188e0:	e0bffa17 	ldw	r2,-24(fp)
   8188e4:	1004c03a 	cmpne	r2,r2,zero
   8188e8:	1001621e 	bne	r2,zero,818e74 <alt_read_cfi_table+0x5c4>
+  {
+    flash->algorithm = (*flash->read_query)(flash, 0x13);
   8188ec:	e0bffe17 	ldw	r2,-8(fp)
   8188f0:	10803417 	ldw	r2,208(r2)
   8188f4:	e13ffe17 	ldw	r4,-8(fp)
@@ -35705,6 +36227,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818900:	10c03fcc 	andi	r3,r2,255
   818904:	e0bffe17 	ldw	r2,-8(fp)
   818908:	10c02d15 	stw	r3,180(r2)
+  
+    /* 
+     * Let's read the write timeout values from the flash 
+     * 
+     */
+    typical_timeout = (*flash->read_query)( flash, 0x1f);
   81890c:	e0bffe17 	ldw	r2,-8(fp)
   818910:	10803417 	ldw	r2,208(r2)
   818914:	e13ffe17 	ldw	r4,-8(fp)
@@ -35712,6 +36240,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81891c:	103ee83a 	callr	r2
   818920:	10803fcc 	andi	r2,r2,255
   818924:	e0bff715 	stw	r2,-36(fp)
+    max_timeout = (*flash->read_query)( flash, 0x23);
   818928:	e0bffe17 	ldw	r2,-8(fp)
   81892c:	10803417 	ldw	r2,208(r2)
   818930:	e13ffe17 	ldw	r4,-8(fp)
@@ -35719,16 +36248,32 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818938:	103ee83a 	callr	r2
   81893c:	10803fcc 	andi	r2,r2,255
   818940:	e0bff615 	stw	r2,-40(fp)
+    
+    if ((typical_timeout == 0 ) || (max_timeout == 0))
   818944:	e0bff717 	ldw	r2,-36(fp)
   818948:	1005003a 	cmpeq	r2,r2,zero
   81894c:	1000031e 	bne	r2,zero,81895c <alt_read_cfi_table+0xac>
   818950:	e0bff617 	ldw	r2,-40(fp)
   818954:	1004c03a 	cmpne	r2,r2,zero
   818958:	1000041e 	bne	r2,zero,81896c <alt_read_cfi_table+0xbc>
+    {
+      flash->write_timeout = 1000; /* 1ms should be more than enough */
   81895c:	e0fffe17 	ldw	r3,-8(fp)
   818960:	0080fa04 	movi	r2,1000
   818964:	18803015 	stw	r2,192(r3)
+     * 
+     */
+    typical_timeout = (*flash->read_query)( flash, 0x1f);
+    max_timeout = (*flash->read_query)( flash, 0x23);
+    
+    if ((typical_timeout == 0 ) || (max_timeout == 0))
   818968:	00000706 	br	818988 <alt_read_cfi_table+0xd8>
+    {
+      flash->write_timeout = 1000; /* 1ms should be more than enough */
+    }
+    else
+    {
+      flash->write_timeout = (1 << typical_timeout) * (1 << max_timeout);
   81896c:	00c00044 	movi	r3,1
   818970:	e0bff717 	ldw	r2,-36(fp)
   818974:	1886983a 	sll	r3,r3,r2
@@ -35736,6 +36281,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81897c:	1886983a 	sll	r3,r3,r2
   818980:	e0bffe17 	ldw	r2,-8(fp)
   818984:	10c03015 	stw	r3,192(r2)
+    }
+   
+    /* Let's read the block erase timeout values from the flash */
+    typical_timeout = (*flash->read_query)( flash, 0x21);
   818988:	e0bffe17 	ldw	r2,-8(fp)
   81898c:	10803417 	ldw	r2,208(r2)
   818990:	e13ffe17 	ldw	r4,-8(fp)
@@ -35743,6 +36292,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818998:	103ee83a 	callr	r2
   81899c:	10803fcc 	andi	r2,r2,255
   8189a0:	e0bff715 	stw	r2,-36(fp)
+    max_timeout = (*flash->read_query)( flash, 0x25);
   8189a4:	e0bffe17 	ldw	r2,-8(fp)
   8189a8:	10803417 	ldw	r2,208(r2)
   8189ac:	e13ffe17 	ldw	r4,-8(fp)
@@ -35750,17 +36300,33 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8189b4:	103ee83a 	callr	r2
   8189b8:	10803fcc 	andi	r2,r2,255
   8189bc:	e0bff615 	stw	r2,-40(fp)
+    
+    if ((typical_timeout == 0 ) || (max_timeout == 0))
   8189c0:	e0bff717 	ldw	r2,-36(fp)
   8189c4:	1005003a 	cmpeq	r2,r2,zero
   8189c8:	1000031e 	bne	r2,zero,8189d8 <alt_read_cfi_table+0x128>
   8189cc:	e0bff617 	ldw	r2,-40(fp)
   8189d0:	1004c03a 	cmpne	r2,r2,zero
   8189d4:	1000051e 	bne	r2,zero,8189ec <alt_read_cfi_table+0x13c>
+    {
+      flash->erase_timeout = 20000000; /* 20s should be more than enough */
   8189d8:	e0fffe17 	ldw	r3,-8(fp)
   8189dc:	00804c74 	movhi	r2,305
   8189e0:	108b4004 	addi	r2,r2,11520
   8189e4:	18803115 	stw	r2,196(r3)
+   
+    /* Let's read the block erase timeout values from the flash */
+    typical_timeout = (*flash->read_query)( flash, 0x21);
+    max_timeout = (*flash->read_query)( flash, 0x25);
+    
+    if ((typical_timeout == 0 ) || (max_timeout == 0))
   8189e8:	00000806 	br	818a0c <alt_read_cfi_table+0x15c>
+    {
+      flash->erase_timeout = 20000000; /* 20s should be more than enough */
+    }
+    else
+    {
+      flash->erase_timeout = (1 << typical_timeout) * (1 << max_timeout) * 1000;
   8189ec:	00c00044 	movi	r3,1
   8189f0:	e0bff717 	ldw	r2,-36(fp)
   8189f4:	1886983a 	sll	r3,r3,r2
@@ -35769,6 +36335,9 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818a00:	10c0fa24 	muli	r3,r2,1000
   818a04:	e0bffe17 	ldw	r2,-8(fp)
   818a08:	10c03115 	stw	r3,196(r2)
+    }
+   
+    device_size = 0x1 << (*flash->read_query)( flash, 0x27);
   818a0c:	e0bffe17 	ldw	r2,-8(fp)
   818a10:	10803417 	ldw	r2,208(r2)
   818a14:	e13ffe17 	ldw	r4,-8(fp)
@@ -35778,6 +36347,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818a24:	00800044 	movi	r2,1
   818a28:	10c4983a 	sll	r2,r2,r3
   818a2c:	e0bffb15 	stw	r2,-20(fp)
+  
+    flash->dev.number_of_regions = (*flash->read_query)(flash, 0x2c);
   818a30:	e0bffe17 	ldw	r2,-8(fp)
   818a34:	10803417 	ldw	r2,208(r2)
   818a38:	e13ffe17 	ldw	r4,-8(fp)
@@ -35786,15 +36357,25 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818a44:	10c03fcc 	andi	r3,r2,255
   818a48:	e0bffe17 	ldw	r2,-8(fp)
   818a4c:	10c00c15 	stw	r3,48(r2)
+    
+    if (flash->dev.number_of_regions > ALT_MAX_NUMBER_OF_FLASH_REGIONS)
   818a50:	e0bffe17 	ldw	r2,-8(fp)
   818a54:	10800c17 	ldw	r2,48(r2)
   818a58:	10800250 	cmplti	r2,r2,9
   818a5c:	1000031e 	bne	r2,zero,818a6c <alt_read_cfi_table+0x1bc>
+    {
+      ret_code = -ENOMEM;
   818a60:	00bffd04 	movi	r2,-12
   818a64:	e0bffa15 	stw	r2,-24(fp)
   818a68:	00005e06 	br	818be4 <alt_read_cfi_table+0x334>
+    }
+    else
+    {
+      for(i=0;i<flash->dev.number_of_regions;i++)
   818a6c:	e03ffd15 	stw	zero,-12(fp)
   818a70:	00005306 	br	818bc0 <alt_read_cfi_table+0x310>
+      {
+        flash->dev.region_info[i].number_of_blocks =  alt_read_16bit_query_entry( 
   818a74:	e43ffd17 	ldw	r16,-12(fp)
   818a78:	e0bffd17 	ldw	r2,-12(fp)
   818a7c:	1085883a 	add	r2,r2,r2
@@ -35808,6 +36389,9 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818a9c:	10c5883a 	add	r2,r2,r3
   818aa0:	10800f04 	addi	r2,r2,60
   818aa4:	11000015 	stw	r4,0(r2)
+                                                            flash,
+                                                            (0x2D+i*4));
+        flash->dev.region_info[i].number_of_blocks += 1; 
   818aa8:	e17ffd17 	ldw	r5,-12(fp)
   818aac:	e0bffd17 	ldw	r2,-12(fp)
   818ab0:	e0fffe17 	ldw	r3,-8(fp)
@@ -35821,6 +36405,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818ad0:	10c5883a 	add	r2,r2,r3
   818ad4:	10800f04 	addi	r2,r2,60
   818ad8:	11000015 	stw	r4,0(r2)
+        flash->dev.region_info[i].block_size =  alt_read_16bit_query_entry( flash, 
   818adc:	e43ffd17 	ldw	r16,-12(fp)
   818ae0:	e0bffd17 	ldw	r2,-12(fp)
   818ae4:	1085883a 	add	r2,r2,r2
@@ -35834,6 +36419,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818b04:	10c5883a 	add	r2,r2,r3
   818b08:	10801004 	addi	r2,r2,64
   818b0c:	11000015 	stw	r4,0(r2)
+                                                              (0x2F+i*4));
+        flash->dev.region_info[i].block_size *= 256;
   818b10:	e17ffd17 	ldw	r5,-12(fp)
   818b14:	e0bffd17 	ldw	r2,-12(fp)
   818b18:	e0fffe17 	ldw	r3,-8(fp)
@@ -35847,6 +36434,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818b38:	10c5883a 	add	r2,r2,r3
   818b3c:	10801004 	addi	r2,r2,64
   818b40:	11000015 	stw	r4,0(r2)
+        flash->dev.region_info[i].region_size = 
   818b44:	e17ffd17 	ldw	r5,-12(fp)
   818b48:	e0bffd17 	ldw	r2,-12(fp)
   818b4c:	e0fffe17 	ldw	r3,-8(fp)
@@ -35866,6 +36454,9 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818b84:	10c5883a 	add	r2,r2,r3
   818b88:	10800e04 	addi	r2,r2,56
   818b8c:	11000015 	stw	r4,0(r2)
+                                    flash->dev.region_info[i].number_of_blocks 
+                                    * flash->dev.region_info[i].block_size;
+        size += flash->dev.region_info[i].region_size;
   818b90:	e0bffd17 	ldw	r2,-12(fp)
   818b94:	e0fffe17 	ldw	r3,-8(fp)
   818b98:	1004913a 	slli	r2,r2,4
@@ -35875,6 +36466,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818ba8:	e0bff917 	ldw	r2,-28(fp)
   818bac:	10c5883a 	add	r2,r2,r3
   818bb0:	e0bff915 	stw	r2,-28(fp)
+    {
+      ret_code = -ENOMEM;
+    }
+    else
+    {
+      for(i=0;i<flash->dev.number_of_regions;i++)
   818bb4:	e0bffd17 	ldw	r2,-12(fp)
   818bb8:	10800044 	addi	r2,r2,1
   818bbc:	e0bffd15 	stw	r2,-12(fp)
@@ -35882,11 +36479,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818bc4:	10c00c17 	ldw	r3,48(r2)
   818bc8:	e0bffd17 	ldw	r2,-12(fp)
   818bcc:	10ffa916 	blt	r2,r3,818a74 <alt_read_cfi_table+0x1c4>
+                                    flash->dev.region_info[i].number_of_blocks 
+                                    * flash->dev.region_info[i].block_size;
+        size += flash->dev.region_info[i].region_size;
+      }
+       
+      if (size != device_size)
   818bd0:	e0fff917 	ldw	r3,-28(fp)
   818bd4:	e0bffb17 	ldw	r2,-20(fp)
   818bd8:	18800226 	beq	r3,r2,818be4 <alt_read_cfi_table+0x334>
+      {
+        ret_code = -ENODEV;
   818bdc:	00bffb44 	movi	r2,-19
   818be0:	e0bffa15 	stw	r2,-24(fp)
+      }
+    }
+    
+    boot_mode = (*flash->read_query)( flash, flash->primary_address + 0xf);
   818be4:	e0bffe17 	ldw	r2,-8(fp)
   818be8:	10c03417 	ldw	r3,208(r2)
   818bec:	e0bffe17 	ldw	r2,-8(fp)
@@ -35895,6 +36504,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818bf8:	e13ffe17 	ldw	r4,-8(fp)
   818bfc:	183ee83a 	callr	r3
   818c00:	e0bff405 	stb	r2,-48(fp)
+     * Intel Flash parts describe the sections in the order they appear
+     * for AMD they just put all the small ones first then the bigger ones
+     * So if it's a top boot part we have to reverse the order of the sectors
+     * so they're in the correct order
+     */
+    if ((flash->algorithm == CFI_ALG_AMD) && (boot_mode == TOP_BOOT_DEVICE))
   818c04:	e0bffe17 	ldw	r2,-8(fp)
   818c08:	10802d17 	ldw	r2,180(r2)
   818c0c:	10800098 	cmpnei	r2,r2,2
@@ -35902,12 +36517,17 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818c14:	e0bff403 	ldbu	r2,-48(fp)
   818c18:	108000d8 	cmpnei	r2,r2,3
   818c1c:	10005d1e 	bne	r2,zero,818d94 <alt_read_cfi_table+0x4e4>
+    {
+      for(i=flash->dev.number_of_regions-1, j=0;
   818c20:	e0bffe17 	ldw	r2,-8(fp)
   818c24:	10800c17 	ldw	r2,48(r2)
   818c28:	10bfffc4 	addi	r2,r2,-1
   818c2c:	e0bffd15 	stw	r2,-12(fp)
   818c30:	e03ffc15 	stw	zero,-16(fp)
+          j<=i;i--,j++)
   818c34:	00005406 	br	818d88 <alt_read_cfi_table+0x4d8>
+      {
+        swap = flash->dev.region_info[i].region_size;
   818c38:	e0bffd17 	ldw	r2,-12(fp)
   818c3c:	e0fffe17 	ldw	r3,-8(fp)
   818c40:	1004913a 	slli	r2,r2,4
@@ -35915,6 +36535,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818c48:	10800e04 	addi	r2,r2,56
   818c4c:	10800017 	ldw	r2,0(r2)
   818c50:	e0bff815 	stw	r2,-32(fp)
+        flash->dev.region_info[i].region_size =  
   818c54:	e17ffd17 	ldw	r5,-12(fp)
   818c58:	e0bffc17 	ldw	r2,-16(fp)
   818c5c:	e0fffe17 	ldw	r3,-8(fp)
@@ -35927,6 +36548,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818c78:	10c5883a 	add	r2,r2,r3
   818c7c:	10800e04 	addi	r2,r2,56
   818c80:	11000015 	stw	r4,0(r2)
+                                flash->dev.region_info[j].region_size;
+        flash->dev.region_info[j].region_size = swap;
   818c84:	e0bffc17 	ldw	r2,-16(fp)
   818c88:	e0fffe17 	ldw	r3,-8(fp)
   818c8c:	1004913a 	slli	r2,r2,4
@@ -35934,6 +36557,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818c94:	10c00e04 	addi	r3,r2,56
   818c98:	e0bff817 	ldw	r2,-32(fp)
   818c9c:	18800015 	stw	r2,0(r3)
+
+        swap = flash->dev.region_info[i].block_size;
   818ca0:	e0bffd17 	ldw	r2,-12(fp)
   818ca4:	e0fffe17 	ldw	r3,-8(fp)
   818ca8:	1004913a 	slli	r2,r2,4
@@ -35941,6 +36566,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818cb0:	10801004 	addi	r2,r2,64
   818cb4:	10800017 	ldw	r2,0(r2)
   818cb8:	e0bff815 	stw	r2,-32(fp)
+        flash->dev.region_info[i].block_size =  
   818cbc:	e17ffd17 	ldw	r5,-12(fp)
   818cc0:	e0bffc17 	ldw	r2,-16(fp)
   818cc4:	e0fffe17 	ldw	r3,-8(fp)
@@ -35953,6 +36579,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818ce0:	10c5883a 	add	r2,r2,r3
   818ce4:	10801004 	addi	r2,r2,64
   818ce8:	11000015 	stw	r4,0(r2)
+                                flash->dev.region_info[j].block_size;
+        flash->dev.region_info[j].block_size = swap;
   818cec:	e0bffc17 	ldw	r2,-16(fp)
   818cf0:	e0fffe17 	ldw	r3,-8(fp)
   818cf4:	1004913a 	slli	r2,r2,4
@@ -35960,6 +36588,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818cfc:	10c01004 	addi	r3,r2,64
   818d00:	e0bff817 	ldw	r2,-32(fp)
   818d04:	18800015 	stw	r2,0(r3)
+ 
+        swap = flash->dev.region_info[i].number_of_blocks;
   818d08:	e0bffd17 	ldw	r2,-12(fp)
   818d0c:	e0fffe17 	ldw	r3,-8(fp)
   818d10:	1004913a 	slli	r2,r2,4
@@ -35967,6 +36597,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818d18:	10800f04 	addi	r2,r2,60
   818d1c:	10800017 	ldw	r2,0(r2)
   818d20:	e0bff815 	stw	r2,-32(fp)
+        flash->dev.region_info[i].number_of_blocks =  
   818d24:	e17ffd17 	ldw	r5,-12(fp)
   818d28:	e0bffc17 	ldw	r2,-16(fp)
   818d2c:	e0fffe17 	ldw	r3,-8(fp)
@@ -35979,6 +36610,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818d48:	10c5883a 	add	r2,r2,r3
   818d4c:	10800f04 	addi	r2,r2,60
   818d50:	11000015 	stw	r4,0(r2)
+                                flash->dev.region_info[j].number_of_blocks;
+        flash->dev.region_info[j].number_of_blocks = swap;
   818d54:	e0bffc17 	ldw	r2,-16(fp)
   818d58:	e0fffe17 	ldw	r3,-8(fp)
   818d5c:	1004913a 	slli	r2,r2,4
@@ -35986,6 +36619,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818d64:	10c00f04 	addi	r3,r2,60
   818d68:	e0bff817 	ldw	r2,-32(fp)
   818d6c:	18800015 	stw	r2,0(r3)
+     * so they're in the correct order
+     */
+    if ((flash->algorithm == CFI_ALG_AMD) && (boot_mode == TOP_BOOT_DEVICE))
+    {
+      for(i=flash->dev.number_of_regions-1, j=0;
+          j<=i;i--,j++)
   818d70:	e0bffd17 	ldw	r2,-12(fp)
   818d74:	10bfffc4 	addi	r2,r2,-1
   818d78:	e0bffd15 	stw	r2,-12(fp)
@@ -35995,8 +36634,16 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818d88:	e0fffc17 	ldw	r3,-16(fp)
   818d8c:	e0bffd17 	ldw	r2,-12(fp)
   818d90:	10ffa90e 	bge	r2,r3,818c38 <alt_read_cfi_table+0x388>
+        flash->dev.region_info[j].number_of_blocks = swap;
+
+      } 
+    }
+    
+    for(i=0;i<flash->dev.number_of_regions;i++)
   818d94:	e03ffd15 	stw	zero,-12(fp)
   818d98:	00001306 	br	818de8 <alt_read_cfi_table+0x538>
+    {
+      flash->dev.region_info[i].offset = offset;
   818d9c:	e0bffd17 	ldw	r2,-12(fp)
   818da0:	e0fffe17 	ldw	r3,-8(fp)
   818da4:	1004913a 	slli	r2,r2,4
@@ -36004,6 +36651,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818dac:	10c00d04 	addi	r3,r2,52
   818db0:	e0bff517 	ldw	r2,-44(fp)
   818db4:	18800015 	stw	r2,0(r3)
+      offset += flash->dev.region_info[i].region_size;
   818db8:	e0bffd17 	ldw	r2,-12(fp)
   818dbc:	e0fffe17 	ldw	r3,-8(fp)
   818dc0:	1004913a 	slli	r2,r2,4
@@ -36013,6 +36661,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818dd0:	e0bff517 	ldw	r2,-44(fp)
   818dd4:	10c5883a 	add	r2,r2,r3
   818dd8:	e0bff515 	stw	r2,-44(fp)
+        flash->dev.region_info[j].number_of_blocks = swap;
+
+      } 
+    }
+    
+    for(i=0;i<flash->dev.number_of_regions;i++)
   818ddc:	e0bffd17 	ldw	r2,-12(fp)
   818de0:	10800044 	addi	r2,r2,1
   818de4:	e0bffd15 	stw	r2,-12(fp)
@@ -36020,6 +36674,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818dec:	10c00c17 	ldw	r3,48(r2)
   818df0:	e0bffd17 	ldw	r2,-12(fp)
   818df4:	10ffe916 	blt	r2,r3,818d9c <alt_read_cfi_table+0x4ec>
+    {
+      flash->dev.region_info[i].offset = offset;
+      offset += flash->dev.region_info[i].region_size;
+    }
+
+    switch(flash->algorithm)
   818df8:	e0bffe17 	ldw	r2,-8(fp)
   818dfc:	10802d17 	ldw	r2,180(r2)
   818e00:	e0bfff15 	stw	r2,-4(fp)
@@ -36033,6 +36693,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818e20:	18800060 	cmpeqi	r2,r3,1
   818e24:	1000091e 	bne	r2,zero,818e4c <alt_read_cfi_table+0x59c>
   818e28:	00001006 	br	818e6c <alt_read_cfi_table+0x5bc>
+    {
+      case CFI_ALG_AMD:
+      {
+        (*flash->write_command)(flash->dev.base_addr, 
   818e2c:	e0bffe17 	ldw	r2,-8(fp)
   818e30:	10c03317 	ldw	r3,204(r2)
   818e34:	e0bffe17 	ldw	r2,-8(fp)
@@ -36040,7 +36704,15 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818e3c:	01401544 	movi	r5,85
   818e40:	01803c04 	movi	r6,240
   818e44:	183ee83a 	callr	r3
+                            0x55, 
+                            READ_ARRAY_AMD_MODE);
+        break;
   818e48:	00000a06 	br	818e74 <alt_read_cfi_table+0x5c4>
+      }
+      case CFI_ALG_INTEL:
+      case CFI_ALG_INTEL_STRATA:
+      {
+        (*flash->write_command)(flash->dev.base_addr, 
   818e4c:	e0bffe17 	ldw	r2,-8(fp)
   818e50:	10c03317 	ldw	r3,204(r2)
   818e54:	e0bffe17 	ldw	r2,-8(fp)
@@ -36048,10 +36720,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818e5c:	01401544 	movi	r5,85
   818e60:	01803fc4 	movi	r6,255
   818e64:	183ee83a 	callr	r3
+                            0x55, 
+                            READ_ARRAY_INTEL_MODE);
+        break;
   818e68:	00000206 	br	818e74 <alt_read_cfi_table+0x5c4>
+      }
+      default:
+      {
+        ret_code = -EIO;
   818e6c:	00bffec4 	movi	r2,-5
   818e70:	e0bffa15 	stw	r2,-24(fp)
+      }
+    } 
+  }  
+
+  return ret_code;
   818e74:	e0bffa17 	ldw	r2,-24(fp)
+}
   818e78:	e037883a 	mov	sp,fp
   818e7c:	dfc00217 	ldw	ra,8(sp)
   818e80:	df000117 	ldw	fp,4(sp)
@@ -36060,19 +36745,38 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818e8c:	f800283a 	ret
 
 00818e90 <alt_read_cfi_width>:
+ * 
+ * Work out the width of the device we're talking to and sanity check that we  
+ * can read the CFI and the Primary Vendor specific Table
+ */
+int alt_read_cfi_width(alt_flash_cfi_dev* flash)
+{
   818e90:	defff704 	addi	sp,sp,-36
   818e94:	dfc00815 	stw	ra,32(sp)
   818e98:	df000715 	stw	fp,28(sp)
   818e9c:	df000704 	addi	fp,sp,28
   818ea0:	e13fff15 	stw	r4,-4(fp)
+  int i;
+  alt_u8 byte_id[12];
+  alt_u16 iface;
+  int ret_code = 0;
   818ea4:	e03ff915 	stw	zero,-28(fp)
+
+  /*
+  * Check for 8 bit wide flash
+  */
+  alt_write_flash_command_8bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   818ea8:	e0bfff17 	ldw	r2,-4(fp)
   818eac:	11000a17 	ldw	r4,40(r2)
   818eb0:	01401544 	movi	r5,85
   818eb4:	01802604 	movi	r6,152
   818eb8:	081833c0 	call	81833c <alt_write_flash_command_8bit_device_8bit_mode>
+
+  for(i=0;i<3;i++)
   818ebc:	e03ffb15 	stw	zero,-20(fp)
   818ec0:	00000f06 	br	818f00 <alt_read_cfi_width+0x70>
+  {
+    byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, QUERY_ADDR+i);
   818ec4:	e13ffb17 	ldw	r4,-20(fp)
   818ec8:	e0bfff17 	ldw	r2,-4(fp)
   818ecc:	10800a17 	ldw	r2,40(r2)
@@ -36085,12 +36789,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818ee8:	e0bffc04 	addi	r2,fp,-16
   818eec:	1105883a 	add	r2,r2,r4
   818ef0:	10c00005 	stb	r3,0(r2)
+  /*
+  * Check for 8 bit wide flash
+  */
+  alt_write_flash_command_8bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+
+  for(i=0;i<3;i++)
   818ef4:	e0bffb17 	ldw	r2,-20(fp)
   818ef8:	10800044 	addi	r2,r2,1
   818efc:	e0bffb15 	stw	r2,-20(fp)
   818f00:	e0bffb17 	ldw	r2,-20(fp)
   818f04:	108000d0 	cmplti	r2,r2,3
   818f08:	103fee1e 	bne	r2,zero,818ec4 <alt_read_cfi_width+0x34>
+  {
+    byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, QUERY_ADDR+i);
+  }
+
+  if ((byte_id[0] == 'Q') &&
   818f0c:	e0bffc03 	ldbu	r2,-16(fp)
   818f10:	10803fcc 	andi	r2,r2,255
   818f14:	10801458 	cmpnei	r2,r2,81
@@ -36103,34 +36818,59 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818f30:	10803fcc 	andi	r2,r2,255
   818f34:	10801658 	cmpnei	r2,r2,89
   818f38:	1000151e 	bne	r2,zero,818f90 <alt_read_cfi_width+0x100>
+      (byte_id[1] == 'R') &&
+      (byte_id[2] == 'Y'))
+  {
+    flash->mode_width = 1;
   818f3c:	e0ffff17 	ldw	r3,-4(fp)
   818f40:	00800044 	movi	r2,1
   818f44:	18802e15 	stw	r2,184(r3)
+    flash->device_width = 1; 
   818f48:	e0ffff17 	ldw	r3,-4(fp)
   818f4c:	00800044 	movi	r2,1
   818f50:	18802f15 	stw	r2,188(r3)
+    iface = IORD_16DIRECT(flash->dev.base_addr, INTERFACE_ADDR);
   818f54:	e0bfff17 	ldw	r2,-4(fp)
   818f58:	10800a17 	ldw	r2,40(r2)
   818f5c:	10800a04 	addi	r2,r2,40
   818f60:	1080002b 	ldhuio	r2,0(r2)
   818f64:	e0bffa0d 	sth	r2,-24(fp)
+    iface += 1;
   818f68:	e0bffa0b 	ldhu	r2,-24(fp)
   818f6c:	10800044 	addi	r2,r2,1
   818f70:	e0bffa0d 	sth	r2,-24(fp)
+    if (!(iface & 0x1))
   818f74:	e0bffa0b 	ldhu	r2,-24(fp)
   818f78:	1080004c 	andi	r2,r2,1
   818f7c:	1004c03a 	cmpne	r2,r2,zero
   818f80:	1001a81e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+    {
+      ret_code = -ENODEV;
   818f84:	00bffb44 	movi	r2,-19
   818f88:	e0bff915 	stw	r2,-28(fp)
+  for(i=0;i<3;i++)
+  {
+    byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, QUERY_ADDR+i);
+  }
+
+  if ((byte_id[0] == 'Q') &&
   818f8c:	0001a506 	br	819624 <alt_read_cfi_width+0x794>
+  else
+  {
+    /*
+    * Check for 8/16 bit in byte wide mode
+    */
+    alt_write_flash_command_16bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   818f90:	e0bfff17 	ldw	r2,-4(fp)
   818f94:	11000a17 	ldw	r4,40(r2)
   818f98:	01401544 	movi	r5,85
   818f9c:	01802604 	movi	r6,152
   818fa0:	08183780 	call	818378 <alt_write_flash_command_16bit_device_8bit_mode>
+    for(i=0;i<6;i++)
   818fa4:	e03ffb15 	stw	zero,-20(fp)
   818fa8:	00000f06 	br	818fe8 <alt_read_cfi_width+0x158>
+    {
+      byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
   818fac:	e13ffb17 	ldw	r4,-20(fp)
   818fb0:	e0bfff17 	ldw	r2,-4(fp)
   818fb4:	10800a17 	ldw	r2,40(r2)
@@ -36143,12 +36883,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   818fd0:	e0bffc04 	addi	r2,fp,-16
   818fd4:	1105883a 	add	r2,r2,r4
   818fd8:	10c00005 	stb	r3,0(r2)
+  {
+    /*
+    * Check for 8/16 bit in byte wide mode
+    */
+    alt_write_flash_command_16bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+    for(i=0;i<6;i++)
   818fdc:	e0bffb17 	ldw	r2,-20(fp)
   818fe0:	10800044 	addi	r2,r2,1
   818fe4:	e0bffb15 	stw	r2,-20(fp)
   818fe8:	e0bffb17 	ldw	r2,-20(fp)
   818fec:	10800190 	cmplti	r2,r2,6
   818ff0:	103fee1e 	bne	r2,zero,818fac <alt_read_cfi_width+0x11c>
+    {
+      byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
+    }
+
+    if ((byte_id[0] == 'Q') && 
   818ff4:	e0bffc03 	ldbu	r2,-16(fp)
   818ff8:	10803fcc 	andi	r2,r2,255
   818ffc:	10801458 	cmpnei	r2,r2,81
@@ -36173,34 +36924,61 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819048:	10803fcc 	andi	r2,r2,255
   81904c:	10801658 	cmpnei	r2,r2,89
   819050:	1000151e 	bne	r2,zero,8190a8 <alt_read_cfi_width+0x218>
+        (byte_id[2] == 'R') &&
+        (byte_id[3] == 'R') && 
+        (byte_id[4] == 'Y') && 
+        (byte_id[5] == 'Y'))
+    {
+      flash->mode_width = 1;
   819054:	e0ffff17 	ldw	r3,-4(fp)
   819058:	00800044 	movi	r2,1
   81905c:	18802e15 	stw	r2,184(r3)
+      flash->device_width = 2; 
   819060:	e0ffff17 	ldw	r3,-4(fp)
   819064:	00800084 	movi	r2,2
   819068:	18802f15 	stw	r2,188(r3)
+      iface = IORD_16DIRECT(flash->dev.base_addr, INTERFACE_ADDR*2);
   81906c:	e0bfff17 	ldw	r2,-4(fp)
   819070:	10800a17 	ldw	r2,40(r2)
   819074:	10801404 	addi	r2,r2,80
   819078:	1080002b 	ldhuio	r2,0(r2)
   81907c:	e0bffa0d 	sth	r2,-24(fp)
+      iface += 1;
   819080:	e0bffa0b 	ldhu	r2,-24(fp)
   819084:	10800044 	addi	r2,r2,1
   819088:	e0bffa0d 	sth	r2,-24(fp)
+      if (!(iface & 0x1))
   81908c:	e0bffa0b 	ldhu	r2,-24(fp)
   819090:	1080004c 	andi	r2,r2,1
   819094:	1004c03a 	cmpne	r2,r2,zero
   819098:	1001621e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+      {
+        ret_code = -ENODEV;
   81909c:	00bffb44 	movi	r2,-19
   8190a0:	e0bff915 	stw	r2,-28(fp)
+    for(i=0;i<6;i++)
+    {
+      byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
+    }
+
+    if ((byte_id[0] == 'Q') && 
   8190a4:	00015f06 	br	819624 <alt_read_cfi_width+0x794>
+    else
+    {
+      /*
+      * Check for 16 bit flash in word mode
+      */
+      alt_write_flash_command_16bit_device_16bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   8190a8:	e0bfff17 	ldw	r2,-4(fp)
   8190ac:	11000a17 	ldw	r4,40(r2)
   8190b0:	01401544 	movi	r5,85
   8190b4:	01802604 	movi	r6,152
   8190b8:	081843c0 	call	81843c <alt_write_flash_command_16bit_device_16bit_mode>
+      for(i=0;i<6;i++)
   8190bc:	e03ffb15 	stw	zero,-20(fp)
   8190c0:	00000f06 	br	819100 <alt_read_cfi_width+0x270>
+      {
+        byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
   8190c4:	e13ffb17 	ldw	r4,-20(fp)
   8190c8:	e0bfff17 	ldw	r2,-4(fp)
   8190cc:	10800a17 	ldw	r2,40(r2)
@@ -36213,12 +36991,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8190e8:	e0bffc04 	addi	r2,fp,-16
   8190ec:	1105883a 	add	r2,r2,r4
   8190f0:	10c00005 	stb	r3,0(r2)
+    {
+      /*
+      * Check for 16 bit flash in word mode
+      */
+      alt_write_flash_command_16bit_device_16bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+      for(i=0;i<6;i++)
   8190f4:	e0bffb17 	ldw	r2,-20(fp)
   8190f8:	10800044 	addi	r2,r2,1
   8190fc:	e0bffb15 	stw	r2,-20(fp)
   819100:	e0bffb17 	ldw	r2,-20(fp)
   819104:	10800190 	cmplti	r2,r2,6
   819108:	103fee1e 	bne	r2,zero,8190c4 <alt_read_cfi_width+0x234>
+      {
+        byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
+      }
+
+      if ((byte_id[0] == 'Q') && 
   81910c:	e0bffc03 	ldbu	r2,-16(fp)
   819110:	10803fcc 	andi	r2,r2,255
   819114:	10801458 	cmpnei	r2,r2,81
@@ -36243,34 +37032,61 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819160:	10803fcc 	andi	r2,r2,255
   819164:	1004c03a 	cmpne	r2,r2,zero
   819168:	1000151e 	bne	r2,zero,8191c0 <alt_read_cfi_width+0x330>
+          (byte_id[2] == 'R') && 
+          (byte_id[3] == '\0') && 
+          (byte_id[4] == 'Y') && 
+          (byte_id[5] == '\0'))
+      {
+        flash->mode_width = 2;
   81916c:	e0ffff17 	ldw	r3,-4(fp)
   819170:	00800084 	movi	r2,2
   819174:	18802e15 	stw	r2,184(r3)
+        flash->device_width = 2; 
   819178:	e0ffff17 	ldw	r3,-4(fp)
   81917c:	00800084 	movi	r2,2
   819180:	18802f15 	stw	r2,188(r3)
+        iface = IORD_16DIRECT(flash->dev.base_addr, INTERFACE_ADDR*2);
   819184:	e0bfff17 	ldw	r2,-4(fp)
   819188:	10800a17 	ldw	r2,40(r2)
   81918c:	10801404 	addi	r2,r2,80
   819190:	1080002b 	ldhuio	r2,0(r2)
   819194:	e0bffa0d 	sth	r2,-24(fp)
+        iface += 1;
   819198:	e0bffa0b 	ldhu	r2,-24(fp)
   81919c:	10800044 	addi	r2,r2,1
   8191a0:	e0bffa0d 	sth	r2,-24(fp)
+        if (!(iface & 0x2))
   8191a4:	e0bffa0b 	ldhu	r2,-24(fp)
   8191a8:	1080008c 	andi	r2,r2,2
   8191ac:	1004c03a 	cmpne	r2,r2,zero
   8191b0:	10011c1e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+        {
+          ret_code = -ENODEV;
   8191b4:	00bffb44 	movi	r2,-19
   8191b8:	e0bff915 	stw	r2,-28(fp)
+      for(i=0;i<6;i++)
+      {
+        byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*2)+i);
+      }
+
+      if ((byte_id[0] == 'Q') && 
   8191bc:	00011906 	br	819624 <alt_read_cfi_width+0x794>
+      else
+      {
+        /*
+        * Check for 32bit wide flash in 32 bit mode
+        */
+        alt_write_flash_command_32bit_device_32bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   8191c0:	e0bfff17 	ldw	r2,-4(fp)
   8191c4:	11000a17 	ldw	r4,40(r2)
   8191c8:	01401544 	movi	r5,85
   8191cc:	01802604 	movi	r6,152
   8191d0:	08184c80 	call	8184c8 <alt_write_flash_command_32bit_device_32bit_mode>
+        for(i=0;i<12;i++)
   8191d4:	e03ffb15 	stw	zero,-20(fp)
   8191d8:	00000f06 	br	819218 <alt_read_cfi_width+0x388>
+        {
+          byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
   8191dc:	e13ffb17 	ldw	r4,-20(fp)
   8191e0:	e0bfff17 	ldw	r2,-4(fp)
   8191e4:	10800a17 	ldw	r2,40(r2)
@@ -36283,12 +37099,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819200:	e0bffc04 	addi	r2,fp,-16
   819204:	1105883a 	add	r2,r2,r4
   819208:	10c00005 	stb	r3,0(r2)
+      {
+        /*
+        * Check for 32bit wide flash in 32 bit mode
+        */
+        alt_write_flash_command_32bit_device_32bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+        for(i=0;i<12;i++)
   81920c:	e0bffb17 	ldw	r2,-20(fp)
   819210:	10800044 	addi	r2,r2,1
   819214:	e0bffb15 	stw	r2,-20(fp)
   819218:	e0bffb17 	ldw	r2,-20(fp)
   81921c:	10800310 	cmplti	r2,r2,12
   819220:	103fee1e 	bne	r2,zero,8191dc <alt_read_cfi_width+0x34c>
+        {
+          byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
+        }
+
+        if ((byte_id[0] == 'Q') &&
   819224:	e0bffc03 	ldbu	r2,-16(fp)
   819228:	10803fcc 	andi	r2,r2,255
   81922c:	10801458 	cmpnei	r2,r2,81
@@ -36337,34 +37164,61 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8192d8:	10803fcc 	andi	r2,r2,255
   8192dc:	1004c03a 	cmpne	r2,r2,zero
   8192e0:	1000151e 	bne	r2,zero,819338 <alt_read_cfi_width+0x4a8>
+          (byte_id[8] == 'Y') && 
+          (byte_id[9] == '\0') && 
+          (byte_id[10] == '\0') && 
+          (byte_id[11] == '\0'))
+        {
+          flash->mode_width = 4;
   8192e4:	e0ffff17 	ldw	r3,-4(fp)
   8192e8:	00800104 	movi	r2,4
   8192ec:	18802e15 	stw	r2,184(r3)
+          flash->device_width = 4; 
   8192f0:	e0ffff17 	ldw	r3,-4(fp)
   8192f4:	00800104 	movi	r2,4
   8192f8:	18802f15 	stw	r2,188(r3)
+          iface = IORD_32DIRECT(flash->dev.base_addr, INTERFACE_ADDR*4);
   8192fc:	e0bfff17 	ldw	r2,-4(fp)
   819300:	10800a17 	ldw	r2,40(r2)
   819304:	10802804 	addi	r2,r2,160
   819308:	10800037 	ldwio	r2,0(r2)
   81930c:	e0bffa0d 	sth	r2,-24(fp)
+          iface += 1;
   819310:	e0bffa0b 	ldhu	r2,-24(fp)
   819314:	10800044 	addi	r2,r2,1
   819318:	e0bffa0d 	sth	r2,-24(fp)
+          if (!(iface & 0x4))
   81931c:	e0bffa0b 	ldhu	r2,-24(fp)
   819320:	1080010c 	andi	r2,r2,4
   819324:	1004c03a 	cmpne	r2,r2,zero
   819328:	1000be1e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+          {
+            ret_code = -ENODEV;
   81932c:	00bffb44 	movi	r2,-19
   819330:	e0bff915 	stw	r2,-28(fp)
+        for(i=0;i<12;i++)
+        {
+          byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
+        }
+
+        if ((byte_id[0] == 'Q') &&
   819334:	0000bb06 	br	819624 <alt_read_cfi_width+0x794>
+        else
+        {
+          /*
+          * Check for 32 bit wide in 16 bit mode
+          */
+          alt_write_flash_command_32bit_device_16bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   819338:	e0bfff17 	ldw	r2,-4(fp)
   81933c:	11000a17 	ldw	r4,40(r2)
   819340:	01401544 	movi	r5,85
   819344:	01802604 	movi	r6,152
   819348:	08184800 	call	818480 <alt_write_flash_command_32bit_device_16bit_mode>
+          for(i=0;i<12;i++)
   81934c:	e03ffb15 	stw	zero,-20(fp)
   819350:	00000f06 	br	819390 <alt_read_cfi_width+0x500>
+          {
+            byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
   819354:	e13ffb17 	ldw	r4,-20(fp)
   819358:	e0bfff17 	ldw	r2,-4(fp)
   81935c:	10800a17 	ldw	r2,40(r2)
@@ -36377,12 +37231,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819378:	e0bffc04 	addi	r2,fp,-16
   81937c:	1105883a 	add	r2,r2,r4
   819380:	10c00005 	stb	r3,0(r2)
+        {
+          /*
+          * Check for 32 bit wide in 16 bit mode
+          */
+          alt_write_flash_command_32bit_device_16bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+          for(i=0;i<12;i++)
   819384:	e0bffb17 	ldw	r2,-20(fp)
   819388:	10800044 	addi	r2,r2,1
   81938c:	e0bffb15 	stw	r2,-20(fp)
   819390:	e0bffb17 	ldw	r2,-20(fp)
   819394:	10800310 	cmplti	r2,r2,12
   819398:	103fee1e 	bne	r2,zero,819354 <alt_read_cfi_width+0x4c4>
+          {
+            byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
+          }
+
+          if ((byte_id[0] == 'Q') &&
   81939c:	e0bffc03 	ldbu	r2,-16(fp)
   8193a0:	10803fcc 	andi	r2,r2,255
   8193a4:	10801458 	cmpnei	r2,r2,81
@@ -36431,34 +37296,61 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819450:	10803fcc 	andi	r2,r2,255
   819454:	1004c03a 	cmpne	r2,r2,zero
   819458:	1000151e 	bne	r2,zero,8194b0 <alt_read_cfi_width+0x620>
+              (byte_id[8] == 'Y') &&
+              (byte_id[9] == '\0') &&
+              (byte_id[10] == 'Y') &&
+              (byte_id[11] == '\0'))
+          {
+            flash->mode_width = 2;
   81945c:	e0ffff17 	ldw	r3,-4(fp)
   819460:	00800084 	movi	r2,2
   819464:	18802e15 	stw	r2,184(r3)
+            flash->device_width = 4; 
   819468:	e0ffff17 	ldw	r3,-4(fp)
   81946c:	00800104 	movi	r2,4
   819470:	18802f15 	stw	r2,188(r3)
+            iface = IORD_32DIRECT(flash->dev.base_addr, INTERFACE_ADDR*4);
   819474:	e0bfff17 	ldw	r2,-4(fp)
   819478:	10800a17 	ldw	r2,40(r2)
   81947c:	10802804 	addi	r2,r2,160
   819480:	10800037 	ldwio	r2,0(r2)
   819484:	e0bffa0d 	sth	r2,-24(fp)
+            iface += 1;
   819488:	e0bffa0b 	ldhu	r2,-24(fp)
   81948c:	10800044 	addi	r2,r2,1
   819490:	e0bffa0d 	sth	r2,-24(fp)
+            if (!(iface & 0x4))
   819494:	e0bffa0b 	ldhu	r2,-24(fp)
   819498:	1080010c 	andi	r2,r2,4
   81949c:	1004c03a 	cmpne	r2,r2,zero
   8194a0:	1000601e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+            {
+              ret_code = -ENODEV;
   8194a4:	00bffb44 	movi	r2,-19
   8194a8:	e0bff915 	stw	r2,-28(fp)
+          for(i=0;i<12;i++)
+          {
+            byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
+          }
+
+          if ((byte_id[0] == 'Q') &&
   8194ac:	00005d06 	br	819624 <alt_read_cfi_width+0x794>
+          else
+          {
+            /*
+            * 32 Bit wide flash in byte mode
+            */
+            alt_write_flash_command_32bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
   8194b0:	e0bfff17 	ldw	r2,-4(fp)
   8194b4:	11000a17 	ldw	r4,40(r2)
   8194b8:	01401544 	movi	r5,85
   8194bc:	01802604 	movi	r6,152
   8194c0:	08183f40 	call	8183f4 <alt_write_flash_command_32bit_device_8bit_mode>
+            for(i=0;i<12;i++)
   8194c4:	e03ffb15 	stw	zero,-20(fp)
   8194c8:	00000f06 	br	819508 <alt_read_cfi_width+0x678>
+            {
+              byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
   8194cc:	e13ffb17 	ldw	r4,-20(fp)
   8194d0:	e0bfff17 	ldw	r2,-4(fp)
   8194d4:	10800a17 	ldw	r2,40(r2)
@@ -36471,12 +37363,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8194f0:	e0bffc04 	addi	r2,fp,-16
   8194f4:	1105883a 	add	r2,r2,r4
   8194f8:	10c00005 	stb	r3,0(r2)
+          {
+            /*
+            * 32 Bit wide flash in byte mode
+            */
+            alt_write_flash_command_32bit_device_8bit_mode(flash->dev.base_addr, 0x55, QUERY_MODE);
+            for(i=0;i<12;i++)
   8194fc:	e0bffb17 	ldw	r2,-20(fp)
   819500:	10800044 	addi	r2,r2,1
   819504:	e0bffb15 	stw	r2,-20(fp)
   819508:	e0bffb17 	ldw	r2,-20(fp)
   81950c:	10800310 	cmplti	r2,r2,12
   819510:	103fee1e 	bne	r2,zero,8194cc <alt_read_cfi_width+0x63c>
+            {
+              byte_id[i] = IORD_8DIRECT(flash->dev.base_addr, (QUERY_ADDR*4)+i);
+            }
+
+            if ((byte_id[0] == 'Q') &&
   819514:	e0bffc03 	ldbu	r2,-16(fp)
   819518:	10803fcc 	andi	r2,r2,255
   81951c:	10801458 	cmpnei	r2,r2,81
@@ -36525,27 +37428,46 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8195c8:	10803fcc 	andi	r2,r2,255
   8195cc:	10801658 	cmpnei	r2,r2,89
   8195d0:	1000141e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+                (byte_id[8] == 'Y') && 
+                (byte_id[9] == 'Y') && 
+                (byte_id[10] == 'Y') && 
+                (byte_id[11] == 'Y'))
+            {
+              flash->mode_width = 1;
   8195d4:	e0ffff17 	ldw	r3,-4(fp)
   8195d8:	00800044 	movi	r2,1
   8195dc:	18802e15 	stw	r2,184(r3)
+              flash->device_width = 4; 
   8195e0:	e0ffff17 	ldw	r3,-4(fp)
   8195e4:	00800104 	movi	r2,4
   8195e8:	18802f15 	stw	r2,188(r3)
+              iface = IORD_32DIRECT(flash->dev.base_addr, INTERFACE_ADDR*4);
   8195ec:	e0bfff17 	ldw	r2,-4(fp)
   8195f0:	10800a17 	ldw	r2,40(r2)
   8195f4:	10802804 	addi	r2,r2,160
   8195f8:	10800037 	ldwio	r2,0(r2)
   8195fc:	e0bffa0d 	sth	r2,-24(fp)
+              iface += 1;
   819600:	e0bffa0b 	ldhu	r2,-24(fp)
   819604:	10800044 	addi	r2,r2,1
   819608:	e0bffa0d 	sth	r2,-24(fp)
+              if (!(iface & 0x4))
   81960c:	e0bffa0b 	ldhu	r2,-24(fp)
   819610:	1080010c 	andi	r2,r2,4
   819614:	1004c03a 	cmpne	r2,r2,zero
   819618:	1000021e 	bne	r2,zero,819624 <alt_read_cfi_width+0x794>
+              {
+                ret_code = -ENODEV;
   81961c:	00bffb44 	movi	r2,-19
   819620:	e0bff915 	stw	r2,-28(fp)
+        }
+      }
+    }
+  }
+  
+  return ret_code;
   819624:	e0bff917 	ldw	r2,-28(fp)
+}
   819628:	e037883a 	mov	sp,fp
   81962c:	dfc00117 	ldw	ra,4(sp)
   819630:	df000017 	ldw	fp,0(sp)
@@ -36553,21 +37475,37 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819638:	f800283a 	ret
 
 0081963c <alt_check_primary_table>:
+ * 
+ * Check that the primary Vendor table starts with the 
+ * correct pattern
+ */
+int alt_check_primary_table(alt_flash_cfi_dev* flash)
+{
   81963c:	defff904 	addi	sp,sp,-28
   819640:	dfc00615 	stw	ra,24(sp)
   819644:	df000515 	stw	fp,20(sp)
   819648:	dc000415 	stw	r16,16(sp)
   81964c:	df000404 	addi	fp,sp,16
   819650:	e13fff15 	stw	r4,-4(fp)
+  int i;
+  int ret_code = 0;
   819654:	e03ffc15 	stw	zero,-16(fp)
+  alt_u8 primary_query_string[3];
+  
+  flash->primary_address = alt_read_16bit_query_entry( flash, 
   819658:	e13fff17 	ldw	r4,-4(fp)
   81965c:	01400544 	movi	r5,21
   819660:	08188340 	call	818834 <alt_read_16bit_query_entry>
   819664:	10ffffcc 	andi	r3,r2,65535
   819668:	e0bfff17 	ldw	r2,-4(fp)
   81966c:	10c03215 	stw	r3,200(r2)
+                            PRIMARY_ADDR);
+  
+  for(i=0;i<3;i++)
   819670:	e03ffd15 	stw	zero,-12(fp)
   819674:	00001006 	br	8196b8 <alt_check_primary_table+0x7c>
+  {
+    primary_query_string[i] = 
   819678:	e43ffd17 	ldw	r16,-12(fp)
   81967c:	e0bfff17 	ldw	r2,-4(fp)
   819680:	11803417 	ldw	r6,208(r2)
@@ -36581,12 +37519,24 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8196a0:	e0bffe04 	addi	r2,fp,-8
   8196a4:	1405883a 	add	r2,r2,r16
   8196a8:	10c00005 	stb	r3,0(r2)
+  alt_u8 primary_query_string[3];
+  
+  flash->primary_address = alt_read_16bit_query_entry( flash, 
+                            PRIMARY_ADDR);
+  
+  for(i=0;i<3;i++)
   8196ac:	e0bffd17 	ldw	r2,-12(fp)
   8196b0:	10800044 	addi	r2,r2,1
   8196b4:	e0bffd15 	stw	r2,-12(fp)
   8196b8:	e0bffd17 	ldw	r2,-12(fp)
   8196bc:	108000d0 	cmplti	r2,r2,3
   8196c0:	103fed1e 	bne	r2,zero,819678 <alt_check_primary_table+0x3c>
+  {
+    primary_query_string[i] = 
+          (*flash->read_query)( flash,(flash->primary_address + i));
+  }
+    
+  if ((primary_query_string[0] != 'P') ||
   8196c4:	e0bffe03 	ldbu	r2,-8(fp)
   8196c8:	10803fcc 	andi	r2,r2,255
   8196cc:	10801418 	cmpnei	r2,r2,80
@@ -36599,9 +37549,17 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8196e8:	10803fcc 	andi	r2,r2,255
   8196ec:	10801260 	cmpeqi	r2,r2,73
   8196f0:	1000021e 	bne	r2,zero,8196fc <alt_check_primary_table+0xc0>
+      (primary_query_string[1] != 'R') ||
+      (primary_query_string[2] != 'I'))
+  {
+    ret_code = -ENODEV;
   8196f4:	00bffb44 	movi	r2,-19
   8196f8:	e0bffc15 	stw	r2,-16(fp)
+  }
+  
+  return ret_code;
   8196fc:	e0bffc17 	ldw	r2,-16(fp)
+}
   819700:	e037883a 	mov	sp,fp
   819704:	dfc00217 	ldw	ra,8(sp)
   819708:	df000117 	ldw	fp,4(sp)
@@ -36610,22 +37568,42 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819714:	f800283a 	ret
 
 00819718 <alt_epcs_flash_init>:
+/*
+ * alt_epcs_flash_init
+ *
+ */
+int alt_epcs_flash_init(alt_flash_epcs_dev* flash)
+{
   819718:	defffc04 	addi	sp,sp,-16
   81971c:	dfc00315 	stw	ra,12(sp)
   819720:	df000215 	stw	fp,8(sp)
   819724:	df000204 	addi	fp,sp,8
   819728:	e13fff15 	stw	r4,-4(fp)
+  int ret_code = 0;
   81972c:	e03ffe15 	stw	zero,-8(fp)
+
+  /* Set up function pointers and/or data structures as needed. */
+  ret_code = alt_epcs_flash_query(flash);
   819730:	e13fff17 	ldw	r4,-4(fp)
   819734:	08197a40 	call	8197a4 <alt_epcs_flash_query>
   819738:	e0bffe15 	stw	r2,-8(fp)
+  */
+
+  /*
+  *  Register this device as a valid flash device type
+  */
+  if (!ret_code)
   81973c:	e0bffe17 	ldw	r2,-8(fp)
   819740:	1004c03a 	cmpne	r2,r2,zero
   819744:	1000031e 	bne	r2,zero,819754 <alt_epcs_flash_init+0x3c>
+    ret_code = alt_flash_device_register(&(flash->dev));
   819748:	e13fff17 	ldw	r4,-4(fp)
   81974c:	081976c0 	call	81976c <alt_flash_device_register>
   819750:	e0bffe15 	stw	r2,-8(fp)
+
+  return ret_code;
   819754:	e0bffe17 	ldw	r2,-8(fp)
+}
   819758:	e037883a 	mov	sp,fp
   81975c:	dfc00117 	ldw	ra,4(sp)
   819760:	df000017 	ldw	fp,0(sp)
@@ -36633,15 +37611,25 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819768:	f800283a 	ret
 
 0081976c <alt_flash_device_register>:
+
+typedef struct alt_flash_dev alt_flash_dev; 
+typedef alt_flash_dev alt_flash_fd;
+
+static ALT_INLINE int alt_flash_device_register( alt_flash_fd* fd)
+{
   81976c:	defffd04 	addi	sp,sp,-12
   819770:	dfc00215 	stw	ra,8(sp)
   819774:	df000115 	stw	fp,4(sp)
   819778:	df000104 	addi	fp,sp,4
   81977c:	e13fff15 	stw	r4,-4(fp)
+  extern alt_llist alt_flash_dev_list;
+
+  return alt_dev_llist_insert ((alt_dev_llist*) fd, &alt_flash_dev_list);
   819780:	e13fff17 	ldw	r4,-4(fp)
   819784:	01402174 	movhi	r5,133
   819788:	29753b04 	addi	r5,r5,-11028
   81978c:	0835c140 	call	835c14 <alt_dev_llist_insert>
+}
   819790:	e037883a 	mov	sp,fp
   819794:	dfc00117 	ldw	ra,4(sp)
   819798:	df000017 	ldw	fp,0(sp)
@@ -36649,96 +37637,154 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   8197a0:	f800283a 	ret
 
 008197a4 <alt_epcs_flash_query>:
+
+
+static int alt_epcs_flash_query(alt_flash_epcs_dev* flash)
+{
   8197a4:	defffc04 	addi	sp,sp,-16
   8197a8:	dfc00315 	stw	ra,12(sp)
   8197ac:	df000215 	stw	fp,8(sp)
   8197b0:	df000204 	addi	fp,sp,8
   8197b4:	e13fff15 	stw	r4,-4(fp)
+  int ret_code = 0;
   8197b8:	e03ffe15 	stw	zero,-8(fp)
+   * reset the device, or whatever, to ensure that
+   * it's in a known working state.
+  */
+  
+  /* Disable 4-bytes address mode. */
+  flash->four_bytes_mode = 0;
   8197bc:	e0bfff17 	ldw	r2,-4(fp)
   8197c0:	10003115 	stw	zero,196(r2)
+  
+  /* Send the RES command sequence */
+  flash->silicon_id =
   8197c4:	e0bfff17 	ldw	r2,-4(fp)
   8197c8:	11002d17 	ldw	r4,180(r2)
   8197cc:	081d0500 	call	81d050 <epcs_read_electronic_signature>
   8197d0:	10c03fcc 	andi	r3,r2,255
   8197d4:	e0bfff17 	ldw	r2,-4(fp)
   8197d8:	10c02f15 	stw	r3,188(r2)
+    epcs_read_electronic_signature(flash->register_base);
+
+  /* Fill in all device-specific parameters. */
+  if (flash->silicon_id == 0x16) /* EPCS64 */
   8197dc:	e0bfff17 	ldw	r2,-4(fp)
   8197e0:	10802f17 	ldw	r2,188(r2)
   8197e4:	10800598 	cmpnei	r2,r2,22
   8197e8:	10000a1e 	bne	r2,zero,819814 <alt_epcs_flash_query+0x70>
+  {
+    flash->dev.region_info[0].region_size = 64 * 1024 * 1024 / 8;
   8197ec:	e0ffff17 	ldw	r3,-4(fp)
   8197f0:	00802034 	movhi	r2,128
   8197f4:	18800e15 	stw	r2,56(r3)
+    flash->dev.region_info[0].number_of_blocks = 128;
   8197f8:	e0ffff17 	ldw	r3,-4(fp)
   8197fc:	00802004 	movi	r2,128
   819800:	18800f15 	stw	r2,60(r3)
+    flash->dev.region_info[0].block_size = 65536;
   819804:	e0ffff17 	ldw	r3,-4(fp)
   819808:	00800074 	movhi	r2,1
   81980c:	18801015 	stw	r2,64(r3)
   819810:	00007306 	br	8199e0 <alt_epcs_flash_query+0x23c>
+  }
+  else if (flash->silicon_id == 0x14) /* EPCS16 */
   819814:	e0bfff17 	ldw	r2,-4(fp)
   819818:	10802f17 	ldw	r2,188(r2)
   81981c:	10800518 	cmpnei	r2,r2,20
   819820:	10000a1e 	bne	r2,zero,81984c <alt_epcs_flash_query+0xa8>
+  {
+    flash->dev.region_info[0].region_size = 16 * 1024 * 1024 / 8;
   819824:	e0ffff17 	ldw	r3,-4(fp)
   819828:	00800834 	movhi	r2,32
   81982c:	18800e15 	stw	r2,56(r3)
+    flash->dev.region_info[0].number_of_blocks = 32;
   819830:	e0ffff17 	ldw	r3,-4(fp)
   819834:	00800804 	movi	r2,32
   819838:	18800f15 	stw	r2,60(r3)
+    flash->dev.region_info[0].block_size = 65536;
   81983c:	e0ffff17 	ldw	r3,-4(fp)
   819840:	00800074 	movhi	r2,1
   819844:	18801015 	stw	r2,64(r3)
   819848:	00006506 	br	8199e0 <alt_epcs_flash_query+0x23c>
+  }
+  else if (flash->silicon_id == 0x13) /* EPCS8 */
   81984c:	e0bfff17 	ldw	r2,-4(fp)
   819850:	10802f17 	ldw	r2,188(r2)
   819854:	108004d8 	cmpnei	r2,r2,19
   819858:	10000a1e 	bne	r2,zero,819884 <alt_epcs_flash_query+0xe0>
+  {
+    flash->dev.region_info[0].region_size = 8 * 1024 * 1024 / 8;
   81985c:	e0ffff17 	ldw	r3,-4(fp)
   819860:	00800434 	movhi	r2,16
   819864:	18800e15 	stw	r2,56(r3)
+    flash->dev.region_info[0].number_of_blocks = 16;
   819868:	e0ffff17 	ldw	r3,-4(fp)
   81986c:	00800404 	movi	r2,16
   819870:	18800f15 	stw	r2,60(r3)
+    flash->dev.region_info[0].block_size = 65536;
   819874:	e0ffff17 	ldw	r3,-4(fp)
   819878:	00800074 	movhi	r2,1
   81987c:	18801015 	stw	r2,64(r3)
   819880:	00005706 	br	8199e0 <alt_epcs_flash_query+0x23c>
+  }
+  else if (flash->silicon_id == 0x12) /* EPCS4 */
   819884:	e0bfff17 	ldw	r2,-4(fp)
   819888:	10802f17 	ldw	r2,188(r2)
   81988c:	10800498 	cmpnei	r2,r2,18
   819890:	10000a1e 	bne	r2,zero,8198bc <alt_epcs_flash_query+0x118>
+  {
+    flash->dev.region_info[0].region_size = 4 * 1024 * 1024 / 8;
   819894:	e0ffff17 	ldw	r3,-4(fp)
   819898:	00800234 	movhi	r2,8
   81989c:	18800e15 	stw	r2,56(r3)
+    flash->dev.region_info[0].number_of_blocks = 8;
   8198a0:	e0ffff17 	ldw	r3,-4(fp)
   8198a4:	00800204 	movi	r2,8
   8198a8:	18800f15 	stw	r2,60(r3)
+    flash->dev.region_info[0].block_size = 65536;
   8198ac:	e0ffff17 	ldw	r3,-4(fp)
   8198b0:	00800074 	movhi	r2,1
   8198b4:	18801015 	stw	r2,64(r3)
   8198b8:	00004906 	br	8199e0 <alt_epcs_flash_query+0x23c>
+  }
+  else if (flash->silicon_id == 0x10) /* EPCS1 */
   8198bc:	e0bfff17 	ldw	r2,-4(fp)
   8198c0:	10802f17 	ldw	r2,188(r2)
   8198c4:	10800418 	cmpnei	r2,r2,16
   8198c8:	10000a1e 	bne	r2,zero,8198f4 <alt_epcs_flash_query+0x150>
+  {
+    flash->dev.region_info[0].region_size = 1 * 1024 * 1024 / 8;
   8198cc:	e0ffff17 	ldw	r3,-4(fp)
   8198d0:	008000b4 	movhi	r2,2
   8198d4:	18800e15 	stw	r2,56(r3)
+    flash->dev.region_info[0].number_of_blocks = 4;
   8198d8:	e0ffff17 	ldw	r3,-4(fp)
   8198dc:	00800104 	movi	r2,4
   8198e0:	18800f15 	stw	r2,60(r3)
+    flash->dev.region_info[0].block_size = 32768;
   8198e4:	e0ffff17 	ldw	r3,-4(fp)
   8198e8:	00a00014 	movui	r2,32768
   8198ec:	18801015 	stw	r2,64(r3)
   8198f0:	00003b06 	br	8199e0 <alt_epcs_flash_query+0x23c>
+  {
+    /* 
+     * Read electronic signature doesn't work for the EPCS128; try 
+     * the "Read Device ID" command" before giving up.
+     */
+    flash->silicon_id = epcs_read_device_id(flash->register_base);
   8198f4:	e0bfff17 	ldw	r2,-4(fp)
   8198f8:	11002d17 	ldw	r4,180(r2)
   8198fc:	081d0bc0 	call	81d0bc <epcs_read_device_id>
   819900:	1007883a 	mov	r3,r2
   819904:	e0bfff17 	ldw	r2,-4(fp)
   819908:	10c02f15 	stw	r3,188(r2)
+    /*
+     * Last byte is the density ID. Note the difference between
+     * EPCS128 and EPCQ128 -- arranged differently, though the 
+     * least significant byte of each is '0x18'.
+     */
+    if((flash->silicon_id & 0xFFFFFF) == 0x20BA18) /* EPCQ128 */
   81990c:	e0bfff17 	ldw	r2,-4(fp)
   819910:	10c02f17 	ldw	r3,188(r2)
   819914:	00804034 	movhi	r2,256
@@ -36747,65 +37793,102 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819920:	00800874 	movhi	r2,33
   819924:	10ae8604 	addi	r2,r2,-17896
   819928:	18800a1e 	bne	r3,r2,819954 <alt_epcs_flash_query+0x1b0>
+    {
+      flash->dev.region_info[0].region_size = 128 * 1024 * 1024 / 8;
   81992c:	e0ffff17 	ldw	r3,-4(fp)
   819930:	00804034 	movhi	r2,256
   819934:	18800e15 	stw	r2,56(r3)
+      flash->dev.region_info[0].number_of_blocks = 256; /* number of sectors */
   819938:	e0ffff17 	ldw	r3,-4(fp)
   81993c:	00804004 	movi	r2,256
   819940:	18800f15 	stw	r2,60(r3)
+      flash->dev.region_info[0].block_size = 65536;  /* sector size */
   819944:	e0ffff17 	ldw	r3,-4(fp)
   819948:	00800074 	movhi	r2,1
   81994c:	18801015 	stw	r2,64(r3)
   819950:	00002306 	br	8199e0 <alt_epcs_flash_query+0x23c>
+    }
+    else if((flash->silicon_id & 0xFF) == 0x18) /* EPCS128 */
   819954:	e0bfff17 	ldw	r2,-4(fp)
   819958:	10802f17 	ldw	r2,188(r2)
   81995c:	10803fcc 	andi	r2,r2,255
   819960:	10800618 	cmpnei	r2,r2,24
   819964:	10000a1e 	bne	r2,zero,819990 <alt_epcs_flash_query+0x1ec>
+    {
+      flash->dev.region_info[0].region_size = 128 * 1024 * 1024 / 8;
   819968:	e0ffff17 	ldw	r3,-4(fp)
   81996c:	00804034 	movhi	r2,256
   819970:	18800e15 	stw	r2,56(r3)
+      flash->dev.region_info[0].number_of_blocks = 64;
   819974:	e0ffff17 	ldw	r3,-4(fp)
   819978:	00801004 	movi	r2,64
   81997c:	18800f15 	stw	r2,60(r3)
+      flash->dev.region_info[0].block_size = 262144;
   819980:	e0ffff17 	ldw	r3,-4(fp)
   819984:	00800134 	movhi	r2,4
   819988:	18801015 	stw	r2,64(r3)
   81998c:	00001406 	br	8199e0 <alt_epcs_flash_query+0x23c>
+    }
+    else if((flash->silicon_id & 0xFF ) == 0x19) /* EPCQ256 */
   819990:	e0bfff17 	ldw	r2,-4(fp)
   819994:	10802f17 	ldw	r2,188(r2)
   819998:	10803fcc 	andi	r2,r2,255
   81999c:	10800658 	cmpnei	r2,r2,25
   8199a0:	10000d1e 	bne	r2,zero,8199d8 <alt_epcs_flash_query+0x234>
+    {
+      flash->dev.region_info[0].region_size = 256 * 1024 * 1024 / 8;
   8199a4:	e0ffff17 	ldw	r3,-4(fp)
   8199a8:	00808034 	movhi	r2,512
   8199ac:	18800e15 	stw	r2,56(r3)
+      flash->dev.region_info[0].number_of_blocks = 512; /* number of sectors */
   8199b0:	e0ffff17 	ldw	r3,-4(fp)
   8199b4:	00808004 	movi	r2,512
   8199b8:	18800f15 	stw	r2,60(r3)
+      flash->dev.region_info[0].block_size = 65536;  /* sector size */
   8199bc:	e0ffff17 	ldw	r3,-4(fp)
   8199c0:	00800074 	movhi	r2,1
   8199c4:	18801015 	stw	r2,64(r3)
+       * must first be programmed into the device, though. To complicate things, 
+       * other Altera IP expects the chip to be in 3 byte address mode when they 
+       * start using it. To be nice, we'll place the device into 4-byte address mode
+       * when we need to, and take it back out when we're done.
+       */
+      flash->four_bytes_mode = 1;
   8199c8:	e0ffff17 	ldw	r3,-4(fp)
   8199cc:	00800044 	movi	r2,1
   8199d0:	18803115 	stw	r2,196(r3)
   8199d4:	00000206 	br	8199e0 <alt_epcs_flash_query+0x23c>
+    }
+    else 
+    {
+      ret_code = -ENODEV; /* No known device found! */
   8199d8:	00bffb44 	movi	r2,-19
   8199dc:	e0bffe15 	stw	r2,-8(fp)
+    }
+  }
+  
+  flash->size_in_bytes = flash->dev.region_info[0].region_size;
   8199e0:	e0bfff17 	ldw	r2,-4(fp)
   8199e4:	10800e17 	ldw	r2,56(r2)
   8199e8:	1007883a 	mov	r3,r2
   8199ec:	e0bfff17 	ldw	r2,-4(fp)
   8199f0:	10c02e15 	stw	r3,184(r2)
+  flash->dev.number_of_regions = 1;
   8199f4:	e0ffff17 	ldw	r3,-4(fp)
   8199f8:	00800044 	movi	r2,1
   8199fc:	18800c15 	stw	r2,48(r3)
+  flash->dev.region_info[0].offset = 0;
   819a00:	e0bfff17 	ldw	r2,-4(fp)
   819a04:	10000d15 	stw	zero,52(r2)
+  flash->page_size = 256;
   819a08:	e0ffff17 	ldw	r3,-4(fp)
   819a0c:	00804004 	movi	r2,256
   819a10:	18803015 	stw	r2,192(r3)
+
+  /* Consider clearing all BP bits here. */
+  return ret_code;
   819a14:	e0bffe17 	ldw	r2,-8(fp)
+}
   819a18:	e037883a 	mov	sp,fp
   819a1c:	dfc00117 	ldw	ra,4(sp)
   819a20:	df000017 	ldw	fp,0(sp)
@@ -36813,6 +37896,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819a28:	f800283a 	ret
 
 00819a2c <alt_epcs_flash_memcmp>:
+  alt_flash_dev* flash_info,
+  const void* src_buffer,
+  int offset,
+  size_t n
+)
+{
   819a2c:	deffeb04 	addi	sp,sp,-84
   819a30:	dfc01415 	stw	ra,80(sp)
   819a34:	df001315 	stw	fp,76(sp)
@@ -36821,10 +37910,21 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819a40:	e17ffa15 	stw	r5,-24(fp)
   819a44:	e1bffb15 	stw	r6,-20(fp)
   819a48:	e1fffc15 	stw	r7,-16(fp)
+  /*
+   * Compare chunks of memory at a time, for better serial-flash
+   * read efficiency.
+   */
+  alt_u8 chunk_buffer[32];
+  const int chunk_size = sizeof(chunk_buffer) / sizeof(*chunk_buffer);
   819a4c:	00800804 	movi	r2,32
   819a50:	e0bff015 	stw	r2,-64(fp)
+  int current_offset = 0;
   819a54:	e03fef15 	stw	zero,-68(fp)
+
+  while (n > 0)
   819a58:	00002c06 	br	819b0c <alt_epcs_flash_memcmp+0xe0>
+  {
+    int this_chunk_size = n > chunk_size ? chunk_size : n;
   819a5c:	e0bff017 	ldw	r2,-64(fp)
   819a60:	e0bfff15 	stw	r2,-4(fp)
   819a64:	e0fffc17 	ldw	r3,-16(fp)
@@ -36836,6 +37936,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819a7c:	e0bffe15 	stw	r2,-8(fp)
   819a80:	e0fffe17 	ldw	r3,-8(fp)
   819a84:	e0ffee15 	stw	r3,-72(fp)
+    int this_chunk_cmp;
+
+    if (
+      alt_epcs_flash_read(
   819a88:	e0fffb17 	ldw	r3,-20(fp)
   819a8c:	e0bfef17 	ldw	r2,-68(fp)
   819a90:	188b883a 	add	r5,r3,r2
@@ -36843,11 +37947,27 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819a98:	e13ff917 	ldw	r4,-28(fp)
   819a9c:	e1ffee17 	ldw	r7,-72(fp)
   819aa0:	081a0640 	call	81a064 <alt_epcs_flash_read>
+  while (n > 0)
+  {
+    int this_chunk_size = n > chunk_size ? chunk_size : n;
+    int this_chunk_cmp;
+
+    if (
   819aa4:	1004403a 	cmpge	r2,r2,zero
   819aa8:	1000031e 	bne	r2,zero,819ab8 <alt_epcs_flash_memcmp+0x8c>
+    {
+      /*
+      * If the read fails, I'm not sure what the appropriate action is.
+      * Compare success seems wrong, so make it compare fail.
+      */
+      return -1;
   819aac:	00bfffc4 	movi	r2,-1
   819ab0:	e0bffd15 	stw	r2,-12(fp)
   819ab4:	00001906 	br	819b1c <alt_epcs_flash_memcmp+0xf0>
+    }
+
+    /* Compare this chunk against the source memory buffer. */
+    this_chunk_cmp = memcmp(&((unsigned char*)(src_buffer))[current_offset], chunk_buffer, this_chunk_size);
   819ab8:	e0fffa17 	ldw	r3,-24(fp)
   819abc:	e0bfef17 	ldw	r2,-68(fp)
   819ac0:	1889883a 	add	r4,r3,r2
@@ -36855,25 +37975,45 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819ac8:	e17ff104 	addi	r5,fp,-60
   819acc:	0846a840 	call	846a84 <memcmp>
   819ad0:	e0bfed15 	stw	r2,-76(fp)
+    if (this_chunk_cmp)
   819ad4:	e0bfed17 	ldw	r2,-76(fp)
   819ad8:	1005003a 	cmpeq	r2,r2,zero
   819adc:	1000031e 	bne	r2,zero,819aec <alt_epcs_flash_memcmp+0xc0>
+    {
+      return this_chunk_cmp;
   819ae0:	e0ffed17 	ldw	r3,-76(fp)
   819ae4:	e0fffd15 	stw	r3,-12(fp)
   819ae8:	00000c06 	br	819b1c <alt_epcs_flash_memcmp+0xf0>
+    }
+
+    n -= this_chunk_size;
   819aec:	e0ffee17 	ldw	r3,-72(fp)
   819af0:	e0bffc17 	ldw	r2,-16(fp)
   819af4:	10c5c83a 	sub	r2,r2,r3
   819af8:	e0bffc15 	stw	r2,-16(fp)
+    current_offset += this_chunk_size;
   819afc:	e0ffef17 	ldw	r3,-68(fp)
   819b00:	e0bfee17 	ldw	r2,-72(fp)
   819b04:	1885883a 	add	r2,r3,r2
   819b08:	e0bfef15 	stw	r2,-68(fp)
+   */
+  alt_u8 chunk_buffer[32];
+  const int chunk_size = sizeof(chunk_buffer) / sizeof(*chunk_buffer);
+  int current_offset = 0;
+
+  while (n > 0)
   819b0c:	e0bffc17 	ldw	r2,-16(fp)
   819b10:	1004c03a 	cmpne	r2,r2,zero
   819b14:	103fd11e 	bne	r2,zero,819a5c <alt_epcs_flash_memcmp+0x30>
+  }
+
+  /*
+   * If execution made it to this point, compare is successful.
+   */
+  return 0;
   819b18:	e03ffd15 	stw	zero,-12(fp)
   819b1c:	e0bffd17 	ldw	r2,-12(fp)
+}
   819b20:	e037883a 	mov	sp,fp
   819b24:	dfc00117 	ldw	ra,4(sp)
   819b28:	df000017 	ldw	fp,0(sp)
@@ -36881,6 +38021,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819b30:	f800283a 	ret
 
 00819b34 <alt_epcs_flash_write>:
+ * large buffer to tie up in our programming library, when not all users will
+ * want that functionality.
+ */
+int alt_epcs_flash_write(alt_flash_dev* flash_info, int offset,
+                          const void* src_addr, int length)
+{
   819b34:	defff204 	addi	sp,sp,-56
   819b38:	dfc00d15 	stw	ra,52(sp)
   819b3c:	df000c15 	stw	fp,48(sp)
@@ -36889,9 +38035,19 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819b48:	e17ffb15 	stw	r5,-20(fp)
   819b4c:	e1bffc15 	stw	r6,-16(fp)
   819b50:	e1fffd15 	stw	r7,-12(fp)
+  int         ret_code = 0;
   819b54:	e03ff915 	stw	zero,-28(fp)
+  int         current_offset;
+
+  /*
+   * First and foremost which sectors are affected?
+   */
+  for(i = 0; i < flash_info->number_of_regions; i++)
   819b58:	e03ff815 	stw	zero,-32(fp)
   819b5c:	00008b06 	br	819d8c <alt_epcs_flash_write+0x258>
+  {
+    /* Is it in this erase block region?*/
+    if((offset >= flash_info->region_info[i].offset) &&
   819b60:	e0bff817 	ldw	r2,-32(fp)
   819b64:	e0fffa17 	ldw	r3,-24(fp)
   819b68:	1004913a 	slli	r2,r2,4
@@ -36915,6 +38071,10 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819bb0:	2087883a 	add	r3,r4,r2
   819bb4:	e0bffb17 	ldw	r2,-20(fp)
   819bb8:	10c0710e 	bge	r2,r3,819d80 <alt_epcs_flash_write+0x24c>
+      (offset < (flash_info->region_info[i].offset +
+      flash_info->region_info[i].region_size)))
+    {
+      current_offset = flash_info->region_info[i].offset;
   819bbc:	e0bff817 	ldw	r2,-32(fp)
   819bc0:	e0fffa17 	ldw	r3,-24(fp)
   819bc4:	1004913a 	slli	r2,r2,4
@@ -36922,8 +38082,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819bcc:	10800d04 	addi	r2,r2,52
   819bd0:	10800017 	ldw	r2,0(r2)
   819bd4:	e0bff515 	stw	r2,-44(fp)
+
+      for(j=0;j<flash_info->region_info[i].number_of_blocks;j++)
   819bd8:	e03ff715 	stw	zero,-36(fp)
   819bdc:	00006006 	br	819d60 <alt_epcs_flash_write+0x22c>
+      {
+        if ((offset >= current_offset ) &&
   819be0:	e0fffb17 	ldw	r3,-20(fp)
   819be4:	e0bff517 	ldw	r2,-44(fp)
   819be8:	18805116 	blt	r3,r2,819d30 <alt_epcs_flash_write+0x1fc>
@@ -36937,6 +38101,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819c08:	1887883a 	add	r3,r3,r2
   819c0c:	e0bffb17 	ldw	r2,-20(fp)
   819c10:	10c0470e 	bge	r2,r3,819d30 <alt_epcs_flash_write+0x1fc>
+        {
+          /*
+           * Check if the contents of the block are different
+           * from the data we wish to put there
+           */
+          data_to_write = ( current_offset + flash_info->region_info[i].block_size
   819c14:	e0bff817 	ldw	r2,-32(fp)
   819c18:	e0fffa17 	ldw	r3,-24(fp)
   819c1c:	1004913a 	slli	r2,r2,4
@@ -36948,6 +38118,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819c34:	e0bffb17 	ldw	r2,-20(fp)
   819c38:	1885c83a 	sub	r2,r3,r2
   819c3c:	e0bff615 	stw	r2,-40(fp)
+                            - offset);
+          data_to_write = MIN(data_to_write, length);
   819c40:	e0bff617 	ldw	r2,-40(fp)
   819c44:	e0bfff15 	stw	r2,-4(fp)
   819c48:	e0fffd17 	ldw	r3,-12(fp)
@@ -36959,6 +38131,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819c60:	e0bffe15 	stw	r2,-8(fp)
   819c64:	e0fffe17 	ldw	r3,-8(fp)
   819c68:	e0fff615 	stw	r3,-40(fp)
+
+          if(alt_epcs_flash_memcmp(flash_info, src_addr, offset, data_to_write))
   819c6c:	e1fff617 	ldw	r7,-40(fp)
   819c70:	e13ffa17 	ldw	r4,-24(fp)
   819c74:	e17ffc17 	ldw	r5,-16(fp)
@@ -36966,15 +38140,21 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819c7c:	0819a2c0 	call	819a2c <alt_epcs_flash_memcmp>
   819c80:	1005003a 	cmpeq	r2,r2,zero
   819c84:	1000131e 	bne	r2,zero,819cd4 <alt_epcs_flash_write+0x1a0>
+          {
+            ret_code = (*flash_info->erase_block)(flash_info, current_offset);
   819c88:	e0bffa17 	ldw	r2,-24(fp)
   819c8c:	10800817 	ldw	r2,32(r2)
   819c90:	e13ffa17 	ldw	r4,-24(fp)
   819c94:	e17ff517 	ldw	r5,-44(fp)
   819c98:	103ee83a 	callr	r2
   819c9c:	e0bff915 	stw	r2,-28(fp)
+
+            if (!ret_code)
   819ca0:	e0bff917 	ldw	r2,-28(fp)
   819ca4:	1004c03a 	cmpne	r2,r2,zero
   819ca8:	10000a1e 	bne	r2,zero,819cd4 <alt_epcs_flash_write+0x1a0>
+            {
+              ret_code = (*flash_info->write_block)(
   819cac:	e0bffa17 	ldw	r2,-24(fp)
   819cb0:	10c00917 	ldw	r3,36(r2)
   819cb4:	e0bff617 	ldw	r2,-40(fp)
@@ -36985,16 +38165,28 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819cc8:	e1fffc17 	ldw	r7,-16(fp)
   819ccc:	183ee83a 	callr	r3
   819cd0:	e0bff915 	stw	r2,-28(fp)
+                                                  data_to_write);
+            }
+          }
+
+          /* Was this the last block? */
+          if ((length == data_to_write) || ret_code)
   819cd4:	e0fffd17 	ldw	r3,-12(fp)
   819cd8:	e0bff617 	ldw	r2,-40(fp)
   819cdc:	18802f26 	beq	r3,r2,819d9c <alt_epcs_flash_write+0x268>
   819ce0:	e0bff917 	ldw	r2,-28(fp)
   819ce4:	1004c03a 	cmpne	r2,r2,zero
   819ce8:	10002c1e 	bne	r2,zero,819d9c <alt_epcs_flash_write+0x268>
+          {
+            goto finished;
+          }
+
+          length -= data_to_write;
   819cec:	e0fffd17 	ldw	r3,-12(fp)
   819cf0:	e0bff617 	ldw	r2,-40(fp)
   819cf4:	1885c83a 	sub	r2,r3,r2
   819cf8:	e0bffd15 	stw	r2,-12(fp)
+          offset = current_offset + flash_info->region_info[i].block_size;
   819cfc:	e0bff817 	ldw	r2,-32(fp)
   819d00:	e0fffa17 	ldw	r3,-24(fp)
   819d04:	1004913a 	slli	r2,r2,4
@@ -37004,10 +38196,13 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819d14:	e0bff517 	ldw	r2,-44(fp)
   819d18:	1885883a 	add	r2,r3,r2
   819d1c:	e0bffb15 	stw	r2,-20(fp)
+          src_addr = (alt_u8*)src_addr + data_to_write;
   819d20:	e0fffc17 	ldw	r3,-16(fp)
   819d24:	e0bff617 	ldw	r2,-40(fp)
   819d28:	1885883a 	add	r2,r3,r2
   819d2c:	e0bffc15 	stw	r2,-16(fp)
+        }
+        current_offset += flash_info->region_info[i].block_size;
   819d30:	e0bff817 	ldw	r2,-32(fp)
   819d34:	e0fffa17 	ldw	r3,-24(fp)
   819d38:	1004913a 	slli	r2,r2,4
@@ -37017,6 +38212,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819d48:	e0bff517 	ldw	r2,-44(fp)
   819d4c:	10c5883a 	add	r2,r2,r3
   819d50:	e0bff515 	stw	r2,-44(fp)
+      (offset < (flash_info->region_info[i].offset +
+      flash_info->region_info[i].region_size)))
+    {
+      current_offset = flash_info->region_info[i].offset;
+
+      for(j=0;j<flash_info->region_info[i].number_of_blocks;j++)
   819d54:	e0bff717 	ldw	r2,-36(fp)
   819d58:	10800044 	addi	r2,r2,1
   819d5c:	e0bff715 	stw	r2,-36(fp)
@@ -37028,6 +38229,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819d74:	10c00017 	ldw	r3,0(r2)
   819d78:	e0bff717 	ldw	r2,-36(fp)
   819d7c:	10ff9816 	blt	r2,r3,819be0 <alt_epcs_flash_write+0xac>
+  int         current_offset;
+
+  /*
+   * First and foremost which sectors are affected?
+   */
+  for(i = 0; i < flash_info->number_of_regions; i++)
   819d80:	e0bff817 	ldw	r2,-32(fp)
   819d84:	10800044 	addi	r2,r2,1
   819d88:	e0bff815 	stw	r2,-32(fp)
@@ -37035,7 +38242,14 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819d90:	10c00c17 	ldw	r3,48(r2)
   819d94:	e0bff817 	ldw	r2,-32(fp)
   819d98:	10ff7116 	blt	r2,r3,819b60 <alt_epcs_flash_write+0x2c>
+      }
+    }
+  }
+
+finished:
+  return ret_code;
   819d9c:	e0bff917 	ldw	r2,-28(fp)
+}
   819da0:	e037883a 	mov	sp,fp
   819da4:	dfc00117 	ldw	ra,4(sp)
   819da8:	df000017 	ldw	fp,0(sp)
@@ -37043,67 +38257,114 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819db0:	f800283a 	ret
 
 00819db4 <alt_epcs_flash_get_info>:
+ *
+ *  Pass the table of erase blocks to the user
+ */
+int alt_epcs_flash_get_info(alt_flash_fd* fd, flash_region** info,
+                            int* number_of_regions)
+{
   819db4:	defffa04 	addi	sp,sp,-24
   819db8:	df000515 	stw	fp,20(sp)
   819dbc:	df000504 	addi	fp,sp,20
   819dc0:	e13ffd15 	stw	r4,-12(fp)
   819dc4:	e17ffe15 	stw	r5,-8(fp)
   819dc8:	e1bfff15 	stw	r6,-4(fp)
+  int ret_code = 0;
   819dcc:	e03ffc15 	stw	zero,-16(fp)
+
+  alt_flash_dev* flash = (alt_flash_dev*)fd;
   819dd0:	e0bffd17 	ldw	r2,-12(fp)
   819dd4:	e0bffb15 	stw	r2,-20(fp)
+
+  *number_of_regions = flash->number_of_regions;
   819dd8:	e0bffb17 	ldw	r2,-20(fp)
   819ddc:	10c00c17 	ldw	r3,48(r2)
   819de0:	e0bfff17 	ldw	r2,-4(fp)
   819de4:	10c00015 	stw	r3,0(r2)
+
+  if (!flash->number_of_regions)
   819de8:	e0bffb17 	ldw	r2,-20(fp)
   819dec:	10800c17 	ldw	r2,48(r2)
   819df0:	1004c03a 	cmpne	r2,r2,zero
   819df4:	1000031e 	bne	r2,zero,819e04 <alt_epcs_flash_get_info+0x50>
+  {
+    ret_code = -EIO;
   819df8:	00bffec4 	movi	r2,-5
   819dfc:	e0bffc15 	stw	r2,-16(fp)
   819e00:	00000b06 	br	819e30 <alt_epcs_flash_get_info+0x7c>
+  }
+  else if (flash->number_of_regions > ALT_MAX_NUMBER_OF_FLASH_REGIONS)
   819e04:	e0bffb17 	ldw	r2,-20(fp)
   819e08:	10800c17 	ldw	r2,48(r2)
   819e0c:	10800250 	cmplti	r2,r2,9
   819e10:	1000031e 	bne	r2,zero,819e20 <alt_epcs_flash_get_info+0x6c>
+  {
+    ret_code = -ENOMEM;
   819e14:	00bffd04 	movi	r2,-12
   819e18:	e0bffc15 	stw	r2,-16(fp)
   819e1c:	00000406 	br	819e30 <alt_epcs_flash_get_info+0x7c>
+  }
+  else
+  {
+    *info = &flash->region_info[0];
   819e20:	e0bffb17 	ldw	r2,-20(fp)
   819e24:	10c00d04 	addi	r3,r2,52
   819e28:	e0bffe17 	ldw	r2,-8(fp)
   819e2c:	10c00015 	stw	r3,0(r2)
+  }
+
+  return ret_code;
   819e30:	e0bffc17 	ldw	r2,-16(fp)
+}
   819e34:	e037883a 	mov	sp,fp
   819e38:	df000017 	ldw	fp,0(sp)
   819e3c:	dec00104 	addi	sp,sp,4
   819e40:	f800283a 	ret
 
 00819e44 <alt_epcs_flash_erase_block>:
+ *
+ * Erase the selected erase block ("sector erase", from the POV
+ * of the EPCS data sheet).
+ */
+int alt_epcs_flash_erase_block(alt_flash_dev* flash_info, int block_offset)
+{
   819e44:	defffa04 	addi	sp,sp,-24
   819e48:	dfc00515 	stw	ra,20(sp)
   819e4c:	df000415 	stw	fp,16(sp)
   819e50:	df000404 	addi	fp,sp,16
   819e54:	e13ffe15 	stw	r4,-8(fp)
   819e58:	e17fff15 	stw	r5,-4(fp)
+  int ret_code = 0;
   819e5c:	e03ffd15 	stw	zero,-12(fp)
+  alt_flash_epcs_dev *f = (alt_flash_epcs_dev*)flash_info;
   819e60:	e0bffe17 	ldw	r2,-8(fp)
   819e64:	e0bffc15 	stw	r2,-16(fp)
+
+  ret_code = alt_epcs_test_address(flash_info, block_offset);
   819e68:	e13ffe17 	ldw	r4,-8(fp)
   819e6c:	e17fff17 	ldw	r5,-4(fp)
   819e70:	0819eb40 	call	819eb4 <alt_epcs_test_address>
   819e74:	e0bffd15 	stw	r2,-12(fp)
+
+  if (ret_code >= 0)
   819e78:	e0bffd17 	ldw	r2,-12(fp)
   819e7c:	1004803a 	cmplt	r2,r2,zero
   819e80:	1000061e 	bne	r2,zero,819e9c <alt_epcs_flash_erase_block+0x58>
+  {
+    /* Send the Sector Erase command, whose 3 address bytes are anywhere
+     * within the chosen sector.
+     */
+    epcs_sector_erase(f->register_base, block_offset, f->four_bytes_mode);
   819e84:	e0bffc17 	ldw	r2,-16(fp)
   819e88:	11002d17 	ldw	r4,180(r2)
   819e8c:	e17fff17 	ldw	r5,-4(fp)
   819e90:	e0bffc17 	ldw	r2,-16(fp)
   819e94:	11803117 	ldw	r6,196(r2)
   819e98:	081cb780 	call	81cb78 <epcs_sector_erase>
+  }
+  return ret_code;
   819e9c:	e0bffd17 	ldw	r2,-12(fp)
+}
   819ea0:	e037883a 	mov	sp,fp
   819ea4:	dfc00117 	ldw	ra,4(sp)
   819ea8:	df000017 	ldw	fp,0(sp)
@@ -37111,18 +38372,35 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819eb0:	f800283a 	ret
 
 00819eb4 <alt_epcs_test_address>:
+}
+
+
+/* This might be a candidate for optimization.  Precompute the last-address? */
+static ALT_INLINE int alt_epcs_test_address(alt_flash_dev* flash_info, int offset)
+{
   819eb4:	defff904 	addi	sp,sp,-28
   819eb8:	df000615 	stw	fp,24(sp)
   819ebc:	df000604 	addi	fp,sp,24
   819ec0:	e13ffe15 	stw	r4,-8(fp)
   819ec4:	e17fff15 	stw	r5,-4(fp)
+  int ret_code = 0;
   819ec8:	e03ffd15 	stw	zero,-12(fp)
+  /* Error checking:
+   * if the block offset is outside of the memory, return -EIO.
+   */
+  alt_flash_epcs_dev *f = (alt_flash_epcs_dev*)flash_info;
   819ecc:	e0bffe17 	ldw	r2,-8(fp)
   819ed0:	e0bffc15 	stw	r2,-16(fp)
+
+  const alt_u32 last_region_index = f->dev.number_of_regions - 1;
   819ed4:	e0bffc17 	ldw	r2,-16(fp)
   819ed8:	10800c17 	ldw	r2,48(r2)
   819edc:	10bfffc4 	addi	r2,r2,-1
   819ee0:	e0bffb15 	stw	r2,-20(fp)
+  alt_u32 last_device_address =
+    -1 +
+    f->dev.region_info[last_region_index].offset +
+    f->dev.region_info[last_region_index].region_size;
   819ee4:	e0bffb17 	ldw	r2,-20(fp)
   819ee8:	e0fffc17 	ldw	r3,-16(fp)
   819eec:	1004913a 	slli	r2,r2,4
@@ -37138,18 +38416,32 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819f14:	2085883a 	add	r2,r4,r2
   819f18:	10bfffc4 	addi	r2,r2,-1
   819f1c:	e0bffa15 	stw	r2,-24(fp)
+
+  if (offset > last_device_address)
   819f20:	e0ffff17 	ldw	r3,-4(fp)
   819f24:	e0bffa17 	ldw	r2,-24(fp)
   819f28:	10c0022e 	bgeu	r2,r3,819f34 <alt_epcs_test_address+0x80>
+  {
+    /* Someone tried to erase a block outside of this device's range. */
+    ret_code = -EIO;
   819f2c:	00bffec4 	movi	r2,-5
   819f30:	e0bffd15 	stw	r2,-12(fp)
+  }
+  return ret_code;
   819f34:	e0bffd17 	ldw	r2,-12(fp)
+}
   819f38:	e037883a 	mov	sp,fp
   819f3c:	df000017 	ldw	fp,0(sp)
   819f40:	dec00104 	addi	sp,sp,4
   819f44:	f800283a 	ret
 
 00819f48 <alt_epcs_flash_write_block>:
+ * function type compatibility.
+ */
+int alt_epcs_flash_write_block(alt_flash_dev* flash_info, int block_offset,
+                                      int data_offset, const void* data,
+                                      int length)
+{
   819f48:	defff204 	addi	sp,sp,-56
   819f4c:	dfc00d15 	stw	ra,52(sp)
   819f50:	df000c15 	stw	fp,48(sp)
@@ -37158,17 +38450,33 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819f5c:	e17ffb15 	stw	r5,-20(fp)
   819f60:	e1bffc15 	stw	r6,-16(fp)
   819f64:	e1fffd15 	stw	r7,-12(fp)
+  int ret_code;
+  alt_flash_epcs_dev *f = (alt_flash_epcs_dev*)flash_info;
   819f68:	e0bffa17 	ldw	r2,-24(fp)
   819f6c:	e0bff815 	stw	r2,-32(fp)
+
+  int buffer_offset = 0;
   819f70:	e03ff715 	stw	zero,-36(fp)
+  int length_of_current_write;
+  ret_code = alt_epcs_test_address(flash_info, data_offset);
   819f74:	e13ffa17 	ldw	r4,-24(fp)
   819f78:	e17ffc17 	ldw	r5,-16(fp)
   819f7c:	0819eb40 	call	819eb4 <alt_epcs_test_address>
   819f80:	e0bff915 	stw	r2,-28(fp)
+
+  if (ret_code >= 0)
   819f84:	e0bff917 	ldw	r2,-28(fp)
   819f88:	1004803a 	cmplt	r2,r2,zero
   819f8c:	10002f1e 	bne	r2,zero,81a04c <alt_epcs_flash_write_block+0x104>
+  {
+
+    /* "Block" writes must be broken up into the page writes that
+     * the device understands.  Partial page writes are allowed.
+     */
+    while (length)
   819f90:	00002b06 	br	81a040 <alt_epcs_flash_write_block+0xf8>
+    {
+      int next_page_start = (data_offset + f->page_size) & ~(f->page_size - 1);
   819f94:	e0bff817 	ldw	r2,-32(fp)
   819f98:	10c03017 	ldw	r3,192(r2)
   819f9c:	e0bffc17 	ldw	r2,-16(fp)
@@ -37178,6 +38486,7 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819fac:	0085c83a 	sub	r2,zero,r2
   819fb0:	1884703a 	and	r2,r3,r2
   819fb4:	e0bff515 	stw	r2,-44(fp)
+      length_of_current_write = MIN(length, next_page_start - data_offset);
   819fb8:	e0fff517 	ldw	r3,-44(fp)
   819fbc:	e0bffc17 	ldw	r2,-16(fp)
   819fc0:	1885c83a 	sub	r2,r3,r2
@@ -37191,6 +38500,8 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   819fe0:	e0bffe15 	stw	r2,-8(fp)
   819fe4:	e0fffe17 	ldw	r3,-8(fp)
   819fe8:	e0fff615 	stw	r3,-40(fp)
+
+      epcs_write_buffer(f->register_base, data_offset, &((const alt_u8*)data)[buffer_offset], length_of_current_write,
   819fec:	e0bff817 	ldw	r2,-32(fp)
   819ff0:	11002d17 	ldw	r4,180(r2)
   819ff4:	e0fffd17 	ldw	r3,-12(fp)
@@ -37202,20 +38513,38 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81a00c:	e17ffc17 	ldw	r5,-16(fp)
   81a010:	e1fff617 	ldw	r7,-40(fp)
   81a014:	081cee00 	call	81cee0 <epcs_write_buffer>
+          f->four_bytes_mode);
+
+      length -= length_of_current_write;
   81a018:	e0c00217 	ldw	r3,8(fp)
   81a01c:	e0bff617 	ldw	r2,-40(fp)
   81a020:	1885c83a 	sub	r2,r3,r2
   81a024:	e0800215 	stw	r2,8(fp)
+      buffer_offset += length_of_current_write;
   81a028:	e0fff717 	ldw	r3,-36(fp)
   81a02c:	e0bff617 	ldw	r2,-40(fp)
   81a030:	1885883a 	add	r2,r3,r2
   81a034:	e0bff715 	stw	r2,-36(fp)
+      data_offset = next_page_start;
   81a038:	e0bff517 	ldw	r2,-44(fp)
   81a03c:	e0bffc15 	stw	r2,-16(fp)
+  {
+
+    /* "Block" writes must be broken up into the page writes that
+     * the device understands.  Partial page writes are allowed.
+     */
+    while (length)
   81a040:	e0800217 	ldw	r2,8(fp)
   81a044:	1004c03a 	cmpne	r2,r2,zero
   81a048:	103fd21e 	bne	r2,zero,819f94 <alt_epcs_flash_write_block+0x4c>
+      length -= length_of_current_write;
+      buffer_offset += length_of_current_write;
+      data_offset = next_page_start;
+    }
+  }
+  return ret_code;
   81a04c:	e0bff917 	ldw	r2,-28(fp)
+}
   81a050:	e037883a 	mov	sp,fp
   81a054:	dfc00117 	ldw	ra,4(sp)
   81a058:	df000017 	ldw	fp,0(sp)
@@ -37223,6 +38552,12 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81a060:	f800283a 	ret
 
 0081a064 <alt_epcs_flash_read>:
+ *  to the beginning.  Reads that start beyond the end of the memory are
+ *  flagged as errors with EIO (is there a better error code?).
+ */
+int alt_epcs_flash_read(alt_flash_dev* flash_info, int offset,
+                        void* dest_addr, int length)
+{
   81a064:	defff704 	addi	sp,sp,-36
   81a068:	dfc00815 	stw	ra,32(sp)
   81a06c:	df000715 	stw	fp,28(sp)
@@ -37231,16 +38566,25 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81a078:	e17ffd15 	stw	r5,-12(fp)
   81a07c:	e1bffe15 	stw	r6,-8(fp)
   81a080:	e1ffff15 	stw	r7,-4(fp)
+  int ret_code = 0;
   81a084:	e03ffb15 	stw	zero,-20(fp)
+
+  alt_flash_epcs_dev *f = (alt_flash_epcs_dev*)flash_info;
   81a088:	e0bffc17 	ldw	r2,-16(fp)
   81a08c:	e0bffa15 	stw	r2,-24(fp)
+
+  ret_code = alt_epcs_test_address(flash_info, offset);
   81a090:	e13ffc17 	ldw	r4,-16(fp)
   81a094:	e17ffd17 	ldw	r5,-12(fp)
   81a098:	0819eb40 	call	819eb4 <alt_epcs_test_address>
   81a09c:	e0bffb15 	stw	r2,-20(fp)
+
+  if (ret_code >= 0)
   81a0a0:	e0bffb17 	ldw	r2,-20(fp)
   81a0a4:	1004803a 	cmplt	r2,r2,zero
   81a0a8:	10000e1e 	bne	r2,zero,81a0e4 <alt_epcs_flash_read+0x80>
+  {
+    ret_code = epcs_read_buffer(f->register_base, offset, dest_addr, length,
   81a0ac:	e0bffa17 	ldw	r2,-24(fp)
   81a0b0:	11002d17 	ldw	r4,180(r2)
   81a0b4:	e1bffe17 	ldw	r6,-8(fp)
@@ -37251,11 +38595,23 @@ static ALT_INLINE int alt_dev_reg (alt_dev* dev)
   81a0c8:	e1ffff17 	ldw	r7,-4(fp)
   81a0cc:	081cce00 	call	81cce0 <epcs_read_buffer>
   81a0d0:	e0bffb15 	stw	r2,-20(fp)
+                                f->four_bytes_mode);
+
+    /* epcs_read_buffer returns the number of buffers read, but
+     * alt_epcs_flash_read returns 0 on success, <0 on failure.
+     */
+    if (ret_code == length)
   81a0d4:	e0fffb17 	ldw	r3,-20(fp)
   81a0d8:	e0bfff17 	ldw	r2,-4(fp)
   81a0dc:	1880011e 	bne	r3,r2,81a0e4 <alt_epcs_flash_read+0x80>
+    {
+      ret_code = 0;
   81a0e0:	e03ffb15 	stw	zero,-20(fp)
+    }
+  }
+  return ret_code;
   81a0e4:	e0bffb17 	ldw	r2,-20(fp)
+}
   81a0e8:	e037883a 	mov	sp,fp
   81a0ec:	dfc00117 	ldw	ra,4(sp)
   81a0f0:	df000017 	ldw	fp,0(sp)
@@ -41783,13 +43139,22 @@ static ALT_INLINE int* alt_get_errno(void)
   81cb14:	f800283a 	ret
 
 0081cb18 <epcs_read_status_register>:
+#include "alt_types.h"
+#include "epcs_commands.h"
+#include "altera_avalon_spi.h"
+
+alt_u8 epcs_read_status_register(alt_u32 base)
+{
   81cb18:	defff904 	addi	sp,sp,-28
   81cb1c:	dfc00615 	stw	ra,24(sp)
   81cb20:	df000515 	stw	fp,20(sp)
   81cb24:	df000504 	addi	fp,sp,20
   81cb28:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 rdsr = epcs_rdsr;
   81cb2c:	00800144 	movi	r2,5
   81cb30:	e0bffe05 	stb	r2,-8(fp)
+  alt_u8 status;
+  alt_avalon_spi_command(
   81cb34:	00800044 	movi	r2,1
   81cb38:	d8800015 	stw	r2,0(sp)
   81cb3c:	e0bffe44 	addi	r2,fp,-7
@@ -41800,8 +43165,15 @@ static ALT_INLINE int* alt_get_errno(void)
   81cb50:	01800044 	movi	r6,1
   81cb54:	e1fffe04 	addi	r7,fp,-8
   81cb58:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    1,
+    &status,
+    0
+  );
+
+  return status;
   81cb5c:	e0bffe43 	ldbu	r2,-7(fp)
   81cb60:	10803fcc 	andi	r2,r2,255
+}
   81cb64:	e037883a 	mov	sp,fp
   81cb68:	dfc00117 	ldw	ra,4(sp)
   81cb6c:	df000017 	ldw	fp,0(sp)
@@ -41809,6 +43181,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81cb74:	f800283a 	ret
 
 0081cb78 <epcs_sector_erase>:
+  {
+  }
+}
+
+void epcs_sector_erase(alt_u32 base, alt_u32 offset, alt_u32 four_bytes_mode)
+{
   81cb78:	defff604 	addi	sp,sp,-40
   81cb7c:	dfc00915 	stw	ra,36(sp)
   81cb80:	df000815 	stw	fp,32(sp)
@@ -41816,41 +43194,67 @@ static ALT_INLINE int* alt_get_errno(void)
   81cb88:	e13ffd15 	stw	r4,-12(fp)
   81cb8c:	e17ffe15 	stw	r5,-8(fp)
   81cb90:	e1bfff15 	stw	r6,-4(fp)
+  alt_u8 se[5];
+  alt_u8 len;
+  
+  if(four_bytes_mode)
   81cb94:	e0bfff17 	ldw	r2,-4(fp)
   81cb98:	1005003a 	cmpeq	r2,r2,zero
   81cb9c:	1000121e 	bne	r2,zero,81cbe8 <epcs_sector_erase+0x70>
+  {
+      se[0] = epcs_se;  /* Note: Use epcs_se for Micron EPCS256 */
   81cba0:	00bff604 	movi	r2,-40
   81cba4:	e0bffb45 	stb	r2,-19(fp)
+      se[1] = (offset >> 24) & 0xFF;
   81cba8:	e0bffe17 	ldw	r2,-8(fp)
   81cbac:	1004d63a 	srli	r2,r2,24
   81cbb0:	e0bffb85 	stb	r2,-18(fp)
+      se[2] = (offset >> 16) & 0xFF;
   81cbb4:	e0bffe17 	ldw	r2,-8(fp)
   81cbb8:	1004d43a 	srli	r2,r2,16
   81cbbc:	e0bffbc5 	stb	r2,-17(fp)
+      se[3] = (offset >> 8) & 0xFF;
   81cbc0:	e0bffe17 	ldw	r2,-8(fp)
   81cbc4:	1004d23a 	srli	r2,r2,8
   81cbc8:	e0bffc05 	stb	r2,-16(fp)
+      se[4] = offset & 0xFF;
   81cbcc:	e0bffe17 	ldw	r2,-8(fp)
   81cbd0:	e0bffc45 	stb	r2,-15(fp)
+      len   = 5;
   81cbd4:	00800144 	movi	r2,5
   81cbd8:	e0bffb05 	stb	r2,-20(fp)
+      epcs_enter_4_bytes_mode(base);
   81cbdc:	e13ffd17 	ldw	r4,-12(fp)
   81cbe0:	081d13c0 	call	81d13c <epcs_enter_4_bytes_mode>
   81cbe4:	00000c06 	br	81cc18 <epcs_sector_erase+0xa0>
+  }
+  else
+  {
+      se[0] = epcs_se;
   81cbe8:	00bff604 	movi	r2,-40
   81cbec:	e0bffb45 	stb	r2,-19(fp)
+      se[1] = (offset >> 16) & 0xFF;
   81cbf0:	e0bffe17 	ldw	r2,-8(fp)
   81cbf4:	1004d43a 	srli	r2,r2,16
   81cbf8:	e0bffb85 	stb	r2,-18(fp)
+      se[2] = (offset >> 8) & 0xFF;
   81cbfc:	e0bffe17 	ldw	r2,-8(fp)
   81cc00:	1004d23a 	srli	r2,r2,8
   81cc04:	e0bffbc5 	stb	r2,-17(fp)
+      se[3] = offset & 0xFF;
   81cc08:	e0bffe17 	ldw	r2,-8(fp)
   81cc0c:	e0bffc05 	stb	r2,-16(fp)
+      len   = 4;
   81cc10:	00800104 	movi	r2,4
   81cc14:	e0bffb05 	stb	r2,-20(fp)
+  }
+
+  /* Execute a WREN instruction */
+  epcs_write_enable(base);
   81cc18:	e13ffd17 	ldw	r4,-12(fp)
   81cc1c:	081ce2c0 	call	81ce2c <epcs_write_enable>
+
+  alt_avalon_spi_command(
   81cc20:	e1bffb03 	ldbu	r6,-20(fp)
   81cc24:	e1fffb44 	addi	r7,fp,-19
   81cc28:	d8000015 	stw	zero,0(sp)
@@ -41859,13 +43263,25 @@ static ALT_INLINE int* alt_get_errno(void)
   81cc34:	e13ffd17 	ldw	r4,-12(fp)
   81cc38:	000b883a 	mov	r5,zero
   81cc3c:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    0,
+    (alt_u8*)0,
+    0
+  );
+
+  epcs_await_wip_released(base);
   81cc40:	e13ffd17 	ldw	r4,-12(fp)
   81cc44:	081cc700 	call	81cc70 <epcs_await_wip_released>
+
+  if(four_bytes_mode)
   81cc48:	e0bfff17 	ldw	r2,-4(fp)
   81cc4c:	1005003a 	cmpeq	r2,r2,zero
   81cc50:	1000021e 	bne	r2,zero,81cc5c <epcs_sector_erase+0xe4>
+  {
+    epcs_exit_4_bytes_mode(base);
   81cc54:	e13ffd17 	ldw	r4,-12(fp)
   81cc58:	081d1940 	call	81d194 <epcs_exit_4_bytes_mode>
+  }
+}
   81cc5c:	e037883a 	mov	sp,fp
   81cc60:	dfc00117 	ldw	ra,4(sp)
   81cc64:	df000017 	ldw	fp,0(sp)
@@ -41873,15 +43289,26 @@ static ALT_INLINE int* alt_get_errno(void)
   81cc6c:	f800283a 	ret
 
 0081cc70 <epcs_await_wip_released>:
+{
+  return epcs_read_status_register(base) & 1;
+}
+
+static ALT_INLINE void epcs_await_wip_released(alt_u32 base)
+{
   81cc70:	defffd04 	addi	sp,sp,-12
   81cc74:	dfc00215 	stw	ra,8(sp)
   81cc78:	df000115 	stw	fp,4(sp)
   81cc7c:	df000104 	addi	fp,sp,4
   81cc80:	e13fff15 	stw	r4,-4(fp)
+  /* Wait until the WIP bit goes low. */
+  while (epcs_test_wip(base))
   81cc84:	e13fff17 	ldw	r4,-4(fp)
   81cc88:	081cca80 	call	81cca8 <epcs_test_wip>
   81cc8c:	1004c03a 	cmpne	r2,r2,zero
   81cc90:	103ffc1e 	bne	r2,zero,81cc84 <epcs_await_wip_released+0x14>
+  {
+  }
+}
   81cc94:	e037883a 	mov	sp,fp
   81cc98:	dfc00117 	ldw	ra,4(sp)
   81cc9c:	df000017 	ldw	fp,0(sp)
@@ -41889,15 +43316,23 @@ static ALT_INLINE int* alt_get_errno(void)
   81cca4:	f800283a 	ret
 
 0081cca8 <epcs_test_wip>:
+
+  return status;
+}
+
+static ALT_INLINE int epcs_test_wip(alt_u32 base)
+{
   81cca8:	defffd04 	addi	sp,sp,-12
   81ccac:	dfc00215 	stw	ra,8(sp)
   81ccb0:	df000115 	stw	fp,4(sp)
   81ccb4:	df000104 	addi	fp,sp,4
   81ccb8:	e13fff15 	stw	r4,-4(fp)
+  return epcs_read_status_register(base) & 1;
   81ccbc:	e13fff17 	ldw	r4,-4(fp)
   81ccc0:	081cb180 	call	81cb18 <epcs_read_status_register>
   81ccc4:	10803fcc 	andi	r2,r2,255
   81ccc8:	1080004c 	andi	r2,r2,1
+}
   81cccc:	e037883a 	mov	sp,fp
   81ccd0:	dfc00117 	ldw	ra,4(sp)
   81ccd4:	df000017 	ldw	fp,0(sp)
@@ -41905,6 +43340,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81ccdc:	f800283a 	ret
 
 0081cce0 <epcs_read_buffer>:
+  }
+}
+
+alt_32 epcs_read_buffer(alt_u32 base, int offset, alt_u8 *dest_addr, int length,
+                        alt_u32 four_bytes_mode)
+{
   81cce0:	defff404 	addi	sp,sp,-48
   81cce4:	dfc00b15 	stw	ra,44(sp)
   81cce8:	df000a15 	stw	fp,40(sp)
@@ -41913,60 +43354,85 @@ static ALT_INLINE int* alt_get_errno(void)
   81ccf4:	e17ffd15 	stw	r5,-12(fp)
   81ccf8:	e1bffe15 	stw	r6,-8(fp)
   81ccfc:	e1ffff15 	stw	r7,-4(fp)
+  alt_u8 read_command[5];
+  alt_u32 cmd_len;
+
+  read_command[0] = epcs_read;
   81cd00:	008000c4 	movi	r2,3
   81cd04:	e0bffa05 	stb	r2,-24(fp)
+  
+  if(four_bytes_mode)
   81cd08:	e0800217 	ldw	r2,8(fp)
   81cd0c:	1005003a 	cmpeq	r2,r2,zero
   81cd10:	10001c1e 	bne	r2,zero,81cd84 <epcs_read_buffer+0xa4>
+  {
+        read_command[1] = (offset >> 24) & 0xFF;
   81cd14:	e0bffd17 	ldw	r2,-12(fp)
   81cd18:	1005d63a 	srai	r2,r2,24
   81cd1c:	1007883a 	mov	r3,r2
   81cd20:	00bfffc4 	movi	r2,-1
   81cd24:	1884703a 	and	r2,r3,r2
   81cd28:	e0bffa45 	stb	r2,-23(fp)
+        read_command[2] = (offset >> 16) & 0xFF;
   81cd2c:	e0bffd17 	ldw	r2,-12(fp)
   81cd30:	1005d43a 	srai	r2,r2,16
   81cd34:	1007883a 	mov	r3,r2
   81cd38:	00bfffc4 	movi	r2,-1
   81cd3c:	1884703a 	and	r2,r3,r2
   81cd40:	e0bffa85 	stb	r2,-22(fp)
+        read_command[3] = (offset >> 8) & 0xFF;
   81cd44:	e0bffd17 	ldw	r2,-12(fp)
   81cd48:	1005d23a 	srai	r2,r2,8
   81cd4c:	1007883a 	mov	r3,r2
   81cd50:	00bfffc4 	movi	r2,-1
   81cd54:	1884703a 	and	r2,r3,r2
   81cd58:	e0bffac5 	stb	r2,-21(fp)
+        read_command[4] = offset & 0xFF;
   81cd5c:	e0bffd17 	ldw	r2,-12(fp)
   81cd60:	1007883a 	mov	r3,r2
   81cd64:	00bfffc4 	movi	r2,-1
   81cd68:	1884703a 	and	r2,r3,r2
   81cd6c:	e0bffb05 	stb	r2,-20(fp)
+        cmd_len = 5;
   81cd70:	00800144 	movi	r2,5
   81cd74:	e0bff915 	stw	r2,-28(fp)
+        epcs_enter_4_bytes_mode(base);
   81cd78:	e13ffc17 	ldw	r4,-16(fp)
   81cd7c:	081d13c0 	call	81d13c <epcs_enter_4_bytes_mode>
   81cd80:	00001306 	br	81cdd0 <epcs_read_buffer+0xf0>
+  }
+  else
+  {
+        read_command[1] = (offset >> 16) & 0xFF;
   81cd84:	e0bffd17 	ldw	r2,-12(fp)
   81cd88:	1005d43a 	srai	r2,r2,16
   81cd8c:	1007883a 	mov	r3,r2
   81cd90:	00bfffc4 	movi	r2,-1
   81cd94:	1884703a 	and	r2,r3,r2
   81cd98:	e0bffa45 	stb	r2,-23(fp)
+        read_command[2] = (offset >> 8) & 0xFF;
   81cd9c:	e0bffd17 	ldw	r2,-12(fp)
   81cda0:	1005d23a 	srai	r2,r2,8
   81cda4:	1007883a 	mov	r3,r2
   81cda8:	00bfffc4 	movi	r2,-1
   81cdac:	1884703a 	and	r2,r3,r2
   81cdb0:	e0bffa85 	stb	r2,-22(fp)
+        read_command[3] = offset & 0xFF;
   81cdb4:	e0bffd17 	ldw	r2,-12(fp)
   81cdb8:	1007883a 	mov	r3,r2
   81cdbc:	00bfffc4 	movi	r2,-1
   81cdc0:	1884703a 	and	r2,r3,r2
   81cdc4:	e0bffac5 	stb	r2,-21(fp)
+        cmd_len = 4;
   81cdc8:	00800104 	movi	r2,4
   81cdcc:	e0bff915 	stw	r2,-28(fp)
+  }
+
+  epcs_await_wip_released(base);
   81cdd0:	e13ffc17 	ldw	r4,-16(fp)
   81cdd4:	081cc700 	call	81cc70 <epcs_await_wip_released>
+
+  alt_avalon_spi_command(
   81cdd8:	e0bfff17 	ldw	r2,-4(fp)
   81cddc:	e1fffa04 	addi	r7,fp,-24
   81cde0:	d8800015 	stw	r2,0(sp)
@@ -41977,12 +43443,24 @@ static ALT_INLINE int* alt_get_errno(void)
   81cdf4:	000b883a 	mov	r5,zero
   81cdf8:	e1bff917 	ldw	r6,-28(fp)
   81cdfc:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    length,
+    (alt_u8*)dest_addr,
+    0
+  );
+
+  if(four_bytes_mode)
   81ce00:	e0800217 	ldw	r2,8(fp)
   81ce04:	1005003a 	cmpeq	r2,r2,zero
   81ce08:	1000021e 	bne	r2,zero,81ce14 <epcs_read_buffer+0x134>
+  {
+    epcs_exit_4_bytes_mode(base);
   81ce0c:	e13ffc17 	ldw	r4,-16(fp)
   81ce10:	081d1940 	call	81d194 <epcs_exit_4_bytes_mode>
+  }
+
+  return length;
   81ce14:	e0bfff17 	ldw	r2,-4(fp)
+}
   81ce18:	e037883a 	mov	sp,fp
   81ce1c:	dfc00117 	ldw	ra,4(sp)
   81ce20:	df000017 	ldw	fp,0(sp)
@@ -41990,13 +43468,18 @@ static ALT_INLINE int* alt_get_errno(void)
   81ce28:	f800283a 	ret
 
 0081ce2c <epcs_write_enable>:
+
+void epcs_write_enable(alt_u32 base)
+{
   81ce2c:	defff904 	addi	sp,sp,-28
   81ce30:	dfc00615 	stw	ra,24(sp)
   81ce34:	df000515 	stw	fp,20(sp)
   81ce38:	df000504 	addi	fp,sp,20
   81ce3c:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 wren = epcs_wren;
   81ce40:	00800184 	movi	r2,6
   81ce44:	e0bffe05 	stb	r2,-8(fp)
+  alt_avalon_spi_command(
   81ce48:	d8000015 	stw	zero,0(sp)
   81ce4c:	d8000115 	stw	zero,4(sp)
   81ce50:	d8000215 	stw	zero,8(sp)
@@ -42005,6 +43488,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81ce5c:	01800044 	movi	r6,1
   81ce60:	e1fffe04 	addi	r7,fp,-8
   81ce64:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    &wren,
+    0,
+    (alt_u8*)0,
+    0
+  );
+}
   81ce68:	e037883a 	mov	sp,fp
   81ce6c:	dfc00117 	ldw	ra,4(sp)
   81ce70:	df000017 	ldw	fp,0(sp)
@@ -42012,16 +43501,25 @@ static ALT_INLINE int* alt_get_errno(void)
   81ce78:	f800283a 	ret
 
 0081ce7c <epcs_write_status_register>:
+
+void epcs_write_status_register(alt_u32 base, alt_u8 value)
+{
   81ce7c:	defff804 	addi	sp,sp,-32
   81ce80:	dfc00715 	stw	ra,28(sp)
   81ce84:	df000615 	stw	fp,24(sp)
   81ce88:	df000604 	addi	fp,sp,24
   81ce8c:	e13ffe15 	stw	r4,-8(fp)
   81ce90:	e17fff05 	stb	r5,-4(fp)
+  alt_u8 wrsr[2];
+  
+  wrsr[0] = epcs_wrsr;
   81ce94:	00800044 	movi	r2,1
   81ce98:	e0bffd05 	stb	r2,-12(fp)
+  wrsr[1] = value;
   81ce9c:	e0bfff03 	ldbu	r2,-4(fp)
   81cea0:	e0bffd45 	stb	r2,-11(fp)
+
+  alt_avalon_spi_command(
   81cea4:	d8000015 	stw	zero,0(sp)
   81cea8:	d8000115 	stw	zero,4(sp)
   81ceac:	d8000215 	stw	zero,8(sp)
@@ -42030,8 +43528,15 @@ static ALT_INLINE int* alt_get_errno(void)
   81ceb8:	01800084 	movi	r6,2
   81cebc:	e1fffd04 	addi	r7,fp,-12
   81cec0:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    0,
+    (alt_u8*)0,
+    0
+  );
+
+  epcs_await_wip_released(base);
   81cec4:	e13ffe17 	ldw	r4,-8(fp)
   81cec8:	081cc700 	call	81cc70 <epcs_await_wip_released>
+}
   81cecc:	e037883a 	mov	sp,fp
   81ced0:	dfc00117 	ldw	ra,4(sp)
   81ced4:	df000017 	ldw	fp,0(sp)
@@ -42039,6 +43544,11 @@ static ALT_INLINE int* alt_get_errno(void)
   81cedc:	f800283a 	ret
 
 0081cee0 <epcs_write_buffer>:
+
+/* Write a partial or full page, assuming that page has been erased */
+alt_32 epcs_write_buffer(alt_u32 base, int offset, const alt_u8* src_addr, 
+                         int length, alt_u32 four_bytes_mode)
+{
   81cee0:	defff404 	addi	sp,sp,-48
   81cee4:	dfc00b15 	stw	ra,44(sp)
   81cee8:	df000a15 	stw	fp,40(sp)
@@ -42047,60 +43557,87 @@ static ALT_INLINE int* alt_get_errno(void)
   81cef4:	e17ffd15 	stw	r5,-12(fp)
   81cef8:	e1bffe15 	stw	r6,-8(fp)
   81cefc:	e1ffff15 	stw	r7,-4(fp)
+  alt_u8 pp[5];
+  alt_u32 cmd_len;
+  
+  pp[0] = epcs_pp;
   81cf00:	00800084 	movi	r2,2
   81cf04:	e0bffa05 	stb	r2,-24(fp)
+  
+  if(four_bytes_mode)
   81cf08:	e0800217 	ldw	r2,8(fp)
   81cf0c:	1005003a 	cmpeq	r2,r2,zero
   81cf10:	10001c1e 	bne	r2,zero,81cf84 <epcs_write_buffer+0xa4>
+  {
+      pp[1] = (offset >> 24) & 0xFF;
   81cf14:	e0bffd17 	ldw	r2,-12(fp)
   81cf18:	1005d63a 	srai	r2,r2,24
   81cf1c:	1007883a 	mov	r3,r2
   81cf20:	00bfffc4 	movi	r2,-1
   81cf24:	1884703a 	and	r2,r3,r2
   81cf28:	e0bffa45 	stb	r2,-23(fp)
+      pp[2] = (offset >> 16) & 0xFF;
   81cf2c:	e0bffd17 	ldw	r2,-12(fp)
   81cf30:	1005d43a 	srai	r2,r2,16
   81cf34:	1007883a 	mov	r3,r2
   81cf38:	00bfffc4 	movi	r2,-1
   81cf3c:	1884703a 	and	r2,r3,r2
   81cf40:	e0bffa85 	stb	r2,-22(fp)
+      pp[3] = (offset >> 8) & 0xFF;
   81cf44:	e0bffd17 	ldw	r2,-12(fp)
   81cf48:	1005d23a 	srai	r2,r2,8
   81cf4c:	1007883a 	mov	r3,r2
   81cf50:	00bfffc4 	movi	r2,-1
   81cf54:	1884703a 	and	r2,r3,r2
   81cf58:	e0bffac5 	stb	r2,-21(fp)
+      pp[4] = offset & 0xFF;
   81cf5c:	e0bffd17 	ldw	r2,-12(fp)
   81cf60:	1007883a 	mov	r3,r2
   81cf64:	00bfffc4 	movi	r2,-1
   81cf68:	1884703a 	and	r2,r3,r2
   81cf6c:	e0bffb05 	stb	r2,-20(fp)
+      cmd_len = 5;
   81cf70:	00800144 	movi	r2,5
   81cf74:	e0bff915 	stw	r2,-28(fp)
+      epcs_enter_4_bytes_mode(base);
   81cf78:	e13ffc17 	ldw	r4,-16(fp)
   81cf7c:	081d13c0 	call	81d13c <epcs_enter_4_bytes_mode>
   81cf80:	00001306 	br	81cfd0 <epcs_write_buffer+0xf0>
+  }
+  else
+  {
+      pp[1] = (offset >> 16) & 0xFF;
   81cf84:	e0bffd17 	ldw	r2,-12(fp)
   81cf88:	1005d43a 	srai	r2,r2,16
   81cf8c:	1007883a 	mov	r3,r2
   81cf90:	00bfffc4 	movi	r2,-1
   81cf94:	1884703a 	and	r2,r3,r2
   81cf98:	e0bffa45 	stb	r2,-23(fp)
+      pp[2] = (offset >> 8) & 0xFF;
   81cf9c:	e0bffd17 	ldw	r2,-12(fp)
   81cfa0:	1005d23a 	srai	r2,r2,8
   81cfa4:	1007883a 	mov	r3,r2
   81cfa8:	00bfffc4 	movi	r2,-1
   81cfac:	1884703a 	and	r2,r3,r2
   81cfb0:	e0bffa85 	stb	r2,-22(fp)
+      pp[3] = offset & 0xFF;
   81cfb4:	e0bffd17 	ldw	r2,-12(fp)
   81cfb8:	1007883a 	mov	r3,r2
   81cfbc:	00bfffc4 	movi	r2,-1
   81cfc0:	1884703a 	and	r2,r3,r2
   81cfc4:	e0bffac5 	stb	r2,-21(fp)
+      cmd_len = 4;
   81cfc8:	00800104 	movi	r2,4
   81cfcc:	e0bff915 	stw	r2,-28(fp)
+  }
+
+  /* First, WREN */
+  epcs_write_enable(base);
   81cfd0:	e13ffc17 	ldw	r4,-16(fp)
   81cfd4:	081ce2c0 	call	81ce2c <epcs_write_enable>
+
+  /* Send the PP command */
+  alt_avalon_spi_command(
   81cfd8:	e1fffa04 	addi	r7,fp,-24
   81cfdc:	d8000015 	stw	zero,0(sp)
   81cfe0:	d8000115 	stw	zero,4(sp)
@@ -42110,6 +43647,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81cff0:	000b883a 	mov	r5,zero
   81cff4:	e1bff917 	ldw	r6,-28(fp)
   81cff8:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    (alt_u8*)0,
+    ALT_AVALON_SPI_COMMAND_MERGE
+  );
+
+  /* Send the user's buffer */
+  alt_avalon_spi_command(
   81cffc:	e1bfff17 	ldw	r6,-4(fp)
   81d000:	d8000015 	stw	zero,0(sp)
   81d004:	d8000115 	stw	zero,4(sp)
@@ -42118,14 +43661,28 @@ static ALT_INLINE int* alt_get_errno(void)
   81d010:	000b883a 	mov	r5,zero
   81d014:	e1fffe17 	ldw	r7,-8(fp)
   81d018:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+   * if the user's going to go off and ignore the flash for
+   * a while, its writes could occur in parallel with user code
+   * execution.  Unfortunately, I have to guard all reads/writes
+   * with wip-tests, to make that happen.
+   */
+  epcs_await_wip_released(base);
   81d01c:	e13ffc17 	ldw	r4,-16(fp)
   81d020:	081cc700 	call	81cc70 <epcs_await_wip_released>
+
+  if(four_bytes_mode)
   81d024:	e0800217 	ldw	r2,8(fp)
   81d028:	1005003a 	cmpeq	r2,r2,zero
   81d02c:	1000021e 	bne	r2,zero,81d038 <epcs_write_buffer+0x158>
+  {
+    epcs_exit_4_bytes_mode(base);
   81d030:	e13ffc17 	ldw	r4,-16(fp)
   81d034:	081d1940 	call	81d194 <epcs_exit_4_bytes_mode>
+  }
+
+  return length;
   81d038:	e0bfff17 	ldw	r2,-4(fp)
+}
   81d03c:	e037883a 	mov	sp,fp
   81d040:	dfc00117 	ldw	ra,4(sp)
   81d044:	df000017 	ldw	fp,0(sp)
@@ -42133,16 +43690,24 @@ static ALT_INLINE int* alt_get_errno(void)
   81d04c:	f800283a 	ret
 
 0081d050 <epcs_read_electronic_signature>:
+
+
+alt_u8 epcs_read_electronic_signature(alt_u32 base)
+{
   81d050:	defff804 	addi	sp,sp,-32
   81d054:	dfc00715 	stw	ra,28(sp)
   81d058:	df000615 	stw	fp,24(sp)
   81d05c:	df000604 	addi	fp,sp,24
   81d060:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 res_cmd[] = {epcs_res, 0, 0, 0};
   81d064:	00bfeac4 	movi	r2,-85
   81d068:	e0bffd05 	stb	r2,-12(fp)
   81d06c:	e03ffd45 	stb	zero,-11(fp)
   81d070:	e03ffd85 	stb	zero,-10(fp)
   81d074:	e03ffdc5 	stb	zero,-9(fp)
+  alt_u8 res;
+
+  alt_avalon_spi_command(
   81d078:	00800044 	movi	r2,1
   81d07c:	d8800015 	stw	r2,0(sp)
   81d080:	e0bffe04 	addi	r2,fp,-8
@@ -42153,8 +43718,15 @@ static ALT_INLINE int* alt_get_errno(void)
   81d094:	01800104 	movi	r6,4
   81d098:	e1fffd04 	addi	r7,fp,-12
   81d09c:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    1,
+    &res,
+    0
+  );
+
+  return res;
   81d0a0:	e0bffe03 	ldbu	r2,-8(fp)
   81d0a4:	10803fcc 	andi	r2,r2,255
+}
   81d0a8:	e037883a 	mov	sp,fp
   81d0ac:	dfc00117 	ldw	ra,4(sp)
   81d0b0:	df000017 	ldw	fp,0(sp)
@@ -42162,13 +43734,20 @@ static ALT_INLINE int* alt_get_errno(void)
   81d0b8:	f800283a 	ret
 
 0081d0bc <epcs_read_device_id>:
+
+alt_u32 epcs_read_device_id(alt_u32 base)
+{
   81d0bc:	defff904 	addi	sp,sp,-28
   81d0c0:	dfc00615 	stw	ra,24(sp)
   81d0c4:	df000515 	stw	fp,20(sp)
   81d0c8:	df000504 	addi	fp,sp,20
   81d0cc:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 rd_id_cmd[] = {epcs_rdid};
   81d0d0:	00bfe7c4 	movi	r2,-97
   81d0d4:	e0bffe05 	stb	r2,-8(fp)
+  alt_u8 id[3];
+
+  alt_avalon_spi_command(
   81d0d8:	008000c4 	movi	r2,3
   81d0dc:	d8800015 	stw	r2,0(sp)
   81d0e0:	e0bffe44 	addi	r2,fp,-7
@@ -42179,6 +43758,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81d0f4:	01800044 	movi	r6,1
   81d0f8:	e1fffe04 	addi	r7,fp,-8
   81d0fc:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    3,
+    id,
+    0
+  );
+
+  return (alt_u32) ((id[0] << 16) | (id[1] << 8) | id[2]);
   81d100:	e0bffe43 	ldbu	r2,-7(fp)
   81d104:	10803fcc 	andi	r2,r2,255
   81d108:	1006943a 	slli	r3,r2,16
@@ -42189,6 +43774,7 @@ static ALT_INLINE int* alt_get_errno(void)
   81d11c:	e0bffec3 	ldbu	r2,-5(fp)
   81d120:	10803fcc 	andi	r2,r2,255
   81d124:	1884b03a 	or	r2,r3,r2
+}
   81d128:	e037883a 	mov	sp,fp
   81d12c:	dfc00117 	ldw	ra,4(sp)
   81d130:	df000017 	ldw	fp,0(sp)
@@ -42196,15 +43782,24 @@ static ALT_INLINE int* alt_get_errno(void)
   81d138:	f800283a 	ret
 
 0081d13c <epcs_enter_4_bytes_mode>:
+
+void epcs_enter_4_bytes_mode(alt_u32 base)
+{
   81d13c:	defff904 	addi	sp,sp,-28
   81d140:	dfc00615 	stw	ra,24(sp)
   81d144:	df000515 	stw	fp,20(sp)
   81d148:	df000504 	addi	fp,sp,20
   81d14c:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 en4b_cmd = epcs_en4b;
   81d150:	00bfedc4 	movi	r2,-73
   81d154:	e0bffe05 	stb	r2,-8(fp)
+
+  /* First, WREN */
+  epcs_write_enable(base);
   81d158:	e13fff17 	ldw	r4,-4(fp)
   81d15c:	081ce2c0 	call	81ce2c <epcs_write_enable>
+
+  alt_avalon_spi_command(
   81d160:	d8000015 	stw	zero,0(sp)
   81d164:	d8000115 	stw	zero,4(sp)
   81d168:	d8000215 	stw	zero,8(sp)
@@ -42213,6 +43808,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81d174:	01800044 	movi	r6,1
   81d178:	e1fffe04 	addi	r7,fp,-8
   81d17c:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    (alt_u8*)0,
+    0
+  );
+
+  return;
+}
   81d180:	e037883a 	mov	sp,fp
   81d184:	dfc00117 	ldw	ra,4(sp)
   81d188:	df000017 	ldw	fp,0(sp)
@@ -42220,15 +43821,24 @@ static ALT_INLINE int* alt_get_errno(void)
   81d190:	f800283a 	ret
 
 0081d194 <epcs_exit_4_bytes_mode>:
+
+void epcs_exit_4_bytes_mode(alt_u32 base)
+{
   81d194:	defff904 	addi	sp,sp,-28
   81d198:	dfc00615 	stw	ra,24(sp)
   81d19c:	df000515 	stw	fp,20(sp)
   81d1a0:	df000504 	addi	fp,sp,20
   81d1a4:	e13fff15 	stw	r4,-4(fp)
+  const alt_u8 exit4b_cmd = epcs_dis4b;
   81d1a8:	00bffa44 	movi	r2,-23
   81d1ac:	e0bffe05 	stb	r2,-8(fp)
+
+  /* First, WREN */
+  epcs_write_enable(base);
   81d1b0:	e13fff17 	ldw	r4,-4(fp)
   81d1b4:	081ce2c0 	call	81ce2c <epcs_write_enable>
+
+  alt_avalon_spi_command(
   81d1b8:	d8000015 	stw	zero,0(sp)
   81d1bc:	d8000115 	stw	zero,4(sp)
   81d1c0:	d8000215 	stw	zero,8(sp)
@@ -42237,6 +43847,12 @@ static ALT_INLINE int* alt_get_errno(void)
   81d1cc:	01800044 	movi	r6,1
   81d1d0:	e1fffe04 	addi	r7,fp,-8
   81d1d4:	08378a40 	call	8378a4 <alt_avalon_spi_command>
+    (alt_u8*)0,
+    0
+  );
+
+  return;
+}
   81d1d8:	e037883a 	mov	sp,fp
   81d1dc:	dfc00117 	ldw	ra,4(sp)
   81d1e0:	df000017 	ldw	fp,0(sp)
@@ -55868,116 +57484,256 @@ udp_close(UDPCONN con)
   8260b8:	f800283a 	ret
 
 008260bc <asm_cksum>:
+      .text
+
+      .global	  asm_cksum
+
+asm_cksum:
+      mov   r2, zero		       /* accumulator = 0 */
   8260bc:	0005883a 	mov	r2,zero
+      ble   r5, zero, done	       /* count <= 0 ? */
   8260c0:	0140620e 	bge	zero,r5,82624c <done>
+
+      mov   r6, zero		       /* carry accumulator */
   8260c4:	000d883a 	mov	r6,zero
+
+      andi  r3, r4, 2		       /* ptr 32-bit aligned? */
   8260c8:	20c0008c 	andi	r3,r4,2
+      beq   r3, zero, asm1
   8260cc:	18000326 	beq	r3,zero,8260dc <asm1>
+      ldhu  r2, (r4)		       /* no - process first 16-bits */
   8260d0:	2080000b 	ldhu	r2,0(r4)
+      addi  r4, r4, 2
   8260d4:	21000084 	addi	r4,r4,2
+      subi  r5, r5, 1
   8260d8:	297fffc4 	addi	r5,r5,-1
 
 008260dc <asm1>:
   8260dc:	02c020b4 	movhi	r11,130
+/*
+ * adjust ptr by ((count/2) mod 16) * 4 bytes
+ * jump to location: loop0 - (count/2 mod 16) * 4 instructions
+ */
+asm1:
+      movia r11, loop0
   8260e0:	5ad88204 	addi	r11,r11,25096
+      andi  r9, r5, 1		       /* r9 = last halfword flag */
   8260e4:	2a40004c 	andi	r9,r5,1
+      srai  r5, r5, 1		       /* count = number of words */
   8260e8:	280bd07a 	srai	r5,r5,1
+      andi  r10, r5, 0xf	       /* modulo 16 */
   8260ec:	2a8003cc 	andi	r10,r5,15
+      slli  r10, r10, 2		       /*      * 4 bytes per word */
   8260f0:	501490ba 	slli	r10,r10,2
+      add   r4, r10, r4		       /* adjust ptr */
   8260f4:	5109883a 	add	r4,r10,r4
+      slli  r10, r10, 2		       /*      * 4 instructions per 4 bytes */
   8260f8:	501490ba 	slli	r10,r10,2
+      sub   r11, r11, r10
   8260fc:	5a97c83a 	sub	r11,r11,r10
+      jmp   r11
   826100:	5800683a 	jmp	r11
 
 00826104 <loop>:
+      
+loop:
+      addi  r4, r4, 64		       /* increment data pointer */
   826104:	21001004 	addi	r4,r4,64
+
+      ldw   r7, -64(r4)
   826108:	21fff017 	ldw	r7,-64(r4)
+      add   r2, r7, r2
   82610c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826110:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826114:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -60(r4)
   826118:	21fff117 	ldw	r7,-60(r4)
+      add   r2, r7, r2
   82611c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826120:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826124:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -56(r4)
   826128:	21fff217 	ldw	r7,-56(r4)
+      add   r2, r7, r2
   82612c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826130:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826134:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -52(r4)
   826138:	21fff317 	ldw	r7,-52(r4)
+      add   r2, r7, r2
   82613c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826140:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826144:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -48(r4)
   826148:	21fff417 	ldw	r7,-48(r4)
+      add   r2, r7, r2
   82614c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826150:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826154:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -44(r4)
   826158:	21fff517 	ldw	r7,-44(r4)
+      add   r2, r7, r2
   82615c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826160:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826164:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -40(r4)
   826168:	21fff617 	ldw	r7,-40(r4)
+      add   r2, r7, r2
   82616c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826170:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826174:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -36(r4)
   826178:	21fff717 	ldw	r7,-36(r4)
+      add   r2, r7, r2
   82617c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826180:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826184:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -32(r4)
   826188:	21fff817 	ldw	r7,-32(r4)
+      add   r2, r7, r2
   82618c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826190:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826194:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -28(r4)
   826198:	21fff917 	ldw	r7,-28(r4)
+      add   r2, r7, r2
   82619c:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261a0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261a4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -24(r4)
   8261a8:	21fffa17 	ldw	r7,-24(r4)
+      add   r2, r7, r2
   8261ac:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261b0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261b4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -20(r4)
   8261b8:	21fffb17 	ldw	r7,-20(r4)
+      add   r2, r7, r2
   8261bc:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261c0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261c4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -16(r4)
   8261c8:	21fffc17 	ldw	r7,-16(r4)
+      add   r2, r7, r2
   8261cc:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261d0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261d4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -12(r4)
   8261d8:	21fffd17 	ldw	r7,-12(r4)
+      add   r2, r7, r2
   8261dc:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261e0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261e4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -8(r4)
   8261e8:	21fffe17 	ldw	r7,-8(r4)
+      add   r2, r7, r2
   8261ec:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   8261f0:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   8261f4:	418d883a 	add	r6,r8,r6
+
+      ldw   r7, -4(r4)
   8261f8:	21ffff17 	ldw	r7,-4(r4)
+      add   r2, r7, r2
   8261fc:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   826200:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826204:	418d883a 	add	r6,r8,r6
 
 00826208 <loop0>:
+loop0:
+      subi  r5, r5, 16
   826208:	297ffc04 	addi	r5,r5,-16
+      bge   r5, zero, loop
   82620c:	283fbd0e 	bge	r5,zero,826104 <loop>
+/*
+ * process last halfword (if any)
+ */
+      beq   r9, zero, fold
   826210:	48000426 	beq	r9,zero,826224 <fold>
+      ldhu  r7, 0(r4)
   826214:	21c0000b 	ldhu	r7,0(r4)
+      add   r2, r7, r2
   826218:	3885883a 	add	r2,r7,r2
+      cmpltu r8, r2, r7
   82621c:	11d1803a 	cmpltu	r8,r2,r7
+      add   r6, r8, r6
   826220:	418d883a 	add	r6,r8,r6
 
 00826224 <fold>:
+      
+fold:
+      srli  r7, r2, 16
   826224:	100ed43a 	srli	r7,r2,16
+      andi  r2, r2, 0xffff
   826228:	10bfffcc 	andi	r2,r2,65535
+      add   r2, r7, r2		    /* add the upper and lower halfwords */
   82622c:	3885883a 	add	r2,r7,r2
+      add   r2, r6, r2		    /* add the carries */
   826230:	3085883a 	add	r2,r6,r2
+/* the accumulator is 18 bits */
+      srli  r7, r2, 16
   826234:	100ed43a 	srli	r7,r2,16
+      andi  r2, r2, 0xffff
   826238:	10bfffcc 	andi	r2,r2,65535
+      add   r2, r7, r2		    /* add 2 carry bits to lower halfword */
   82623c:	3885883a 	add	r2,r7,r2
+/* the accumulator is 17 bits */
+      srli  r7, r2, 16
   826240:	100ed43a 	srli	r7,r2,16
+      andi  r2, r2, 0xffff
   826244:	10bfffcc 	andi	r2,r2,65535
+      add   r2, r7, r2		    /* add carry to lower halfword */
   826248:	3885883a 	add	r2,r7,r2
 
 0082624c <done>:
+
+done:
+      ret			    		/* r2 = 16-bit checksum */
   82624c:	f800283a 	ret
 
 00826250 <dtrap>:
@@ -80716,12 +82472,23 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835c10:	f800283a 	ret
 
 00835c14 <alt_dev_llist_insert>:
+/*
+ *
+ */
+
+int alt_dev_llist_insert (alt_dev_llist* dev, alt_llist* list)
+{
   835c14:	defff904 	addi	sp,sp,-28
   835c18:	dfc00615 	stw	ra,24(sp)
   835c1c:	df000515 	stw	fp,20(sp)
   835c20:	df000504 	addi	fp,sp,20
   835c24:	e13ffd15 	stw	r4,-12(fp)
   835c28:	e17ffe15 	stw	r5,-8(fp)
+  /*
+   * check that the device exists, and that it has a valid name.
+   */
+
+  if (!dev || !dev->name)
   835c2c:	e0bffd17 	ldw	r2,-12(fp)
   835c30:	1005003a 	cmpeq	r2,r2,zero
   835c34:	1000041e 	bne	r2,zero,835c48 <alt_dev_llist_insert+0x34>
@@ -80729,33 +82496,55 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835c3c:	10800217 	ldw	r2,8(r2)
   835c40:	1004c03a 	cmpne	r2,r2,zero
   835c44:	1000071e 	bne	r2,zero,835c64 <alt_dev_llist_insert+0x50>
+  {
+    ALT_ERRNO = EINVAL;
   835c48:	0835cc80 	call	835cc8 <alt_get_errno>
   835c4c:	1007883a 	mov	r3,r2
   835c50:	00800584 	movi	r2,22
   835c54:	18800015 	stw	r2,0(r3)
+    return -EINVAL;
   835c58:	00bffa84 	movi	r2,-22
   835c5c:	e0bfff15 	stw	r2,-4(fp)
   835c60:	00001306 	br	835cb0 <alt_dev_llist_insert+0x9c>
+  
+  /*
+   * register the device.
+   */
+  
+  alt_llist_insert(list, &dev->llist);
   835c64:	e0fffd17 	ldw	r3,-12(fp)
   835c68:	e0bffe17 	ldw	r2,-8(fp)
   835c6c:	e0bffb15 	stw	r2,-20(fp)
   835c70:	e0fffc15 	stw	r3,-16(fp)
+ */
+
+static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list, 
+                alt_llist* entry)
+{
+  entry->previous = list;
   835c74:	e0fffc17 	ldw	r3,-16(fp)
   835c78:	e0bffb17 	ldw	r2,-20(fp)
   835c7c:	18800115 	stw	r2,4(r3)
+  entry->next     = list->next;
   835c80:	e0bffb17 	ldw	r2,-20(fp)
   835c84:	10c00017 	ldw	r3,0(r2)
   835c88:	e0bffc17 	ldw	r2,-16(fp)
   835c8c:	10c00015 	stw	r3,0(r2)
+
+  list->next->previous = entry;
   835c90:	e0bffb17 	ldw	r2,-20(fp)
   835c94:	10c00017 	ldw	r3,0(r2)
   835c98:	e0bffc17 	ldw	r2,-16(fp)
   835c9c:	18800115 	stw	r2,4(r3)
+  list->next           = entry;
   835ca0:	e0fffb17 	ldw	r3,-20(fp)
   835ca4:	e0bffc17 	ldw	r2,-16(fp)
   835ca8:	18800015 	stw	r2,0(r3)
+
+  return 0;  
   835cac:	e03fff15 	stw	zero,-4(fp)
   835cb0:	e0bfff17 	ldw	r2,-4(fp)
+}
   835cb4:	e037883a 	mov	sp,fp
   835cb8:	dfc00117 	ldw	ra,4(sp)
   835cbc:	df000017 	ldw	fp,0(sp)
@@ -80763,10 +82552,17 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835cc4:	f800283a 	ret
 
 00835cc8 <alt_get_errno>:
+#undef errno
+
+extern int errno;
+
+static ALT_INLINE int* alt_get_errno(void)
+{
   835cc8:	defffd04 	addi	sp,sp,-12
   835ccc:	dfc00215 	stw	ra,8(sp)
   835cd0:	df000115 	stw	fp,4(sp)
   835cd4:	df000104 	addi	fp,sp,4
+  return ((alt_errno) ? alt_errno() : &errno);
   835cd8:	00802174 	movhi	r2,133
   835cdc:	10b57904 	addi	r2,r2,-10780
   835ce0:	10800017 	ldw	r2,0(r2)
@@ -80782,6 +82578,7 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835d08:	10b59504 	addi	r2,r2,-10668
   835d0c:	e0bfff15 	stw	r2,-4(fp)
   835d10:	e0bfff17 	ldw	r2,-4(fp)
+}
   835d14:	e037883a 	mov	sp,fp
   835d18:	dfc00117 	ldw	ra,4(sp)
   835d1c:	df000017 	ldw	fp,0(sp)
@@ -80789,19 +82586,35 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835d24:	f800283a 	ret
 
 00835d28 <_do_ctors>:
+/*
+ * Run the C++ static constructors.
+ */
+
+void _do_ctors(void)
+{
   835d28:	defffd04 	addi	sp,sp,-12
   835d2c:	dfc00215 	stw	ra,8(sp)
   835d30:	df000115 	stw	fp,4(sp)
   835d34:	df000104 	addi	fp,sp,4
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
   835d38:	00bfff04 	movi	r2,-4
   835d3c:	00c02134 	movhi	r3,132
   835d40:	18dc9304 	addi	r3,r3,29260
   835d44:	1885883a 	add	r2,r3,r2
   835d48:	e0bfff15 	stw	r2,-4(fp)
   835d4c:	00000606 	br	835d68 <_do_ctors+0x40>
+        (*ctor) (); 
   835d50:	e0bfff17 	ldw	r2,-4(fp)
   835d54:	10800017 	ldw	r2,0(r2)
   835d58:	103ee83a 	callr	r2
+
+void _do_ctors(void)
+{
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
   835d5c:	e0bfff17 	ldw	r2,-4(fp)
   835d60:	10bfff04 	addi	r2,r2,-4
   835d64:	e0bfff15 	stw	r2,-4(fp)
@@ -80809,6 +82622,8 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835d6c:	00802134 	movhi	r2,132
   835d70:	109c9204 	addi	r2,r2,29256
   835d74:	18bff62e 	bgeu	r3,r2,835d50 <_do_ctors+0x28>
+        (*ctor) (); 
+}
   835d78:	e037883a 	mov	sp,fp
   835d7c:	dfc00117 	ldw	ra,4(sp)
   835d80:	df000017 	ldw	fp,0(sp)
@@ -80816,19 +82631,35 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835d88:	f800283a 	ret
 
 00835d8c <_do_dtors>:
+/*
+ * Run the C++ static destructors.
+ */
+
+void _do_dtors(void)
+{
   835d8c:	defffd04 	addi	sp,sp,-12
   835d90:	dfc00215 	stw	ra,8(sp)
   835d94:	df000115 	stw	fp,4(sp)
   835d98:	df000104 	addi	fp,sp,4
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
   835d9c:	00bfff04 	movi	r2,-4
   835da0:	00c02134 	movhi	r3,132
   835da4:	18dc9304 	addi	r3,r3,29260
   835da8:	1885883a 	add	r2,r3,r2
   835dac:	e0bfff15 	stw	r2,-4(fp)
   835db0:	00000606 	br	835dcc <_do_dtors+0x40>
+        (*dtor) (); 
   835db4:	e0bfff17 	ldw	r2,-4(fp)
   835db8:	10800017 	ldw	r2,0(r2)
   835dbc:	103ee83a 	callr	r2
+
+void _do_dtors(void)
+{
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
   835dc0:	e0bfff17 	ldw	r2,-4(fp)
   835dc4:	10bfff04 	addi	r2,r2,-4
   835dc8:	e0bfff15 	stw	r2,-4(fp)
@@ -80836,6 +82667,8 @@ static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
   835dd0:	00802134 	movhi	r2,132
   835dd4:	109c9304 	addi	r2,r2,29260
   835dd8:	18bff62e 	bgeu	r3,r2,835db4 <_do_dtors+0x28>
+        (*dtor) (); 
+}
   835ddc:	e037883a 	mov	sp,fp
   835de0:	dfc00117 	ldw	ra,4(sp)
   835de4:	df000017 	ldw	fp,0(sp)
@@ -82879,6 +84712,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   836fe0:	f800283a 	ret
 
 00836fe4 <alt_program_amd>:
+ * then writes Addr, Data Addr, Data etc.
+ */
+int alt_program_amd(alt_flash_dev* flash_info, int block_offset, 
+                int offset, const void* src_addr, 
+                int length)
+{
   836fe4:	defff704 	addi	sp,sp,-36
   836fe8:	dfc00815 	stw	ra,32(sp)
   836fec:	df000715 	stw	fp,28(sp)
@@ -82887,9 +84726,14 @@ void OSTCBInitHook(OS_TCB *ptcb)
   836ff8:	e17ffd15 	stw	r5,-12(fp)
   836ffc:	e1bffe15 	stw	r6,-8(fp)
   837000:	e1ffff15 	stw	r7,-4(fp)
+  int ret_code = 0;
   837004:	e03ffb15 	stw	zero,-20(fp)
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   837008:	e0bffc17 	ldw	r2,-16(fp)
   83700c:	e0bffa15 	stw	r2,-24(fp)
+  
+  
+  ret_code = alt_flash_program_block( flash, offset, src_addr, length, 
   837010:	e1bfff17 	ldw	r6,-4(fp)
   837014:	008020f4 	movhi	r2,131
   837018:	109ce204 	addi	r2,r2,29576
@@ -82899,7 +84743,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837028:	e1c00217 	ldw	r7,8(fp)
   83702c:	0817f980 	call	817f98 <alt_flash_program_block>
   837030:	e0bffb15 	stw	r2,-20(fp)
+                                    alt_write_word_amd);
+  return ret_code;
   837034:	e0bffb17 	ldw	r2,-20(fp)
+}
   837038:	e037883a 	mov	sp,fp
   83703c:	dfc00117 	ldw	ra,4(sp)
   837040:	df000017 	ldw	fp,0(sp)
@@ -82907,15 +84754,27 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837048:	f800283a 	ret
 
 0083704c <alt_erase_block_amd>:
+ * alt_erase_block_amd
+ * 
+ * Erase the selected erase block
+ */
+int alt_erase_block_amd(alt_flash_dev* flash_info, int block_offset)
+{
   83704c:	defff804 	addi	sp,sp,-32
   837050:	dfc00715 	stw	ra,28(sp)
   837054:	df000615 	stw	fp,24(sp)
   837058:	df000604 	addi	fp,sp,24
   83705c:	e13ffe15 	stw	r4,-8(fp)
   837060:	e17fff15 	stw	r5,-4(fp)
+  int   ret_code = 0;
   837064:	e03ffc15 	stw	zero,-16(fp)
+  int   timeout;
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   837068:	e0bffe17 	ldw	r2,-8(fp)
   83706c:	e0bffa15 	stw	r2,-24(fp)
+  volatile alt_u8  value;
+
+  (*flash->write_command)(flash->dev.base_addr, 0x555, (alt_u8)0xAA);
   837070:	e0bffa17 	ldw	r2,-24(fp)
   837074:	10c03317 	ldw	r3,204(r2)
   837078:	e0bffa17 	ldw	r2,-24(fp)
@@ -82923,6 +84782,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837080:	01415544 	movi	r5,1365
   837084:	01802a84 	movi	r6,170
   837088:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x2AA, (alt_u8)0x55);
   83708c:	e0bffa17 	ldw	r2,-24(fp)
   837090:	10c03317 	ldw	r3,204(r2)
   837094:	e0bffa17 	ldw	r2,-24(fp)
@@ -82930,6 +84790,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   83709c:	0140aa84 	movi	r5,682
   8370a0:	01801544 	movi	r6,85
   8370a4:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x555, (alt_u8)0x80);
   8370a8:	e0bffa17 	ldw	r2,-24(fp)
   8370ac:	10c03317 	ldw	r3,204(r2)
   8370b0:	e0bffa17 	ldw	r2,-24(fp)
@@ -82937,6 +84798,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8370b8:	01415544 	movi	r5,1365
   8370bc:	01802004 	movi	r6,128
   8370c0:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x555, (alt_u8)0xAA);
   8370c4:	e0bffa17 	ldw	r2,-24(fp)
   8370c8:	10c03317 	ldw	r3,204(r2)
   8370cc:	e0bffa17 	ldw	r2,-24(fp)
@@ -82944,6 +84806,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8370d4:	01415544 	movi	r5,1365
   8370d8:	01802a84 	movi	r6,170
   8370dc:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x2AA, (alt_u8)0x55);
   8370e0:	e0bffa17 	ldw	r2,-24(fp)
   8370e4:	10c03317 	ldw	r3,204(r2)
   8370e8:	e0bffa17 	ldw	r2,-24(fp)
@@ -82951,6 +84814,8 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8370f0:	0140aa84 	movi	r5,682
   8370f4:	01801544 	movi	r6,85
   8370f8:	183ee83a 	callr	r3
+
+  (*flash->write_native)((alt_u8*)flash->dev.base_addr+block_offset, 0x30);
   8370fc:	e0bffa17 	ldw	r2,-24(fp)
   837100:	11803517 	ldw	r6,212(r2)
   837104:	e0bffa17 	ldw	r2,-24(fp)
@@ -82960,10 +84825,24 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837114:	1889883a 	add	r4,r3,r2
   837118:	01400c04 	movi	r5,48
   83711c:	303ee83a 	callr	r6
+
+  /*
+   * Delay to meet AM29LV065D timing requirements
+   */
+  usleep(10000);
   837120:	0109c404 	movi	r4,10000
   837124:	080f0f40 	call	80f0f4 <usleep>
+  
+  /*
+   * Bit 3 indicates that the erase command has been accepted
+   * this last 50µS
+   */
+  timeout = 50;   
   837128:	00800c84 	movi	r2,50
   83712c:	e0bffb15 	stw	r2,-20(fp)
+  do 
+  {
+    value = IORD_8DIRECT((alt_u8*)flash->dev.base_addr + block_offset, 0);
   837130:	e0bffa17 	ldw	r2,-24(fp)
   837134:	10800a17 	ldw	r2,40(r2)
   837138:	1007883a 	mov	r3,r2
@@ -82971,11 +84850,14 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837140:	1885883a 	add	r2,r3,r2
   837144:	10800023 	ldbuio	r2,0(r2)
   837148:	e0bffd05 	stb	r2,-12(fp)
+    usleep(1000);
   83714c:	0100fa04 	movi	r4,1000
   837150:	080f0f40 	call	80f0f4 <usleep>
+    timeout--;
   837154:	e0bffb17 	ldw	r2,-20(fp)
   837158:	10bfffc4 	addi	r2,r2,-1
   83715c:	e0bffb15 	stw	r2,-20(fp)
+  }while(!(value & 0x8) && (timeout > 0));
   837160:	e0bffd03 	ldbu	r2,-12(fp)
   837164:	10803fcc 	andi	r2,r2,255
   837168:	1080020c 	andi	r2,r2,8
@@ -82984,10 +84866,21 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837174:	e0bffb17 	ldw	r2,-20(fp)
   837178:	10800048 	cmpgei	r2,r2,1
   83717c:	103fec1e 	bne	r2,zero,837130 <alt_erase_block_amd+0xe4>
+
+
+  timeout = flash->erase_timeout;
   837180:	e0bffa17 	ldw	r2,-24(fp)
   837184:	10803117 	ldw	r2,196(r2)
   837188:	e0bffb15 	stw	r2,-20(fp)
+  
+  /*
+   *  Bit 7 goes low until the block is erased if bit 5 goes to 
+   *  1 it's an error
+   */
+  while (timeout > 0)
   83718c:	00001706 	br	8371ec <alt_erase_block_amd+0x1a0>
+  {
+    value = IORD_8DIRECT((alt_u8*)flash->dev.base_addr + block_offset, 0);
   837190:	e0bffa17 	ldw	r2,-24(fp)
   837194:	10800a17 	ldw	r2,40(r2)
   837198:	1007883a 	mov	r3,r2
@@ -82995,6 +84888,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8371a0:	1885883a 	add	r2,r3,r2
   8371a4:	10800023 	ldbuio	r2,0(r2)
   8371a8:	e0bffd05 	stb	r2,-12(fp)
+    if ((value & 0x80) || (value &0x20))
   8371ac:	e0bffd03 	ldbu	r2,-12(fp)
   8371b0:	10803fcc 	andi	r2,r2,255
   8371b4:	1080201c 	xori	r2,r2,128
@@ -83006,20 +84900,43 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8371cc:	1080080c 	andi	r2,r2,32
   8371d0:	1004c03a 	cmpne	r2,r2,zero
   8371d4:	1000081e 	bne	r2,zero,8371f8 <alt_erase_block_amd+0x1ac>
+    {
+      break;
+    }
+    usleep(1000);
   8371d8:	0100fa04 	movi	r4,1000
   8371dc:	080f0f40 	call	80f0f4 <usleep>
+    timeout -= 1000;
   8371e0:	e0bffb17 	ldw	r2,-20(fp)
   8371e4:	10bf0604 	addi	r2,r2,-1000
   8371e8:	e0bffb15 	stw	r2,-20(fp)
+  
+  /*
+   *  Bit 7 goes low until the block is erased if bit 5 goes to 
+   *  1 it's an error
+   */
+  while (timeout > 0)
   8371ec:	e0bffb17 	ldw	r2,-20(fp)
   8371f0:	10800048 	cmpgei	r2,r2,1
   8371f4:	103fe61e 	bne	r2,zero,837190 <alt_erase_block_amd+0x144>
+    }
+    usleep(1000);
+    timeout -= 1000;
+  }
+  
+  if (timeout <= 0)
   8371f8:	e0bffb17 	ldw	r2,-20(fp)
   8371fc:	10800048 	cmpgei	r2,r2,1
   837200:	1000031e 	bne	r2,zero,837210 <alt_erase_block_amd+0x1c4>
+  {
+    ret_code = -ETIMEDOUT;
   837204:	00bfe304 	movi	r2,-116
   837208:	e0bffc15 	stw	r2,-16(fp)
   83720c:	00000f06 	br	83724c <alt_erase_block_amd+0x200>
+  }
+  else
+  {
+    value = IORD_8DIRECT((alt_u8*)flash->dev.base_addr + block_offset, 0);
   837210:	e0bffa17 	ldw	r2,-24(fp)
   837214:	10800a17 	ldw	r2,40(r2)
   837218:	1007883a 	mov	r3,r2
@@ -83027,15 +84944,23 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837220:	1885883a 	add	r2,r3,r2
   837224:	10800023 	ldbuio	r2,0(r2)
   837228:	e0bffd05 	stb	r2,-12(fp)
+    if (!(value & 0x80))
   83722c:	e0bffd03 	ldbu	r2,-12(fp)
   837230:	10803fcc 	andi	r2,r2,255
   837234:	1080201c 	xori	r2,r2,128
   837238:	10bfe004 	addi	r2,r2,-128
   83723c:	1004803a 	cmplt	r2,r2,zero
   837240:	1000021e 	bne	r2,zero,83724c <alt_erase_block_amd+0x200>
+    {
+      ret_code = -EIO;
   837244:	00bffec4 	movi	r2,-5
   837248:	e0bffc15 	stw	r2,-16(fp)
+    }
+  }    
+  
+  return ret_code;
   83724c:	e0bffc17 	ldw	r2,-16(fp)
+}
   837250:	e037883a 	mov	sp,fp
   837254:	dfc00117 	ldw	ra,4(sp)
   837258:	df000017 	ldw	fp,0(sp)
@@ -83043,6 +84968,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837260:	f800283a 	ret
 
 00837264 <alt_wait_for_command_to_complete_amd>:
+ */
+ 
+int alt_wait_for_command_to_complete_amd(alt_flash_cfi_dev* flash,
+                                         int offset, 
+                                          alt_u8 data)
+{
   837264:	defff804 	addi	sp,sp,-32
   837268:	dfc00715 	stw	ra,28(sp)
   83726c:	df000615 	stw	fp,24(sp)
@@ -83050,11 +84981,16 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837274:	e13ffd15 	stw	r4,-12(fp)
   837278:	e17ffe15 	stw	r5,-8(fp)
   83727c:	e1bfff05 	stb	r6,-4(fp)
+  volatile alt_u8  value;
+  int timeout = flash->write_timeout * 100;
   837280:	e0bffd17 	ldw	r2,-12(fp)
   837284:	10803017 	ldw	r2,192(r2)
   837288:	10801924 	muli	r2,r2,100
   83728c:	e0bffb15 	stw	r2,-20(fp)
+  int ret_code = 0;
   837290:	e03ffa15 	stw	zero,-24(fp)
+  
+  value = IORD_8DIRECT(flash->dev.base_addr, offset);
   837294:	e0bffd17 	ldw	r2,-12(fp)
   837298:	10800a17 	ldw	r2,40(r2)
   83729c:	1007883a 	mov	r3,r2
@@ -83062,7 +84998,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8372a4:	1885883a 	add	r2,r3,r2
   8372a8:	10800023 	ldbuio	r2,0(r2)
   8372ac:	e0bffc05 	stb	r2,-16(fp)
+  while (timeout > 0)
   8372b0:	00001706 	br	837310 <alt_wait_for_command_to_complete_amd+0xac>
+  {
+    if (((value & 0x80 ) == (data &0x80)) ||
   8372b4:	e0bffc03 	ldbu	r2,-16(fp)
   8372b8:	10803fcc 	andi	r2,r2,255
   8372bc:	10c0200c 	andi	r3,r2,128
@@ -83074,11 +85013,18 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8372d4:	1080080c 	andi	r2,r2,32
   8372d8:	1004c03a 	cmpne	r2,r2,zero
   8372dc:	10000f1e 	bne	r2,zero,83731c <alt_wait_for_command_to_complete_amd+0xb8>
+        (value & 0x20))
+    {
+      break;
+    }
+    usleep (1);
   8372e0:	01000044 	movi	r4,1
   8372e4:	080f0f40 	call	80f0f4 <usleep>
+    timeout--;
   8372e8:	e0bffb17 	ldw	r2,-20(fp)
   8372ec:	10bfffc4 	addi	r2,r2,-1
   8372f0:	e0bffb15 	stw	r2,-20(fp)
+    value = IORD_8DIRECT(flash->dev.base_addr, offset);
   8372f4:	e0bffd17 	ldw	r2,-12(fp)
   8372f8:	10800a17 	ldw	r2,40(r2)
   8372fc:	1007883a 	mov	r3,r2
@@ -83086,15 +85032,33 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837304:	1885883a 	add	r2,r3,r2
   837308:	10800023 	ldbuio	r2,0(r2)
   83730c:	e0bffc05 	stb	r2,-16(fp)
+  volatile alt_u8  value;
+  int timeout = flash->write_timeout * 100;
+  int ret_code = 0;
+  
+  value = IORD_8DIRECT(flash->dev.base_addr, offset);
+  while (timeout > 0)
   837310:	e0bffb17 	ldw	r2,-20(fp)
   837314:	10800048 	cmpgei	r2,r2,1
   837318:	103fe61e 	bne	r2,zero,8372b4 <alt_wait_for_command_to_complete_amd+0x50>
+    usleep (1);
+    timeout--;
+    value = IORD_8DIRECT(flash->dev.base_addr, offset);
+  }
+  
+  if (timeout == 0)
   83731c:	e0bffb17 	ldw	r2,-20(fp)
   837320:	1004c03a 	cmpne	r2,r2,zero
   837324:	1000031e 	bne	r2,zero,837334 <alt_wait_for_command_to_complete_amd+0xd0>
+  {
+    ret_code = -ETIMEDOUT;
   837328:	00bfe304 	movi	r2,-116
   83732c:	e0bffa15 	stw	r2,-24(fp)
   837330:	00000f06 	br	837370 <alt_wait_for_command_to_complete_amd+0x10c>
+  }
+  else
+  {
+    value = IORD_8DIRECT(flash->dev.base_addr, offset);
   837334:	e0bffd17 	ldw	r2,-12(fp)
   837338:	10800a17 	ldw	r2,40(r2)
   83733c:	1007883a 	mov	r3,r2
@@ -83102,15 +85066,22 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837344:	1885883a 	add	r2,r3,r2
   837348:	10800023 	ldbuio	r2,0(r2)
   83734c:	e0bffc05 	stb	r2,-16(fp)
+    if ((value & 0x80) != (data&0x80))
   837350:	e0bffc03 	ldbu	r2,-16(fp)
   837354:	10803fcc 	andi	r2,r2,255
   837358:	10c0200c 	andi	r3,r2,128
   83735c:	e0bfff03 	ldbu	r2,-4(fp)
   837360:	1080200c 	andi	r2,r2,128
   837364:	18800226 	beq	r3,r2,837370 <alt_wait_for_command_to_complete_amd+0x10c>
+    {
+      ret_code = -EIO;
   837368:	00bffec4 	movi	r2,-5
   83736c:	e0bffa15 	stw	r2,-24(fp)
+    }
+  }    
+  return ret_code;
   837370:	e0bffa17 	ldw	r2,-24(fp)
+}
   837374:	e037883a 	mov	sp,fp
   837378:	dfc00117 	ldw	ra,4(sp)
   83737c:	df000017 	ldw	fp,0(sp)
@@ -83118,6 +85089,11 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837384:	f800283a 	ret
 
 00837388 <alt_write_word_amd>:
+
+static int alt_write_word_amd(  alt_flash_cfi_dev* flash, 
+                                const int offset, 
+                                const alt_u8* src_addr)
+{
   837388:	defff904 	addi	sp,sp,-28
   83738c:	dfc00615 	stw	ra,24(sp)
   837390:	df000515 	stw	fp,20(sp)
@@ -83125,7 +85101,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837398:	e13ffd15 	stw	r4,-12(fp)
   83739c:	e17ffe15 	stw	r5,-8(fp)
   8373a0:	e1bfff15 	stw	r6,-4(fp)
+  int ret_code = 0;
   8373a4:	e03ffc15 	stw	zero,-16(fp)
+  alt_u8 value;
+  (*flash->write_command)(flash->dev.base_addr, 0x555, (alt_u8)0xAA);
   8373a8:	e0bffd17 	ldw	r2,-12(fp)
   8373ac:	10c03317 	ldw	r3,204(r2)
   8373b0:	e0bffd17 	ldw	r2,-12(fp)
@@ -83133,6 +85112,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8373b8:	01415544 	movi	r5,1365
   8373bc:	01802a84 	movi	r6,170
   8373c0:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x2AA, (alt_u8)0x55);
   8373c4:	e0bffd17 	ldw	r2,-12(fp)
   8373c8:	10c03317 	ldw	r3,204(r2)
   8373cc:	e0bffd17 	ldw	r2,-12(fp)
@@ -83140,6 +85120,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8373d4:	0140aa84 	movi	r5,682
   8373d8:	01801544 	movi	r6,85
   8373dc:	183ee83a 	callr	r3
+  (*flash->write_command)(flash->dev.base_addr, 0x555, (alt_u8)0xA0);
   8373e0:	e0bffd17 	ldw	r2,-12(fp)
   8373e4:	10c03317 	ldw	r3,204(r2)
   8373e8:	e0bffd17 	ldw	r2,-12(fp)
@@ -83147,19 +85128,30 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8373f0:	01415544 	movi	r5,1365
   8373f4:	01802804 	movi	r6,160
   8373f8:	183ee83a 	callr	r3
+  
+  value = *src_addr;
   8373fc:	e0bfff17 	ldw	r2,-4(fp)
   837400:	10800003 	ldbu	r2,0(r2)
   837404:	e0bffb05 	stb	r2,-20(fp)
+
+  alt_write_value_to_flash(flash, offset, src_addr);
   837408:	e13ffd17 	ldw	r4,-12(fp)
   83740c:	e17ffe17 	ldw	r5,-8(fp)
   837410:	e1bfff17 	ldw	r6,-4(fp)
   837414:	0817e340 	call	817e34 <alt_write_value_to_flash>
+  
+  ret_code = alt_wait_for_command_to_complete_amd(flash, 
   837418:	e1bffb03 	ldbu	r6,-20(fp)
   83741c:	e13ffd17 	ldw	r4,-12(fp)
   837420:	e17ffe17 	ldw	r5,-8(fp)
   837424:	08372640 	call	837264 <alt_wait_for_command_to_complete_amd>
   837428:	e0bffc15 	stw	r2,-16(fp)
+                                                  offset,
+                                                  value);
+  return ret_code;
   83742c:	e0bffc17 	ldw	r2,-16(fp)
+  
+}
   837430:	e037883a 	mov	sp,fp
   837434:	dfc00117 	ldw	ra,4(sp)
   837438:	df000017 	ldw	fp,0(sp)
@@ -83167,6 +85159,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837440:	f800283a 	ret
 
 00837444 <alt_program_intel>:
+ * Program a block (or part of one)
+ */
+int alt_program_intel(alt_flash_dev* flash_info, int block_offset, 
+                int offset, const void* src_addr, 
+                int length)
+{
   837444:	defff704 	addi	sp,sp,-36
   837448:	dfc00815 	stw	ra,32(sp)
   83744c:	df000715 	stw	fp,28(sp)
@@ -83175,16 +85173,28 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837458:	e17ffd15 	stw	r5,-12(fp)
   83745c:	e1bffe15 	stw	r6,-8(fp)
   837460:	e1ffff15 	stw	r7,-4(fp)
+  int ret_code = 0;
   837464:	e03ffb15 	stw	zero,-20(fp)
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   837468:	e0bffc17 	ldw	r2,-16(fp)
   83746c:	e0bffa15 	stw	r2,-24(fp)
+  
+   /*
+  * If this block is locked then unlock it
+  */
+  ret_code = alt_unlock_block_intel(flash, block_offset);
   837470:	e13ffa17 	ldw	r4,-24(fp)
   837474:	e17ffd17 	ldw	r5,-12(fp)
   837478:	083763c0 	call	83763c <alt_unlock_block_intel>
   83747c:	e0bffb15 	stw	r2,-20(fp)
+
+  if (!ret_code)
   837480:	e0bffb17 	ldw	r2,-20(fp)
   837484:	1004c03a 	cmpne	r2,r2,zero
   837488:	1000091e 	bne	r2,zero,8374b0 <alt_program_intel+0x6c>
+  {
+
+    ret_code = alt_flash_program_block( flash, offset, src_addr, length, 
   83748c:	e1bfff17 	ldw	r6,-4(fp)
   837490:	008020f4 	movhi	r2,131
   837494:	109df204 	addi	r2,r2,30664
@@ -83194,7 +85204,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8374a4:	e1c00217 	ldw	r7,8(fp)
   8374a8:	0817f980 	call	817f98 <alt_flash_program_block>
   8374ac:	e0bffb15 	stw	r2,-20(fp)
+                                        alt_write_word_intel);
+  }
+  
+  return ret_code;
   8374b0:	e0bffb17 	ldw	r2,-20(fp)
+}
   8374b4:	e037883a 	mov	sp,fp
   8374b8:	dfc00117 	ldw	ra,4(sp)
   8374bc:	df000017 	ldw	fp,0(sp)
@@ -83202,25 +85217,45 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8374c4:	f800283a 	ret
 
 008374c8 <alt_erase_block_intel>:
+ * alt_erase_block_intel
+ * 
+ * Erase the selected erase block
+ */
+int alt_erase_block_intel(alt_flash_dev* flash_info, int block_offset)
+{
   8374c8:	defff804 	addi	sp,sp,-32
   8374cc:	dfc00715 	stw	ra,28(sp)
   8374d0:	df000615 	stw	fp,24(sp)
   8374d4:	df000604 	addi	fp,sp,24
   8374d8:	e13ffe15 	stw	r4,-8(fp)
   8374dc:	e17fff15 	stw	r5,-4(fp)
+  int   ret_code = 0;
   8374e0:	e03ffc15 	stw	zero,-16(fp)
+  alt_flash_cfi_dev* flash = (alt_flash_cfi_dev*)flash_info;
   8374e4:	e0bffe17 	ldw	r2,-8(fp)
   8374e8:	e0bffb15 	stw	r2,-20(fp)
+  volatile alt_u8  status;
+  int   timeout = flash->erase_timeout;
   8374ec:	e0bffb17 	ldw	r2,-20(fp)
   8374f0:	10803117 	ldw	r2,196(r2)
   8374f4:	e0bffa15 	stw	r2,-24(fp)
+
+  /*
+  * If this block is locked then unlock it
+  */
+  ret_code = alt_unlock_block_intel(flash, block_offset);
   8374f8:	e13ffb17 	ldw	r4,-20(fp)
   8374fc:	e17fff17 	ldw	r5,-4(fp)
   837500:	083763c0 	call	83763c <alt_unlock_block_intel>
   837504:	e0bffc15 	stw	r2,-16(fp)
+
+  if (!ret_code)
   837508:	e0bffc17 	ldw	r2,-16(fp)
   83750c:	1004c03a 	cmpne	r2,r2,zero
   837510:	1000441e 	bne	r2,zero,837624 <alt_erase_block_intel+0x15c>
+  {
+
+    flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0x20);
   837514:	e0bffb17 	ldw	r2,-20(fp)
   837518:	11803517 	ldw	r6,212(r2)
   83751c:	e0bffb17 	ldw	r2,-20(fp)
@@ -83230,6 +85265,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   83752c:	1889883a 	add	r4,r3,r2
   837530:	01400804 	movi	r5,32
   837534:	303ee83a 	callr	r6
+    flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0xD0);
   837538:	e0bffb17 	ldw	r2,-20(fp)
   83753c:	11803517 	ldw	r6,212(r2)
   837540:	e0bffb17 	ldw	r2,-20(fp)
@@ -83239,6 +85275,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837550:	1889883a 	add	r4,r3,r2
   837554:	01403404 	movi	r5,208
   837558:	303ee83a 	callr	r6
+
+    do
+    {
+      status = IORD_8DIRECT(flash->dev.base_addr, block_offset);
   83755c:	e0bffb17 	ldw	r2,-20(fp)
   837560:	10800a17 	ldw	r2,40(r2)
   837564:	1007883a 	mov	r3,r2
@@ -83246,33 +85286,50 @@ void OSTCBInitHook(OS_TCB *ptcb)
   83756c:	1885883a 	add	r2,r3,r2
   837570:	10800023 	ldbuio	r2,0(r2)
   837574:	e0bffd05 	stb	r2,-12(fp)
+      if (status & 0x80)
   837578:	e0bffd03 	ldbu	r2,-12(fp)
   83757c:	10803fcc 	andi	r2,r2,255
   837580:	1080201c 	xori	r2,r2,128
   837584:	10bfe004 	addi	r2,r2,-128
   837588:	1004803a 	cmplt	r2,r2,zero
   83758c:	1000081e 	bne	r2,zero,8375b0 <alt_erase_block_intel+0xe8>
+      {
+        break;
+      }
+      usleep(1000);
   837590:	0100fa04 	movi	r4,1000
   837594:	080f0f40 	call	80f0f4 <usleep>
+      timeout -= 1000;
   837598:	e0bffa17 	ldw	r2,-24(fp)
   83759c:	10bf0604 	addi	r2,r2,-1000
   8375a0:	e0bffa15 	stw	r2,-24(fp)
+    }while(timeout > 0);
   8375a4:	e0bffa17 	ldw	r2,-24(fp)
   8375a8:	10800048 	cmpgei	r2,r2,1
   8375ac:	103feb1e 	bne	r2,zero,83755c <alt_erase_block_intel+0x94>
+    
+    if (timeout <= 0)
   8375b0:	e0bffa17 	ldw	r2,-24(fp)
   8375b4:	10800048 	cmpgei	r2,r2,1
   8375b8:	1000031e 	bne	r2,zero,8375c8 <alt_erase_block_intel+0x100>
+    {
+      ret_code = -ETIMEDOUT;
   8375bc:	00bfe304 	movi	r2,-116
   8375c0:	e0bffc15 	stw	r2,-16(fp)
   8375c4:	00000e06 	br	837600 <alt_erase_block_intel+0x138>
+    }
+    else if (status & 0x7f)
   8375c8:	e0bffd03 	ldbu	r2,-12(fp)
   8375cc:	10803fcc 	andi	r2,r2,255
   8375d0:	10801fcc 	andi	r2,r2,127
   8375d4:	1005003a 	cmpeq	r2,r2,zero
   8375d8:	1000091e 	bne	r2,zero,837600 <alt_erase_block_intel+0x138>
+    {
+      /* If we have an error of some kind bomb out */
+      ret_code = -EIO;
   8375dc:	00bffec4 	movi	r2,-5
   8375e0:	e0bffc15 	stw	r2,-16(fp)
+      status = IORD_8DIRECT(flash->dev.base_addr, block_offset);
   8375e4:	e0bffb17 	ldw	r2,-20(fp)
   8375e8:	10800a17 	ldw	r2,40(r2)
   8375ec:	1007883a 	mov	r3,r2
@@ -83280,6 +85337,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8375f4:	1885883a 	add	r2,r3,r2
   8375f8:	10800023 	ldbuio	r2,0(r2)
   8375fc:	e0bffd05 	stb	r2,-12(fp)
+    }
+
+    /* Put the device back into read array mode */
+    flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0xFF);
   837600:	e0bffb17 	ldw	r2,-20(fp)
   837604:	11803517 	ldw	r6,212(r2)
   837608:	e0bffb17 	ldw	r2,-20(fp)
@@ -83289,7 +85350,11 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837618:	1889883a 	add	r4,r3,r2
   83761c:	01403fc4 	movi	r5,255
   837620:	303ee83a 	callr	r6
+  }
+  
+  return ret_code;
   837624:	e0bffc17 	ldw	r2,-16(fp)
+}
   837628:	e037883a 	mov	sp,fp
   83762c:	dfc00117 	ldw	ra,4(sp)
   837630:	df000017 	ldw	fp,0(sp)
@@ -83297,17 +85362,33 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837638:	f800283a 	ret
 
 0083763c <alt_unlock_block_intel>:
+/*
+* Private Intel specific functions
+*/
+
+static int alt_unlock_block_intel(alt_flash_cfi_dev* flash, int block_offset)
+{
   83763c:	defff904 	addi	sp,sp,-28
   837640:	dfc00615 	stw	ra,24(sp)
   837644:	df000515 	stw	fp,20(sp)
   837648:	df000504 	addi	fp,sp,20
   83764c:	e13ffe15 	stw	r4,-8(fp)
   837650:	e17fff15 	stw	r5,-4(fp)
+  alt_u8  locked;
+  alt_u8  status;
+  int ret_code = 0;
   837654:	e03ffc15 	stw	zero,-16(fp)
+  int timeout = flash->write_timeout * 100;
   837658:	e0bffe17 	ldw	r2,-8(fp)
   83765c:	10803017 	ldw	r2,192(r2)
   837660:	10801924 	muli	r2,r2,100
   837664:	e0bffb15 	stw	r2,-20(fp)
+
+
+  /*
+  * Is this block locked?
+  */
+  flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0x90);
   837668:	e0bffe17 	ldw	r2,-8(fp)
   83766c:	11803517 	ldw	r6,212(r2)
   837670:	e0bffe17 	ldw	r2,-8(fp)
@@ -83317,6 +85398,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837680:	1889883a 	add	r4,r3,r2
   837684:	01402404 	movi	r5,144
   837688:	303ee83a 	callr	r6
+  locked = IORD_8DIRECT(flash->dev.base_addr, block_offset + 4);
   83768c:	e0bffe17 	ldw	r2,-8(fp)
   837690:	10800a17 	ldw	r2,40(r2)
   837694:	1007883a 	mov	r3,r2
@@ -83325,11 +85407,14 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8376a0:	10800104 	addi	r2,r2,4
   8376a4:	10800023 	ldbuio	r2,0(r2)
   8376a8:	e0bffd45 	stb	r2,-11(fp)
+  if (locked & 0x1)
   8376ac:	e0bffd43 	ldbu	r2,-11(fp)
   8376b0:	1080004c 	andi	r2,r2,1
   8376b4:	10803fcc 	andi	r2,r2,255
   8376b8:	1005003a 	cmpeq	r2,r2,zero
   8376bc:	1000331e 	bne	r2,zero,83778c <alt_unlock_block_intel+0x150>
+  {
+    flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0x60);
   8376c0:	e0bffe17 	ldw	r2,-8(fp)
   8376c4:	11803517 	ldw	r6,212(r2)
   8376c8:	e0bffe17 	ldw	r2,-8(fp)
@@ -83339,6 +85424,7 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8376d8:	1889883a 	add	r4,r3,r2
   8376dc:	01401804 	movi	r5,96
   8376e0:	303ee83a 	callr	r6
+    flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0xD0);
   8376e4:	e0bffe17 	ldw	r2,-8(fp)
   8376e8:	11803517 	ldw	r6,212(r2)
   8376ec:	e0bffe17 	ldw	r2,-8(fp)
@@ -83348,6 +85434,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8376fc:	1889883a 	add	r4,r3,r2
   837700:	01403404 	movi	r5,208
   837704:	303ee83a 	callr	r6
+
+    do
+    {
+      status = IORD_8DIRECT(flash->dev.base_addr, block_offset);
   837708:	e0bffe17 	ldw	r2,-8(fp)
   83770c:	10800a17 	ldw	r2,40(r2)
   837710:	1007883a 	mov	r3,r2
@@ -83355,32 +85445,54 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837718:	1885883a 	add	r2,r3,r2
   83771c:	10800023 	ldbuio	r2,0(r2)
   837720:	e0bffd05 	stb	r2,-12(fp)
+      if (status & 0x80)
   837724:	e0bffd03 	ldbu	r2,-12(fp)
   837728:	10803fcc 	andi	r2,r2,255
   83772c:	1080201c 	xori	r2,r2,128
   837730:	10bfe004 	addi	r2,r2,-128
   837734:	1004803a 	cmplt	r2,r2,zero
   837738:	1000081e 	bne	r2,zero,83775c <alt_unlock_block_intel+0x120>
+      {
+        break;
+      }
+      timeout--;
   83773c:	e0bffb17 	ldw	r2,-20(fp)
   837740:	10bfffc4 	addi	r2,r2,-1
   837744:	e0bffb15 	stw	r2,-20(fp)
+      usleep(1);
   837748:	01000044 	movi	r4,1
   83774c:	080f0f40 	call	80f0f4 <usleep>
+    }while(timeout > 0);
   837750:	e0bffb17 	ldw	r2,-20(fp)
   837754:	10800048 	cmpgei	r2,r2,1
   837758:	103feb1e 	bne	r2,zero,837708 <alt_unlock_block_intel+0xcc>
+
+    if (timeout == 0)
   83775c:	e0bffb17 	ldw	r2,-20(fp)
   837760:	1004c03a 	cmpne	r2,r2,zero
   837764:	1000031e 	bne	r2,zero,837774 <alt_unlock_block_intel+0x138>
+    {
+      ret_code = -ETIMEDOUT;
   837768:	00bfe304 	movi	r2,-116
   83776c:	e0bffc15 	stw	r2,-16(fp)
   837770:	00000606 	br	83778c <alt_unlock_block_intel+0x150>
+    }
+    else if (status & 0x7f)
   837774:	e0bffd03 	ldbu	r2,-12(fp)
   837778:	10801fcc 	andi	r2,r2,127
   83777c:	1005003a 	cmpeq	r2,r2,zero
   837780:	1000021e 	bne	r2,zero,83778c <alt_unlock_block_intel+0x150>
+    {
+      /* If we have an error of some kind bomb out */
+      ret_code = -EIO;
   837784:	00bffec4 	movi	r2,-5
   837788:	e0bffc15 	stw	r2,-16(fp)
+  }
+
+  /*
+  * Back to Read Array mode
+  */
+  flash->write_native((alt_u8*)flash->dev.base_addr + block_offset, 0xFF);
   83778c:	e0bffe17 	ldw	r2,-8(fp)
   837790:	11803517 	ldw	r6,212(r2)
   837794:	e0bffe17 	ldw	r2,-8(fp)
@@ -83390,7 +85502,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8377a4:	1889883a 	add	r4,r3,r2
   8377a8:	01403fc4 	movi	r5,255
   8377ac:	303ee83a 	callr	r6
+
+  return ret_code;
   8377b0:	e0bffc17 	ldw	r2,-16(fp)
+}
   8377b4:	e037883a 	mov	sp,fp
   8377b8:	dfc00117 	ldw	ra,4(sp)
   8377bc:	df000017 	ldw	fp,0(sp)
@@ -83398,6 +85513,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8377c4:	f800283a 	ret
 
 008377c8 <alt_write_word_intel>:
+ * offset bytes into the flash
+ */
+ 
+int alt_write_word_intel( alt_flash_cfi_dev* flash, 
+                                  const int offset, const alt_u8* src_addr)
+{ 
   8377c8:	defff904 	addi	sp,sp,-28
   8377cc:	dfc00615 	stw	ra,24(sp)
   8377d0:	df000515 	stw	fp,20(sp)
@@ -83405,7 +85526,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8377d8:	e13ffd15 	stw	r4,-12(fp)
   8377dc:	e17ffe15 	stw	r5,-8(fp)
   8377e0:	e1bfff15 	stw	r6,-4(fp)
+  int ret_code = 0;
   8377e4:	e03ffc15 	stw	zero,-16(fp)
+  alt_u8 status;
+  (*flash->write_native)((alt_u8*)flash->dev.base_addr+offset, 0x40);
   8377e8:	e0bffd17 	ldw	r2,-12(fp)
   8377ec:	11803517 	ldw	r6,212(r2)
   8377f0:	e0bffd17 	ldw	r2,-12(fp)
@@ -83415,10 +85539,15 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837800:	1889883a 	add	r4,r3,r2
   837804:	01401004 	movi	r5,64
   837808:	303ee83a 	callr	r6
+  alt_write_value_to_flash(flash, offset, src_addr);
   83780c:	e13ffd17 	ldw	r4,-12(fp)
   837810:	e17ffe17 	ldw	r5,-8(fp)
   837814:	e1bfff17 	ldw	r6,-4(fp)
   837818:	0817e340 	call	817e34 <alt_write_value_to_flash>
+
+  do
+  {
+    status = IORD_8DIRECT(flash->dev.base_addr, offset);
   83781c:	e0bffd17 	ldw	r2,-12(fp)
   837820:	10800a17 	ldw	r2,40(r2)
   837824:	1007883a 	mov	r3,r2
@@ -83426,18 +85555,28 @@ void OSTCBInitHook(OS_TCB *ptcb)
   83782c:	1885883a 	add	r2,r3,r2
   837830:	10800023 	ldbuio	r2,0(r2)
   837834:	e0bffb05 	stb	r2,-20(fp)
+  }while(!(status & 0x80));
   837838:	e0bffb03 	ldbu	r2,-20(fp)
   83783c:	10803fcc 	andi	r2,r2,255
   837840:	1080201c 	xori	r2,r2,128
   837844:	10bfe004 	addi	r2,r2,-128
   837848:	1004403a 	cmpge	r2,r2,zero
   83784c:	103ff31e 	bne	r2,zero,83781c <alt_write_word_intel+0x54>
+
+  /* If we have an error of some kind bomb out */
+  if (status & 0x7f)
   837850:	e0bffb03 	ldbu	r2,-20(fp)
   837854:	10801fcc 	andi	r2,r2,127
   837858:	1005003a 	cmpeq	r2,r2,zero
   83785c:	1000021e 	bne	r2,zero,837868 <alt_write_word_intel+0xa0>
+  {
+    ret_code = -EIO;
   837860:	00bffec4 	movi	r2,-5
   837864:	e0bffc15 	stw	r2,-16(fp)
+  }
+
+  /* Put the device back into read array mode */
+  flash->write_native((alt_u8*)flash->dev.base_addr + offset, 0xFF);
   837868:	e0bffd17 	ldw	r2,-12(fp)
   83786c:	11803517 	ldw	r6,212(r2)
   837870:	e0bffd17 	ldw	r2,-12(fp)
@@ -83447,7 +85586,10 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837880:	1889883a 	add	r4,r3,r2
   837884:	01403fc4 	movi	r5,255
   837888:	303ee83a 	callr	r6
+  
+  return ret_code;
   83788c:	e0bffc17 	ldw	r2,-16(fp)
+}
   837890:	e037883a 	mov	sp,fp
   837894:	dfc00117 	ldw	ra,4(sp)
   837898:	df000017 	ldw	fp,0(sp)
@@ -83455,6 +85597,12 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8378a0:	f800283a 	ret
 
 008378a4 <alt_avalon_spi_command>:
+
+int alt_avalon_spi_command(alt_u32 base, alt_u32 slave,
+                           alt_u32 write_length, const alt_u8 * write_data,
+                           alt_u32 read_length, alt_u8 * read_data,
+                           alt_u32 flags)
+{
   8378a4:	defff404 	addi	sp,sp,-48
   8378a8:	df000b15 	stw	fp,44(sp)
   8378ac:	df000b04 	addi	fp,sp,44
@@ -83462,20 +85610,37 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8378b4:	e17ffd15 	stw	r5,-12(fp)
   8378b8:	e1bffe15 	stw	r6,-8(fp)
   8378bc:	e1ffff15 	stw	r7,-4(fp)
+  const alt_u8 * write_end = write_data + write_length;
   8378c0:	e0fffe17 	ldw	r3,-8(fp)
   8378c4:	e0bfff17 	ldw	r2,-4(fp)
   8378c8:	10c5883a 	add	r2,r2,r3
   8378cc:	e0bffb15 	stw	r2,-20(fp)
+  alt_u8 * read_end = read_data + read_length;
   8378d0:	e0c00117 	ldw	r3,4(fp)
   8378d4:	e0800217 	ldw	r2,8(fp)
   8378d8:	10c5883a 	add	r2,r2,r3
   8378dc:	e0bffa15 	stw	r2,-24(fp)
+
+  alt_u32 write_zeros = read_length;
   8378e0:	e0800117 	ldw	r2,4(fp)
   8378e4:	e0bff915 	stw	r2,-28(fp)
+  alt_u32 read_ignore = write_length;
   8378e8:	e0bffe17 	ldw	r2,-8(fp)
   8378ec:	e0bff815 	stw	r2,-32(fp)
+
+  /* We must not send more than two bytes to the target before it has
+   * returned any as otherwise it will overflow. */
+  /* Unfortunately the hardware does not seem to work with credits > 1,
+   * leave it at 1 for now. */
+  alt_32 credits = 1;
   8378f0:	00800044 	movi	r2,1
   8378f4:	e0bff615 	stw	r2,-40(fp)
+  /* Warning: this function is not currently safe if called in a multi-threaded
+   * environment, something above must perform locking to make it safe if more
+   * than one thread intends to use it.
+   */
+
+  IOWR_ALTERA_AVALON_SPI_SLAVE_SEL(base, 1 << slave);
   8378f8:	e0bffc17 	ldw	r2,-16(fp)
   8378fc:	11000504 	addi	r4,r2,20
   837900:	e0fffd17 	ldw	r3,-12(fp)
@@ -83483,22 +85648,41 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837908:	10c6983a 	sll	r3,r2,r3
   83790c:	2005883a 	mov	r2,r4
   837910:	10c00035 	stwio	r3,0(r2)
+  
+  /* Set the SSO bit (force chipselect) only if the toggle flag is not set */
+  if ((flags & ALT_AVALON_SPI_COMMAND_TOGGLE_SS_N) == 0) {
   837914:	e0800317 	ldw	r2,12(fp)
   837918:	1080008c 	andi	r2,r2,2
   83791c:	1004c03a 	cmpne	r2,r2,zero
   837920:	1000051e 	bne	r2,zero,837938 <alt_avalon_spi_command+0x94>
+    IOWR_ALTERA_AVALON_SPI_CONTROL(base, ALTERA_AVALON_SPI_CONTROL_SSO_MSK);
   837924:	e0bffc17 	ldw	r2,-16(fp)
   837928:	10800304 	addi	r2,r2,12
   83792c:	1007883a 	mov	r3,r2
   837930:	00810004 	movi	r2,1024
   837934:	18800035 	stwio	r2,0(r3)
+  /*
+   * Discard any stale data present in the RXDATA register, in case
+   * previous communication was interrupted and stale data was left
+   * behind.
+   */
+  IORD_ALTERA_AVALON_SPI_RXDATA(base);
   837938:	e0bffc17 	ldw	r2,-16(fp)
   83793c:	10800037 	ldwio	r2,0(r2)
   837940:	00000006 	br	837944 <alt_avalon_spi_command+0xa0>
+  for ( ; ; )
+  {
+    
+    do
+    {
+      status = IORD_ALTERA_AVALON_SPI_STATUS(base);
   837944:	e0bffc17 	ldw	r2,-16(fp)
   837948:	10800204 	addi	r2,r2,8
   83794c:	10800037 	ldwio	r2,0(r2)
   837950:	e0bff715 	stw	r2,-36(fp)
+    }
+    while (((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) == 0 || credits == 0) &&
+            (status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) == 0);
   837954:	e0bff717 	ldw	r2,-36(fp)
   837958:	1080100c 	andi	r2,r2,64
   83795c:	1005003a 	cmpeq	r2,r2,zero
@@ -83510,6 +85694,8 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837974:	1080200c 	andi	r2,r2,128
   837978:	1005003a 	cmpeq	r2,r2,zero
   83797c:	103ff11e 	bne	r2,zero,837944 <alt_avalon_spi_command+0xa0>
+
+    if ((status & ALTERA_AVALON_SPI_STATUS_TRDY_MSK) != 0 && credits > 0)
   837980:	e0bff717 	ldw	r2,-36(fp)
   837984:	1080100c 	andi	r2,r2,64
   837988:	1005003a 	cmpeq	r2,r2,zero
@@ -83517,12 +85703,17 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837990:	e0bff617 	ldw	r2,-40(fp)
   837994:	10800050 	cmplti	r2,r2,1
   837998:	10001d1e 	bne	r2,zero,837a10 <alt_avalon_spi_command+0x16c>
+    {
+      credits--;
   83799c:	e0bff617 	ldw	r2,-40(fp)
   8379a0:	10bfffc4 	addi	r2,r2,-1
   8379a4:	e0bff615 	stw	r2,-40(fp)
+
+      if (write_data < write_end)
   8379a8:	e0ffff17 	ldw	r3,-4(fp)
   8379ac:	e0bffb17 	ldw	r2,-20(fp)
   8379b0:	18800b2e 	bgeu	r3,r2,8379e0 <alt_avalon_spi_command+0x13c>
+        IOWR_ALTERA_AVALON_SPI_TXDATA(base, *write_data++);
   8379b4:	e0bffc17 	ldw	r2,-16(fp)
   8379b8:	11000104 	addi	r4,r2,4
   8379bc:	e0bfff17 	ldw	r2,-4(fp)
@@ -83534,32 +85725,49 @@ void OSTCBInitHook(OS_TCB *ptcb)
   8379d4:	2005883a 	mov	r2,r4
   8379d8:	10c00035 	stwio	r3,0(r2)
   8379dc:	00000c06 	br	837a10 <alt_avalon_spi_command+0x16c>
+      else if (write_zeros > 0)
   8379e0:	e0bff917 	ldw	r2,-28(fp)
   8379e4:	1005003a 	cmpeq	r2,r2,zero
   8379e8:	1000071e 	bne	r2,zero,837a08 <alt_avalon_spi_command+0x164>
+      {
+        write_zeros--;
   8379ec:	e0bff917 	ldw	r2,-28(fp)
   8379f0:	10bfffc4 	addi	r2,r2,-1
   8379f4:	e0bff915 	stw	r2,-28(fp)
+        IOWR_ALTERA_AVALON_SPI_TXDATA(base, 0);
   8379f8:	e0bffc17 	ldw	r2,-16(fp)
   8379fc:	10800104 	addi	r2,r2,4
   837a00:	10000035 	stwio	zero,0(r2)
   837a04:	00000206 	br	837a10 <alt_avalon_spi_command+0x16c>
+      }
+      else
+        credits = -1024;
   837a08:	00bf0004 	movi	r2,-1024
   837a0c:	e0bff615 	stw	r2,-40(fp)
+    };
+
+    if ((status & ALTERA_AVALON_SPI_STATUS_RRDY_MSK) != 0)
   837a10:	e0bff717 	ldw	r2,-36(fp)
   837a14:	1080200c 	andi	r2,r2,128
   837a18:	1005003a 	cmpeq	r2,r2,zero
   837a1c:	103fc91e 	bne	r2,zero,837944 <alt_avalon_spi_command+0xa0>
+    {
+      alt_u32 rxdata = IORD_ALTERA_AVALON_SPI_RXDATA(base);
   837a20:	e0bffc17 	ldw	r2,-16(fp)
   837a24:	10800037 	ldwio	r2,0(r2)
   837a28:	e0bff515 	stw	r2,-44(fp)
+
+      if (read_ignore > 0)
   837a2c:	e0bff817 	ldw	r2,-32(fp)
   837a30:	1005003a 	cmpeq	r2,r2,zero
   837a34:	1000041e 	bne	r2,zero,837a48 <alt_avalon_spi_command+0x1a4>
+        read_ignore--;
   837a38:	e0bff817 	ldw	r2,-32(fp)
   837a3c:	10bfffc4 	addi	r2,r2,-1
   837a40:	e0bff815 	stw	r2,-32(fp)
   837a44:	00000706 	br	837a64 <alt_avalon_spi_command+0x1c0>
+      else
+        *read_data++ = (alt_u8)rxdata;
   837a48:	e0bff517 	ldw	r2,-44(fp)
   837a4c:	1007883a 	mov	r3,r2
   837a50:	e0800217 	ldw	r2,8(fp)
@@ -83567,32 +85775,55 @@ void OSTCBInitHook(OS_TCB *ptcb)
   837a58:	e0800217 	ldw	r2,8(fp)
   837a5c:	10800044 	addi	r2,r2,1
   837a60:	e0800215 	stw	r2,8(fp)
+      credits++;
   837a64:	e0bff617 	ldw	r2,-40(fp)
   837a68:	10800044 	addi	r2,r2,1
   837a6c:	e0bff615 	stw	r2,-40(fp)
+
+      if (read_ignore == 0 && read_data == read_end)
   837a70:	e0bff817 	ldw	r2,-32(fp)
   837a74:	1004c03a 	cmpne	r2,r2,zero
   837a78:	103fb21e 	bne	r2,zero,837944 <alt_avalon_spi_command+0xa0>
   837a7c:	e0c00217 	ldw	r3,8(fp)
   837a80:	e0bffa17 	ldw	r2,-24(fp)
   837a84:	18800126 	beq	r3,r2,837a8c <alt_avalon_spi_command+0x1e8>
+        break;
+    }
+    
+  }
   837a88:	003fae06 	br	837944 <alt_avalon_spi_command+0xa0>
+
+  /* Wait until the interface has finished transmitting */
+  do
+  {
+    status = IORD_ALTERA_AVALON_SPI_STATUS(base);
   837a8c:	e0bffc17 	ldw	r2,-16(fp)
   837a90:	10800204 	addi	r2,r2,8
   837a94:	10800037 	ldwio	r2,0(r2)
   837a98:	e0bff715 	stw	r2,-36(fp)
+  }
+  while ((status & ALTERA_AVALON_SPI_STATUS_TMT_MSK) == 0);
   837a9c:	e0bff717 	ldw	r2,-36(fp)
   837aa0:	1080080c 	andi	r2,r2,32
   837aa4:	1005003a 	cmpeq	r2,r2,zero
   837aa8:	103ff81e 	bne	r2,zero,837a8c <alt_avalon_spi_command+0x1e8>
+
+  /* Clear SSO (release chipselect) unless the caller is going to
+   * keep using this chip
+   */
+  if ((flags & ALT_AVALON_SPI_COMMAND_MERGE) == 0)
   837aac:	e0800317 	ldw	r2,12(fp)
   837ab0:	1080004c 	andi	r2,r2,1
   837ab4:	1004c03a 	cmpne	r2,r2,zero
   837ab8:	1000031e 	bne	r2,zero,837ac8 <alt_avalon_spi_command+0x224>
+    IOWR_ALTERA_AVALON_SPI_CONTROL(base, 0);
   837abc:	e0bffc17 	ldw	r2,-16(fp)
   837ac0:	10800304 	addi	r2,r2,12
   837ac4:	10000035 	stwio	zero,0(r2)
+
+  return read_length;
   837ac8:	e0800117 	ldw	r2,4(fp)
+}
   837acc:	e037883a 	mov	sp,fp
   837ad0:	df000017 	ldw	fp,0(sp)
   837ad4:	dec00104 	addi	sp,sp,4
