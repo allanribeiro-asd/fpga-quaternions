@@ -1,0 +1,8 @@
+
+**** Build of configuration Nios II for project simple_socket_bsp ****
+
+make all 
+makefile:758: Warning: SOPC File J:/Altera/13.0sp1/projects/DE2_CD/DE2_demonstrations_Qsys/DE2_NET/system_0.sopcinfo could not be found.
+[BSP build complete]
+
+**** Build Finished ****

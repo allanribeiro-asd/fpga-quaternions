@@ -1,9 +1,10 @@
 def parse(data):
 # Parses a line with the following pattern:
-# "Time (s)","Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)","Absolute (rad/s)"
+	# "Time (s)","Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)","Absolute (rad/s)"
 	# Split each field by ','
 	splited = data.split(',')
-	splited.pop(3)
+	# Take out absolute value
+	splited.pop(4)
 	# Empty array for processing
 	parsed = []
 	for i in splited:
@@ -12,22 +13,21 @@ def parse(data):
 	return parsed
 
 def norm(data):
+	# Take time out
+	time = data.pop(0)
 	rate = max(data)
 	qx = [float(data[0])/rate]
 	qy = [float(data[1])/rate]
 	qz = [float(data[2])/rate]
-	return (rate,qx,qy,qz)
+	return (time,qx,qy,qz)
 
-def to_quaternion():
-	file = 'data.csv'
-	# Open and separate file lines
+def to_quaternion(file):
 	lines = (open(file, 'r')).readlines()
 	lines.pop(0)
 	counter = 0
 	quaternions = []
 	for line in lines:
 		data = parse(line)
-		time = data.pop(0)
 		quaternions.append(data)
 	return quaternions
 
@@ -68,6 +68,7 @@ def main():
 	if not connect:
 		return 1
 
+	file = '../dados/data.csv'
 	quaternion = to_quaternion()
 
 	counter = 0
@@ -75,7 +76,7 @@ def main():
 		connection.send(quaternion[counter].encode())
 		counter = counter+1
 	
-	data = connection.recv(buffer)
+	final_quaternion = connection.recv(buffer)
 	raise KeyboardInterrupt
 
 main()

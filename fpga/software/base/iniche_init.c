@@ -1,0 +1,334 @@
+/******************************************************************************
+* Copyright (c) 2006 Altera Corporation, San Jose, California, USA.           *
+* All rights reserved. All use of this software and documentation is          *
+* subject to the License Agreement located at the end of this file below.     *
+*******************************************************************************                                                                             *
+* Date - October 24, 2006                                                     *
+* Module - iniche_init.c                                                      *
+*                                                                             *                                                                             *
+******************************************************************************/
+
+/******************************************************************************
+ * NicheStack TCP/IP stack initialization and Operating System Start in main()
+ * for Simple Socket Server (SSS) example. 
+ * 
+ * This example demonstrates the use of MicroC/OS-II running on NIOS II.       
+ * In addition it is to serve as a good starting point for designs using       
+ * MicroC/OS-II and Altera NicheStack TCP/IP Stack - NIOS II Edition.                                                                                           
+ *      
+ * Please refer to the Altera NicheStack Tutorial documentation for details on 
+ * this software example, as well as details on how to configure the NicheStack
+ * TCP/IP networking stack and MicroC/OS-II Real-Time Operating System.  
+ */
+  
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <io.h>
+#include <fcntl.h>
+/* MicroC/OS-II definitions */
+#include "../simple_socket_bsp/HAL/inc/includes.h"
+
+#include "../simple_socket_bsp/system.h"
+
+#include "dm9000a.h"
+
+/* Simple Socket Server definitions */
+#include "simple_socket_server.h"
+#include "alt_error_handler.h"
+
+/* Nichestack definitions */
+#include "../simple_socket_bsp/iniche/src/h/nios2/ipport.h"
+#include "../simple_socket_bsp/iniche/src/h/tcpport.h"
+#include "../simple_socket_bsp/iniche/src/h/libport.h"
+#include "../simple_socket_bsp/iniche/src/nios2/osport.h"
+#include "basic_io.h"
+#include "LCD.h"
+#include "altera_avalon_pio_regs.h"
+/* Definition of task stack for the initial task which will initialize the NicheStack
+ * TCP/IP Stack and then initialize the rest of the Simple Socket Server example tasks. 
+ */
+OS_STK    SSSInitialTaskStk[TASK_STACKSIZE];
+
+/* Declarations for creating a task with TK_NEWTASK.  
+ * All tasks which use NicheStack (those that use sockets) must be created this way.
+ * TK_OBJECT macro creates the static task object used by NicheStack during operation.
+ * TK_ENTRY macro corresponds to the entry point, or defined function name, of the task.
+ * inet_taskinfo is the structure used by TK_NEWTASK to create the task.
+ */
+TK_OBJECT(to_ssstask);
+TK_ENTRY(SSSSimpleSocketServerTask);
+
+struct inet_taskinfo ssstask = {
+      &to_ssstask,
+      "simple socket server",
+      SSSSimpleSocketServerTask,
+      4,
+      APP_STACK_SIZE,
+};
+
+/* SSSInitialTask will initialize the NicheStack
+ * TCP/IP Stack and then initialize the rest of the Simple Socket Server example 
+ * RTOS structures and tasks. 
+ */
+void SSSInitialTask(void *task_data)
+{
+	printf("\n\nOK: projeto carregado!\n\n\n");
+	INT8U error_code;
+
+	/*
+	* Initialize Altera NicheStack TCP/IP Stack - Nios II Edition specific code.
+	* NicheStack is initialized from a task, so that RTOS will have started, and
+	* I/O drivers are available.  Two tasks are created:
+	*    "Inet main"  task with priority 2
+	*    "clock tick" task with priority 3
+	*/
+	alt_iniche_init();
+	netmain();
+
+	/* Wait for the network stack to be ready before proceeding.
+	* iniche_net_ready indicates that TCP/IP stack is ready, and IP address is obtained.
+	*/
+	while (!iniche_net_ready)
+	TK_SLEEP(1);
+
+	/* Now that the stack is running, perform the application initialization steps */
+
+	/* Application Specific Task Launching Code Block Begin */
+
+	printf("\nSimple Socket Server starting up\n");
+
+	//Variaveis para uso do display LCD
+	LCD_Init();
+	//char Starting[16] = "Starting wgen ";
+	//LCD_Show_Text(Starting);
+	char Text[16] = "Wave request:  ";
+	char Text00[16] = "  triangle     ";
+	char Text01[16] = "  sawtooth     ";
+	char Text10[16] = "  square       ";
+	char Text11[16] = "INVALID        ";
+	char Text100a[16] = "Disconnect from";
+	char Text100b[16] = "SERVER         ";
+	char ArqI[32] = "ARQ INVALIDO !!!ARQ INVALIDO !!!";
+	char p1[16];
+	char p2[16];
+	unsigned int linha1=0;
+	unsigned int linha2=16;
+
+	//Botoes e escolhas (pelos switches)
+	int sw, but;
+	char flag = 0; //0-> aguardando escolha, 1->executando
+	char lastbut = 0x0F;
+	char choice = 0;
+	char reqA[8]= "triangle";
+	char reqB[8]= "sawtooth";
+	char reqC[6]= "square";
+	char reqD[10]= "disconnect";
+	char reqE[5]= "empty";
+
+	//Gerador de ondas
+	int wave_cod = 0;
+	int wave_value = 0;
+	int date;
+
+	//Socket e conexao
+	struct sockaddr_in sa;
+	int res;
+	int SocketFD;
+	char buf[2000];
+	//Alterar aqui o ip e a porta
+	char server_ip[16];
+	int server_port;
+	sa.sin_family = AF_INET;
+	printf("Informe o IP (no formato '192.168.0.2'):\n");
+	scanf("%s", server_ip);
+	printf("Informe a porta (no formato '5000'):\n");
+	scanf("%d", &server_port);
+	printf("Endereco %s:%d obtido\n", server_ip, server_port);
+
+	//char server_ip[14]="192.168.1.102";
+	//int server_port = 5000;
+
+
+	//Conexão com servidor
+	SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+	printf("Socket criado\n");
+	memset(&sa, 0, sizeof sa);
+	sa.sin_family = AF_INET;
+	sa.sin_port = htons(server_port);
+	res = inet_pton(AF_INET, server_ip, &sa.sin_addr);
+	if (connect(SocketFD, (struct sockaddr *)&sa, sizeof sa) == -1) {
+	perror("connect failed");
+	close(SocketFD);
+	exit(EXIT_FAILURE);
+	} else {
+	  printf("Connected to server address %s:%d\n",server_ip, server_port);
+	}
+
+	//Imprimindo a data nos displays 7seg
+	memset(&buf, 0, sizeof(buf)/sizeof(char)); // Clear the buffer.
+	if (recv(SocketFD, buf, sizeof(buf), 0) < 0) {
+		perror("Recv()date");
+		exit(EXIT_FAILURE);
+	}else{
+		printf("Msg recebida: %s\n", buf);
+		date = atoi(buf);
+	}
+
+	//Loop para coleta de comandos
+	while (1){
+
+	  //Leitura dos switches e dos botoes
+	  sw = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_PIO_BASE) & 0x07;
+	  but = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_PIO_BASE) & 0x0F;
+
+		if(flag == 0) // estado de escolha
+		{
+			//Impressao no display lcd
+			if(sw==0){LCD_Line1(); LCD_Show_Text(Text); LCD_Line2(); LCD_Show_Text(Text00);}
+			else if(sw==1){LCD_Line1(); LCD_Show_Text(Text); LCD_Line2(); LCD_Show_Text(Text01);}
+			else if(sw==2){LCD_Line1(); LCD_Show_Text(Text); LCD_Line2(); LCD_Show_Text(Text10);}
+			else if(sw==7){LCD_Line1(); LCD_Show_Text(Text100a); LCD_Line2(); LCD_Show_Text(Text100b);}
+			else {LCD_Line1(); LCD_Show_Text(Text); LCD_Line2(); LCD_Show_Text(Text11);}
+
+			seg7_show(SEG7_DISPLAY_BASE,date);
+
+			//KEY1 envia o pedido conforme os SW abaixo:
+			if(but == 13) {
+				flag = 1;
+				if(sw == 0){
+					choice = 1;
+					if (send(SocketFD, reqA, sizeof(reqA), 0) < 0){
+						perror("Send()");
+						exit(EXIT_FAILURE);
+					}else{
+						printf("Request sent: triangle wave\n");
+					}
+				}else if(sw == 1){
+					choice = 2;
+					if (send(SocketFD, reqB, sizeof(reqB), 0) < 0){
+						perror("Send()");
+						exit(EXIT_FAILURE);
+					}else{
+						printf("Request sent: sawtooth wave\n");
+					}
+				}else if(sw == 2){
+					choice = 3;
+					if (send(SocketFD, reqC, sizeof(reqC), 0) < 0){
+						perror("Send()");
+						exit(EXIT_FAILURE);
+					}else{
+						printf("Request sent: square wave\n");
+					}
+				}else if(sw == 7){
+					choice = 5;
+					if (send(SocketFD, reqD, sizeof(reqD), 0) < 0) {
+						perror("Send()");
+						exit(EXIT_FAILURE);
+					}else{
+						flag = 2;
+						printf("Request sent: disconnect\n");
+					}
+				}else{
+					choice = 4;
+					if (send(SocketFD, reqE, sizeof(reqE), 0) < 0){
+						perror("Send()");
+						exit(EXIT_FAILURE);
+					}else{
+						printf("Request sent: no wave\n");
+					}
+				}
+				//recebimento de mensagens do servidor
+				memset(&buf, 0, sizeof(buf)/sizeof(char)); // Clear the buffer.
+				if (recv(SocketFD, buf, sizeof(buf), 0) < 0) {
+					perror("Recv()");
+					exit(EXIT_FAILURE);
+				}else{
+					printf("Msg recebida: %s\n", buf);
+					wave_cod = atoi(buf);
+		  			printf("Wave_cod: %d\n", wave_cod);
+				}
+			}
+		  	}else if(flag == 1) // geracao da onda
+		  	{
+		  		printf("Inicio da execucao\n");
+		  		LCD_Line1(); LCD_Show_Text("Running-K2 stop");
+
+		  		//Loop de funcionamento
+		  		while (flag == 1){
+		  			//leitura dos botoes para verificar se houve nova escolha ou parada
+		  			but = IORD_ALTERA_AVALON_PIO_DATA(BUTTON_PIO_BASE) & 0x0F;
+		  			if (but == 11) {
+		  				flag = 0;
+		  				printf("Execucao parada\n");
+
+		  			}
+		  			//Funcionamento do gerador
+		  			//Escrita do comando no gerador
+		  			IOWR (WG_0_BASE,0,wave_cod);
+		  			printf("Wave_cod: %d\n", wave_cod);
+
+		  			//Leitura do gerador
+		  			wave_value=IORD (WG_0_BASE,0);
+		  			printf("Wave: %d\n", wave_value);
+
+		  			seg7_show(SEG7_DISPLAY_BASE,wave_value);
+		  			msleep(100);
+		  		}
+
+		  	}else if(flag == 2) // Desconectado (deve dar run novamente)
+		  	{
+		  		LCD_Line1(); LCD_Show_Text("Disconnected    ");
+		  		LCD_Line2(); LCD_Show_Text("     from server");
+
+		  		while (flag == 2){ //loop infinito
+
+		  		}
+		  	}
+
+		  	//lastbut=but;
+
+	    msleep(100);
+  }
+}
+
+/* Main creates a single task, SSSInitialTask, and starts task scheduler.
+ */
+
+int main (int argc, char* argv[], char* envp[])
+{
+  
+  INT8U error_code;
+
+  DM9000A_INSTANCE( DM9000A_0, dm9000a_0 );
+  DM9000A_INIT( DM9000A_0, dm9000a_0 );
+
+  /* Clear the RTOS timer */
+  OSTimeSet(0);
+
+  /* SSSInitialTask will initialize the NicheStack
+   * TCP/IP Stack and then initialize the rest of the Simple Socket Server example
+   * RTOS structures and tasks.
+   */
+  error_code = OSTaskCreateExt(SSSInitialTask,
+                             NULL,
+                             (void *)&SSSInitialTaskStk[TASK_STACKSIZE],
+                             SSS_INITIAL_TASK_PRIORITY,
+                             SSS_INITIAL_TASK_PRIORITY,
+                             SSSInitialTaskStk,
+                             TASK_STACKSIZE,
+                             NULL,
+                             0);
+  alt_uCOSIIErrorHandler(error_code, 0);
+
+  /*
+   * As with all MicroC/OS-II designs, once the initial thread(s) and
+   * associated RTOS resources are declared, we start the RTOS. That's it!
+   */
+  OSStart();
+  
+  while(1); /* Correct Program Flow never gets here. */
+
+  return -1;
+}

@@ -1,0 +1,10 @@
+
+**** Build of configuration Nios II for project wgen21 ****
+
+make all 
+Info: Building ../wgen21_bsp/
+make --no-print-directory -C ../wgen21_bsp/
+[BSP build complete]
+[wgen21 build complete]
+
+**** Build Finished ****
