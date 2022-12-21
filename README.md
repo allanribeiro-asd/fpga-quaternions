@@ -45,6 +45,11 @@ Na aba "Generation"
     Escolha "None" em "Simulation" e "Testbench System"
     Em "Synthesis", escolha "VHDL" e marque a opção "Create block symbol file"
     Em seguida, clique em "Generate"
+Feche o Qsys e abra o Eclipse em "fpga\software"
+    Clique com o direito do mouse em "server1" e selecione "Clean Project"
+    Faça o mesmo para "server1_bsp"
+    
+
     
 
 	nios2-download -g <bin>
