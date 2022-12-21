@@ -46,14 +46,17 @@ Na aba "Generation"
     Em "Synthesis", escolha "VHDL" e marque a opção "Create block symbol file"
     Em seguida, clique em "Generate"
 Feche o Qsys e abra o Eclipse em "fpga\software"
-    Clique com o direito do mouse em "server1" e selecione "Clean Project"
+    Clique com o direito do mouse em "server1" e selecione "Clean Project" (ou em "Build Configurations" e "Clean All")
     Faça o mesmo para "server1_bsp"
     Expanda a pasta do BSP
         Abra os arquivos: "settings.bsp", "settings.bsp~" e "create-this-bsp"
         Os dois primeiros possuem os caminhos que levam ao bsp e ao sopcinfo do projeto, substitua com o caminho do seu diretório.
         "create-this-bsp" tem apenas o caminho do sopcinfo, substitua-o também pelo seu caminho.
         Salve os arquivos
-    De "Build Project" em "server1_bsp" e em seguida no "server1"    
+    Na parte inferior do Eclipse, vá em "Problems" selecione e apague todas as linhas (se houver alguma)
+        As vezes, o Eclipse aponta erros que não foram gerados durante a compilação do projeto, dessa maneira, temos certeza que, se aparecerem, os erros são de fato da copilação.
+    Feche todos os arquivos fonte abertos.
+    De "Build Project" em "server1_bsp" e em seguida no "server1".
         
     
 
