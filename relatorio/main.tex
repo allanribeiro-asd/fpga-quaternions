@@ -29,8 +29,8 @@ abordagem dos ângulos de Euler.
 	Fez se o uso dos dados de giroscópio e acelerômtetros de um
 smartphone, descritos em um csv, fazendo-se a amostragem em tempo da
 leitura da aceleração das variações, em eixo x, y e z. Os dados são
-então filtrados de string para float, processados por um socket,
-escrito em python, que por sua vez realizaria a conexão com a placa.
+então filtrados de string para ponto flutuante, processados por um socket,
+escrito em python, que por sua vez realiza a conexão com a placa.
 
 	Na placa Cyclone II, foram escritos arquivos em VHDL que fazem
 a abstração do uso de registradores para guardar um quaternion, sendo
@@ -41,25 +41,58 @@ quaternions recebidos.
 
 	Sem sucesso, o presente relatório dá visão para problemas que
 futuros desenvolvedores terão, se usada a mesma abordagem. Dentre os
-inúmeros, lista-se o empecilho principal: uma operação efetiva de multiplicação. Os
-procedimentos são detalhados abaixo.
+inúmeros, lista-se o empecilho principal: uma operação efetiva de
+multiplicação. Os procedimentos são detalhados abaixo.
 
-	Alguns pontos evoluídos no trabalho, importante que leitores
-saibam é que a estrutura para a multiplicação dos quaternions em sí
-está pronta, sendo necessária a correção das operações. Um testbench
-também foi elaborado para uso com os sources disponíveis, e está
-funcional. O parsing dos dados também foi realizado ,e as respectivas
-funções estão prontas, além de um envio efetivo realizado.
+	Alguns pontos importantes que leitores devem saber é que a
+estrutura para a multiplicação dos quaternions em sí está pronta,
+sendo necessária a correção das operações. Um testbench também foi
+elaborado para uso com os sources disponíveis, e está funcional. O
+parsing dos dados também foi realizado, e as respectivas funções estão
+prontas, além de um envio efetivo realizado.
 
 \newpage
 
 \section{Desenvolvimento do projeto}
 
+\subsection{Aquisição de dados}
+
+	Para amostrar os dados a serem usados no projeto, foi feito
+uso do phyphox[1], e sua funcionalidade de leitura de diversos
+sensores de um dispositivo que rode android. Este aplicativo permite a
+visualização em tempo real das métricas de diversos sensores, além da
+captura e exportação dos dados em CSV, um formato padrão em texto de
+armazenamento de dados.
+
+	Os dados foram exportados e disponibilizados num arquivo, que
+por sua vez é processada pelo servidor, que mais tarde alimenta a
+placa com os dados. A formatação transforma a tupla de valores de
+string (tempo, qx, qy e qz) em pontos flutuantes com a mesma quantidade de casas
+decimais. Isso é importante para facilitar a entrada e armazenamento
+dos dados em placa. Mais tarde, serão codificados novamente em string
+para envio efetivo pela rede.
+
 \subsection{Conexão de rede}
 
-	A conexão TCP/IP com a placa Altera DE2 Cyclone II foi
+	A conexão em sí foi construída em 2 partes. Primeiro, um
+servidor em python espera por uma conexão em socket, que roda em um
+computador à parte. Chamar-se-à de servidor. O servidor, após filtrar
+os pontos, os envia em tupla à placa, um após o outro. Uma vez
+enviados, espera por uma tupla do mesmo tipo da placa.
+
+	A conexão TCP/IP com a placa Altera DE2 Cyclone II, cliente, foi
 projetada com base no projeto "Wave Gen" realizado pelo aluno Luciano Bonzatto
-, no segundo semestre de 2022. A conexão foi estabelecida com sucesso,
+, no segundo semestre de 2022. Estabelecida com sucesso, é necessário
+a especificação do endereço de servidor a contatar.
+
+	Importante notar que a placa recebe uma string, e não uma
+tupla. Futuros esforços devem ser concentrados na conversão da string
+recebida, novamente para uma tupla, e em seguida em ponto flutuante.
+
+	Os dados são, por fim, escritos em 3 registradores internos da
+placa, um como indicador de operação (load e mult), um como buffer, e
+um terceiro acumulador de operações, que é lido ao final das operações
+com todos os quaternions desejados, e é devolvido ao servidor.
 
 \subsection{Multiplicação}
 
