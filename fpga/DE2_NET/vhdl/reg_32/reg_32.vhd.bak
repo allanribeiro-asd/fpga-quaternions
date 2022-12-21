@@ -1,0 +1,8 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+Entity bram_interface is
+	PORT(	CLK:				IN std_logic;
+			RST:				IN std_logic);
+end entity;

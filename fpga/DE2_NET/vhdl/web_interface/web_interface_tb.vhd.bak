@@ -1,0 +1,188 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+Entity bram_interface_tb is
+end entity;
+
+Architecture a_bram_interface_tb of bram_interface_tb is
+component bram_interface is
+	PORT(	CLK:			IN std_logic;
+			RST:			IN std_logic;
+			CS:			IN std_logic;
+			READ_EN:		IN std_logic;
+			WRITE_EN:	IN std_logic;
+			ADD:			IN std_logic_vector (1 downto 0);
+			WRITEDATA:	IN  std_logic_vector(31 downto 0);
+			READDATA:	OUT std_logic_vector(31 downto 0));
+end component;
+
+TYPE state_type is (stop, idle, write_add, write_data, write_controle, write_stop, read_add, read_controle, read_stop);
+signal rst, clk: std_logic;
+signal READDATA, WRITEDATA: std_logic_vector(31 downto 0);
+signal ADD: std_logic_vector(1 downto 0);
+signal state: state_type;
+signal CS, WRITE_EN, READ_EN: std_logic;
+signal wt_address: integer;
+
+begin  
+	DUT: bram_interface port map(		CLK			=> clk,
+												RST			=> rst,
+												CS				=> CS,
+												READ_EN		=> READ_EN,
+												WRITE_EN		=> WRITE_EN,
+												ADD			=> ADD,
+												WRITEDATA	=> WRITEDATA,
+												READDATA		=> READDATA);
+	gera_rst:process 
+	begin 
+		rst <= '0';
+		wait for 15 ns;
+		rst <= '1';
+		wait;
+	end process;
+
+	gera_clk:process 
+	begin 
+		clk <= '0';
+		wait for 10 ns;
+		clk <= '1';
+		wait for 10 ns;
+	end process;
+
+	gera_data_we_rd_add_cs : process (rst, CLK)
+		variable counter: integer;
+	begin
+		If rst = '0' then
+			counter    := 0;
+			state      <= idle;
+			
+		Elsif CLK' event and CLK = '1' then
+			counter := counter + 1;
+			case state is
+				when idle => 
+					state <= write_add;
+					counter := 0;
+					wt_address <= 0;
+				when write_add => 
+					state <= write_data;
+					counter := 0;
+					wt_address <= wt_address + 1;
+				when write_data =>
+					state <= write_controle;
+					counter := 0;     
+				when write_controle =>
+					state <= write_stop;
+					counter := 0;
+				when write_stop =>
+					If counter = 2 then
+						counter := 0;
+						If wt_address = 1024 then
+							state <= read_add;
+							wt_address <= 0;
+						Else
+							state <= write_add;
+						end If;
+					end If;
+				when read_add => 
+					state <= read_controle;
+					counter := 0;
+				when read_controle =>
+					If counter =3 then
+						state <= read_stop;
+						counter := 0;
+					end If;
+				when read_stop =>
+					If counter = 3 then
+						counter := 0;
+						If wt_address = 1024 then
+							state <= stop;
+							wt_address <= 0;
+						Else
+							state <= read_add;
+							wt_address <= wt_address + 1;
+						end If;
+					end If;
+				when stop => 
+					state <= stop;
+					counter := 0;
+		  end case;
+		end if;
+	End process;
+
+	process(state)
+		variable counter, rd_address: integer;
+		variable arr: string(1 to 34);
+	begin
+		case state is
+			when idle =>
+			   CS	<= '0';
+			   READ_EN <= '0';
+			   WRITE_EN <= '0';
+			   ADD <= "00";
+			   WRITEDATA <= (others => '0');
+				rd_address := 0;
+				arr := "LUCIANO BONZATTO JUNIOR +++---+++ ";
+				counter := 1;
+				
+			when write_add =>
+			   CS	<= '1';
+			   READ_EN	<= '0';
+			   WRITE_EN	<= '1';
+			   ADD	<= "00";
+			   WRITEDATA  <= std_logic_vector(to_signed(wt_address, 32));
+				
+			when write_data =>
+			   CS	<= '1';
+			   READ_EN	<= '0';
+			   WRITE_EN	<= '1';
+			   ADD	<= "01";
+			   WRITEDATA  <= std_logic_vector(to_signed(character'pos(arr(counter)), 32));
+				counter := counter + 1;
+				If counter = 35 then
+					counter := 1;
+				end If;
+				
+			when write_controle =>
+			   CS	<= '1';
+			   READ_EN	<= '0';
+			   WRITE_EN	<= '1';
+			   ADD	<= "10";
+			   WRITEDATA  <= std_logic_vector(to_signed(1, 32));
+				
+			when write_stop =>
+			   CS	<= '0';
+			   READ_EN	<= '0';
+			   WRITE_EN	<= '0';
+			   ADD	<= "00";
+			   WRITEDATA  <= std_logic_vector(to_signed(0, 32));
+				
+			when read_add =>
+			   CS	<= '1';
+			   READ_EN	<= '1';
+			   WRITE_EN	<= '1';
+			   ADD	<= "00";
+			   WRITEDATA  <= std_logic_vector(to_signed(wt_address, 32));
+				
+			when read_controle =>
+			   CS	<= '1';
+			   READ_EN	<= '1';
+			   WRITE_EN	<= '1';
+			   ADD	<= "10";
+			   WRITEDATA  <= std_logic_vector(to_signed(2, 32));
+				
+			when read_stop =>
+			   CS	<= '0';
+			   READ_EN	<= '0';
+			   WRITE_EN	<= '0';
+			   ADD	<= "00";
+			   WRITEDATA  <= std_logic_vector(to_signed(0, 32));
+				
+			when stop =>
+			   CS	<= '0';
+			   READ_EN <= '0';
+			   WRITE_EN <= '0';
+		 end case;
+	end process;
+End architecture;
+

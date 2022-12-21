@@ -1,0 +1,142 @@
+\documentclass [12pt,oneside] {article}
+\include{packages} % incluir pacotes e configurações
+\begin {document}
+
+%==========================================================================
+\title {Calculo do deslocamento de corpos usando Quatérnions}
+
+\author {
+	Allan Ribeiro \\
+	2037807 \\
+	\and
+	Lucas Perin Silva Leyser \\
+	1860275
+}
+
+\date {21 de Dezembro de 2022}
+\maketitle
+%==========================================================================
+
+%==========================================================================
+\section{Introdução}
+%==========================================================================
+
+	A intenção era fazer o uso de FPGA para cálculo do
+deslocamento de uma partícula no tempo fazendo uso da abstração de
+quaternions, que evita problemas algébricos, diferentemente da
+abordagem dos ângulos de Euler.
+
+	Fez se o uso dos dados de giroscópio e acelerômtetros de um
+smartphone, descritos em um csv, fazendo-se a amostragem em tempo da
+leitura da aceleração das variações, em eixo x, y e z. Os dados são
+então filtrados de string para float, processados por um socket,
+escrito em python, que por sua vez realizaria a conexão com a placa.
+
+	Na placa Cyclone II, foram escritos arquivos em VHDL que fazem
+a abstração do uso de registradores para guardar um quaternion, sendo
+descrito como o valor normalizado de dimensão única. Foram usados 2
+registradores, um como buffer, e outro que acumula as operações subse-
+quentes, devolvendo o resultante da multiplicação de todos os
+quaternions recebidos.
+
+	Sem sucesso, o presente relatório dá visão para problemas que
+futuros desenvolvedores terão, se usada a mesma abordagem. Dentre os
+inúmeros, lista-se o empecilho principal: uma operação efetiva de multiplicação. Os
+procedimentos são detalhados abaixo.
+
+	Alguns pontos evoluídos no trabalho, importante que leitores
+saibam é que a estrutura para a multiplicação dos quaternions em sí
+está pronta, sendo necessária a correção das operações. Um testbench
+também foi elaborado para uso com os sources disponíveis, e está
+funcional. O parsing dos dados também foi realizado ,e as respectivas
+funções estão prontas, além de um envio efetivo realizado.
+
+\newpage
+
+\section{Desenvolvimento do projeto}
+
+\subsection{Conexão de rede}
+
+	A conexão TCP/IP com a placa Altera DE2 Cyclone II foi
+projetada com base no projeto "Wave Gen" realizado pelo aluno Luciano Bonzatto
+, no segundo semestre de 2022. A conexão foi estabelecida com sucesso,
+
+\subsection{Multiplicação}
+
+	Para o cálculo da multiplicação dos quaternos, foram
+utilizados sinais do tipo "sfixed" que utiliza um ponto fixo
+determinando qual a parte inteira e qual a parte decimal do valor
+recebido, que é então armazenado em um registrador de 32 bits. Isso
+resulta em uma precisão de $2^{-15}$ nas operações.
+
+	A operação, infelizmente, apresenta um problema: em teste de
+mesa, a tentativa de multiplicar 0.5 por 0.5 resulta no deslocamento
+errôneo dos bits.
+
+\begin{footnotesize}
+\begin{verbatim}
+	0.5 * 0.5 = 0b0010 * 0b0010 = 0b0001 = 0.25 (caso ideal)
+
+	0.5 * 0.5 = 0b0010 * 0b0010 = 0b000001 = 0.0625 (caso real)
+\end{verbatim}
+\end{footnotesize}
+
+Na tentativa de resolver o problema, não foram feitos testes de outras
+operações, uma vez que os esforços passaram a se concentrar no envio
+dos dados à placa.
+
+	Devido à falta de suporte a esse tipo de sinal, foi preciso
+utilizar portas do tipo \texttt{std\_logic\_vector} para o recebimento dos
+valores e a própria FPGA faz a cópia desse valor para um sinal do tipo
+"sfixed". Partimos do pressuposto que, como os valores são sinalizados
+e entre 0 e 1, sempre teríamos dois bits iniciais, o primeiro para o
+sinal e o segundo para a parte inteira do valor, e o restante é a
+parte decimal do valor, ou seja, utilizando um sinal com o ponto fixo
+entre o segundo e terceiro MSB do \texttt{std\_logic\_vector} a cópia pode ser
+feita diretamente, bit a bit.
+
+	Foi-se feito a tentativa de abstrair outra forma de cálculo:
+receber os dados em binário, e faze r a operação bit a bit. Outro
+problema apareceu aqui através da  Os principais problemas residem na
+abstração usada para fazer a multiplicação entre os pontos. No caso de
+um dos números serem negativos, a multimplicação em complemento de 2
+não foi implementada com sucesso. Resolvido este problema, a
+multiplicação deve funcionar efetivamente.
+
+	Outra tentativa consistiu em trabalhar com inteiros,
+fazendo-se shift dos bits, multiplicando-os, e retornando à posição
+original. Ocorreram os mesmos problemas da abordagem por complemento
+de 2.
+
+\newpage
+%==========================================================================
+\section{Conclusão e recomendações gerais}
+%==========================================================================
+
+	O projeto teve avanços, e está perto de estar completo.
+Novamente, a conexão de rede funciona. A multiplicação também, mas existem erros na
+operação.
+
+	Se possível, troque a versão da placa para evitar problemas de
+licença, problemas de compilação e geração de componentes/circuitos
+(Qsys).
+
+	A forma como a multiplicação foi feita é dependente da
+biblioteca ieee\_proposed, representada pelos arquivos
+\texttt{fixed\_float\_types\_c.vhdl, float\_pkg\_c.vhdl} e
+\texttt{fixed\_pkg\_c.vhdl}. Os três
+tem problemas com versões de vhdl, cujo dialeto deve ser 2008.
+
+	As bibliotecas deve ser inserida como arquivos do projeto no
+Quartus (caso simulação em RTL), no Qsys (para geração dos
+componentes), e compiladas internamente do ModelSim (para simulação em
+RTL).
+
+	A multiplicação em binário na FPGA é considerada, por muitas
+referências, como uma área obscura para se implementar. Sem sucesso,
+algumas recomendações são: implementar uma lógica de complemento de 2
+funcional, uso de outro tipo preferível (real não é sintetizável).
+
+\end{document}
+%==========================================================================
+

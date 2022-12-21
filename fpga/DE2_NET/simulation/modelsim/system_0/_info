@@ -1,0 +1,3125 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\hadryan\clones\vhdl_fpu\DE2_NET\simulation\modelsim
+valtera_avalon_sc_fifo
+I3j^_P6C<Y1YSaE1znGgWm2
+VjOzUMS5nAQIa6?lLKEfID0
+Z1 dC:\Users\hadryan\clones\vhdl_fpu\DE2_NET\simulation\modelsim
+Z2 w1671591075
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v
+L0 21
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-vlog01compat -work system_0 -O0
+Z5 !s92 -vlog01compat -work system_0 +incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules -O0
+!s100 LA]MgFh^nE2BeTjHK6ikX3
+!s108 1671591299.383000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_arb_adder
+Z6 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+I^CAlYO`1G?ZM2Qk<G8ib22
+VeEm48mj>0hhNR4acO5n:k1
+Z7 !s105 altera_merlin_arbitrator_sv_unit
+S1
+R1
+R2
+Z8 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv
+Z9 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv
+L0 228
+R3
+r1
+31
+Z10 !s108 1671591301.267000
+Z11 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z13 o-sv -work system_0 -O0
+Z14 !s92 -sv -work system_0 +incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules -O0
+!s100 1nmGPn?zF=?lBj;5iJb6a0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_arbitrator
+R6
+IX86a3=8`ZE<9z>^FeAZBI2
+VkoHZHN`N_KjQAPBBQ3eh^0
+R7
+S1
+R1
+R2
+R8
+R9
+Z15 L0 103
+R3
+r1
+31
+R10
+R11
+R12
+R13
+R14
+!s100 NgnYBc`f8T`=_NYM51MJO3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter
+R6
+IgIJANO=_d@1ML5dJQbGQ23
+V@=j7QA[ZdKcGN4KhV_^2K1
+Z16 !s105 altera_merlin_burst_adapter_sv_unit
+S1
+R1
+R2
+Z17 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv
+Z18 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv
+L0 264
+R3
+r1
+31
+Z19 !s108 1671591301.668000
+Z20 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv|
+R13
+R14
+!s100 ?l2j_zLZ@f;WVBc5ihLMQ0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_adder
+R6
+I:9LSgTJmJ?88`nGESkCac2
+VT^DWNd^gjBXG7CAj0hlQD0
+R16
+S1
+R1
+R2
+R17
+R18
+L0 55
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 ioi767^9KKE]VL^W;WMBM0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_burstwrap_increment
+R6
+I8P@V[oD=RA89_T>Bc8MK;1
+VHjbSmoaK][OE;MmVBLg=O2
+R16
+S1
+R1
+R2
+R17
+R18
+L0 40
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 Bk_[D[Tj7DF5FAJIQO]l50
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_full
+R6
+IISCV]oO?`AHQUfkB^:5AS0
+VDC]8A4@BJ2]0K3`RS4Oe60
+R16
+S1
+R1
+R2
+R17
+R18
+L0 468
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 cL6V15>gWTC@2A0N1jbcG3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_min
+R6
+I9Hd9[7fO5kQVL2IJbgY3>3
+VHB7>Umo4_PQhA:aini:bA0
+R16
+S1
+R1
+R2
+R17
+R18
+L0 98
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 7?QPnPVg;cAY3^B>[b3l42
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_subtractor
+R6
+I33ESdUASP?Jz]Y^FG<Ni>1
+Ve3BCL<XCz>dk7;O1IYNCU2
+R16
+S1
+R1
+R2
+R17
+R18
+L0 77
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 8fJMEj_Ig90OnYYk^mUmS0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_uncompressed_only
+R6
+ICRb;E]m=6mz5X`nAEbzRX0
+VT[Ib6Vh0E__m];USj<OE<1
+R16
+S1
+R1
+R2
+R17
+R18
+L0 414
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 LL:z2lBfc2IVlVWXP:jbP3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_uncompressor
+R6
+IB_Nz:3L[GY]S]bQPzPBcD1
+Vk1gIA`RY2OQ1N9QbTULJo2
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+L0 40
+R3
+r1
+31
+R13
+R14
+!s100 A:[a<zl[HWoNM=A2Fgegz0
+!s105 altera_merlin_burst_uncompressor_sv_unit
+!s108 1671591301.216000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_master_agent
+R6
+IOSGKU[_Q52BKJzeV[:RVO0
+VG[gHYg_J=R2@KnI_[bEjA0
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv
+L0 28
+R3
+r1
+31
+R13
+R14
+!s100 9?J@<=Y1`]@aGhnm<7K0V0
+!s105 altera_merlin_master_agent_sv_unit
+!s108 1671591302.248000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_master_translator
+R6
+IT9iIJSJOQ?<;HFD6FT1C33
+V0KIH7<bW[IFhHJBzB4US?0
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv
+L0 30
+R3
+r1
+31
+R13
+R14
+!s100 VI;5Z]<zF9AU51lVNEnF?1
+!s105 altera_merlin_master_translator_sv_unit
+!s108 1671591302.350000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_slave_agent
+R6
+IgJ>WKc3c7lhgBgIFPFk_53
+VekU5U46jGhemBCkL?m_og2
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv
+L0 34
+R3
+r1
+31
+R13
+R14
+!s100 gi9eV76H>9^;1LEL1MRVV2
+!s105 altera_merlin_slave_agent_sv_unit
+!s108 1671591302.188000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_slave_translator
+R6
+I[FKHS]OUVFCYgPnM7KR0^0
+VA6G6lglY;QOHbkKlTEAXC0
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv
+L0 35
+R3
+r1
+31
+R13
+R14
+!s100 1:Xj7oP`G6n@Va;eN:GPm1
+!s105 altera_merlin_slave_translator_sv_unit
+!s108 1671591302.300000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_std_arb_adder
+R6
+IWU2`nQm6jacLE;97nM<:43
+Vmlj[RYOK[eU?<77[?FBQH0
+Z22 !s105 altera_merlin_std_arbitrator_core_sv_unit
+S1
+R1
+Z23 w1671591076
+Z24 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv
+Z25 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv
+L0 211
+R3
+r1
+31
+Z26 !s108 1671591302.500000
+Z27 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv|
+Z28 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv|
+R13
+R14
+!s100 Y8k_4E]7bMQ7d[Q6biCIm1
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_std_arbitrator_core
+R6
+ITTdhh]cQY4oPJ4228m3Ba0
+Vim<bQeEd6gMYA99g3jHXb1
+R22
+S1
+R1
+R23
+R24
+R25
+R15
+R3
+r1
+31
+R26
+R27
+R28
+R13
+R14
+!s100 [1cXODCi1FcHS[P5SI?I`3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_traffic_limiter
+R6
+IFKl[699PoSV?S5ljeeAm62
+VFToJ:O^P1mK>hGEjaBQXC3
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv
+L0 44
+R3
+r1
+31
+R13
+R14
+!s100 mCFic^?9UfT??C95Co7I?2
+!s105 altera_merlin_traffic_limiter_sv_unit
+!s108 1671591301.788000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_width_adapter
+R6
+IT8kcAcRdTlm1iY=_SJk9i3
+V2j8B8W7hj9i^DJ]hQaO3J2
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv
+L0 25
+R3
+r1
+31
+R13
+R14
+!s100 ^ic^@EXdOZ0K7IWCeg^6V2
+!s105 altera_merlin_width_adapter_sv_unit
+!s108 1671591301.158000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_reset_controller
+I_[NOUgz]L;6;?If^T[4@51
+VBWWT<i0A@QcN4KE]hBS<V0
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v
+L0 29
+R3
+r1
+31
+R4
+R5
+!s100 B6Un06`Qa>_R<iVXjiIY[0
+!s108 1671591299.243000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_reset_synchronizer
+IAQdH[SaLiP6AgU:gD>:^g0
+V3CjoOZCIEdzCJgPn8]D7`2
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v
+L0 24
+R3
+r1
+31
+R4
+R5
+!s100 Hmcg=0zNAQo<>gaI^l>4b0
+!s108 1671591299.339000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_tristate_controller_aggregator
+R6
+IEcRfZijNQPX3<<oEfEmcY3
+VbfC8LigESUjKieKz4LIle1
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv
+L0 22
+R3
+r1
+31
+R13
+R14
+!s100 ]2L_`1Xf[4n2`BSCMP__`3
+!s105 altera_tristate_controller_aggregator_sv_unit
+!s108 1671591302.403000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_tristate_controller_translator
+R6
+IOBEZL76]O9B>FmKgTf:bz1
+V932]71G@ca9Q>14hgR^l62
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv
+L0 22
+R3
+r1
+31
+R13
+R14
+!s100 l@8fV1`Qc^`l?iUF6?iC53
+!s105 altera_tristate_controller_translator_sv_unit
+!s108 1671591302.451000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vAUDIO_DAC_FIFO
+I^W^Fe:OigkLIOLH<8^bN?0
+V0gTklbk1eJOm2`dX4n]e_2
+R1
+Z29 w1671591074
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@a@u@d@i@o_@d@a@c_@f@i@f@o
+!s100 k<Xm66^B>AeP_K:EnSWD`3
+!s108 1671591299.708000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDM9000A_IF
+IZhV:Raafa]M254WIFAY893
+V;86T3_53:Eah9L@d_:]6[1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@d@m9000@a_@i@f
+!s100 9Pkj86EXTnKhVP3Bk=ika3
+!s108 1671591299.529000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vFIFO_16_256
+IDYYf?EZ0f7i;PL^L[?n5n2
+VIcjn;nUYgDcWllGV_TY;d1
+R1
+R29
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v
+L0 36
+R3
+r1
+31
+R4
+R5
+n@f@i@f@o_16_256
+!s100 Y]AMJj`DQEU<Xg`1kKWNJ3
+!s108 1671591299.753000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vImg_RAM
+I83AB]BXdi81e4@^7SH`362
+VOoYE@MBQb6DE1?bW^ZjQ]3
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/Img_RAM.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/Img_RAM.v
+L0 36
+R3
+r1
+31
+R4
+R5
+n@img_@r@a@m
+!s100 fV;o[4h6baMjW^?IV6;og0
+!s108 1671591299.573000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/Img_RAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/Img_RAM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vISP1362_IF
+IJ>Uz`lV3@jnEmScn[0D_O3
+V96;TklVc^X0@?[12fWeFR0
+R1
+Z30 w1671591068
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@i@s@p1362_@i@f
+!s100 ;>WEh<l9TGAYDY8405?fd1
+!s108 1671591299.951000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSEG7_LUT
+I6<1m2;`9?UW?MSiU6KoEL0
+VUbYATRA9<`nKUR_ZQPcUN2
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@s@e@g7_@l@u@t
+!s100 3lRnIoe;o8e5_E]TUjk:T1
+!s108 1671591299.435000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSEG7_LUT_8
+I9^F1Y[jnFehdO=RSa`1G;2
+VjOSflh2zz=:;Qk67A]o5D0
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@s@e@g7_@l@u@t_8
+!s100 le]U[`[[QG]o3z:RlnYQQ0
+!s108 1671591299.483000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0
+Z31 w1671591065
+Z32 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z33 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z34 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z35 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0.vhd
+Z36 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0.vhd
+l0
+L9
+V^Im]=SadSU76D2U7BO4AY2
+Z37 OV;C;10.1d;51
+31
+Z38 !s108 1671591302.972000
+Z39 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0.vhd|
+Z40 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0.vhd|
+Z41 o-93 -work system_0 -O0
+Z42 tExplicit 1
+!s100 ?4zcUH;INk;O5c?f8k3oO2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 8 system_0 0 22 ^Im]=SadSU76D2U7BO4AY2
+l4919
+L82
+VV<E:FN]i?lf3ka7<Co53V3
+R37
+31
+R38
+R39
+R40
+R41
+R42
+!s100 id4R_zQY`=UYlci@R>IbF2
+!i10b 1
+vsystem_0_addr_router
+R6
+IOTWRF]8]Ck5fTmbOP8j`G1
+VgPf1lfWNHJDPgT61@8k[d3
+Z43 !s105 system_0_addr_router_sv_unit
+S1
+R1
+R2
+Z44 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv
+Z45 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv
+L0 86
+R3
+r1
+31
+Z46 !s108 1671591302.130000
+Z47 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv|
+Z48 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv|
+R13
+R14
+!s100 ]A>FZmD0_9CV[fNBXL8h71
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_001
+R6
+IY9H::EIPfZWV_RCbU1>fB0
+VKbnjJ<P:LcMdZDf0_Hjjb0
+Z49 !s105 system_0_addr_router_001_sv_unit
+S1
+R1
+R2
+Z50 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv
+Z51 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv
+L0 86
+R3
+r1
+31
+Z52 !s108 1671591302.071000
+Z53 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv|
+Z54 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv|
+R13
+R14
+!s100 Sagj]L8DbOKY`jh5UIWf13
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_001_default_decode
+R6
+Ik``a]?6ziQM]k2i=:<OmX0
+V93PQ=jWYDlE:ZjLO8LhA:2
+R49
+S1
+R1
+R2
+R50
+R51
+L0 45
+R3
+r1
+31
+R52
+R53
+R54
+R13
+R14
+!s100 ?kGg1hKgleAH@X@W>CRYj0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_default_decode
+R6
+IBNYg]IcQlz`5XnWlP3Qh;3
+VlmFeCeWf1?Vnj2kEJIG?G1
+R43
+S1
+R1
+R2
+R44
+R45
+L0 45
+R3
+r1
+31
+R46
+R47
+R48
+R13
+R14
+!s100 CTnN@o2eBXS1FM9@kZnY11
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_audio_0_avalon_slave_0_translator
+R31
+R32
+R33
+R34
+R1
+Z55 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd
+Z56 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd
+l0
+L9
+VFFTlA51>E`[1jB19:I2CJ2
+R37
+31
+Z57 !s108 1671591304.779000
+Z58 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd|
+Z59 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd|
+R41
+R42
+!s100 ?;8AhmSj3U49eKgbBY7mb2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 42 system_0_audio_0_avalon_slave_0_translator 0 22 FFTlA51>E`[1jB19:I2CJ2
+l148
+L78
+V[WHbiV]^A2;GA96^L`QQK2
+R37
+31
+R57
+R58
+R59
+R41
+R42
+!s100 EPEkea?VKe48Ro4FKId<>0
+!i10b 1
+Esystem_0_burst_adapter
+R31
+R32
+R33
+R34
+R1
+Z60 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd
+Z61 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd
+l0
+L9
+VMC9;JHf>EiJ_6dMcIEhh;0
+R37
+31
+Z62 !s108 1671591303.921000
+Z63 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd|
+Z64 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd|
+R41
+R42
+!s100 J^Uf8@?IlM_FE718bbz3z3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 22 system_0_burst_adapter 0 22 MC9;JHf>EiJ_6dMcIEhh;0
+l112
+L60
+V3V2:`28o18XoXkLkIXRGW3
+R37
+31
+R62
+R63
+R64
+R41
+R42
+!s100 RdJ6b`?o`k0aB:kfg_3eT0
+!i10b 1
+Esystem_0_burst_adapter_001
+R31
+R32
+R33
+R34
+R1
+Z65 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd
+Z66 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd
+l0
+L9
+VVzRRGJILY^_3:=1J7LmSK3
+R37
+31
+Z67 !s108 1671591303.980000
+Z68 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd|
+Z69 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd|
+R41
+R42
+!s100 ejR:1zDBa]:3zkFQ51PS?2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 26 system_0_burst_adapter_001 0 22 VzRRGJILY^_3:=1J7LmSK3
+l112
+L60
+Ve:X^Z]CJSOmnP5:aDGgWz1
+R37
+31
+R67
+R68
+R69
+R41
+R42
+!s100 ^[3gIYOMzlgXNdAWI8`083
+!i10b 1
+vsystem_0_button_pio
+I]E=[;3gjPYeR`=3RTIeJH1
+VB`mfP:0`^aZf1Yd?I20aa2
+R1
+R30
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 `9Mzd5ZGZC3NMPPRG1TFH1
+!s108 1671591300.160000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cfi_flash_0
+IATQh8]FQQfMe@NkYR[7Ej0
+Vm?8VIKi_L5PT4ao3JZk7;1
+R1
+Z70 w1671591073
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v
+L0 9
+R3
+r1
+31
+R4
+R5
+!s100 ]2>FDfiYMfV2C;RozmeP83
+!s108 1671591299.848000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_cfi_flash_0_uas_translator
+R31
+R32
+R33
+R34
+R1
+Z71 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd
+Z72 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd
+l0
+L9
+VhlWg@ZJBm]6A2ZA[GK2Uf0
+R37
+31
+Z73 !s108 1671591304.217000
+Z74 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd|
+Z75 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd|
+R41
+R42
+!s100 ;4`kD]IR2gkeT6igJ60`:0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 35 system_0_cfi_flash_0_uas_translator 0 22 hlWg@ZJBm]6A2ZA[GK2Uf0
+l148
+L78
+V>3EWM?>>KgDY=n6JWY5I`0
+R37
+31
+R73
+R74
+R75
+R41
+R42
+!s100 4>^[AQizk[3CV^8@n1[Y[1
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent
+R31
+R32
+R33
+R34
+R1
+Z76 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd
+Z77 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+VI]j[X;4L8`zeFW<`LQ5_23
+R37
+31
+Z78 !s108 1671591303.514000
+Z79 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd|
+Z80 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd|
+R41
+R42
+!s100 a0<`Xg1Ji1LbaJLm;hCI@2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 66 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent 0 22 I]j[X;4L8`zeFW<`LQ5_23
+l178
+L93
+V<KBmoo@`V`:`25i@nXg]51
+R37
+31
+R78
+R79
+R80
+R41
+R42
+!s100 [^FK=RI7XHQC2XeUcoEAZ2
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo
+R31
+R32
+R33
+R34
+R1
+Z81 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+Z82 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+l0
+L9
+V5LPF^cnWn_oXESgT];lL=2
+R37
+31
+Z83 !s108 1671591303.333000
+Z84 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+Z85 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+R41
+R42
+!s100 5M7V_4HPgEMK0>P73zSPM0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 77 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo 0 22 5LPF^cnWn_oXESgT];lL=2
+l98
+L53
+VUMFYiFNDYgI8WPDT3YC0:3
+R37
+31
+R83
+R84
+R85
+R41
+R42
+!s100 6S8E?jfOJJ0DG^dmloU1S2
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo
+R31
+R32
+R33
+R34
+R1
+Z86 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z87 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VI8C6cN<UF1:WA[HBV>8bI0
+R37
+31
+Z88 !s108 1671591303.269000
+Z89 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z90 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R41
+R42
+!s100 O9[6oX>^hfIY[j8AbEHOY2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 75 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 I8C6cN<UF1:WA[HBV>8bI0
+l98
+L53
+VCZhOg;XG:[029EA1kooMS0
+R37
+31
+R88
+R89
+R90
+R41
+R42
+!s100 1JJhF>Wm;dgS;8AMSJCjg2
+!i10b 1
+vsystem_0_cmd_xbar_demux
+R6
+Ij9c^<B1^6o1?@XnO4izL;3
+V:1XF5<g5F?59@lWicKnm>3
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 cE<ae9Ka[^Db<9;^k@dB61
+!s105 system_0_cmd_xbar_demux_sv_unit
+!s108 1671591301.620000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cmd_xbar_demux_001
+R6
+IK57N5YJHPEJ0o3TzMGF?93
+VVWSfaOefc1<O6cSRoGQUC2
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 3RiA_gA>N14QbHcaGj9]O2
+!s105 system_0_cmd_xbar_demux_001_sv_unit
+!s108 1671591301.569000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cmd_xbar_mux
+R6
+I=?e=M^Nd5D8AC3TTHlaF02
+V9gj[D1>@YGmLAHSF@FmeW2
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 ^bCSPbV43ebE=>i>MjVf91
+!s105 system_0_cmd_xbar_mux_sv_unit
+!s108 1671591301.519000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_cpu_0_data_master_translator
+R31
+R32
+R33
+R34
+R1
+Z91 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd
+Z92 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd
+l0
+L9
+VmKX4l4nl9YNQRZbP6SlUf1
+R37
+31
+Z93 !s108 1671591303.862000
+Z94 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd|
+Z95 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd|
+R41
+R42
+!s100 U@XnR78g32Kn`KogM=>U93
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 37 system_0_cpu_0_data_master_translator 0 22 mKX4l4nl9YNQRZbP6SlUf1
+l140
+L74
+VZW0LNdP[TY?Xdf_=f_4EM2
+R37
+31
+R93
+R94
+R95
+R41
+R42
+!s100 [IchcDLT9Z0WDOgf<bbf_0
+!i10b 1
+Esystem_0_cpu_0_instruction_master_translator
+R31
+R32
+R33
+R34
+R1
+Z96 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd
+Z97 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd
+l0
+L9
+VLgH7:e`EkM9E91BZNdDT71
+R37
+31
+Z98 !s108 1671591303.803000
+Z99 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd|
+Z100 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd|
+R41
+R42
+!s100 K4`?CM8O_9dm7:`[J_7oi2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 44 system_0_cpu_0_instruction_master_translator 0 22 LgH7:e`EkM9E91BZNdDT71
+l140
+L74
+V<GC;l;0IYSSFdK<Z]7JbJ3
+R37
+31
+R98
+R99
+R100
+R41
+R42
+!s100 AGi=;n_bO1@PFYJAil:?P1
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator
+R31
+R32
+R33
+R34
+R1
+Z101 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd
+Z102 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd
+l0
+L9
+V;kHOJG52N]AVTI<QLAA2a0
+R37
+31
+Z103 !s108 1671591304.041000
+Z104 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd|
+Z105 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd|
+R41
+R42
+!s100 G8TLbo>Yk>>gbWZ_YL[Xj3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 43 system_0_cpu_0_jtag_debug_module_translator 0 22 ;kHOJG52N]AVTI<QLAA2a0
+l148
+L78
+VzJf`6_Nei`jS6IBI1?NTz3
+R37
+31
+R103
+R104
+R105
+R41
+R42
+!s100 EYPfUAoQ0dhRR:G?dnF@00
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent
+R31
+R32
+R33
+R34
+R1
+Z106 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd
+Z107 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+VW[?H]0S4d:<z9;dm_z1JJ1
+R37
+31
+Z108 !s108 1671591303.394000
+Z109 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd|
+Z110 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd|
+R41
+R42
+!s100 keGelAoYaBOXB@AP7b[`T0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 74 system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent 0 22 W[?H]0S4d:<z9;dm_z1JJ1
+l178
+L93
+VTOm675o1PzAH8:]3WMnXX0
+R37
+31
+R108
+R109
+R110
+R41
+R42
+!s100 MPY_A8W[Y[8]FkCNeJaT22
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+R31
+R32
+R33
+R34
+R1
+Z111 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z112 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VLQd_oEHdLj7>GJiOQC1gX0
+R37
+31
+Z113 !s108 1671591303.091000
+Z114 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z115 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R41
+R42
+!s100 hR;GSDb<?U0CA9OnX=[f41
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 83 system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 LQd_oEHdLj7>GJiOQC1gX0
+l98
+L53
+VUU]U2a0=B95lLI6Ko75mo0
+R37
+31
+R113
+R114
+R115
+R41
+R42
+!s100 o>UC>[AHMfD:RfQeIE28X0
+!i10b 1
+vsystem_0_epcs_controller
+IHG^zkT6Fi1^z]j;z@6<Wn3
+VU0o;LD=7<eUjN82EGe_X_3
+R1
+Z116 w1671591066
+Z117 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v
+Z118 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v
+L0 475
+R3
+r1
+31
+Z119 !s108 1671591300.596000
+Z120 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v|
+Z121 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v|
+R4
+R5
+!s100 he?47NEj^K;WWM9ZiLiDJ3
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_epcs_controller_epcs_control_port_translator
+R31
+R32
+R33
+R34
+R1
+Z122 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd
+Z123 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd
+l0
+L9
+VQ?aV]<]bL0>HBMlY=0Pj_2
+R37
+31
+Z124 !s108 1671591304.158000
+Z125 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd|
+Z126 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd|
+R41
+R42
+!s100 TbZ2]k0KAP@2Wm9A_G7N10
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 53 system_0_epcs_controller_epcs_control_port_translator 0 22 Q?aV]<]bL0>HBMlY=0Pj_2
+l148
+L78
+VzZ0Y@MQ[182<9Va@iMe_z1
+R37
+31
+R124
+R125
+R126
+R41
+R42
+!s100 0Ac;fTjR^gQBgbNF<2`ez0
+!i10b 1
+vsystem_0_epcs_controller_sub
+IEjk?Y=e6k4anIfMm^?AcO2
+VSnOWCL7>Ao1@U]eU;JCQ<3
+R1
+R116
+R117
+R118
+L0 41
+R3
+r1
+31
+R119
+R120
+R121
+R4
+R5
+!s100 :dWzPC10=BYUTk48G<GDY3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router
+R6
+I[1?9afXIZcW23L@UG`[9^0
+VWTQF0Wb9CHDcDiI:nn4_E0
+Z127 !s105 system_0_id_router_sv_unit
+S1
+R1
+R2
+Z128 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv
+Z129 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv
+L0 86
+R3
+r1
+31
+Z130 !s108 1671591302.012000
+Z131 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv|
+Z132 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv|
+R13
+R14
+!s100 ;`obzii4RaJhh94Xz=`jK1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_001
+R6
+IcMIl3obF?5md]TeF6KSd40
+V2Zm7zA3<ldbId@FEM]z5Z0
+Z133 !s105 system_0_id_router_001_sv_unit
+S1
+R1
+R2
+Z134 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv
+Z135 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv
+L0 86
+R3
+r1
+31
+Z136 !s108 1671591301.954000
+Z137 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv|
+Z138 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv|
+R13
+R14
+!s100 H_dAndnUgGm`bCZ`gBD4U3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_001_default_decode
+R6
+Ii>m[b_0TcFcee>?ckB?4B3
+V_8:V7e:Bco2d;l`_;oN8S3
+R133
+S1
+R1
+R2
+R134
+R135
+L0 45
+R3
+r1
+31
+R136
+R137
+R138
+R13
+R14
+!s100 :k`KWzc_Yo`3>1EXzaRR>1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_003
+R6
+IY[;Df5]OgLc:U?8z3No=P3
+V^hcK1B=Bo6:NlBeB8b@;_3
+Z139 !s105 system_0_id_router_003_sv_unit
+S1
+R1
+R2
+Z140 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv
+Z141 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv
+L0 86
+R3
+r1
+31
+Z142 !s108 1671591301.895000
+Z143 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv|
+Z144 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv|
+R13
+R14
+!s100 kaW0UDTKWZo8k4BSSEfmi2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_003_default_decode
+R6
+ITiF<SDfDCUOgDY_TG?4Wg3
+VIa^d2?miY259TAzd>Ub4m0
+R139
+S1
+R1
+R2
+R140
+R141
+L0 45
+R3
+r1
+31
+R142
+R143
+R144
+R13
+R14
+!s100 GGZaFnmoil?NQUlPWg2h:3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_005
+R6
+IW^YVJII?e`VVZcoN36fkL2
+V:36nQQ^]l90lg9kJG99_M1
+Z145 !s105 system_0_id_router_005_sv_unit
+S1
+R1
+R2
+Z146 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_005.sv
+Z147 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_005.sv
+L0 86
+R3
+r1
+31
+Z148 !s108 1671591301.837000
+Z149 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_005.sv|
+Z150 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_id_router_005.sv|
+R13
+R14
+!s100 K5UcTPRH7F^HgK8cZJf]S3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_005_default_decode
+R6
+IQgl?lGgB:@o@igOoc_I[j1
+VbhN_^S3lbO4k:dAfX6ehg0
+R145
+S1
+R1
+R2
+R146
+R147
+L0 45
+R3
+r1
+31
+R148
+R149
+R150
+R13
+R14
+!s100 WJ]O0<o:>VSGKiea]I=R62
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_default_decode
+R6
+IzPh9YT6T]nOQ[Ifnj[:nW0
+VAXPk?1A5`>U?Ko]G0RVYb0
+R127
+S1
+R1
+R2
+R128
+R129
+L0 45
+R3
+r1
+31
+R130
+R131
+R132
+R13
+R14
+!s100 nZa;JW>KSaiHkbGRXLllQ3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_irq_mapper
+R6
+Ifd4cbD?LUEb48TB:FHn;M1
+V;AZ5Z]Toko2ni?Ud3YPob0
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv
+L0 31
+R3
+r1
+31
+R13
+R14
+!s100 N0]TVCmnBSHi6D?PWJhe33
+!s105 system_0_irq_mapper_sv_unit
+!s108 1671591301.108000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_isp1362_hc_translator
+R31
+R32
+R33
+R34
+R1
+Z151 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd
+Z152 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd
+l0
+L9
+VLVXC?>KAVV_9@cmQHkFPA0
+R37
+31
+Z153 !s108 1671591304.718000
+Z154 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd|
+Z155 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd|
+R41
+R42
+!s100 ?mQNdflKCDKl1]aQGUZ^C2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 30 system_0_isp1362_hc_translator 0 22 LVXC?>KAVV_9@cmQHkFPA0
+l148
+L78
+VDgVJ``jlHC7]g16<dR<GG1
+R37
+31
+R153
+R154
+R155
+R41
+R42
+!s100 W2]93hH8m]0OB2Z7zfjE?3
+!i10b 1
+vsystem_0_jtag_uart_0
+Ib_0=DneUm=mfnC_6@7P9>0
+V`AZ]eEok2jZe=ILP_HQJA1
+R1
+Z156 w1671591067
+Z157 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v
+Z158 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v
+L0 327
+R3
+r1
+31
+Z159 !s108 1671591300.506000
+Z160 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v|
+Z161 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v|
+R4
+R5
+!s100 eCiK55D45h=72a8SVH8R_3
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_jtag_uart_0_avalon_jtag_slave_translator
+R31
+R32
+R33
+R34
+R1
+Z162 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd
+Z163 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd
+l0
+L9
+VhY2QShL6C2F=a2>WAhgh[2
+R37
+31
+Z164 !s108 1671591304.339000
+Z165 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd|
+Z166 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd|
+R41
+R42
+!s100 I]kSjkQX;>`XWQE1ZYngG3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 49 system_0_jtag_uart_0_avalon_jtag_slave_translator 0 22 hY2QShL6C2F=a2>WAhgh[2
+l148
+L78
+VnmjSH4THgOdejEzSQdk0;3
+R37
+31
+R164
+R165
+R166
+R41
+R42
+!s100 g17W3Vma4@d95@e<X0F5M0
+!i10b 1
+vsystem_0_jtag_uart_0_scfifo_r
+I4=2EI<FTMST<g6;FVm2cm2
+VTG^7:`Cha18YVfKAk1]aI1
+R1
+R156
+R157
+R158
+L0 240
+R3
+r1
+31
+R159
+R160
+R161
+R4
+R5
+!s100 hGz;IiGehB04dz6HJQ37T0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_scfifo_w
+ISaBJX;mFJNXZ2g_7fOk;31
+Veng;f>AJnca055O^lOD5H2
+R1
+R156
+R157
+R158
+L0 77
+R3
+r1
+31
+R159
+R160
+R161
+R4
+R5
+!s100 m;oANjSK?V>HQDCalWXZV3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_sim_scfifo_r
+IOl38ahEN`hS@R^gU8Sci@3
+VPkc:CQTdS;YiZ2Q[FJzVH1
+R1
+R156
+R157
+R158
+L0 162
+R3
+r1
+31
+R159
+R160
+R161
+R4
+R5
+!s100 O^J]z3[fOai7g][7PR1lo3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_sim_scfifo_w
+I17TO<YK[JGN<nczd9]Y:42
+VIdD=GkJ0PO?DMLH9W4jTO1
+R1
+R156
+R157
+R158
+L0 21
+R3
+r1
+31
+R159
+R160
+R161
+R4
+R5
+!s100 F91hi?1PU3hG:C<in[H<M3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_lcd_16207_0
+InB>kH^8VGM:?cb2NoaIa81
+VzVl_Ya0ZRgdfkYTT3D<3e2
+R1
+R156
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 kQoVlY;J^n6fhnO2[[PJ_0
+!s108 1671591300.313000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_lcd_16207_0_control_slave_translator
+R31
+R32
+R33
+R34
+R1
+Z167 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd
+Z168 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd
+l0
+L9
+VREmD=X;6iT4gU0?i8JnRa1
+R37
+31
+Z169 !s108 1671591304.515000
+Z170 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd|
+Z171 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd|
+R41
+R42
+!s100 U4IB4mYA5Nl?8UhR]ShH@0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 45 system_0_lcd_16207_0_control_slave_translator 0 22 REmD=X;6iT4gU0?i8JnRa1
+l148
+L78
+V9dc<oH=KaUg58o17mHNYZ0
+R37
+31
+R169
+R170
+R171
+R41
+R42
+!s100 7QKXUdWh1iaT[kOCADgfW3
+!i10b 1
+vsystem_0_led_green
+I@LYm5EUD;`aO`I>h1kSKE1
+V9O1`gMi^3Vb4ec6SOjPDz1
+R1
+R30
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 U76gLM3O42]4<J[Rl_6mR3
+!s108 1671591300.213000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_led_red
+Iz[kVaif0WHlGLen8nk5iT3
+VPiL@<5g<=SzoNcC]jc4S73
+R1
+R156
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 Tf4f6[FMm5c9@@o7RVZaC1
+!s108 1671591300.265000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_led_red_s1_translator
+R31
+R32
+R33
+R34
+R1
+Z172 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd
+Z173 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd
+l0
+L9
+V7RdfPnO617f0Ln==^2lMK3
+R37
+31
+Z174 !s108 1671591304.594000
+Z175 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd|
+Z176 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd|
+R41
+R42
+!s100 e8AZ0O<]Rz`RXPMbJUSV<0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 30 system_0_led_red_s1_translator 0 22 7RdfPnO617f0Ln==^2lMK3
+l148
+L78
+V6CM;;:VHOVMOUgR>J@OD82
+R37
+31
+R174
+R175
+R176
+R41
+R42
+!s100 <UDeSUIkhc=UkGH3`;Kd60
+!i10b 1
+vsystem_0_rsp_xbar_demux
+R6
+IV4Uf4jg:EnQ_ZLASSZ];52
+VdCKUHVTJR>i<P27@5]kiD3
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 3QeCcZ[`6k[=Cb^9T^fBd1
+!s105 system_0_rsp_xbar_demux_sv_unit
+!s108 1671591301.472000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_demux_005
+R6
+IzH5PmdMFcoVgGI]?^00JL2
+VhecAEKWMGKeYjUf><^FQ[2
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_005.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_005.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 PV]eoQ>iizi220KOkiFE>2
+!s105 system_0_rsp_xbar_demux_005_sv_unit
+!s108 1671591301.426000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_005.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_005.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_mux
+R6
+IL5o]SMagZC5mXHlV2OUC:2
+VI7?aDU7>ZBz7GnVKSlR4A3
+S1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 ZkSoX7aK9DlLM8Z?M?]Z[1
+!s105 system_0_rsp_xbar_mux_sv_unit
+!s108 1671591301.375000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_mux_001
+R6
+IWE[GlVJ;:U1@`;WdXWaS03
+V:JXDk2WX`FnbM6KXTJ2Ji1
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 bm35W8B__]H2<]CMVHoMJ2
+!s105 system_0_rsp_xbar_mux_001_sv_unit
+!s108 1671591301.323000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_rst_controller
+R31
+R32
+R33
+R34
+R1
+Z177 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd
+Z178 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd
+l0
+L9
+VSP00@JjEUboI4>UYgN7YM2
+R37
+31
+Z179 !s108 1671591305.020000
+Z180 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd|
+Z181 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd|
+R41
+R42
+!s100 7NP>8KdZO3D^2LgWnniKa3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 23 system_0_rst_controller 0 22 SP00@JjEUboI4>UYgN7YM2
+l70
+L39
+Vc<j5cln]z@X?4M7IDJZA^3
+R37
+31
+R179
+R180
+R181
+R41
+R42
+!s100 _HL:=GK_cl0C>lCFOXVXB0
+!i10b 1
+Esystem_0_rst_controller_002
+R31
+R32
+R33
+R34
+R1
+Z182 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd
+Z183 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd
+l0
+L9
+VoUh5HLLNYA>7HNn62G23?0
+!s100 gDFlFlmAPKPnl90kQ<o8U0
+R37
+31
+!i10b 1
+Z184 !s108 1671591305.078000
+Z185 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd|
+Z186 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd|
+R41
+R42
+Artl
+R32
+R33
+R34
+DEx4 work 27 system_0_rst_controller_002 0 22 oUh5HLLNYA>7HNn62G23?0
+l70
+L39
+V2Sm^=Rc^zf@HZ[1@<MH`h0
+!s100 gFcN1VT?cMTo:KElFX@V;0
+R37
+31
+!i10b 1
+R184
+R185
+R186
+R41
+R42
+vsystem_0_SD_CLK
+I6l5MQL5efLmR<7JdAK1?63
+Vm^Ia_32TaS[T@o3CDWQH51
+R1
+R30
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v
+L0 21
+R3
+r1
+31
+R4
+R5
+nsystem_0_@s@d_@c@l@k
+!s100 =faMBlU^V7L?;ma0aQOCV1
+!s108 1671591300.002000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_SD_DAT
+I6BdF]6lUV8NIIJe^JZ;k63
+V`oBfKF?aPkjNQP5`Tg0lm2
+R1
+R30
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v
+L0 21
+R3
+r1
+31
+R4
+R5
+nsystem_0_@s@d_@d@a@t
+!s100 78TYH>KM0YRKY>leb?L4I0
+!s108 1671591300.056000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0
+I192hbA?nlzEmBV;Bf5>oL0
+VUzWXQ[>PcaKJ_:Uc;a^XO2
+R1
+R116
+Z187 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v
+Z188 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v
+L0 158
+R3
+r1
+31
+Z189 !s108 1671591300.665000
+Z190 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v|
+Z191 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v|
+R4
+R5
+!s100 AUTl^OO8JnIihW=c7HBO;3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0_input_efifo_module
+IUaiFNMdFF8Hon>5Ag2HWT1
+VKhNXTZKK^TAd9OIOHMMO53
+R1
+R116
+R187
+R188
+L0 21
+R3
+r1
+31
+R189
+R190
+R191
+R4
+R5
+!s100 l;IMEXB2mih1b=Me9n10?3
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_sdram_0_s1_translator
+R31
+R32
+R33
+R34
+R1
+Z192 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd
+Z193 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd
+l0
+L9
+VNQ6hAoo8=?Q7AjK1[<Gl@3
+R37
+31
+Z194 !s108 1671591304.100000
+Z195 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd|
+Z196 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd|
+R41
+R42
+!s100 ?TSKcdZmDU[BdUEI`0nVh2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 30 system_0_sdram_0_s1_translator 0 22 NQ6hAoo8=?Q7AjK1[<Gl@3
+l148
+L78
+VX5LO@0c0V]F`F9FeXaj0O0
+R37
+31
+R194
+R195
+R196
+R41
+R42
+!s100 @zfCn_68>AeF2AA`@S]B20
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent
+R31
+R32
+R33
+R34
+R1
+Z197 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd
+Z198 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+VX:H?XH@kZ9c]BGfN5<K380
+R37
+31
+Z199 !s108 1671591303.453000
+Z200 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd|
+Z201 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd|
+R41
+R42
+!s100 YUXN20O1AIo<E@:V<:Bg@0
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 61 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent 0 22 X:H?XH@kZ9c]BGfN5<K380
+l178
+L93
+VeTjVnhWAL6d2h@b0OcdXF0
+R37
+31
+R199
+R200
+R201
+R41
+R42
+!s100 F:h_4AOSnEOVoGS[]ILz73
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo
+R31
+R32
+R33
+R34
+R1
+Z202 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+Z203 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+l0
+L9
+V1@jJhU0_R1jFK7k5lheUP0
+R37
+31
+Z204 !s108 1671591303.209000
+Z205 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+Z206 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+R41
+R42
+!s100 HRHd5JbcXoaM3d8L=OR>_2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 72 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo 0 22 1@jJhU0_R1jFK7k5lheUP0
+l98
+L53
+V^mgYni`5O41UZUV78:CN>1
+R37
+31
+R204
+R205
+R206
+R41
+R42
+!s100 oDfYHVDa2mKz0bS4c>h>b2
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo
+R31
+R32
+R33
+R34
+R1
+Z207 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z208 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VMWPhzEN?13@lLCKToc=zI2
+R37
+31
+Z209 !s108 1671591303.150000
+Z210 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z211 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R41
+R42
+!s100 Y_XRY>16Xm4kYaIaSRmkZ3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 70 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 MWPhzEN?13@lLCKToc=zI2
+l98
+L53
+VbEBNHGAo83fW=OSAPPj2=2
+R37
+31
+R209
+R210
+R211
+R41
+R42
+!s100 D^C?SbUgd1?hWOJDTN`0?2
+!i10b 1
+vsystem_0_sdram_0_test_component
+IMP]nn0jHO:=5H9l@;jePi2
+V`lcgeeCVlK=Xa2_Dl9AeC1
+R1
+R116
+Z212 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v
+Z213 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v
+L0 113
+R3
+r1
+31
+Z214 !s108 1671591300.723000
+Z215 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v|
+Z216 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v|
+R4
+R5
+!s100 h]Jb5Za_GZRB9SY7bUDW<3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0_test_component_ram_module
+I:JZk7bWHXeS`3Rc<bT[l@3
+V[J>3LnKa;R5RjMSK>e6g81
+R1
+R116
+R212
+R213
+L0 21
+R3
+r1
+31
+R214
+R215
+R216
+R4
+R5
+!s100 D1fh3]>i5ggfJdPMg1TRQ0
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_seg7_display_avalon_slave_0_translator
+R31
+R32
+R33
+R34
+R1
+Z217 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd
+Z218 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd
+l0
+L9
+VU3@O5J]DBIJ?]L;ZhA<B:3
+R37
+31
+Z219 !s108 1671591304.899000
+Z220 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd|
+Z221 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd|
+R41
+R42
+!s100 Q62aWH3I[Im8YPTS5iDNb3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 47 system_0_seg7_display_avalon_slave_0_translator 0 22 U3@O5J]DBIJ?]L;ZhA<B:3
+l148
+L78
+V3MKFngTHNnFdJ[OY?9an61
+R37
+31
+R219
+R220
+R221
+R41
+R42
+!s100 2SDo:n?[SBaG5>F[K^GBh1
+!i10b 1
+vsystem_0_switch_pio
+IEiT7615]ce_>V;lNCcEIB3
+VQo8RRQGFgm8H]Z1I0Uh9d2
+R1
+R30
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 Zd>Z7IlZl7M2PZ4jmB9k32
+!s108 1671591300.106000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_switch_pio_s1_translator
+R31
+R32
+R33
+R34
+R1
+Z222 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd
+Z223 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd
+l0
+L9
+V@OTf:bF<?lW6T[FDP;kB]0
+R37
+31
+Z224 !s108 1671591304.657000
+Z225 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd|
+Z226 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd|
+R41
+R42
+!s100 mOA>gko07dA_Ym5VSbAED2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 33 system_0_switch_pio_s1_translator 0 22 @OTf:bF<?lW6T[FDP;kB]0
+l148
+L78
+VQEA^i<Y1EKAaIjI^SiK_L0
+R37
+31
+R224
+R225
+R226
+R41
+R42
+!s100 ^`;=khKQB@Qc6Al2B2OTT2
+!i10b 1
+vsystem_0_sysid_qsys_0
+IL[V1dahZcEOXCeY@FRR[]3
+VA34B>b?NAcmCh:[:z:RU42
+R1
+R70
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 g`PJNe42@aiU5ki8]gMY`0
+!s108 1671591299.797000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_sysid_qsys_0_control_slave_translator
+R31
+R32
+R33
+R34
+R1
+Z227 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd
+Z228 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd
+l0
+L9
+V6Dj9@I;LIR?3^aWGIJLF_2
+R37
+31
+Z229 !s108 1671591304.278000
+Z230 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd|
+Z231 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd|
+R41
+R42
+!s100 9;iIzYh9b`KOb5Ue5`<b30
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 46 system_0_sysid_qsys_0_control_slave_translator 0 22 6Dj9@I;LIR?3^aWGIJLF_2
+l148
+L78
+VLLCZmWS[CIBMWzc8?9VM81
+R37
+31
+R229
+R230
+R231
+R41
+R42
+!s100 `3`_aF=0SX]VT6LobNBWX0
+!i10b 1
+vsystem_0_timer_0
+IZNK]=X1Ci0o:YQjXz8BIl3
+Vh0dadkQeibUnegW;j@@b]3
+R1
+R156
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 ?ib5Uc7_X>HLBeaRSKAGf0
+!s108 1671591300.361000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_timer_0_s1_translator
+R31
+R32
+R33
+R34
+R1
+Z232 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd
+Z233 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd
+l0
+L9
+VYYDET3Zc@`X<eQ4`LOI2I3
+R37
+31
+Z234 !s108 1671591304.456000
+Z235 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd|
+Z236 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd|
+R41
+R42
+!s100 YWUTYUE5B3XPS?cTR=;i>3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 30 system_0_timer_0_s1_translator 0 22 YYDET3Zc@`X<eQ4`LOI2I3
+l148
+L78
+VdIQ@LBHiUIV2AjfZEKJ^92
+R37
+31
+R234
+R235
+R236
+R41
+R42
+!s100 P;bUR?L49Zab:5zUnn94Y2
+!i10b 1
+vsystem_0_tri_state_bridge_0_bridge_0
+R6
+IYT^acHgX_?Q]dIeV1Y>hb1
+V5[MU`OJASNQ_eWFADV`BD0
+S1
+R1
+R70
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv
+L0 26
+R3
+r1
+31
+R13
+R14
+!i10b 1
+!s100 `aXEf472BViWCDlNOFG_S0
+!s105 system_0_tri_state_bridge_0_bridge_0_sv_unit
+!s85 0
+!s108 1671591302.653000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv|
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0
+IEQBzD[R>HzWcl1lBG@b603
+VAP^hBnlSdjoS<HnGfO0BZ3
+R1
+R70
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v
+L0 9
+R3
+r1
+31
+R4
+R5
+nsystem_0_tri_state_bridge_0_pin@sharer_0
+!s100 c7JmaDSPK6A_dfT9dCJbO0
+!s108 1671591299.901000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0_arbiter
+R6
+IQBQ_dJBJKA`>I5>5fJc9K1
+V[J5^NS^1BNg@U[CMUF^I60
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv
+L0 36
+R3
+r1
+31
+R13
+R14
+nsystem_0_tri_state_bridge_0_pin@sharer_0_arbiter
+!s100 T1NfLOSjn=W^Md5`Fb35W2
+!s105 system_0_tri_state_bridge_0_pinSharer_0_arbiter_sv_unit
+!s108 1671591302.557000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0_pin_sharer
+R6
+I:D]hcnb;1_k?;_25Q53Le1
+V7BVio<77_X_U<V<VQl`Ie1
+S1
+R1
+R23
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv
+L0 19
+R3
+r1
+31
+R13
+R14
+nsystem_0_tri_state_bridge_0_pin@sharer_0_pin_sharer
+!s100 gU@DYEXQH5YI>M[NZDG041
+!s105 system_0_tri_state_bridge_0_pinSharer_0_pin_sharer_sv_unit
+!s108 1671591302.605000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv|
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0
+I3U12lA;JD=cl>oALj`J`g3
+VlbCM1fS;ZUz>`b<E@m2I^0
+R1
+R156
+Z237 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v
+Z238 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v
+L0 789
+R3
+r1
+31
+Z239 !s108 1671591300.415000
+Z240 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v|
+Z241 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v|
+R4
+R5
+!s100 c19Z:de9ERhYAXW1=<M<;0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_regs
+I7bkYk6A_6zCYcKeC;7XG21
+V<CBZc<=h6C3mc<o11UOli1
+R1
+R156
+R237
+R238
+L0 544
+R3
+r1
+31
+R239
+R240
+R241
+R4
+R5
+!s100 ??Bki[]KgRenEoVZ5;A4G2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_rx
+I[K1GS<:]K?FYkj``lmb3[3
+VR?@[Nc7L]=JVjBc:TPBL32
+R1
+R156
+R237
+R238
+L0 286
+R3
+r1
+31
+R239
+R240
+R241
+R4
+R5
+!s100 DzJS;]cMLT9]N8WN0DXgV1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_rx_stimulus_source
+I=PWnSCK>k]HR[=6b4lFOc2
+VB4EM_3?i5SnP9=K@T;W7n1
+R1
+R156
+R237
+R238
+L0 193
+R3
+r1
+31
+R239
+R240
+R241
+R4
+R5
+!s100 HHi0o;GV4[[;L<UEM6^2<0
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_uart_0_s1_translator
+R31
+R32
+R33
+R34
+R1
+Z242 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd
+Z243 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd
+l0
+L9
+VLM?6R7<YjcBQSd6DeH:743
+R37
+31
+Z244 !s108 1671591304.398000
+Z245 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd|
+Z246 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd|
+R41
+R42
+!s100 AjWK=JR>=`M6R?M`Ob=8[1
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 29 system_0_uart_0_s1_translator 0 22 LM?6R7<YjcBQSd6DeH:743
+l148
+L78
+VC:U7N8K@K3g:DNNM:Bg:h3
+R37
+31
+R244
+R245
+R246
+R41
+R42
+!s100 8oD9aF8YSBlbEdL6@9HoW1
+!i10b 1
+vsystem_0_uart_0_tx
+I7347]QhE58:mi^z4Qj][O1
+Vg@hE@__Sfbj:e99E]7Z2P3
+R1
+R156
+R237
+R238
+L0 21
+R3
+r1
+31
+R239
+R240
+R241
+R4
+R5
+!s100 jIkd9L^_H9<:S84;fWHMg3
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_vga_0_avalon_slave_0_translator
+R31
+R32
+R33
+R34
+R1
+Z247 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd
+Z248 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd
+l0
+L9
+Vk@bFGTN1DMMLUh?X0o;Ua1
+R37
+31
+Z249 !s108 1671591304.839000
+Z250 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd|
+Z251 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd|
+R41
+R42
+!s100 0>gKad3>B?i7z51BlbG6k3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 40 system_0_vga_0_avalon_slave_0_translator 0 22 k@bFGTN1DMMLUh?X0o;Ua1
+l148
+L78
+VO@i:RE<V<42LY179C>T3^3
+R37
+31
+R249
+R250
+R251
+R41
+R42
+!s100 z1aP^jH13J`]aB5:RjK7X3
+!i10b 1
+Esystem_0_web_fpu_0_avalon_slave_0_translator
+R31
+R32
+R33
+R34
+R1
+Z252 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_web_fpu_0_avalon_slave_0_translator.vhd
+Z253 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_web_fpu_0_avalon_slave_0_translator.vhd
+l0
+L9
+VY4oGz;9HMG=J7h7AZMCi62
+R37
+31
+Z254 !s108 1671591304.959000
+Z255 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_web_fpu_0_avalon_slave_0_translator.vhd|
+Z256 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_web_fpu_0_avalon_slave_0_translator.vhd|
+R41
+R42
+!s100 _C?gA5QajIAdeV3RIPZ[U3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 44 system_0_web_fpu_0_avalon_slave_0_translator 0 22 Y4oGz;9HMG=J7h7AZMCi62
+l148
+L78
+V6jGU`[mUFFLD94B6NV>XB0
+R37
+31
+R254
+R255
+R256
+R41
+R42
+!s100 ?Yc[<_^JXAA>g5gEdZe8^3
+!i10b 1
+Esystem_0_width_adapter
+R31
+R32
+R33
+R34
+R1
+Z257 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd
+Z258 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd
+l0
+L9
+V]DZ:kO0mEdYCQ[aY[>OJg1
+R37
+31
+Z259 !s108 1671591303.574000
+Z260 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd|
+Z261 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd|
+R41
+R42
+!s100 Rb1kZGVb8f9mW0^NCN?am3
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 22 system_0_width_adapter 0 22 ]DZ:kO0mEdYCQ[aY[>OJg1
+l132
+L70
+Vb7nE0H?3O@o_DnAZ8<eC80
+R37
+31
+R259
+R260
+R261
+R41
+R42
+!s100 6G=H=@Kco9T3CIm7a6i]T2
+!i10b 1
+Esystem_0_width_adapter_001
+R31
+R32
+R33
+R34
+R1
+Z262 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd
+Z263 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd
+l0
+L9
+VWR8ciZl@PD6]zI:FN]Mkc3
+R37
+31
+Z264 !s108 1671591303.632000
+Z265 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd|
+Z266 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd|
+R41
+R42
+!s100 Dhd4EgK?DPE?MdNP@a>1W1
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 26 system_0_width_adapter_001 0 22 WR8ciZl@PD6]zI:FN]Mkc3
+l132
+L70
+VDKlPZS8Y26G]hQ]CBW`S@2
+R37
+31
+R264
+R265
+R266
+R41
+R42
+!s100 a0ej1SJ?Shn_`R?J[n;C02
+!i10b 1
+Esystem_0_width_adapter_002
+R31
+R32
+R33
+R34
+R1
+Z267 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd
+Z268 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd
+l0
+L9
+V8^6CkdnW:l^UiR_;TU8Nd3
+R37
+31
+Z269 !s108 1671591303.688000
+Z270 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd|
+Z271 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd|
+R41
+R42
+!s100 ?jVRYne_md93SNGN3]In?2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 26 system_0_width_adapter_002 0 22 8^6CkdnW:l^UiR_;TU8Nd3
+l132
+L70
+V4:9OBTC_Poi9o4GXj5No32
+R37
+31
+R269
+R270
+R271
+R41
+R42
+!s100 61kXKNkZed_;PHnKM?Gc33
+!i10b 1
+Esystem_0_width_adapter_003
+R31
+R32
+R33
+R34
+R1
+Z272 8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd
+Z273 FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd
+l0
+L9
+VG3=6496n`mENUj2=S[lRF2
+R37
+31
+Z274 !s108 1671591303.746000
+Z275 !s90 -reportprogress|300|-93|-work|system_0|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd|
+Z276 !s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd|
+R41
+R42
+!s100 cS4@fZ8m;Y`FO0J=]iYCe2
+!i10b 1
+Artl
+R32
+R33
+R34
+DEx4 work 26 system_0_width_adapter_003 0 22 G3=6496n`mENUj2=S[lRF2
+l132
+L70
+V4=P47<Qa>dOHYLH4]DdON0
+R37
+31
+R274
+R275
+R276
+R41
+R42
+!s100 `2W:nO5]VnFGO:liB0Z<O2
+!i10b 1
+vtornado_system_0_epcs_controller_atom
+I<A=H6?8zf5A04QTm9Y0?g2
+Vf>ciCXOoDV8IGj;?oJ9MU0
+R1
+R116
+R117
+R118
+L0 424
+R3
+r1
+31
+R119
+R120
+R121
+R4
+R5
+!s100 e:cCiO1?a@SgAdP<9Ig:D2
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_Controller
+IaS@hjE^hbcQ:;]]=IFniO3
+V6Qe1S>J>9<[0ae3;6lZk63
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Param.h
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@controller
+!s100 [J234M^Sk0e76Jl`TPQmL0
+!s108 1671591300.779000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Param.h|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_NIOS_CTRL
+I^A2iJP>7koS]mj[M``_Rk1
+VCOXO3]M]b<C3?7OJ2QjKI1
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@n@i@o@s_@c@t@r@l
+!s100 2i_?K6DSVaTlLG;;KLTH80
+!s108 1671591299.618000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_OSD_RAM
+I@7`oUGP?<QYlh>lWozNjY3
+VdZB6;i4T<E0HCEiLYYe<Y0
+R1
+R2
+8C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v
+FC:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@o@s@d_@r@a@m
+!s100 5`E:lAT_6zT9^B5e07nQa3
+!s108 1671591299.664000
+!s107 C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules|C:/Users/hadryan/clones/vhdl_fpu/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v|
+!i10b 1
+!s85 0
+!s101 -O0

@@ -1,0 +1,38 @@
+
+**** Build of configuration Nios II for project blanck1 ****
+
+make all 
+      1 [main] sh 10604 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 7560 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] echo 2240 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Building ../blanck1_bsp/
+make --no-print-directory -C ../blanck1_bsp/
+      1 [main] pwd 12012 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 7132 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 1688 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+[BSP build complete]
+      1 [main] echo 1452 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: Compiling SSS_DE2_115.c to obj/default/SSS_DE2_115.o
+      1 [main] mkdir 9200 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+nios2-elf-gcc -xc -MP -MMD -c -I../blanck1_bsp//HAL/inc -I../blanck1_bsp/ -I../blanck1_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/SSS_DE2_115.o SSS_DE2_115.c
+the public mailing list cygwin@cygwin.com
+In file included from SSS_DE2_115.c:12:
+SSS_DE2_115.h:14:28: warning: alt_iniche_dev.h: No such file or directory
+SSS_DE2_115.c: In function 'get_DE2_115_mac_addr':
+SSS_DE2_115.c:29: error: 'CFI_FLASH_0_BASE' undeclared (first use in this function)
+SSS_DE2_115.c:29: error: (Each undeclared identifier is reported only once
+SSS_DE2_115.c:29: error: for each function it appears in.)
+SSS_DE2_115.c:31: warning: implicit declaration of function 'printf'
+SSS_DE2_115.c:31: warning: incompatible implicit declaration of built-in function 'printf'
+SSS_DE2_115.c: In function 'FindLastFlashSectorOffset':
+SSS_DE2_115.c:90: error: 'CFI_FLASH_0_NAME' undeclared (first use in this function)
+make: *** [obj/default/SSS_DE2_115.o] Error 1
+
+**** Build Finished ****

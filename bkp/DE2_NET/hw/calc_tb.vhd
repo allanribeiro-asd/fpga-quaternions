@@ -14,14 +14,14 @@ Architecture behavior of calc_tb is
        regselect     : IN  STD_LOGIC_VECTOR( 1 DOWNTO 0);
        write_en      : IN  STD_LOGIC;
        read_en       : IN  STD_LOGIC;
-       writedata  	 : IN  sfixed (0 downto -31);
-       readdata   	 : OUT sfixed (0 downto -31)
+       writedataint  	 : IN  STD_LOGIC_VECTOR (31 downto 0);
+       readdataint   	 : OUT STD_LOGIC_VECTOR (31 downto 0)
        );
     END component;
     
     signal reset, clock, cs, writeen, readen : std_logic;
     signal regsel : std_logic_vector(1 downto 0);
-    signal data_in, data_out : sfixed (0 downto -31);
+    signal data_in, data_out : STD_LOGIC_VECTOR (31 downto 0);
     
     begin
     
@@ -50,14 +50,14 @@ Architecture behavior of calc_tb is
         regselect  => regsel,
         write_en   => writeen, 
         read_en    => readen,         
-        writedata  => data_in, 
-        readdata   => data_out     
+        writedataint  => data_in, 
+        readdataint   => data_out     
 		  );
     
     teste:process 
     begin
         wait for 30 ns;
-        data_in <= "01000000000000000000000000000000"; -- 0.5
+        data_in <= "00100000000000000000000000000000"; -- 0.5
         regsel <= "01";
         writeen <= '1';
         wait for 100 ns;
@@ -72,12 +72,13 @@ Architecture behavior of calc_tb is
         data_in <= "00000000000000000000000000000001"; -- Mult
         regsel <= "00";
         writeen <= '1';
-        wait for 100 ns;
+        wait for 33 ns;
         writeen <= '0';
         wait for 10 ns;
         data_in <= "00000000000000000000000000000010"; -- Read
         regsel <= "00";
         writeen <= '1';
+	wait for 20 ns;
         writeen <= '0';
         wait for 100 ns;
         readen <= '1';

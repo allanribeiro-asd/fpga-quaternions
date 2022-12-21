@@ -1,0 +1,173 @@
+\documentclass [12pt,oneside] {article}
+\include{packages} % incluir pacotes e configurações
+\begin {document}
+
+%==========================================================================
+\title {Contador módulo 57}
+\author {Allan Ribeiro}
+\date{12 de Outubro de 2022}
+\maketitle
+%==========================================================================
+
+%==========================================================================
+\section{Introdução}
+%==========================================================================
+
+	O presente documento é um breve relatório sobre o primeiro
+exercício de Lógica Reconfigurável, solicitado pelo professor Luiz Fernando
+Copetti. O exercício é descrito a seguir: Deve-se construir um contador
+baseado em contadores de 4 bits. A contagem deve iniciar em 12, terminar em
+68, e sofrer a operação de \texttt{modulus} 57.
+
+
+%==========================================================================
+\section{Lista de figuras}
+%==========================================================================
+
+Figura 1: "Snapshot" da tela de simulação.
+%==========================================================================
+
+
+%==========================================================================
+\section {Contador base}
+%==========================================================================
+	O projeto foi concebido se baseando num contador simples de 4 bits.
+Este contador opera sob um clock, tem capacidade de reset assíncrono,
+carregar determinado valor, e conta de 0 a 15. Abaixo o código fonte.
+%==========================================================================
+
+%==========================================================================
+\begin{footnotesize}
+\begin{verbatim}
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity counter is
+	port (
+		clock, enable, reset, load, clear : in std_logic;
+		q: out std_logic_vector (3 downto 0);
+		ld : in std_logic_vector (3 downto 0)
+	);
+end counter;
+
+architecture behavior of counter is
+	signal count : integer;
+	begin
+	process(clock, reset) begin
+		if reset = '1' then 	--Assinchronous reset
+			if load = '1' then	--allows the counter to begin with specified value
+				count <= to_integer(signed(ld));
+			else
+				count <= 0;
+			end if;
+		elsif clock'event and clock = '1' then --On clock, change variable value accordingly
+			if enable = '1' then
+				if clear = '1' then
+					count <= 0;
+				elsif load = '1' then
+					count <= to_integer(signed(ld));
+				else
+					count <= count + 1;
+				end if;
+			end if;
+		end if;
+		q <= std_logic_vector(to_signed(count, 4));
+	end process;
+end architecture;
+
+\end{verbatim}
+\end{footnotesize}
+%==========================================================================
+
+%==========================================================================
+\section{Contador de dois dígitos}
+%==========================================================================
+
+	A segunda parte do projeto se trata de unir dois contadores de 4
+bits. Isso permite que seja alcançado até $2^8-1=255$ numa contagem. Para
+limitar o contador à quantidade exigida, usa-se uma variável auxiliar que
+verifica se a contagem de dos termos está em determinado dígito, retornando
+um em caso positivo, e é salvo num sinal. Esse sinal é então ligado ao bit
+de clear do contador, responsável por inferir o valor 0 sobre o contador.
+
+A ordem lógica é a seguinte: O contador começa em 12. O contador deve
+contar até 68, sofrendo a operação de \texttt{modulus}, ou resto, 57. Isso
+resulta na seguinte ordem numérica
+
+%==========================================================================
+\begin{table}[!htp]
+\centering
+\label{time-0x1}
+\begin{tabular}{|ccc|}
+\cline{1-3}
+%\multicolumn{1}{
+operação & dezena & unidade \\
+load & U & U \\
+reset & 1 & 2 \\
+clock & 1 & 3 \\
+clock & 1 & 4 \\
+... & ... & ... \\
+clock & 5 & 5 \\
+clock & 5 & 6 \\
+clock & 0 & 0 \\
+... & ... & ... \\
+clock & 0 & 1 \\
+... & ... & ... \\
+clock & 1 & 1 \\
+load & 1 & 1 \\
+reset & 1 & 2 \\
+... & ... & ... \\
+\hline
+\end{tabular}
+\end{table}
+%==========================================================================
+
+	Observando a tabela acima percebe-se que a operação de módulo,
+convenientemente, fecha um ciclo de contagem: de 12 à 56, de 0 a 11. Estão
+explícitos os pontos de controle do contador. Ao alcançar 56, o contador
+deve voltar à zero, e ao alcançar 11, o contador precisa reiniciar,
+fechando o ciclo de contagem, e carregar 12 em seguida.
+
+Abaixo, parte do código conte final.
+
+\begin{footnotesize}
+\begin{verbatim}
+
+--On reset, begin at 12
+dozen_ld <= "0001";
+unit_ld <= "0010";
+--Reset on 11: I know it's unecessary to reset, but it wouldn't be from 12 to 67 mod 56
+dozen_in_1 <= ((not aux_dozen(3)) and (not aux_dozen(2)) and (not aux_dozen(1)) and aux_dozen(0));
+unit_in_1 <= (not aux_unit(3) and (not aux_unit(2)) and (not aux_unit(1)) and  aux_unit(0));
+reset_aux <= ((dozen_in_1) and (unit_in_1)) or reset;
+load_aux <= load or ((dozen_in_1) and (unit_in_1));
+--Clear on 56
+dozen_in_5 <= ((not aux_dozen(3)) and aux_dozen(2) and (not aux_dozen(1)) and aux_dozen(0));
+unit_in_6 <= (not aux_unit(3) and aux_unit(2) and aux_unit(1) and  (not aux_unit(0)));
+unit_clear <= clear or (dozen_in_5 and unit_in_6) or (aux_unit(3) and (not aux_unit(2)) and (not aux_unit(1)) and aux_unit(0));
+dozen_enable <= enable and (clear or unit_clear );
+dozen_clear <= (dozen_in_5 and unit_in_6) or clear;
+--Clear on clear, or 9, or 5
+q_dozen <= aux_dozen;
+q_unit <= aux_unit;
+
+\end{verbatim}
+\end{footnotesize}
+
+Pode-se observar as operações que condicionam o contador acima. Primeiro, o
+valor com o qual este deve iniciar: reset em 11, para que torne a contar 12 no
+próximo ciclo. Esta é a operação necessária para que o contador resete
+sempre para 12.
+
+Como a saída é dada em bits, o sinal é real sob bits 1 ligados, e devem ser
+usados para decidir quando resetar o contador.
+
+A segunda parte se trata de limpar os dígitos ao alcançar 56, devido à
+operação de \texttt{modulus}.
+
+\end{document}
+%==========================================================================
+
+

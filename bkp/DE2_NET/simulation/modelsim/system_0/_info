@@ -1,0 +1,3336 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\fpga-quaternions\bkp\DE2_NET\simulation\modelsim
+valtera_avalon_sc_fifo
+I?KONoedC]_0G96>NaTi>:0
+VjOzUMS5nAQIa6?lLKEfID0
+Z1 dC:\altera\fpga-quaternions\bkp\DE2_NET\simulation\modelsim
+Z2 w1671482850
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v
+L0 21
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-vlog01compat -work system_0 -O0
+Z5 !s92 -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules -O0
+!s100 JVR>G]T_f2BkNB6[LZ;2K0
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v|
+!s108 1671549451.424000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_arb_adder
+Z6 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+IReF<`MEn6jCL1dHK^Fejc0
+VeEm48mj>0hhNR4acO5n:k1
+Z7 !s105 altera_merlin_arbitrator_sv_unit
+S1
+R1
+R2
+Z8 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv
+Z9 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv
+L0 228
+R3
+r1
+31
+Z10 !s108 1671549454.231000
+Z11 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv|
+Z13 o-sv -work system_0 -O0
+Z14 !s92 -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules -O0
+!s100 eAUm<bCk`7kE04g?5hkUb2
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_arbitrator
+R6
+IE>XX@94593V9=VIk?7oj@2
+VkoHZHN`N_KjQAPBBQ3eh^0
+R7
+S1
+R1
+R2
+R8
+R9
+Z15 L0 103
+R3
+r1
+31
+R10
+R11
+R12
+R13
+R14
+!s100 <NP_G7mBgzKJI<b=]DHPA3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter
+R6
+I][HikVH]jGS0bj^LV:U0F3
+V@=j7QA[ZdKcGN4KhV_^2K1
+Z16 !s105 altera_merlin_burst_adapter_sv_unit
+S1
+R1
+R2
+Z17 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv
+Z18 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv
+L0 264
+R3
+r1
+31
+Z19 !s108 1671549454.833000
+Z20 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv|
+R13
+R14
+!s100 _SDJYcW:mERab7>?bQ7DP3
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_adder
+R6
+ISo?^Ro3k8=5n44gX3e4bO2
+VT^DWNd^gjBXG7CAj0hlQD0
+R16
+S1
+R1
+R2
+R17
+R18
+L0 55
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 <@ka1]n1Ve3Pf?:DAdBKC2
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_burstwrap_increment
+R6
+IJ??B6n?34_1f8D5>h:X7Q3
+VHjbSmoaK][OE;MmVBLg=O2
+R16
+S1
+R1
+R2
+R17
+R18
+L0 40
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 N2BSRYLOX5R7<Z?TF8P3H2
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_full
+R6
+IDRWiB[J0hDzonBTh4MMzb0
+VDC]8A4@BJ2]0K3`RS4Oe60
+R16
+S1
+R1
+R2
+R17
+R18
+L0 468
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 RXSn3O4eilD_3BN:E0:Xl1
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_min
+R6
+IMOKegQg^A;K7VEc4j2Yh<0
+VHB7>Umo4_PQhA:aini:bA0
+R16
+S1
+R1
+R2
+R17
+R18
+L0 98
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 7^FoFja2;4D?64m=Kj?1X0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_subtractor
+R6
+I;U;A_SVl<[A5?3=02aoLD1
+Ve3BCL<XCz>dk7;O1IYNCU2
+R16
+S1
+R1
+R2
+R17
+R18
+L0 77
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 ]VagAE660G]f:G4I`kT;k2
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_adapter_uncompressed_only
+R6
+IJUlBF3BX^G2jAgif>kaPi2
+VT[Ib6Vh0E__m];USj<OE<1
+R16
+S1
+R1
+R2
+R17
+R18
+L0 414
+R3
+r1
+31
+R19
+R20
+R21
+R13
+R14
+!s100 4l3W_9ca:zfdK1YQMRhKV0
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_burst_uncompressor
+R6
+I2<hOJL?KE@LlRfSZb><1k1
+Vk1gIA`RY2OQ1N9QbTULJo2
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+L0 40
+R3
+r1
+31
+R13
+R14
+!s100 ojKMBTJMlbcl>[4VoZ>3b3
+!s105 altera_merlin_burst_uncompressor_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!s108 1671549454.030000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_master_agent
+R6
+Ic[AP7aYRjNVGI@ZIDD^gI2
+VG[gHYg_J=R2@KnI_[bEjA0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv
+L0 28
+R3
+r1
+31
+R13
+R14
+!s100 ^VIbZLNHO=aL=@jOl;E^Z2
+!s105 altera_merlin_master_agent_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv|
+!s108 1671549455.682000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_master_translator
+R6
+IEgX2^5J17IaFCfFPG?QE=2
+V0KIH7<bW[IFhHJBzB4US?0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv
+L0 30
+R3
+r1
+31
+R13
+R14
+!s100 ?XUKHNV@Vh_^?Ij=3;PS=1
+!s105 altera_merlin_master_translator_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv|
+!s108 1671549455.835000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_slave_agent
+R6
+Imi:U>YOc0>;4mlaJK@_nM1
+VekU5U46jGhemBCkL?m_og2
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv
+L0 34
+R3
+r1
+31
+R13
+R14
+!s100 Cf@FfUnRLIzY5FBVjFcV@0
+!s105 altera_merlin_slave_agent_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv|
+!s108 1671549455.613000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_slave_translator
+R6
+IlzPh?0lnGc@Vb;RA<1^XM1
+VA6G6lglY;QOHbkKlTEAXC0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv
+L0 35
+R3
+r1
+31
+R13
+R14
+!s100 6WAEQl]BG1S8X<4UoCF1l0
+!s105 altera_merlin_slave_translator_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv|
+!s108 1671549455.766000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_std_arb_adder
+R6
+I?1nVEz>Hk@kn1U]K8bLEc3
+Vmlj[RYOK[eU?<77[?FBQH0
+Z22 !s105 altera_merlin_std_arbitrator_core_sv_unit
+S1
+R1
+R2
+Z23 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv
+Z24 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv
+L0 211
+R3
+r1
+31
+Z25 !s108 1671549456.052000
+Z26 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv|
+Z27 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv|
+R13
+R14
+!s100 3PLj2[1nEXEZJB<NQ5;`X1
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_std_arbitrator_core
+R6
+I6REziSYjbD_QfMk0@>>[G0
+Vim<bQeEd6gMYA99g3jHXb1
+R22
+S1
+R1
+R2
+R23
+R24
+R15
+R3
+r1
+31
+R25
+R26
+R27
+R13
+R14
+!s100 NChCWM4YjGjMMmM]UTWZi2
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_traffic_limiter
+R6
+I5Ce<c=H4`gYIT^VmJ[H5P3
+VFToJ:O^P1mK>hGEjaBQXC3
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv
+L0 44
+R3
+r1
+31
+R13
+R14
+!s100 6N45GHdnIPUBlZFaeVeaz2
+!s105 altera_merlin_traffic_limiter_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!s108 1671549454.980000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_merlin_width_adapter
+R6
+I;1^DY?8>7g1h[a<4Ja2b02
+V2j8B8W7hj9i^DJ]hQaO3J2
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv
+L0 25
+R3
+r1
+31
+R13
+R14
+!s100 `=kfT1lz20>]<j;>4fH^B2
+!s105 altera_merlin_width_adapter_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv|
+!s108 1671549453.930000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_reset_controller
+I@c:DL:@@KP6KbXVj1ID033
+VBWWT<i0A@QcN4KE]hBS<V0
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v
+L0 29
+R3
+r1
+31
+R4
+R5
+!s100 C:]3d30d2ZFZSj_RW>c?W0
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v|
+!s108 1671549451.255000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_reset_synchronizer
+I8dbiGCf:JP9hE`54X`9mA1
+V3CjoOZCIEdzCJgPn8]D7`2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v
+L0 24
+R3
+r1
+31
+R4
+R5
+!s100 7RZ[lA_icW6QB4Xe_Vb=93
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v|
+!s108 1671549451.355000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_tristate_controller_aggregator
+R6
+IaCHTW::ZK_>Mcnfc;0Q`10
+VbfC8LigESUjKieKz4LIle1
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv
+L0 22
+R3
+r1
+31
+R13
+R14
+!s100 Kd>OSEX;cMd3XMC<0CXOm0
+!s105 altera_tristate_controller_aggregator_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv|
+!s108 1671549455.913000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+valtera_tristate_controller_translator
+R6
+I7Q?HICa7kB8Dfo:l5B`8C1
+V932]71G@ca9Q>14hgR^l62
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv
+L0 22
+R3
+r1
+31
+R13
+R14
+!s100 BokJhcVZV<88dQ:]4Jg^D0
+!s105 altera_tristate_controller_translator_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv|
+!s108 1671549455.983000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vAUDIO_DAC_FIFO
+IAMg_PaYoZGC1i4GSV;T^Z1
+V0gTklbk1eJOm2`dX4n]e_2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@a@u@d@i@o_@d@a@c_@f@i@f@o
+!s100 QencAGeJ0;W@XOM57T=F?1
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v|
+!s108 1671549451.972000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vDM9000A_IF
+IVWWQ::W_bE?Ad[F>czFjd3
+V;86T3_53:Eah9L@d_:]6[1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@d@m9000@a_@i@f
+!s100 H<ZHITDzABCgb9X>SIYh=2
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v|
+!s108 1671549451.703000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vFIFO_16_256
+I;7jMa;h0TK1B5FUcNKnd00
+VIcjn;nUYgDcWllGV_TY;d1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v
+L0 36
+R3
+r1
+31
+R4
+R5
+n@f@i@f@o_16_256
+!s100 6g[NBJ;XA]2JW<RG@GGC82
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v|
+!s108 1671549452.041000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vImg_RAM
+I`ENc@nN5jQ<Z7kKPz]QVK3
+VOoYE@MBQb6DE1?bW^ZjQ]3
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/Img_RAM.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/Img_RAM.v
+L0 36
+R3
+r1
+31
+R4
+R5
+n@img_@r@a@m
+!s100 Qn>]n]d`_@:z6[d[852Gk1
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/Img_RAM.v|
+!s108 1671549451.772000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/Img_RAM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vISP1362_IF
+IVQFR0cnA<8XV1oBCO:V4z3
+V96;TklVc^X0@?[12fWeFR0
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@i@s@p1362_@i@f
+!s100 N8[BSi8:k=e44E_60493E1
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v|
+!s108 1671549452.342000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Ereg32
+R2
+Z28 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z29 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z30 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32.vhd
+Z31 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32.vhd
+l0
+L3
+VSkAW<Qi?_I]=z>cm?h;>22
+Z32 OV;C;10.1d;51
+31
+Z33 !s108 1671549459.375000
+Z34 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32.vhd|
+Z35 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32.vhd|
+Z36 o-93 -work system_0 -O0
+Z37 tExplicit 1
+!s100 kk@4:=b9]e1^l]aUjiNY70
+!i10b 1
+Abehavior
+R28
+R29
+DEx4 work 5 reg32 0 22 SkAW<Qi?_I]=z>cm?h;>22
+l20
+L10
+VcEdU:Sjk@RF6O6T3E:hIX1
+R32
+31
+R33
+R34
+R35
+R36
+R37
+!s100 5QkVBc1dz[8kG3BO0bQh20
+!i10b 1
+Ereg32_av
+R2
+R28
+R29
+R1
+Z38 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32_av.vhd
+Z39 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32_av.vhd
+l0
+L5
+Vk_BizG7dQ:<^afRj<c8iI3
+R32
+31
+Z40 !s108 1671549459.444000
+Z41 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32_av.vhd|
+Z42 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32_av.vhd|
+R36
+R37
+!s100 ;39N9AXLWU82NIm7bM?Xa1
+!i10b 1
+Astructure
+R28
+R29
+DEx4 work 8 reg32_av 0 22 k_BizG7dQ:<^afRj<c8iI3
+l44
+L15
+VP27DglbMINT`T5E@oF=J<3
+!s100 ZNo9hND3_N2hgR>HgRVZR2
+R32
+31
+R40
+R41
+R42
+R36
+R37
+!i10b 1
+vSEG7_LUT
+IfAdaT1A>T^n:d[2oG`hVb1
+VUbYATRA9<`nKUR_ZQPcUN2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@s@e@g7_@l@u@t
+!s100 7YkzVZlVWO:dLz9njoZUo2
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v|
+!s108 1671549451.571000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSEG7_LUT_8
+I?n]3LPZW4_CXXS@n545UV2
+VjOSflh2zz=:;Qk67A]o5D0
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@s@e@g7_@l@u@t_8
+!s100 QH]DCG>]acRbHhW2f?JGE3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v|
+!s108 1671549451.640000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vSRAM_16Bit_512K
+IdS>8?`R1HLCVWOQRZ3aKY0
+VBBkfEVKJ57OTOzKP0[O1I1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SRAM_16Bit_512K.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SRAM_16Bit_512K.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@s@r@a@m_16@bit_512@k
+!s100 :J>mHY[Aa@ja^LzQlL8ZB0
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SRAM_16Bit_512K.v|
+!s108 1671549451.502000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SRAM_16Bit_512K.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0
+R2
+Z43 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R28
+R29
+R1
+Z44 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0.vhd
+Z45 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0.vhd
+l0
+L9
+V3^O?Y^IGQ9g^`2SdGDSej1
+R32
+31
+Z46 !s108 1671549456.352000
+Z47 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0.vhd|
+Z48 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0.vhd|
+R36
+R37
+!s100 mlOZ8dfz?2K;YZbzFhj3l3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 8 system_0 0 22 3^O?Y^IGQ9g^`2SdGDSej1
+l5153
+L89
+V_Mcg7GQG2]jD2h]TX;fF83
+R32
+31
+R46
+R47
+R48
+R36
+R37
+!s100 S3[8U<>?J@i2iNH9]]N2X2
+!i10b 1
+vsystem_0_addr_router
+R6
+I?fMd0?cE]^?z5^2`7fg[M0
+V<nYEZUK3g9:Ek^ET_J4W?2
+Z49 !s105 system_0_addr_router_sv_unit
+S1
+R1
+R2
+Z50 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv
+Z51 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv
+L0 86
+R3
+r1
+31
+Z52 !s108 1671549455.528000
+Z53 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv|
+Z54 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv|
+R13
+R14
+!s100 e7KnAPfUD70En@38ZP6X<2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_001
+R6
+IW2>Ikbcz71YaCBTgFCQ<<1
+V6fd:I^ZT1Tmm373K]0QX=1
+Z55 !s105 system_0_addr_router_001_sv_unit
+S1
+R1
+R2
+Z56 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv
+Z57 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv
+L0 86
+R3
+r1
+31
+Z58 !s108 1671549455.450000
+Z59 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv|
+Z60 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv|
+R13
+R14
+!s100 W;RhaBZ4QJMMF983MCh;`0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_001_default_decode
+R6
+I]POMUDH=lL=9zaE`ZHRHe3
+VdMn`k5;HYA384:M8R=IO41
+R55
+S1
+R1
+R2
+R56
+R57
+L0 45
+R3
+r1
+31
+R58
+R59
+R60
+R13
+R14
+!s100 LcAhMRFUOKlUkc@FhOf[V3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_addr_router_default_decode
+R6
+IJObi8Y:Mh=Ec;@Ej]S_1z2
+VkRAMD;hVHALZT7BX@0iO`3
+R49
+S1
+R1
+R2
+R50
+R51
+L0 45
+R3
+r1
+31
+R52
+R53
+R54
+R13
+R14
+!s100 B6[4S;XdTAz;;lnm_[m9:0
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_audio_0_avalon_slave_0_translator
+R2
+R43
+R28
+R29
+R1
+Z61 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd
+Z62 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd
+l0
+L9
+VFFTlA51>E`[1jB19:I2CJ2
+R32
+31
+Z63 !s108 1671549458.906000
+Z64 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd|
+Z65 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd|
+R36
+R37
+!s100 ?;8AhmSj3U49eKgbBY7mb2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 42 system_0_audio_0_avalon_slave_0_translator 0 22 FFTlA51>E`[1jB19:I2CJ2
+l148
+L78
+V[WHbiV]^A2;GA96^L`QQK2
+R32
+31
+R63
+R64
+R65
+R36
+R37
+!s100 EPEkea?VKe48Ro4FKId<>0
+!i10b 1
+Esystem_0_burst_adapter
+R2
+R43
+R28
+R29
+R1
+Z66 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd
+Z67 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd
+l0
+L9
+VamlU:dl=P8k_bR?=i;GBE3
+R32
+31
+Z68 !s108 1671549457.703000
+Z69 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd|
+Z70 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd|
+R36
+R37
+!s100 5eJVbJgVB9fNW6id[ImKn2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 22 system_0_burst_adapter 0 22 amlU:dl=P8k_bR?=i;GBE3
+l112
+L60
+VGQ]::4hjzJO8Bi6gRlfl]2
+R32
+31
+R68
+R69
+R70
+R36
+R37
+!s100 J9n8:7>=2[me<F250lh[H1
+!i10b 1
+Esystem_0_burst_adapter_001
+R2
+R43
+R28
+R29
+R1
+Z71 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd
+Z72 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd
+l0
+L9
+VLZ`:T[S1F[z>0DfBSF=LY3
+R32
+31
+Z73 !s108 1671549457.787000
+Z74 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd|
+Z75 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd|
+R36
+R37
+!s100 3>QJ<I9QSN5cYT4kTaeCT0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 26 system_0_burst_adapter_001 0 22 LZ`:T[S1F[z>0DfBSF=LY3
+l112
+L60
+V:_od>?oL8MhaIWHJkePj63
+R32
+31
+R73
+R74
+R75
+R36
+R37
+!s100 =:5QY?D[<E^19oAET7iEZ3
+!i10b 1
+vsystem_0_button_pio
+IVY6jafSSiDiONjY]S;Vc91
+VB`mfP:0`^aZf1Yd?I20aa2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 fEed:lJ9GgV`9NLE_KnkK3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v|
+!s108 1671549452.643000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cfi_flash_0
+IR0GOY65anRk60N<WkhX[>1
+Vm?8VIKi_L5PT4ao3JZk7;1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v
+L0 9
+R3
+r1
+31
+R4
+R5
+!s100 KeF:_i[iH4RNL^VUz]>ke3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v|
+!s108 1671549452.188000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_cfi_flash_0_uas_translator
+R2
+R43
+R28
+R29
+R1
+Z76 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd
+Z77 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd
+l0
+L9
+VhlWg@ZJBm]6A2ZA[GK2Uf0
+R32
+31
+Z78 !s108 1671549458.104000
+Z79 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd|
+Z80 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd|
+R36
+R37
+!s100 ;4`kD]IR2gkeT6igJ60`:0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 35 system_0_cfi_flash_0_uas_translator 0 22 hlWg@ZJBm]6A2ZA[GK2Uf0
+l148
+L78
+V>3EWM?>>KgDY=n6JWY5I`0
+R32
+31
+R78
+R79
+R80
+R36
+R37
+!s100 4>^[AQizk[3CV^8@n1[Y[1
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent
+R2
+R43
+R28
+R29
+R1
+Z81 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd
+Z82 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+Vd=ZOUFYKRHk?F[W>:Q8^C3
+R32
+31
+Z83 !s108 1671549457.155000
+Z84 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd|
+Z85 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd|
+R36
+R37
+!s100 k2=DSKF4dhSC21NVJhhiX1
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 66 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent 0 22 d=ZOUFYKRHk?F[W>:Q8^C3
+l178
+L93
+V84>dZSj3iSKE?dkdF@Vnd3
+R32
+31
+R83
+R84
+R85
+R36
+R37
+!s100 [@;LXcmCGUFJeZ`J8>[GN1
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo
+R2
+R43
+R28
+R29
+R1
+Z86 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+Z87 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+l0
+L9
+V5LPF^cnWn_oXESgT];lL=2
+R32
+31
+Z88 !s108 1671549456.916000
+Z89 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+Z90 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+R36
+R37
+!s100 5M7V_4HPgEMK0>P73zSPM0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 77 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo 0 22 5LPF^cnWn_oXESgT];lL=2
+l98
+L53
+VUMFYiFNDYgI8WPDT3YC0:3
+R32
+31
+R88
+R89
+R90
+R36
+R37
+!s100 6S8E?jfOJJ0DG^dmloU1S2
+!i10b 1
+Esystem_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo
+R2
+R43
+R28
+R29
+R1
+Z91 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z92 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VI8C6cN<UF1:WA[HBV>8bI0
+R32
+31
+Z93 !s108 1671549456.838000
+Z94 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z95 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R36
+R37
+!s100 O9[6oX>^hfIY[j8AbEHOY2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 75 system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 I8C6cN<UF1:WA[HBV>8bI0
+l98
+L53
+VCZhOg;XG:[029EA1kooMS0
+R32
+31
+R93
+R94
+R95
+R36
+R37
+!s100 1JJhF>Wm;dgS;8AMSJCjg2
+!i10b 1
+vsystem_0_cmd_xbar_demux
+R6
+ICVMha?F0N@eSS>l9_Y`:90
+ViOE`NA6c>3P`aa:^jJ:h43
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 hd4>HQD79c5[k<YdQebnn0
+!s105 system_0_cmd_xbar_demux_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv|
+!s108 1671549454.764000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cmd_xbar_demux_001
+R6
+Ig8D59eIaKk=U;OnkY025@2
+V]A6odz`39aA4@U8fQ@Y7X1
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 k?@ilSzA@Od7i7I:fPTA=1
+!s105 system_0_cmd_xbar_demux_001_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv|
+!s108 1671549454.695000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_cmd_xbar_mux
+R6
+IF4J<Ff4L?egF4NfH<ag530
+V4SRM8z;3Ib59JO:`zAa=P2
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 eI7nEh^XOT]R25k_FKJP63
+!s105 system_0_cmd_xbar_mux_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv|
+!s108 1671549454.625000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_cpu_0_data_master_translator
+R2
+R43
+R28
+R29
+R1
+Z96 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd
+Z97 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd
+l0
+L9
+VmKX4l4nl9YNQRZbP6SlUf1
+R32
+31
+Z98 !s108 1671549457.618000
+Z99 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd|
+Z100 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd|
+R36
+R37
+!s100 U@XnR78g32Kn`KogM=>U93
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 37 system_0_cpu_0_data_master_translator 0 22 mKX4l4nl9YNQRZbP6SlUf1
+l140
+L74
+VZW0LNdP[TY?Xdf_=f_4EM2
+R32
+31
+R98
+R99
+R100
+R36
+R37
+!s100 [IchcDLT9Z0WDOgf<bbf_0
+!i10b 1
+Esystem_0_cpu_0_instruction_master_translator
+R2
+R43
+R28
+R29
+R1
+Z101 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd
+Z102 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd
+l0
+L9
+VLgH7:e`EkM9E91BZNdDT71
+R32
+31
+Z103 !s108 1671549457.540000
+Z104 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd|
+Z105 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd|
+R36
+R37
+!s100 K4`?CM8O_9dm7:`[J_7oi2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 44 system_0_cpu_0_instruction_master_translator 0 22 LgH7:e`EkM9E91BZNdDT71
+l140
+L74
+V<GC;l;0IYSSFdK<Z]7JbJ3
+R32
+31
+R103
+R104
+R105
+R36
+R37
+!s100 AGi=;n_bO1@PFYJAil:?P1
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator
+R2
+R43
+R28
+R29
+R1
+Z106 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd
+Z107 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd
+l0
+L9
+V;kHOJG52N]AVTI<QLAA2a0
+R32
+31
+Z108 !s108 1671549457.856000
+Z109 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd|
+Z110 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd|
+R36
+R37
+!s100 G8TLbo>Yk>>gbWZ_YL[Xj3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 43 system_0_cpu_0_jtag_debug_module_translator 0 22 ;kHOJG52N]AVTI<QLAA2a0
+l148
+L78
+VzJf`6_Nei`jS6IBI1?NTz3
+R32
+31
+R108
+R109
+R110
+R36
+R37
+!s100 EYPfUAoQ0dhRR:G?dnF@00
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent
+R2
+R43
+R28
+R29
+R1
+Z111 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd
+Z112 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+VfI`dD]7zcBXh4gne50FHm2
+R32
+31
+Z113 !s108 1671549456.985000
+Z114 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd|
+Z115 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd|
+R36
+R37
+!s100 1V1^jm3DJ_JzICd`f57R03
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 74 system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent 0 22 fI`dD]7zcBXh4gne50FHm2
+l178
+L93
+V17PCAL66a33l69nBYPN4b3
+R32
+31
+R113
+R114
+R115
+R36
+R37
+!s100 <gG?Ug:T<CCzM2g<>Ngm80
+!i10b 1
+Esystem_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+R2
+R43
+R28
+R29
+R1
+Z116 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z117 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VLQd_oEHdLj7>GJiOQC1gX0
+R32
+31
+Z118 !s108 1671549456.600000
+Z119 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z120 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R36
+R37
+!s100 hR;GSDb<?U0CA9OnX=[f41
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 83 system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 LQd_oEHdLj7>GJiOQC1gX0
+l98
+L53
+VUU]U2a0=B95lLI6Ko75mo0
+R32
+31
+R118
+R119
+R120
+R36
+R37
+!s100 o>UC>[AHMfD:RfQeIE28X0
+!i10b 1
+vsystem_0_epcs_controller
+IzX<>7N:Se^LUdNW_eDEQj3
+VU0o;LD=7<eUjN82EGe_X_3
+R1
+R2
+Z121 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v
+Z122 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v
+L0 475
+R3
+r1
+31
+Z123 !s108 1671549453.206000
+Z124 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v|
+Z125 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v|
+R4
+R5
+!s100 n]VeL4=UhS8hhDUj8:0810
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_epcs_controller_epcs_control_port_translator
+R2
+R43
+R28
+R29
+R1
+Z126 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd
+Z127 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd
+l0
+L9
+VQ?aV]<]bL0>HBMlY=0Pj_2
+R32
+31
+Z128 !s108 1671549458.019000
+Z129 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd|
+Z130 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd|
+R36
+R37
+!s100 TbZ2]k0KAP@2Wm9A_G7N10
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 53 system_0_epcs_controller_epcs_control_port_translator 0 22 Q?aV]<]bL0>HBMlY=0Pj_2
+l148
+L78
+VzZ0Y@MQ[182<9Va@iMe_z1
+R32
+31
+R128
+R129
+R130
+R36
+R37
+!s100 0Ac;fTjR^gQBgbNF<2`ez0
+!i10b 1
+vsystem_0_epcs_controller_sub
+ImW^[;L;F4ifWQ0m611A1C3
+VSnOWCL7>Ao1@U]eU;JCQ<3
+R1
+R2
+R121
+R122
+L0 41
+R3
+r1
+31
+R123
+R124
+R125
+R4
+R5
+!s100 C_h:d^e<E5jCI[MW6CJK@0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router
+R6
+I0LPAmALT?C88BAM1]mJ242
+VbgNR7W7J725fZ7`eH5SeG1
+Z131 !s105 system_0_id_router_sv_unit
+S1
+R1
+R2
+Z132 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv
+Z133 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv
+L0 86
+R3
+r1
+31
+Z134 !s108 1671549455.365000
+Z135 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv|
+Z136 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv|
+R13
+R14
+!s100 Vm`Sge772_XKFaaSo_e`>2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_001
+R6
+I:5F1ALzZQgKPNgkg01]kS3
+VkiTNQIVkhSILB0nAZcZjn2
+Z137 !s105 system_0_id_router_001_sv_unit
+S1
+R1
+R2
+Z138 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv
+Z139 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv
+L0 86
+R3
+r1
+31
+Z140 !s108 1671549455.281000
+Z141 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv|
+Z142 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv|
+R13
+R14
+!s100 oUWI_H@BHhZkFIfO<_j_K3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_001_default_decode
+R6
+I7IQma1COgcH>8=6hXh<eE0
+VY]l]efbF_104<12faC>QB0
+R137
+S1
+R1
+R2
+R138
+R139
+L0 45
+R3
+r1
+31
+R140
+R141
+R142
+R13
+R14
+!s100 Y?3Z=bQ2QBVC>4hffF@^53
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_003
+R6
+INhbimD==Mbz<zf97hQ4?L1
+VLkg4knTiiYZd169VmS[Lb3
+Z143 !s105 system_0_id_router_003_sv_unit
+S1
+R1
+R2
+Z144 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv
+Z145 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv
+L0 86
+R3
+r1
+31
+Z146 !s108 1671549455.212000
+Z147 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv|
+Z148 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv|
+R13
+R14
+!s100 Z_IjlAhCJ6mIn^_=XQP2`3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_003_default_decode
+R6
+Ik1iMSUDZMTa9i:`Y7E]<o0
+VTcABZ6PDNM@g];A]?:9VI3
+R143
+S1
+R1
+R2
+R144
+R145
+L0 45
+R3
+r1
+31
+R146
+R147
+R148
+R13
+R14
+!s100 gWa^cCjnWgOM:73<E@f7A2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_006
+R6
+IGHoG6I406;8DfXDj:ak_>0
+Vz]Xz6kf>D]4C]0NA4mz@b0
+Z149 !s105 system_0_id_router_006_sv_unit
+S1
+R1
+R2
+Z150 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_006.sv
+Z151 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_006.sv
+L0 86
+R3
+r1
+31
+Z152 !s108 1671549455.133000
+Z153 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_006.sv|
+Z154 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_006.sv|
+R13
+R14
+!s100 >c4;]4<MD^9Ph^igb4=7i2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_006_default_decode
+R6
+I9H<jDQ<Tj33J48EFc52L40
+V661:mQUe4;D[K0lelF`bO2
+R149
+S1
+R1
+R2
+R150
+R151
+L0 45
+R3
+r1
+31
+R152
+R153
+R154
+R13
+R14
+!s100 VXG5_IFXgh^no6Y_?8Ia80
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_024
+R6
+I?[a?91:@ZzY2Jmf[WV5Sb1
+V>Y`5g_PA7Tz9HOQ`oF9V[3
+Z155 !s105 system_0_id_router_024_sv_unit
+S1
+R1
+R2
+Z156 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_024.sv
+Z157 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_024.sv
+L0 86
+R3
+r1
+31
+Z158 !s108 1671549455.049000
+Z159 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_024.sv|
+Z160 !s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_024.sv|
+R13
+R14
+!s100 bSV?9>=0X>I9hbPfQ5k`f2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_024_default_decode
+R6
+Im3AJHF41oH=4jgahg3Sd:0
+V;z?I1chmLcOm69kT2fh0k3
+R155
+S1
+R1
+R2
+R156
+R157
+L0 45
+R3
+r1
+31
+R158
+R159
+R160
+R13
+R14
+!s100 VRi^gBFJZ2[nomH0fXkQJ1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_id_router_default_decode
+R6
+I4IHRbJGKAC661iFlHGVDm3
+VP6d531EDzQ7@Fl]ZRebZX3
+R131
+S1
+R1
+R2
+R132
+R133
+L0 45
+R3
+r1
+31
+R134
+R135
+R136
+R13
+R14
+!s100 ngT2<2JMP4GF2>J1`k:Uj1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_irq_mapper
+R6
+Ihodo`ZzK8Ck<`]^Vl]H]V3
+V;AZ5Z]Toko2ni?Ud3YPob0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv
+L0 31
+R3
+r1
+31
+R13
+R14
+!s100 RgdI3hga`0UZTb:IdfLIj1
+!s105 system_0_irq_mapper_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv|
+!s108 1671549453.861000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_isp1362_hc_translator
+R2
+R43
+R28
+R29
+R1
+Z161 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd
+Z162 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd
+l0
+L9
+VLVXC?>KAVV_9@cmQHkFPA0
+R32
+31
+Z163 !s108 1671549458.821000
+Z164 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd|
+Z165 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd|
+R36
+R37
+!s100 ?mQNdflKCDKl1]aQGUZ^C2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 30 system_0_isp1362_hc_translator 0 22 LVXC?>KAVV_9@cmQHkFPA0
+l148
+L78
+VDgVJ``jlHC7]g16<dR<GG1
+R32
+31
+R163
+R164
+R165
+R36
+R37
+!s100 W2]93hH8m]0OB2Z7zfjE?3
+!i10b 1
+vsystem_0_jtag_uart_0
+IXIR1j]3Qj5b6CN]@3e`3e3
+V`AZ]eEok2jZe=ILP_HQJA1
+R1
+R2
+Z166 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v
+Z167 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v
+L0 327
+R3
+r1
+31
+Z168 !s108 1671549453.090000
+Z169 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v|
+Z170 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v|
+R4
+R5
+!s100 lF9dKE05RJIS[2?:S7HHF1
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_jtag_uart_0_avalon_jtag_slave_translator
+R2
+R43
+R28
+R29
+R1
+Z171 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd
+Z172 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd
+l0
+L9
+VhY2QShL6C2F=a2>WAhgh[2
+R32
+31
+Z173 !s108 1671549458.342000
+Z174 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd|
+Z175 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd|
+R36
+R37
+!s100 I]kSjkQX;>`XWQE1ZYngG3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 49 system_0_jtag_uart_0_avalon_jtag_slave_translator 0 22 hY2QShL6C2F=a2>WAhgh[2
+l148
+L78
+VnmjSH4THgOdejEzSQdk0;3
+R32
+31
+R173
+R174
+R175
+R36
+R37
+!s100 g17W3Vma4@d95@e<X0F5M0
+!i10b 1
+vsystem_0_jtag_uart_0_scfifo_r
+IFBL[Z5No6X?@m^^hJDajW1
+VTG^7:`Cha18YVfKAk1]aI1
+R1
+R2
+R166
+R167
+L0 240
+R3
+r1
+31
+R168
+R169
+R170
+R4
+R5
+!s100 G@F13dgB1XNlmDcK4fgZ[3
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_scfifo_w
+Ici`BnQ:3nod7O=?F`iPTh0
+Veng;f>AJnca055O^lOD5H2
+R1
+R2
+R166
+R167
+L0 77
+R3
+r1
+31
+R168
+R169
+R170
+R4
+R5
+!s100 nN_gUEiXXWaJ>=BlhMB@m2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_sim_scfifo_r
+Iz_KkALi]6LK`D5bn@O3]R3
+VPkc:CQTdS;YiZ2Q[FJzVH1
+R1
+R2
+R166
+R167
+L0 162
+R3
+r1
+31
+R168
+R169
+R170
+R4
+R5
+!s100 8U:8e^JRbB]2fo0T]_h`f2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_jtag_uart_0_sim_scfifo_w
+IfK87Q@@6OZebL::G`oCH=2
+VIdD=GkJ0PO?DMLH9W4jTO1
+R1
+R2
+R166
+R167
+L0 21
+R3
+r1
+31
+R168
+R169
+R170
+R4
+R5
+!s100 ch31?=6[>GH:F7W9VZCg^0
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_lcd_16207_0
+IPQzTKdA[1b]@T?4io]7SD1
+VzVl_Ya0ZRgdfkYTT3D<3e2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 g6zzdKO4[nS>1PQoOn[2l1
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v|
+!s108 1671549452.843000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_lcd_16207_0_control_slave_translator
+R2
+R43
+R28
+R29
+R1
+Z176 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd
+Z177 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd
+l0
+L9
+VREmD=X;6iT4gU0?i8JnRa1
+R32
+31
+Z178 !s108 1671549458.574000
+Z179 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd|
+Z180 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd|
+R36
+R37
+!s100 U4IB4mYA5Nl?8UhR]ShH@0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 45 system_0_lcd_16207_0_control_slave_translator 0 22 REmD=X;6iT4gU0?i8JnRa1
+l148
+L78
+V9dc<oH=KaUg58o17mHNYZ0
+R32
+31
+R178
+R179
+R180
+R36
+R37
+!s100 7QKXUdWh1iaT[kOCADgfW3
+!i10b 1
+vsystem_0_led_green
+I`7LkICMcocgGjH@9fc?oJ1
+V9O1`gMi^3Vb4ec6SOjPDz1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 PC04@<ai6313OOaA4EIH02
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v|
+!s108 1671549452.705000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_led_red
+IXG7H2=nR36YgZ[;3@kOME0
+VPiL@<5g<=SzoNcC]jc4S73
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 a3R1hLBU_SjAg72AW5R:V3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v|
+!s108 1671549452.774000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_led_red_s1_translator
+R2
+R43
+R28
+R29
+R1
+Z181 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd
+Z182 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd
+l0
+L9
+V7RdfPnO617f0Ln==^2lMK3
+R32
+31
+Z183 !s108 1671549458.658000
+Z184 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd|
+Z185 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd|
+R36
+R37
+!s100 e8AZ0O<]Rz`RXPMbJUSV<0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 30 system_0_led_red_s1_translator 0 22 7RdfPnO617f0Ln==^2lMK3
+l148
+L78
+V6CM;;:VHOVMOUgR>J@OD82
+R32
+31
+R183
+R184
+R185
+R36
+R37
+!s100 <UDeSUIkhc=UkGH3`;Kd60
+!i10b 1
+vsystem_0_rsp_xbar_demux
+R6
+IZ?S<X@0[EAJ_gURB8VSYZ2
+VjJG`^]X7@Uh50X<[k@23:3
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 UjkRRZ4QSoga@hCBn5==K0
+!s105 system_0_rsp_xbar_demux_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv|
+!s108 1671549454.547000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_demux_006
+R6
+Ic5mEFn_SENDII1GLb0h6G1
+V2Jkl>95QgT3hk=Zm8mh<^1
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_006.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_006.sv
+L0 43
+R3
+r1
+31
+R13
+R14
+!s100 <l>cYjl;4Y]eXFYYYW4k<1
+!s105 system_0_rsp_xbar_demux_006_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_006.sv|
+!s108 1671549454.478000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_006.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_mux
+R6
+IR9XE[<]@IXNfdnA><TNT;1
+V0I:1NeeRnef4Al`N^C^=@3
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 mdKbVkSS?DZ8;lP4L_9IV3
+!s105 system_0_rsp_xbar_mux_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv|
+!s108 1671549454.409000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_rsp_xbar_mux_001
+R6
+ITh?TSoJeHbTJ00O8igEBD1
+V6o]?nn6h11X1Wg=6`bZRG0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv
+L0 38
+R3
+r1
+31
+R13
+R14
+!s100 aO=Mig9WWb`5PG<bbh85>1
+!s105 system_0_rsp_xbar_mux_001_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv|
+!s108 1671549454.325000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_rst_controller
+R2
+R43
+R28
+R29
+R1
+Z186 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd
+Z187 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd
+l0
+L9
+VSP00@JjEUboI4>UYgN7YM2
+R32
+31
+Z188 !s108 1671549459.222000
+Z189 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd|
+Z190 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd|
+R36
+R37
+!s100 7NP>8KdZO3D^2LgWnniKa3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 23 system_0_rst_controller 0 22 SP00@JjEUboI4>UYgN7YM2
+l70
+L39
+Vc<j5cln]z@X?4M7IDJZA^3
+R32
+31
+R188
+R189
+R190
+R36
+R37
+!s100 _HL:=GK_cl0C>lCFOXVXB0
+!i10b 1
+Esystem_0_rst_controller_002
+R2
+R43
+R28
+R29
+R1
+Z191 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd
+Z192 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd
+l0
+L9
+VoUh5HLLNYA>7HNn62G23?0
+R32
+31
+Z193 !s108 1671549459.306000
+Z194 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd|
+Z195 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd|
+R36
+R37
+!s100 gDFlFlmAPKPnl90kQ<o8U0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 27 system_0_rst_controller_002 0 22 oUh5HLLNYA>7HNn62G23?0
+l70
+L39
+V2Sm^=Rc^zf@HZ[1@<MH`h0
+R32
+31
+R193
+R194
+R195
+R36
+R37
+!s100 gFcN1VT?cMTo:KElFX@V;0
+!i10b 1
+vsystem_0_SD_CLK
+IA_AK^RiTl_F7]0F7ekI;P1
+Vm^Ia_32TaS[T@o3CDWQH51
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v
+L0 21
+R3
+r1
+31
+R4
+R5
+nsystem_0_@s@d_@c@l@k
+!s100 >of5A@dON[REIRg^f;09i0
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v|
+!s108 1671549452.420000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_SD_DAT
+INf18BRGY>Vb6?Hac8V08U1
+V`oBfKF?aPkjNQP5`Tg0lm2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v
+L0 21
+R3
+r1
+31
+R4
+R5
+nsystem_0_@s@d_@d@a@t
+!s100 2kIz]9IROTB883<KXK<G80
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v|
+!s108 1671549452.505000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0
+IY?PBj;@^Az06IOb@ond560
+VUzWXQ[>PcaKJ_:Uc;a^XO2
+R1
+R2
+Z196 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v
+Z197 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v
+L0 158
+R3
+r1
+31
+Z198 !s108 1671549453.291000
+Z199 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v|
+Z200 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v|
+R4
+R5
+!s100 PYcDG:`;b0PGXOCWlgZQZ2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0_input_efifo_module
+Iimc]XdPDJ@;e;GFklHJ6g1
+VKhNXTZKK^TAd9OIOHMMO53
+R1
+R2
+R196
+R197
+L0 21
+R3
+r1
+31
+R198
+R199
+R200
+R4
+R5
+!s100 CU`Ve@fj3@JLUC_eOI?4A1
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_sdram_0_s1_translator
+R2
+R43
+R28
+R29
+R1
+Z201 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd
+Z202 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd
+l0
+L9
+VNQ6hAoo8=?Q7AjK1[<Gl@3
+R32
+31
+Z203 !s108 1671549457.941000
+Z204 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd|
+Z205 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd|
+R36
+R37
+!s100 ?TSKcdZmDU[BdUEI`0nVh2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 30 system_0_sdram_0_s1_translator 0 22 NQ6hAoo8=?Q7AjK1[<Gl@3
+l148
+L78
+VX5LO@0c0V]F`F9FeXaj0O0
+R32
+31
+R203
+R204
+R205
+R36
+R37
+!s100 @zfCn_68>AeF2AA`@S]B20
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent
+R2
+R43
+R28
+R29
+R1
+Z206 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd
+Z207 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd
+l0
+L9
+Vd=iafV5[ASiH1f@Y3:Zd62
+R32
+31
+Z208 !s108 1671549457.070000
+Z209 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd|
+Z210 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd|
+R36
+R37
+!s100 d;ISWhZgzjkb4acblBAY[0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 61 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent 0 22 d=iafV5[ASiH1f@Y3:Zd62
+l178
+L93
+V0W<GY2NI`BVYCAeIG[kfW2
+R32
+31
+R208
+R209
+R210
+R36
+R37
+!s100 @4@FThAQ2ETBGK]UOX4G71
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo
+R2
+R43
+R28
+R29
+R1
+Z211 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+Z212 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd
+l0
+L9
+V1@jJhU0_R1jFK7k5lheUP0
+R32
+31
+Z213 !s108 1671549456.753000
+Z214 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+Z215 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd|
+R36
+R37
+!s100 HRHd5JbcXoaM3d8L=OR>_2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 72 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo 0 22 1@jJhU0_R1jFK7k5lheUP0
+l98
+L53
+V^mgYni`5O41UZUV78:CN>1
+R32
+31
+R213
+R214
+R215
+R36
+R37
+!s100 oDfYHVDa2mKz0bS4c>h>b2
+!i10b 1
+Esystem_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo
+R2
+R43
+R28
+R29
+R1
+Z216 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+Z217 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd
+l0
+L9
+VMWPhzEN?13@lLCKToc=zI2
+R32
+31
+Z218 !s108 1671549456.669000
+Z219 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+Z220 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd|
+R36
+R37
+!s100 Y_XRY>16Xm4kYaIaSRmkZ3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 70 system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo 0 22 MWPhzEN?13@lLCKToc=zI2
+l98
+L53
+VbEBNHGAo83fW=OSAPPj2=2
+R32
+31
+R218
+R219
+R220
+R36
+R37
+!s100 D^C?SbUgd1?hWOJDTN`0?2
+!i10b 1
+vsystem_0_sdram_0_test_component
+IdEfModYM56HFAf0CDQW?h3
+V`lcgeeCVlK=Xa2_Dl9AeC1
+R1
+R2
+Z221 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v
+Z222 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v
+L0 113
+R3
+r1
+31
+Z223 !s108 1671549453.376000
+Z224 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v|
+Z225 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v|
+R4
+R5
+!s100 zRhAX3KM4Q9>JXR^>Z>3X1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_sdram_0_test_component_ram_module
+IKz37F?_RQ1IhXOFk?b;TE3
+V[J>3LnKa;R5RjMSK>e6g81
+R1
+R2
+R221
+R222
+L0 21
+R3
+r1
+31
+R223
+R224
+R225
+R4
+R5
+!s100 JWm<Lkb2SMoMzXh2?FGo]2
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_seg7_display_avalon_slave_0_translator
+R2
+R43
+R28
+R29
+R1
+Z226 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd
+Z227 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd
+l0
+L9
+VU3@O5J]DBIJ?]L;ZhA<B:3
+R32
+31
+Z228 !s108 1671549459.059000
+Z229 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd|
+Z230 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd|
+R36
+R37
+!s100 Q62aWH3I[Im8YPTS5iDNb3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 47 system_0_seg7_display_avalon_slave_0_translator 0 22 U3@O5J]DBIJ?]L;ZhA<B:3
+l148
+L78
+V3MKFngTHNnFdJ[OY?9an61
+R32
+31
+R228
+R229
+R230
+R36
+R37
+!s100 2SDo:n?[SBaG5>F[K^GBh1
+!i10b 1
+Esystem_0_sram_0_avalon_slave_0_translator
+R2
+R43
+R28
+R29
+R1
+Z231 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sram_0_avalon_slave_0_translator.vhd
+Z232 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sram_0_avalon_slave_0_translator.vhd
+l0
+L9
+V`XZmOZnn1iEm0WddNHJ8[3
+R32
+31
+Z233 !s108 1671549459.143000
+Z234 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sram_0_avalon_slave_0_translator.vhd|
+Z235 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sram_0_avalon_slave_0_translator.vhd|
+R36
+R37
+!s100 Yzj:FX5CcKeSh?Z4h^UoB0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 41 system_0_sram_0_avalon_slave_0_translator 0 22 `XZmOZnn1iEm0WddNHJ8[3
+l148
+L78
+VzAC;2ASjYiO<;U2]:TkNQ0
+R32
+31
+R233
+R234
+R235
+R36
+R37
+!s100 LhXzQOi]H0Q;ZB:N?Jd9g1
+!i10b 1
+vsystem_0_switch_pio
+I?RIbd?SV0aKX]@]nc1;z=3
+VQo8RRQGFgm8H]Z1I0Uh9d2
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 Kzo^UDA43X7LcZJ7IP;`<0
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v|
+!s108 1671549452.574000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_switch_pio_s1_translator
+R2
+R43
+R28
+R29
+R1
+Z236 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd
+Z237 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd
+l0
+L9
+V@OTf:bF<?lW6T[FDP;kB]0
+R32
+31
+Z238 !s108 1671549458.743000
+Z239 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd|
+Z240 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd|
+R36
+R37
+!s100 mOA>gko07dA_Ym5VSbAED2
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 33 system_0_switch_pio_s1_translator 0 22 @OTf:bF<?lW6T[FDP;kB]0
+l148
+L78
+VQEA^i<Y1EKAaIjI^SiK_L0
+R32
+31
+R238
+R239
+R240
+R36
+R37
+!s100 ^`;=khKQB@Qc6Al2B2OTT2
+!i10b 1
+vsystem_0_sysid_qsys_0
+IMYj;A05=2nCF]J9`V>L_N3
+VA34B>b?NAcmCh:[:z:RU42
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 1Achi;=MiXzC@`TdO1XE11
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v|
+!s108 1671549452.119000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_sysid_qsys_0_control_slave_translator
+R2
+R43
+R28
+R29
+R1
+Z241 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd
+Z242 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd
+l0
+L9
+V6Dj9@I;LIR?3^aWGIJLF_2
+R32
+31
+Z243 !s108 1671549458.188000
+Z244 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd|
+Z245 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd|
+R36
+R37
+!s100 9;iIzYh9b`KOb5Ue5`<b30
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 46 system_0_sysid_qsys_0_control_slave_translator 0 22 6Dj9@I;LIR?3^aWGIJLF_2
+l148
+L78
+VLLCZmWS[CIBMWzc8?9VM81
+R32
+31
+R243
+R244
+R245
+R36
+R37
+!s100 `3`_aF=0SX]VT6LobNBWX0
+!i10b 1
+vsystem_0_timer_0
+IM[X=M22k0?h6:GDOW[9d@0
+Vh0dadkQeibUnegW;j@@b]3
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v
+L0 21
+R3
+r1
+31
+R4
+R5
+!s100 39?>R3]Eh;A>g`0EnLA_;1
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v|
+!s108 1671549452.906000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_timer_0_s1_translator
+R2
+R43
+R28
+R29
+R1
+Z246 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd
+Z247 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd
+l0
+L9
+VYYDET3Zc@`X<eQ4`LOI2I3
+R32
+31
+Z248 !s108 1671549458.504000
+Z249 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd|
+Z250 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd|
+R36
+R37
+!s100 YWUTYUE5B3XPS?cTR=;i>3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 30 system_0_timer_0_s1_translator 0 22 YYDET3Zc@`X<eQ4`LOI2I3
+l148
+L78
+VdIQ@LBHiUIV2AjfZEKJ^92
+R32
+31
+R248
+R249
+R250
+R36
+R37
+!s100 P;bUR?L49Zab:5zUnn94Y2
+!i10b 1
+vsystem_0_tri_state_bridge_0_bridge_0
+R6
+IWQAK3^>T6X:hZJ2:O7n_;3
+V5[MU`OJASNQ_eWFADV`BD0
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv
+L0 26
+R3
+r1
+31
+R13
+R14
+!s100 ;0Yz_1VV0m0h=>Dg=7G5]3
+!s105 system_0_tri_state_bridge_0_bridge_0_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv|
+!i10b 1
+!s85 0
+!s108 1671549456.268000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv|
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0
+I^kDmTJb;=g=1<^;jV7XA`0
+VAP^hBnlSdjoS<HnGfO0BZ3
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v
+L0 9
+R3
+r1
+31
+R4
+R5
+nsystem_0_tri_state_bridge_0_pin@sharer_0
+!s100 J<Y;@kOW<1=M9i4Sg=z1[3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v|
+!s108 1671549452.289000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0_arbiter
+R6
+IN9GlS7KPIP2MVzVFIO;>Q2
+V[J5^NS^1BNg@U[CMUF^I60
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv
+L0 36
+R3
+r1
+31
+R13
+R14
+nsystem_0_tri_state_bridge_0_pin@sharer_0_arbiter
+!s100 <gn@boOYg@P4GK<Y^ST<B2
+!s105 system_0_tri_state_bridge_0_pinSharer_0_arbiter_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv|
+!s108 1671549456.136000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_tri_state_bridge_0_pinSharer_0_pin_sharer
+R6
+IT:84_QJgUd@S2Mk3KN>oH1
+V7BVio<77_X_U<V<VQl`Ie1
+S1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv
+L0 19
+R3
+r1
+31
+R13
+R14
+nsystem_0_tri_state_bridge_0_pin@sharer_0_pin_sharer
+!s100 oGzW52oYD]lM6?CaMFcJ;0
+!s105 system_0_tri_state_bridge_0_pinSharer_0_pin_sharer_sv_unit
+!s90 -reportprogress|300|-sv|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv|
+!s108 1671549456.199000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv|
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0
+I4E@[9QL5N7Mbd<[ZTaX9Z0
+VlbCM1fS;ZUz>`b<E@m2I^0
+R1
+R2
+Z251 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v
+Z252 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v
+L0 789
+R3
+r1
+31
+Z253 !s108 1671549452.975000
+Z254 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v|
+Z255 !s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v|
+R4
+R5
+!s100 F<TYk7dJe1NEEX0<3lVd<2
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_regs
+IJXWF<XEHO_Yl90i=emf9n3
+V<CBZc<=h6C3mc<o11UOli1
+R1
+R2
+R251
+R252
+L0 544
+R3
+r1
+31
+R253
+R254
+R255
+R4
+R5
+!s100 XeinE6kE6_o;ZFjg[bRO42
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_rx
+I`Jm7_T@omk@RGC^Q8JGT_0
+VR?@[Nc7L]=JVjBc:TPBL32
+R1
+R2
+R251
+R252
+L0 286
+R3
+r1
+31
+R253
+R254
+R255
+R4
+R5
+!s100 7Kh7RE4cFQAbgP;92^EN:1
+!i10b 1
+!s85 0
+!s101 -O0
+vsystem_0_uart_0_rx_stimulus_source
+I3MeNhz8HWCS2<UV=GcXdU0
+VB4EM_3?i5SnP9=K@T;W7n1
+R1
+R2
+R251
+R252
+L0 193
+R3
+r1
+31
+R253
+R254
+R255
+R4
+R5
+!s100 if]f6;lOT5N`=8SPf_;Z51
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_uart_0_s1_translator
+R2
+R43
+R28
+R29
+R1
+Z256 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd
+Z257 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd
+l0
+L9
+VLM?6R7<YjcBQSd6DeH:743
+R32
+31
+Z258 !s108 1671549458.420000
+Z259 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd|
+Z260 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd|
+R36
+R37
+!s100 AjWK=JR>=`M6R?M`Ob=8[1
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 29 system_0_uart_0_s1_translator 0 22 LM?6R7<YjcBQSd6DeH:743
+l148
+L78
+VC:U7N8K@K3g:DNNM:Bg:h3
+R32
+31
+R258
+R259
+R260
+R36
+R37
+!s100 8oD9aF8YSBlbEdL6@9HoW1
+!i10b 1
+vsystem_0_uart_0_tx
+IM85i]W6UT>;>f^g3VV13E3
+Vg@hE@__Sfbj:e99E]7Z2P3
+R1
+R2
+R251
+R252
+L0 21
+R3
+r1
+31
+R253
+R254
+R255
+R4
+R5
+!s100 SRZb3laIMF_nK<3f1F;YB2
+!i10b 1
+!s85 0
+!s101 -O0
+Esystem_0_vga_0_avalon_slave_0_translator
+R2
+R43
+R28
+R29
+R1
+Z261 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd
+Z262 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd
+l0
+L9
+Vk@bFGTN1DMMLUh?X0o;Ua1
+R32
+31
+Z263 !s108 1671549458.974000
+Z264 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd|
+Z265 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd|
+R36
+R37
+!s100 0>gKad3>B?i7z51BlbG6k3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 40 system_0_vga_0_avalon_slave_0_translator 0 22 k@bFGTN1DMMLUh?X0o;Ua1
+l148
+L78
+VO@i:RE<V<42LY179C>T3^3
+R32
+31
+R263
+R264
+R265
+R36
+R37
+!s100 z1aP^jH13J`]aB5:RjK7X3
+!i10b 1
+Esystem_0_wg_0_avalon_slave_0_translator
+R2
+R43
+R28
+R29
+R1
+Z266 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_wg_0_avalon_slave_0_translator.vhd
+Z267 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_wg_0_avalon_slave_0_translator.vhd
+l0
+L9
+V:<dW9lD0^5`l;P7L>bIzi0
+R32
+31
+Z268 !s108 1671549458.257000
+Z269 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_wg_0_avalon_slave_0_translator.vhd|
+Z270 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_wg_0_avalon_slave_0_translator.vhd|
+R36
+R37
+!s100 D4XFCSg;l?39K<om]4I2n0
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 39 system_0_wg_0_avalon_slave_0_translator 0 22 :<dW9lD0^5`l;P7L>bIzi0
+l148
+L78
+V4LCBCQmg;ZKFXV3PS4ak:0
+R32
+31
+R268
+R269
+R270
+R36
+R37
+!s100 eWaTCfa2@>:LH[:z?d5Dk1
+!i10b 1
+Esystem_0_width_adapter
+R2
+R43
+R28
+R29
+R1
+Z271 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd
+Z272 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd
+l0
+L9
+VJhLR76?aD4fZ>U;;?4@X<3
+R32
+31
+Z273 !s108 1671549457.239000
+Z274 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd|
+Z275 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd|
+R36
+R37
+!s100 J@4j?V;G0YBTjP1e0W^GV3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 22 system_0_width_adapter 0 22 JhLR76?aD4fZ>U;;?4@X<3
+l132
+L70
+V_h0PI5DHkV>]l2Q_RPmmL0
+R32
+31
+R273
+R274
+R275
+R36
+R37
+!s100 NBLFFUVN717n:CGFb6Td:3
+!i10b 1
+Esystem_0_width_adapter_001
+R2
+R43
+R28
+R29
+R1
+Z276 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd
+Z277 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd
+l0
+L9
+V5j1i=Oa3C=3QGU]n[UHI31
+R32
+31
+Z278 !s108 1671549457.317000
+Z279 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd|
+Z280 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd|
+R36
+R37
+!s100 KD=a<cHdPSg`A[2;E1<`00
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 26 system_0_width_adapter_001 0 22 5j1i=Oa3C=3QGU]n[UHI31
+l132
+L70
+V=`gYcdekXA2D;kZ3aYaZ<0
+R32
+31
+R278
+R279
+R280
+R36
+R37
+!s100 GRKGMYMC9FA[BdQBUX5[P0
+!i10b 1
+Esystem_0_width_adapter_002
+R2
+R43
+R28
+R29
+R1
+Z281 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd
+Z282 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd
+l0
+L9
+VA7kj>[n_e96`QMJ5aLU2K3
+R32
+31
+Z283 !s108 1671549457.386000
+Z284 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd|
+Z285 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd|
+R36
+R37
+!s100 3gXRJ=`1QcZ:@i<26SQ6=3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 26 system_0_width_adapter_002 0 22 A7kj>[n_e96`QMJ5aLU2K3
+l132
+L70
+V?U:DI6i68aXc2gWLOUV>V2
+R32
+31
+R283
+R284
+R285
+R36
+R37
+!s100 X9>kmeUKWoK;Hca6PgRgS0
+!i10b 1
+Esystem_0_width_adapter_003
+R2
+R43
+R28
+R29
+R1
+Z286 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd
+Z287 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd
+l0
+L9
+V[EPeo;m0Q]]Ml^@DChZ9I3
+R32
+31
+Z288 !s108 1671549457.471000
+Z289 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd|
+Z290 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd|
+R36
+R37
+!s100 z:]=4kTh[?9iBBhi[B^Ro3
+!i10b 1
+Artl
+R43
+R28
+R29
+DEx4 work 26 system_0_width_adapter_003 0 22 [EPeo;m0Q]]Ml^@DChZ9I3
+l132
+L70
+VO1R^bhZBzkN[^[9zA`cnT3
+R32
+31
+R288
+R289
+R290
+R36
+R37
+!s100 KkYaz8OIe7izdE:lH<lG;2
+!i10b 1
+vtornado_system_0_epcs_controller_atom
+IMnO3XUPoDzXPo][fkf25n3
+Vf>ciCXOoDV8IGj;?oJ9MU0
+R1
+R2
+R121
+R122
+L0 424
+R3
+r1
+31
+R123
+R124
+R125
+R4
+R5
+!s100 K>Xfa>UJ1Wg=mORkFG3ff1
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_Controller
+IIc9GILQI`^z]bG3bY2KH`1
+V6Qe1S>J>9<[0ae3;6lZk63
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Param.h
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@controller
+!s100 b4T;V3`C=YU?6=S7Ma`b;2
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v|
+!s108 1671549453.460000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Param.h|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_NIOS_CTRL
+Ij<WHFV@YFJ5jb>2M<==8?0
+VCOXO3]M]b<C3?7OJ2QjKI1
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@n@i@o@s_@c@t@r@l
+!s100 b`RHRR]lihNi@AIRdbP@c3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v|
+!s108 1671549451.841000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vVGA_OSD_RAM
+IHQHXCDh2MP;<66Z:_dU[N0
+VdZB6;i4T<E0HCEiLYYe<Y0
+R1
+R2
+8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v
+FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@v@g@a_@o@s@d_@r@a@m
+!s100 ad;V=3nFIPDoMA`]j<a;B3
+!s90 -reportprogress|300|-vlog01compat|-work|system_0|+incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v|
+!s108 1671549451.919000
+!s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v|
+!i10b 1
+!s85 0
+!s101 -O0
+Ewgen
+R2
+R43
+R28
+R29
+R1
+Z291 8C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/wgen.vhd
+Z292 FC:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/wgen.vhd
+l0
+L9
+V>4^<=h27fP[B<Fb9eY35R1
+!s100 3UPO[3PefQ_j=EC>3TQ7W0
+R32
+31
+!i10b 1
+Z293 !s108 1671549459.522000
+Z294 !s90 -reportprogress|300|-93|-work|system_0|C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/wgen.vhd|
+Z295 !s107 C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/wgen.vhd|
+R36
+R37
+Aa_wgen
+R43
+R28
+R29
+Z296 DEx4 work 4 wgen 0 22 >4^<=h27fP[B<Fb9eY35R1
+l26
+L21
+Z297 VNgjJ3]DB?O7h8?zo6ChHK1
+Z298 !s100 cHg5DhJ`>bRO5j`4kBZf?1
+R32
+31
+!i10b 1
+R293
+R294
+R295
+R36
+R37
