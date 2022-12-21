@@ -17,20 +17,25 @@ ter alterado o source code aqui presente.
 ### 1 - Quartus
 
 Arquivos em VHDL importantes ao projeto estão dentro de
-("fpga/hw")[fpga/hw].
+("fpga/quat")[fpga/quat].
 
-	calc_tb.vhd - Esta é a testbench do projeto para uma
-multiplicação simples
+calc_tb.vhd - Esta é a testbench do projeto para uma multiplicação simples
 
-	calc.vhd - Contém o encapsulamento dos registradores e
-arquitetura para multiplicar dois quaternions de uma única dimensão
-
-	fixed
-
+calc.vhd - Contém o encapsulamento dos registradores e arquitetura para 
+multiplicar dois quaternions de uma única dimensão
+    
+reg32_clr - Registrador "self clear" de 32 bits 
+reg32_clr - Registrador ponto fixo, sinalizado, de 32 bits. Entrada e saída são no formato:
+            bit:      (1)        (0)            (-1 a -30)
+                    (Sinal)(Parte inteira).(Valores frácionários)
+                    
 ### 2 - Qsys
 
-### 3 - Eclipse
-
+### 3 - Eclipse
+Os arquivos fonte do Eclipse estão em ("fpga/software/server1") [fpga/software/server1].
+O principal deles é "iniche_init.c" onde o servidor por Socket é criado (função SSSInitialTask()).
+É PRECISO ALTERAR O IP E PORTA DO SERVIDOR NO ARQUIVO "iniche_init.c", as linhas que cumprem essa função, possuem os respectivos comentátios no código.
+    
 ## Rodando
 
 	nios2-download -g <bin>

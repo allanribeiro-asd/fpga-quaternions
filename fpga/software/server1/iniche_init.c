@@ -177,12 +177,12 @@ void SSSInitialTask(void *task_data)
   //error_code = OSTaskDel(OS_PRIO_SELF);
   //alt_uCOSIIErrorHandler(error_code, 0);
   LCD_Init();
+  
   int sw, but;
   struct sockaddr_in sa;
   int res;
   int SocketFD;
   char buf[1024];
-  printf("estou aqui\n");
   SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
   printf("Socket criado\n");
   memset(&sa, 0, sizeof sa);
