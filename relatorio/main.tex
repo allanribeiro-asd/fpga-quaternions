@@ -3,22 +3,26 @@
 \begin {document}
 
 %==========================================================================
+
 \title {Calculo do deslocamento de corpos usando Quatérnions}
 
 \author {
-	Allan Ribeiro \\
-	2037807 \\
-	\and
-	Lucas Perin Silva Leyser \\
+	Allan Ribeiro\\
+	2037807\\
+	\and\\
+	Lucas Perin Silva Leyser\\
 	1860275
 }
 
 \date {21 de Dezembro de 2022}
+
 \maketitle
-%==========================================================================
 
 %==========================================================================
+
+
 \section{Introdução}
+
 %==========================================================================
 
 	A intenção era fazer o uso de FPGA para cálculo do
@@ -29,8 +33,9 @@ abordagem dos ângulos de Euler.
 	Fez se o uso dos dados de giroscópio e acelerômtetros de um
 smartphone, descritos em um csv, fazendo-se a amostragem em tempo da
 leitura da aceleração das variações, em eixo x, y e z. Os dados são
-então filtrados de string para ponto flutuante, processados por um socket,
-escrito em python, que por sua vez realiza a conexão com a placa.
+então filtrados de string para ponto flutuante, processados por um
+socket, escrito em python, que por sua vez realiza a conexão com a
+placa.
 
 	Na placa Cyclone II, foram escritos arquivos em VHDL que fazem
 a abstração do uso de registradores para guardar um quaternion, sendo
@@ -67,10 +72,10 @@ armazenamento de dados.
 	Os dados foram exportados e disponibilizados num arquivo, que
 por sua vez é processada pelo servidor, que mais tarde alimenta a
 placa com os dados. A formatação transforma a tupla de valores de
-string (tempo, qx, qy e qz) em pontos flutuantes com a mesma quantidade de casas
-decimais. Isso é importante para facilitar a entrada e armazenamento
-dos dados em placa. Mais tarde, serão codificados novamente em string
-para envio efetivo pela rede.
+string (tempo, qx, qy e qz) em pontos flutuantes com a mesma
+quantidade de casas decimais. Isso é importante para facilitar a
+entrada e armazenamento dos dados em placa. Mais tarde, serão
+codificados novamente em string para envio efetivo pela rede.
 
 \subsection{Conexão de rede}
 
@@ -80,10 +85,11 @@ computador à parte. Chamar-se-à de servidor. O servidor, após filtrar
 os pontos, os envia em tupla à placa, um após o outro. Uma vez
 enviados, espera por uma tupla do mesmo tipo da placa.
 
-	A conexão TCP/IP com a placa Altera DE2 Cyclone II, cliente, foi
-projetada com base no projeto "Wave Gen" realizado pelo aluno Luciano Bonzatto
-, no segundo semestre de 2022. Estabelecida com sucesso, é necessário
-a especificação do endereço de servidor a contatar.
+	A conexão TCP/IP com a placa Altera DE2 Cyclone II, cliente,
+foi projetada com base no projeto "Wave Gen" realizado pelo aluno
+Luciano Bonzatto , no segundo semestre de 2022. Estabelecida com
+sucesso, é necessário a especificação do endereço de servidor a
+contatar.
 
 	Importante notar que a placa recebe uma string, e não uma
 tupla. Futuros esforços devem ser concentrados na conversão da string
@@ -106,27 +112,29 @@ resulta em uma precisão de $2^{-15}$ nas operações.
 mesa, a tentativa de multiplicar 0.5 por 0.5 resulta no deslocamento
 errôneo dos bits.
 
-\begin{footnotesize}
-\begin{verbatim}
+\begin{footnotesize} \begin{verbatim}
+
 	0.5 * 0.5 = 0b0010 * 0b0010 = 0b0001 = 0.25 (caso ideal)
 
 	0.5 * 0.5 = 0b0010 * 0b0010 = 0b000001 = 0.0625 (caso real)
-\end{verbatim}
-\end{footnotesize}
+
+\end{verbatim} \end{footnotesize}
 
 Mas o caso é isolado. Para outros casos, o resultado é caótico à
-primeira vista. Na tentativa de resolver o problema, foram feitos testes de outras
-operações, e os resultados também são incorretos, porém consistentes.
+primeira vista. Na tentativa de resolver o problema, foram feitos
+testes de outras operações, e os resultados também são incorretos,
+porém consistentes.
 
 	Devido à falta de suporte a esse tipo de sinal por parte do
-qsys, foi preciso utilizar portas do tipo \texttt{std\_logic\_vector} para o recebimento dos
-valores e a própria FPGA faz a cópia desse valor para um sinal do tipo
-"sfixed". Partimos do pressuposto que, como os valores são sinalizados
-e entre 0 e 1, sempre teríamos dois bits iniciais, o primeiro para o
-sinal e o segundo para a parte inteira do valor. O restante é a
-parte decimal do valor, ou seja, utilizando um sinal com o ponto fixo
-entre o segundo e terceiro MSB do \texttt{std\_logic\_vector} a cópia pode ser
-feita diretamente, bit a bit.
+qsys, foi preciso utilizar portas do tipo \texttt{std\_logic\_vector}
+para o recebimento dos valores e a própria FPGA faz a cópia desse
+valor para um sinal do tipo "sfixed". Partimos do pressuposto que,
+como os valores são sinalizados e entre 0 e 1, sempre teríamos dois
+bits iniciais, o primeiro para o sinal e o segundo para a parte
+inteira do valor. O restante é a parte decimal do valor, ou seja,
+utilizando um sinal com o ponto fixo entre o segundo e terceiro MSB do
+\texttt{std\_logic\_vector} a cópia pode ser feita diretamente, bit a
+bit.
 
 	Foi feita a tentativa de abstrair outra forma de cálculo:
 receber os dados em binário, e faze r a operação bit a bit. Outro
@@ -150,17 +158,17 @@ de 2.
 Novamente, a conexão de rede funciona. A multiplicação também, mas existem erros na
 operação.
 
-	Se possível, troque a versão da placa para evitar problemas de
-licença, problemas de compilação e geração de componentes/circuitos
-(Qsys).
+	Como recomendações gerais para futuros uso do projeto, troque
+a versão da placa para evitar problemas de licença, problemas de
+compilação e geração de componentes/circuitos (Qsys).
 
 	A forma como a multiplicação foi feita é dependente da
 biblioteca ieee\_proposed, representada pelos arquivos
 \texttt{fixed\_float\_types\_c.vhdl, float\_pkg\_c.vhdl} e
-\texttt{fixed\_pkg\_c.vhdl}. Os três
-tem problemas com versões de vhdl, cujo dialeto deve ser 2008.
+\texttt{fixed\_pkg\_c.vhdl}. Os três tem problemas com versões de
+vhdl, cujo dialeto deve ser 2008.
 
-	As bibliotecas deve ser inserida como arquivos do projeto no
+	As bibliotecas devem ser inserida como arquivos do projeto no
 Quartus (caso simulação em RTL), no Qsys (para geração dos
 componentes), e compiladas internamente do ModelSim (para simulação em
 RTL).
@@ -168,7 +176,8 @@ RTL).
 	A multiplicação em binário na FPGA é considerada, por muitas
 referências, como uma área obscura para se implementar. Sem sucesso,
 algumas recomendações são: implementar uma lógica de complemento de 2
-funcional, uso de outro tipo preferível (real não é sintetizável).
+funcional, uso de outro tipo preferível (real não é sintetizável), ou
+mesmo uso de outros formátos numéricos mais simples de representar.
 
 \end{document}
 %==========================================================================
