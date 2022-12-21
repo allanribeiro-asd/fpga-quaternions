@@ -48,6 +48,13 @@ Na aba "Generation"
 Feche o Qsys e abra o Eclipse em "fpga\software"
     Clique com o direito do mouse em "server1" e selecione "Clean Project"
     Faça o mesmo para "server1_bsp"
+    Expanda a pasta do BSP
+        Abra os arquivos: "settings.bsp", "settings.bsp~" e "create-this-bsp"
+        Os dois primeiros possuem os caminhos que levam ao bsp e ao sopcinfo do projeto, substitua com o caminho do seu diretório.
+        "create-this-bsp" tem apenas o caminho do sopcinfo, substitua-o também pelo seu caminho.
+        Salve os arquivos
+    De "Build Project" em "server1_bsp" e em seguida no "server1"    
+        
     
 
     
