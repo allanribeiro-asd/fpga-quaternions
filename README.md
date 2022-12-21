@@ -36,10 +36,16 @@ Os arquivos fonte do Eclipse estão em ("fpga/software/server1") [fpga/software/
 O principal deles é "iniche_init.c" onde o servidor por Socket é criado (função SSSInitialTask()).
 É PRECISO ALTERAR O IP E PORTA DO SERVIDOR NO ARQUIVO "iniche_init.c", as linhas que cumprem essa função, possuem os respectivos comentátios no código.
     
-## Rodando
+## Passo a Passo para rodar
 
 Abrir o arquivo "DE2_NET.qpf"
 Compilar o projeto
+Abrir o Qsys e abrir o arquivo "system_0.qsys"
+Na aba "Generation"
+    Escolha "None" em "Simulation" e "Testbench System"
+    Em "Synthesis", escolha "VHDL" e marque a opção "Create block symbol file"
+    Em seguida, clique em "Generate"
+    
 
 	nios2-download -g <bin>
 	nios2-terminal

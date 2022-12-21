@@ -100,14 +100,6 @@
          type = "long";
       }
    }
-   element Audio_0.avalon_slave_0
-   {
-      datum baseAddress
-      {
-         value = "27795728";
-         type = "long";
-      }
-   }
    element DM9000A.avalon_slave_0
    {
       datum baseAddress
@@ -121,6 +113,14 @@
       datum baseAddress
       {
          value = "25165824";
+         type = "long";
+      }
+   }
+   element Audio_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "27795728";
          type = "long";
       }
    }
@@ -268,35 +268,11 @@
          type = "int";
       }
    }
-   element timer_0.s1
+   element SD_CLK.s1
    {
       datum baseAddress
       {
-         value = "27795488";
-         type = "long";
-      }
-   }
-   element button_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "27795600";
-         type = "long";
-      }
-   }
-   element timer_1.s1
-   {
-      datum baseAddress
-      {
-         value = "27795520";
-         type = "long";
-      }
-   }
-   element switch_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "27795616";
+         value = "27795664";
          type = "long";
       }
    }
@@ -308,35 +284,11 @@
          type = "long";
       }
    }
-   element uart_0.s1
-   {
-      datum baseAddress
-      {
-         value = "27795456";
-         type = "long";
-      }
-   }
-   element led_green.s1
-   {
-      datum baseAddress
-      {
-         value = "27795584";
-         type = "long";
-      }
-   }
    element SD_CMD.s1
    {
       datum baseAddress
       {
          value = "27795648";
-         type = "long";
-      }
-   }
-   element led_red.s1
-   {
-      datum baseAddress
-      {
-         value = "27795568";
          type = "long";
       }
    }
@@ -348,11 +300,59 @@
          type = "long";
       }
    }
-   element SD_CLK.s1
+   element timer_1.s1
    {
       datum baseAddress
       {
-         value = "27795664";
+         value = "27795520";
+         type = "long";
+      }
+   }
+   element led_red.s1
+   {
+      datum baseAddress
+      {
+         value = "27795568";
+         type = "long";
+      }
+   }
+   element led_green.s1
+   {
+      datum baseAddress
+      {
+         value = "27795584";
+         type = "long";
+      }
+   }
+   element uart_0.s1
+   {
+      datum baseAddress
+      {
+         value = "27795456";
+         type = "long";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "27795488";
+         type = "long";
+      }
+   }
+   element switch_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "27795616";
+         type = "long";
+      }
+   }
+   element button_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "27795600";
          type = "long";
       }
    }
@@ -459,7 +459,7 @@
  <parameter name="projectName" value="DE2_NET.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1671639556013" />
+ <parameter name="timeStamp" value="1671656419572" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk_50_clk_in" internal="clk_50.clk_in" type="clock" dir="end">
@@ -1098,7 +1098,9 @@
  <module kind="web_fpu" version="2.0" enabled="0" name="web_fpu_0">
   <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="50000000" />
  </module>
- <module kind="quat" version="1.0" enabled="1" name="quat_0" />
+ <module kind="quat" version="1.0" enabled="1" name="quat_0">
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+ </module>
  <connection kind="clock" version="13.0" start="clk_50.clk" end="sdram_0.clk" />
  <connection
    kind="avalon"
@@ -1724,16 +1726,6 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
-   kind="clock"
-   version="13.0"
-   start="clk_50.clk"
-   end="quat_0.clock_sink" />
- <connection
-   kind="reset"
-   version="13.0"
-   start="merged_resets.out_reset"
-   end="quat_0.reset_sink" />
- <connection
    kind="avalon"
    version="13.0"
    start="cpu_0.data_master"
@@ -1751,6 +1743,21 @@
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="clock"
+   version="13.0"
+   start="clk_50.clk"
+   end="quat_0.clock_sink" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="cpu_0.jtag_debug_module_reset"
+   end="quat_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="13.0"
+   start="merged_resets.out_reset"
+   end="quat_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="0" />
 </system>

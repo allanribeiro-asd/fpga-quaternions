@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="system_0/simulation/submodules/system_0_SD_CLK.vhd"
+   type="VHDL"
+   library="SD_CLK" />
+ <file
+   path="system_0/simulation/submodules/system_0_SD_DAT.vhd"
+   type="VHDL"
+   library="SD_DAT" />
+ <file
+   path="system_0/simulation/submodules/system_0_switch_pio.vhd"
+   type="VHDL"
+   library="switch_pio" />
+ <file
+   path="system_0/simulation/submodules/system_0_button_pio.vhd"
+   type="VHDL"
+   library="button_pio" />
+ <file
+   path="system_0/simulation/submodules/system_0_led_green.vhd"
+   type="VHDL"
+   library="led_green" />
+ <file
+   path="system_0/simulation/submodules/system_0_led_red.vhd"
+   type="VHDL"
+   library="led_red" />
+ <file
+   path="system_0/simulation/submodules/system_0_lcd_16207_0.vhd"
+   type="VHDL"
+   library="lcd_16207_0" />
+ <file
+   path="system_0/simulation/submodules/system_0_timer_0.vhd"
+   type="VHDL"
+   library="timer_0" />
+ <file
+   path="system_0/simulation/submodules/system_0_uart_0.vhd"
+   type="VHDL"
+   library="uart_0" />
+ <file
+   path="system_0/simulation/submodules/system_0_jtag_uart_0.vhd"
+   type="VHDL"
+   library="jtag_uart_0" />
+ <file
+   path="system_0/simulation/submodules/system_0_epcs_controller.vhd"
+   type="VHDL"
+   library="epcs_controller" />
+ <file
+   path="system_0/simulation/submodules/system_0_epcs_controller_boot_rom.hex"
+   type="HEX"
+   library="epcs_controller" />
+ <file
+   path="system_0/simulation/submodules/system_0_sdram_0.vhd"
+   type="VHDL"
+   library="sdram_0" />
+ <file
+   path="system_0/simulation/submodules/system_0_sdram_0_test_component.vhd"
+   type="VHDL"
+   library="sdram_0" />
+ <file path="system_0/simulation/system_0.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_width_adapter.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_width_adapter_001.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_width_adapter_002.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_width_adapter_003.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_burst_adapter.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_burst_adapter_001.vhd" type="VHDL" />
+ <file path="system_0/simulation/system_0_rst_controller.vhd" type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_rst_controller_002.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cpu_0_instruction_master_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cpu_0_data_master_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cpu_0_jtag_debug_module_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_sdram_0_s1_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_epcs_controller_epcs_control_port_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_cfi_flash_0_uas_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_sysid_qsys_0_control_slave_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_quat_0_avalon_slave_0_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_uart_0_s1_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_timer_0_s1_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_lcd_16207_0_control_slave_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_led_red_s1_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_switch_pio_s1_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_isp1362_hc_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_audio_0_avalon_slave_0_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_vga_0_avalon_slave_0_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_seg7_display_avalon_slave_0_translator.vhd"
+   type="VHDL" />
+ <file
+   path="system_0/simulation/system_0_sram_0_avalon_slave_0_translator.vhd"
+   type="VHDL" />
+ <topLevel name="system_0" />
+ <deviceFamily name="cycloneii" />
+ <modelMap
+   controllerPath="system_0.epcs_controller"
+   modelPath="system_0.epcs_controller" />
+</simPackage>

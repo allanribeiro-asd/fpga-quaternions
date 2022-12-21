@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="30" />
+   <connections preferredWidth="175" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -17,5 +17,5 @@
  <library expandedCategories="Project,Library" />
  <window width="1600" height="870" x="0" y="0" />
  <hdlexample language="VERILOG" />
- <generation synthesis="VHDL" />
+ <generation synthesis="VHDL" simulation="NONE" block_symbol_file="1" />
 </preferences>
