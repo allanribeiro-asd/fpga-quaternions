@@ -81,7 +81,12 @@ def main():
 
 	connection = connect(ip, port)
 	if not connect:
+<<<<<<< HEAD
 		exit
+=======
+		return 1
+
+>>>>>>> 9f28da5cb75c548f4e5cd2ff08dd688c063c70ea
 
 	counter = 0
 	while 1:
