@@ -2,6 +2,7 @@
 <LOG_ROOT>
 	<PROJECT NAME="DE2_NET">
 		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_NET|system_0:u0|system_0_cpu_0:cpu_0|system_0_cpu_0_ic_tag_module:system_0_cpu_0_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_02h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_NET|system_0:u0|calc:quat_0|lpm_mult:Mult0" CBX_FILE_NAME="mult_i1t.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_NET|system_0:u0|system_0_cpu_0:cpu_0|lpm_add_sub:Add10" CBX_FILE_NAME="add_sub_8ri.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_NET|system_0:u0|AUDIO_DAC_FIFO:audio_0|FIFO_16_256:u0|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_hlj1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_NET|system_0:u0|VGA_NIOS_CTRL:vga_0|VGA_OSD_RAM:u1|Img_RAM:u0|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_q7o1.tdf"/>

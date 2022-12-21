@@ -38,6 +38,9 @@ O principal deles é "iniche_init.c" onde o servidor por Socket é criado (funç
     
 ## Rodando
 
+Abrir o arquivo "DE2_NET.qpf"
+Compilar o projeto
+
 	nios2-download -g <bin>
 	nios2-terminal
 

@@ -546,13 +546,13 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/reg32_float.vhd -library ieee_proposed
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/reg32_clr.vhd -library ieee_proposed
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/float_pkg_c.vhdl
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/fixed_pkg_c.vhdl
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/fixed_float_types_c.vhdl
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/calc_tb.vhd -library ieee_proposed
-set_global_assignment -name VHDL_FILE ../../teste/projeto_final_wave_gen/DE2_NET/hw/calc.vhd -library ieee_proposed
+set_global_assignment -name VHDL_FILE quat/reg32_float.vhd
+set_global_assignment -name VHDL_FILE quat/reg32_clr.vhd
+set_global_assignment -name VHDL_FILE quat/float_pkg_c.vhdl -library ieee_proposed
+set_global_assignment -name VHDL_FILE quat/fixed_pkg_c.vhdl -library ieee_proposed
+set_global_assignment -name VHDL_FILE quat/fixed_float_types_c.vhdl -library ieee_proposed
+set_global_assignment -name VHDL_FILE quat/calc_tb.vhd
+set_global_assignment -name VHDL_FILE quat/calc.vhd
 set_global_assignment -name VHDL_FILE vhdl/web_interface/web_interface.vhd
 set_global_assignment -name VHDL_FILE vhdl/reg_32/reg_32.vhd
 set_global_assignment -name QIP_FILE system_0/synthesis/system_0.qip

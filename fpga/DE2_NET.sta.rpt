@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_NET
-Wed Dec 21 13:18:58 2022
+Wed Dec 21 17:43:15 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -87,8 +87,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                             ; Status ; Read at                  ;
 +-----------------------------------------------------------+--------+--------------------------+
-; system_0/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Wed Dec 21 13:18:57 2022 ;
-; system_0/synthesis/submodules/system_0_cpu_0.sdc          ; OK     ; Wed Dec 21 13:18:57 2022 ;
+; system_0/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Wed Dec 21 17:43:14 2022 ;
+; system_0/synthesis/submodules/system_0_cpu_0.sdc          ; OK     ; Wed Dec 21 17:43:14 2022 ;
 +-----------------------------------------------------------+--------+--------------------------+
 
 
@@ -293,7 +293,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 4     ; 4    ;
+; Unconstrained Clocks            ; 5     ; 5    ;
 ; Unconstrained Input Ports       ; 94    ; 94   ;
 ; Unconstrained Input Port Paths  ; 215   ; 215  ;
 ; Unconstrained Output Ports      ; 253   ; 253  ;
@@ -307,11 +307,12 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Dec 21 13:18:54 2022
+    Info: Processing started: Wed Dec 21 17:43:11 2022
 Info: Command: quartus_sta DE2_NET -c DE2_NET
 Info: qsta_default_script.tcl version: #1
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 32 combinational loops as latches.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity GHVD5181
         Info (332166): set_disable_timing [get_cells -hierarchical QXXQ6833_0]
@@ -364,6 +365,7 @@ Info (332164): Evaluating HDL-embedded SDC commands
 Info (332104): Reading SDC File: 'system_0/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: 'system_0/synthesis/submodules/system_0_cpu_0.sdc'
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: system_0:u0|calc:quat_0|reg32_clr:r32_0|Q[-30] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_27 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: I2C_AV_Config:u1|mI2C_CTRL_CLK was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: system_0:u0|AUDIO_DAC_FIFO:audio_0|oAUD_BCK was determined to be a clock but was found without an associated clock assignment.
@@ -386,6 +388,7 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
+Warning (332060): Node: system_0:u0|calc:quat_0|reg32_clr:r32_0|Q[-30] was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: CLOCK_27 was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: I2C_AV_Config:u1|mI2C_CTRL_CLK was determined to be a clock but was found without an associated clock assignment.
 Warning (332060): Node: system_0:u0|AUDIO_DAC_FIFO:audio_0|oAUD_BCK was determined to be a clock but was found without an associated clock assignment.
@@ -405,10 +408,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4692 megabytes
-    Info: Processing ended: Wed Dec 21 13:18:58 2022
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4690 megabytes
+    Info: Processing ended: Wed Dec 21 17:43:15 2022
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
 
 
