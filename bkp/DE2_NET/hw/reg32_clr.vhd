@@ -7,8 +7,8 @@ ENTITY reg32_clr IS
 	PORT (
 		clock, reset : IN STD_LOGIC;
 		WE : IN STD_LOGIC;
-		D : IN sfixed (0 downto -31);
-		Q : OUT sfixed (0 downto -31) );
+		D : IN sfixed (1 downto -30);
+		Q : OUT sfixed (1 downto -30) );
 END reg32_clr;
 
 ARCHITECTURE Behavior OF reg32_clr IS

@@ -4,40 +4,47 @@ use ieee.std_logic_1164.all;
 use ieee_proposed.fixed_pkg.all;
 
 ENTITY calc IS
-PORT ( clock, reset : IN  STD_LOGIC;
-	   chipselect 	 : IN  STD_LOGIC;
-       regselect     : IN  STD_LOGIC_VECTOR( 1 DOWNTO 0);
-       write_en      : IN  STD_LOGIC;
-       read_en       : IN  STD_LOGIC;
-       writedata  	 : IN  sfixed (0 downto -31);
-       readdata   	 : OUT sfixed (0 downto -31)
-       );
+PORT (
+	clock, reset	: IN STD_LOGIC;
+	chipselect	: IN STD_LOGIC;
+	regselect	: IN STD_LOGIC_VECTOR( 1 DOWNTO 0);
+	write_en	: IN STD_LOGIC;
+	read_en		: IN STD_LOGIC;
+	writedataint	: IN STD_LOGIC_VECTOR (31 downto 0);
+	readdataint	: OUT STD_LOGIC_VECTOR (31 downto 0)
+ );
 END calc;
 
 ARCHITECTURE behavior OF calc IS
 
-    COMPONENT reg32_float
-    PORT    ( 		clock, reset : IN STD_LOGIC;
-                    WE  :   IN  STD_LOGIC;
-                    D   :   IN  sfixed(0 DOWNTO -31);
-                    Q   :   OUT sfixed(0 DOWNTO -31)
-            );
-    END COMPONENT;
-    
-    COMPONENT reg32_clr
-    PORT    ( 		clock, reset : IN STD_LOGIC;
-                    WE  :   IN  STD_LOGIC;
-                    D   :   IN  sfixed(0 DOWNTO -31);
-                    Q   :   OUT sfixed(0 DOWNTO -31)
-            );
-    END COMPONENT;
-	 
-    signal write_enable_reg_0, write_enable_reg_1, write_enable_reg_2 : std_logic;
-    signal r32_o_0, r32_o_1, r32_o_2, writedata_2 : sfixed(0 DOWNTO -31);
-    signal mult : sfixed(0 DOWNTO -63);
-    
+COMPONENT reg32_float
+PORT(
+	clock, reset : IN STD_LOGIC;
+	WE: IN STD_LOGIC;
+	D : IN sfixed(1 DOWNTO -30);
+	Q : OUT sfixed(1 DOWNTO -30)
+	);
+END COMPONENT;
+
+COMPONENT reg32_clr
+PORT(
+	clock, reset : IN STD_LOGIC;
+	WE: IN STD_LOGIC;
+	D : IN sfixed(1 DOWNTO -30);
+	Q : OUT sfixed(1 DOWNTO -30)
+	);
+END COMPONENT;
+
+	signal writedata : sfixed (1 downto -30);
+	signal readdata	: sfixed (1 downto -30);
+	signal write_enable_reg_0, write_enable_reg_1, write_enable_reg_2 : std_logic;
+	signal r32_o_0, writedata_2 : sfixed(1 DOWNTO -30);
+	signal r32_o_1, r32_o_2 : sfixed(1 DOWNTO -30);
+	signal mult : sfixed(1 DOWNTO -62);
+
 	BEGIN
-		r32_0 : reg32_clr       -- Load -> 11, Mult -> 01, Read -> 10
+
+		r32_0 : reg32_clr -- Load -> 11, Mult -> 01, Read -> 10
 			port map
 			(
 				clock => clock,
@@ -47,7 +54,7 @@ ARCHITECTURE behavior OF calc IS
 				Q => r32_o_0
 			);
 			
-		r32_1 : reg32_float        -- New Quaternion
+		r32_1 : reg32_float-- New Quaternion
 			port map
 			(
 				clock => clock,
@@ -56,8 +63,8 @@ ARCHITECTURE behavior OF calc IS
 				D => writedata,
 				Q => r32_o_1
 			);
-            
-        r32_2 : reg32_float       -- Acc. Result
+
+			r32_2 : reg32_float -- Acc. Result
 			port map
 			(
 				clock => clock,
@@ -66,17 +73,47 @@ ARCHITECTURE behavior OF calc IS
 				D => writedata_2,
 				Q => r32_o_2
 			);
-  
-    write_enable_reg_0 <= write_en and chipselect  and (not regselect(1)) and (not regselect(0)); 
-    write_enable_reg_1 <= write_en and chipselect  and (not regselect(1)) and      regselect(0) ;
-    write_enable_reg_2 <= r32_o_0(-31);
-    
-    writedata_2 <=  r32_o_1             when ((r32_o_0(-30) = '1') and (r32_o_0(-31) = '1')) else --Load 
-                    mult(0 downto -31)  when ((r32_o_0(-30) = '0') and (r32_o_0(-31) = '1')); 		--Mult
-    
-    mult <= r32_o_1 * r32_o_2;
-       
-    readdata <= r32_o_2 when ((r32_o_0(-30) = '1') and (r32_o_0(-31) = '0')) else
-																			(others => 'Z');
 
+	process(clock, reset, r32_o_0, readdata, writedataint)
+		variable index : integer range -1 to 31;
+	begin
+		writedata(1) <= '0';
+		index := 31;
+		while index > -1 loop
+			if writedataint(index) = '1' then
+				writedata(index-30) <= '1';
+			else
+				writedata(index-30) <= '0';
+			end if;
+			index := index - 1;
+		end loop;
+
+		write_enable_reg_0 <= write_en and chipselect and (not regselect(1)) and (not regselect(0)); 
+		write_enable_reg_1 <= write_en and chipselect and (not regselect(1)) and regselect(0) ;
+		write_enable_reg_2 <= r32_o_0(-30);
+
+		if ((r32_o_0(-29) = '1') and (r32_o_0(-30) = '1')) then
+			writedata_2 <= r32_o_1;
+		elsif ((r32_o_0(-29) = '0') and (r32_o_0(-30) = '1')) then
+			writedata_2 <= mult(1 downto -30); --Mult
+		end if;
+
+		mult <= r32_o_1 * r32_o_2;
+
+		if ((r32_o_0(-29) = '1') and (r32_o_0(-30) = '0')) then
+			readdata <= r32_o_2;
+		else
+			readdata <= x"ffffffff";
+		end if;
+
+		index := 31;
+		while index > -1 loop
+			if readdata(index-30) = '1' then
+				readdataint(index) <= '1';
+			else
+				readdataint(index) <= '0';
+			end if;
+			index := index - 1;
+		end loop;
+	end process;
 end behavior;

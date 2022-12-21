@@ -1,0 +1,365 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\fpga-quaternions\fpga\simulation\modelsim
+vAudio_PLL
+IhH9^2VeKPE60_hX4QZ5_:1
+VCV0lTED`j^C<dJ=7Yg0bk0
+Z1 dC:\altera\fpga-quaternions\fpga\simulation\modelsim
+Z2 w1671482849
+8C:/altera/fpga-quaternions/fpga/Audio_PLL.v
+FC:/altera/fpga-quaternions/fpga/Audio_PLL.v
+L0 39
+Z3 OV;L;10.1d;51
+r1
+31
+Z4 o-vlog01compat -work work -O0
+Z5 !s92 -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/fpga -O0
+n@audio_@p@l@l
+!i10b 1
+!s100 Vz?Q85Y`G;S:S>;ECYW@>1
+!s85 0
+!s108 1671536524.423000
+!s107 C:/altera/fpga-quaternions/fpga/Audio_PLL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/Audio_PLL.v|
+!s101 -O0
+Ecalc
+Z6 w1671534363
+Z7 DPx13 ieee_proposed 17 fixed_float_types 0 22 iVh63YdNZa2_CQb_R2=4S2
+Z8 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z9 DPx13 ieee_proposed 9 fixed_pkg 0 22 j9Xni18icP;3zS7Yicg^m1
+Z10 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z11 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
+Z12 8C:/altera/fpga-quaternions/fpga/hw/calc.vhd
+Z13 FC:/altera/fpga-quaternions/fpga/hw/calc.vhd
+l0
+L6
+Ve?FS6m^<j4XlmC24ZmXIF1
+Z14 OV;C;10.1d;51
+32
+Z15 !s108 1671536549.163000
+Z16 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/calc.vhd|
+Z17 !s107 C:/altera/fpga-quaternions/fpga/hw/calc.vhd|
+Z18 o-work work -O0
+Z19 tExplicit 1
+!s100 en>U@0P`G1V]jU84hhVg]2
+!i10b 1
+Abehavior
+R7
+R8
+R9
+R10
+R11
+DEx4 work 4 calc 0 22 e?FS6m^<j4XlmC24ZmXIF1
+l48
+L20
+V7l1W78]Tlkk0JbOif>l:`3
+R14
+32
+R15
+R16
+R17
+R18
+R19
+!s100 =BfYMYd=QjA]j?=o@zLdC0
+!i10b 1
+Ecalc_tb
+Z20 w1671534078
+R7
+R8
+R9
+R10
+R11
+R1
+Z21 8C:/altera/fpga-quaternions/fpga/hw/calc_tb.vhd
+Z22 FC:/altera/fpga-quaternions/fpga/hw/calc_tb.vhd
+l0
+L6
+V2oA<V32X66FVc>CPCQ>7B1
+R14
+32
+Z23 !s108 1671536540.153000
+Z24 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/calc_tb.vhd|
+Z25 !s107 C:/altera/fpga-quaternions/fpga/hw/calc_tb.vhd|
+R18
+R19
+!s100 3=ij>g66H1Y]91YH9md:j0
+!i10b 1
+Abehavior
+R7
+R8
+R9
+R10
+R11
+DEx4 work 7 calc_tb 0 22 2oA<V32X66FVc>CPCQ>7B1
+l27
+L9
+V2jT``GWMf3W7WZaC;F9e[0
+R14
+32
+R23
+R24
+R25
+R18
+R19
+!s100 67H05c?HXAC]EU?8_0gKz1
+!i10b 1
+vDE2_NET
+I:@3fh0dVe=4EJRV9^]FX;1
+VXdXg3fV@61?V_G>`9K_?h3
+R1
+R2
+8C:/altera/fpga-quaternions/fpga/de2_net.v
+FC:/altera/fpga-quaternions/fpga/de2_net.v
+L0 44
+R3
+r1
+31
+R4
+R5
+n@d@e2_@n@e@t
+!i10b 1
+!s100 I2ZS8SNGjPBk;gK2czmVJ2
+!s85 0
+!s108 1671536524.478000
+!s107 C:/altera/fpga-quaternions/fpga/de2_net.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/de2_net.v|
+!s101 -O0
+vI2C_AV_Config
+I2g0ZzzGgZ6Sz_oQ;6;hI`3
+VTe[;nQbNgHY7b>DfJ@0z11
+R1
+R2
+8C:/altera/fpga-quaternions/fpga/I2C_AV_Config.v
+FC:/altera/fpga-quaternions/fpga/I2C_AV_Config.v
+L0 1
+R3
+r1
+31
+R4
+n@i2@c_@a@v_@config
+R5
+!i10b 1
+!s100 @eLQUlji[Q0GcH4L45h4L1
+!s85 0
+!s108 1671536524.253000
+!s107 C:/altera/fpga-quaternions/fpga/I2C_AV_Config.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/I2C_AV_Config.v|
+!s101 -O0
+vI2C_Controller
+IYV5:1j=`dElS7QSRUmMEE3
+VZmC6jMkN`OWc<9_n9o2@V0
+R1
+R2
+8C:/altera/fpga-quaternions/fpga/I2C_Controller.v
+FC:/altera/fpga-quaternions/fpga/I2C_Controller.v
+L0 42
+R3
+r1
+31
+R4
+R5
+n@i2@c_@controller
+!i10b 1
+!s100 Pbj5SK8PRd7baAki<PJI50
+!s85 0
+!s108 1671536524.306000
+!s107 C:/altera/fpga-quaternions/fpga/I2C_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/I2C_Controller.v|
+!s101 -O0
+Ereg32
+Z26 w1671483423
+R10
+R11
+R1
+Z27 8C:/altera/fpga-quaternions/fpga/hw/reg32.vhd
+Z28 FC:/altera/fpga-quaternions/fpga/hw/reg32.vhd
+l0
+L3
+V0V8ZQUlbJc=[YnKZ=lO?i0
+R14
+32
+Z29 !s108 1671536549.238000
+Z30 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/reg32.vhd|
+Z31 !s107 C:/altera/fpga-quaternions/fpga/hw/reg32.vhd|
+R18
+R19
+!s100 kk@4:=b9]e1^l]aUjiNY70
+!i10b 1
+Abehavior
+R10
+R11
+DEx4 work 5 reg32 0 22 0V8ZQUlbJc=[YnKZ=lO?i0
+l20
+L10
+V@6d`C:XTSm6FAL6JOb<0b1
+R14
+32
+R29
+R30
+R31
+R18
+R19
+!s100 5QkVBc1dz[8kG3BO0bQh20
+!i10b 1
+Ereg32_av
+R26
+R10
+R11
+R1
+Z32 8C:/altera/fpga-quaternions/fpga/hw/reg32_av.vhd
+Z33 FC:/altera/fpga-quaternions/fpga/hw/reg32_av.vhd
+l0
+L5
+VJDMd=iV[R>C]4Z4z>oaG42
+R14
+32
+Z34 !s108 1671536549.308000
+Z35 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/reg32_av.vhd|
+Z36 !s107 C:/altera/fpga-quaternions/fpga/hw/reg32_av.vhd|
+R18
+R19
+!s100 ;39N9AXLWU82NIm7bM?Xa1
+!i10b 1
+Astructure
+R10
+R11
+DEx4 work 8 reg32_av 0 22 JDMd=iV[R>C]4Z4z>oaG42
+l44
+L15
+VTkWW^_fK^SNS`5[WQ6MMg2
+R14
+32
+R34
+R35
+R36
+R18
+R19
+!s100 ZNo9hND3_N2hgR>HgRVZR2
+!i10b 1
+Ereg32_clr
+R26
+R7
+R8
+R9
+R10
+R11
+R1
+Z37 8C:/altera/fpga-quaternions/fpga/hw/reg32_clr.vhd
+Z38 FC:/altera/fpga-quaternions/fpga/hw/reg32_clr.vhd
+l0
+L6
+V8Gz;Y9XUDNdX6l]zCKn4j2
+R14
+32
+Z39 !s108 1671536549.373000
+Z40 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/reg32_clr.vhd|
+Z41 !s107 C:/altera/fpga-quaternions/fpga/hw/reg32_clr.vhd|
+R18
+R19
+!s100 SWU;@]18nWKfFZ@k3EHIf0
+!i10b 1
+Abehavior
+R7
+R8
+R9
+R10
+R11
+DEx4 work 9 reg32_clr 0 22 8Gz;Y9XUDNdX6l]zCKn4j2
+l16
+L14
+VI?_JLzA9_<<;6V[@TIadO0
+R14
+32
+R39
+R40
+R41
+R18
+R19
+!s100 C=a>i7jzB_Sa1ndKaoX>[1
+!i10b 1
+Ereg32_float
+R26
+R7
+R8
+R9
+R10
+R11
+R1
+Z42 8C:/altera/fpga-quaternions/fpga/hw/reg32_float.vhd
+Z43 FC:/altera/fpga-quaternions/fpga/hw/reg32_float.vhd
+l0
+L6
+VG<QAYmf6bDDL>SUf:4ZbZ2
+!s100 6VKA3>_dFiD?8ngjDDJe22
+R14
+32
+!i10b 1
+Z44 !s108 1671536549.443000
+Z45 !s90 -reportprogress|300|-work|work|C:/altera/fpga-quaternions/fpga/hw/reg32_float.vhd|
+Z46 !s107 C:/altera/fpga-quaternions/fpga/hw/reg32_float.vhd|
+R18
+R19
+Abehavior
+R7
+R8
+R9
+R10
+R11
+DEx4 work 11 reg32_float 0 22 G<QAYmf6bDDL>SUf:4ZbZ2
+l16
+L14
+V>1ZHzB8nTe=90kkzh8zWI1
+!s100 ^8@[JEJAl[Dk2LN^[Y:C72
+R14
+32
+!i10b 1
+R44
+R45
+R46
+R18
+R19
+vReset_Delay
+I5hzMn=8Q5R?2Fn<C1Y7A;2
+V]>[>njZ6W;eC7LFENSk:f3
+R1
+R2
+8C:/altera/fpga-quaternions/fpga/reset_delay.v
+FC:/altera/fpga-quaternions/fpga/reset_delay.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@reset_@delay
+!i10b 1
+!s100 9RAJ=NlW2[2Rl]3]72?jX0
+!s85 0
+!s108 1671536524.533000
+!s107 C:/altera/fpga-quaternions/fpga/reset_delay.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/reset_delay.v|
+!s101 -O0
+vSDRAM_PLL
+I0aJS]6Y`39FUlF_IjkkdV2
+VZ[h1`HW2keBcjdG>I^cjS2
+R1
+R2
+8C:/altera/fpga-quaternions/fpga/SDRAM_PLL.v
+FC:/altera/fpga-quaternions/fpga/SDRAM_PLL.v
+L0 39
+R3
+r1
+31
+R4
+R5
+n@s@d@r@a@m_@p@l@l
+!i10b 1
+!s100 ;[:oMnFOKIghAA>W<4Gh12
+!s85 0
+!s108 1671536524.363000
+!s107 C:/altera/fpga-quaternions/fpga/SDRAM_PLL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/fpga-quaternions/fpga|C:/altera/fpga-quaternions/fpga/SDRAM_PLL.v|
+!s101 -O0

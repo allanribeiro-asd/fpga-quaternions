@@ -1,3 +1,5 @@
+import numpy as np
+
 def parse(data):
 # Parses a line with the following pattern:
 	# "Time (s)","Gyroscope x (rad/s)","Gyroscope y (rad/s)","Gyroscope z (rad/s)","Absolute (rad/s)"
@@ -13,22 +15,31 @@ def parse(data):
 	return parsed
 
 def norm(data):
-	# Take time out
-	time = data.pop(0)
-	rate = max(data)
-	qx = [float(data[0])/rate]
-	qy = [float(data[1])/rate]
-	qz = [float(data[2])/rate]
-	return (time,qx,qy,qz)
+	# Take time out	
+	data.pop(0)
+
+	max = 0
+	for i in range(int(len(data)/4)):
+		for j in range(1,3):
+			if (abs(data[i][j])) > max:
+				max = abs(data[i][j]);
+
+	for i in range(int(len(data)/4)):
+		for j in range(1,3):
+			data[i][j] = data[i][j]/max
+
+	return (data)
 
 def to_quaternion(file):
 	lines = (open(file, 'r')).readlines()
 	lines.pop(0)
 	counter = 0
 	quaternions = []
+	data = [[]]
 	for line in lines:
-		data = parse(line)
-		quaternions.append(data)
+		data.append(parse(line))
+		counter += 1
+	quaternions = norm(data)
 	return quaternions
 
 import socket
@@ -49,6 +60,8 @@ def connect(ip, port):
 	s.settimeout(1)
 	s.bind((ip, port))
 	s.listen(1)
+	print ('Server address: ' + (socket.gethostbyname(socket.gethostname())) + ':' + str(port))
+	print("Waiting for connection...")
 	try:
 		return accept(s)
 	except ConnectionAbortedError:
@@ -63,13 +76,13 @@ def main():
 	ip = ''
 	port = 5000
 	buffer = 1024  # Normally 1024, but we want fast response
+	file = 'C:/altera/fpga-quaternions/server/data.csv'
+	quaternion = to_quaternion(file)
 
 	connection = connect(ip, port)
 	if not connect:
 		return 1
 
-	file = '../dados/data.csv'
-	quaternion = to_quaternion()
 
 	counter = 0
 	while 1:

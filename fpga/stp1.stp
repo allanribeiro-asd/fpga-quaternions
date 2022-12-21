@@ -1,4 +1,4 @@
-<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C35 (0x020B40DD)" sof_file="DE2_NET_time_limited.sof">
+<session jtag_chain="Disabled" jtag_device="" sof_file="DE2_NET_time_limited.sof">
   <display_tree gui_logging_enabled="1">
     <display_branch instance="auto_signaltap_0" log="log: 2020/11/20 00:47:37  #0" signal_set="signal_set: 2020/11/20 00:20:44  #0" trigger="trigger: 2020/11/20 00:20:44  #1"/>
   </display_tree>
@@ -1268,13 +1268,11 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="B659D027" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2020/11/19 18:51:27  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="B659D027" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2020/11/19 18:51:27  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic">
-            <power_up enabled="yes">
-            </power_up>
-            <op_node/>
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up><op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -2369,12 +2367,13 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="BC2E1D37" attribute_mem_mode="false" gap_record="true" is_expanded="true" name="trigger: 2020/11/20 00:08:44  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="segmented">
+      <trigger CRC="BC2E1D37" attribute_mem_mode="false" gap_record="true" is_expanded="true" name="trigger: 2020/11/20 00:08:44  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="segmented">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'system_0:u0|reg32_av:wg_0|write_enable0_total' == either edge
             <power_up enabled="yes">
-            </power_up><op_node/>
+            </power_up>
+            <op_node/>
           </level>
         </events>
         <storage_qualifier_events>
@@ -3671,7 +3670,7 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="FC577897" attribute_mem_mode="false" gap_record="true" is_expanded="true" name="trigger: 2020/11/20 00:20:44  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="segmented">
+      <trigger CRC="FC577897" attribute_mem_mode="false" gap_record="true" is_expanded="true" name="trigger: 2020/11/20 00:20:44  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="16" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="segmented">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
           <level enabled="yes" name="condition1" type="basic">'we_tot' == either edge
@@ -3780,7 +3779,7 @@
     <single attribute="instance widget visible" value="1"/>
     <single attribute="jtag widget visible" value="1"/>
     <multi attribute="column width" size="23" value="34,75,469,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
-    <multi attribute="frame size" size="2" value="1920,1017"/>
+    <multi attribute="frame size" size="2" value="1370,749"/>
     <multi attribute="jtag widget size" size="2" value="334,120"/>
   </global_info>
 </session>

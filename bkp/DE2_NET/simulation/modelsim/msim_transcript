@@ -1,0 +1,1111 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE2_NET_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlib system_0
+# ** Warning: (vlib-34) Library already exists at "system_0".
+# 
+# vmap system_0 system_0
+# Modifying modelsim.ini
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_reset_controller
+# 
+# Top level modules:
+# 	altera_reset_controller
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_reset_synchronizer.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_reset_synchronizer
+# 
+# Top level modules:
+# 	altera_reset_synchronizer
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_avalon_sc_fifo.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_avalon_sc_fifo
+# 
+# Top level modules:
+# 	altera_avalon_sc_fifo
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SRAM_16Bit_512K.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SRAM_16Bit_512K
+# 
+# Top level modules:
+# 	SRAM_16Bit_512K
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SEG7_LUT
+# 
+# Top level modules:
+# 	SEG7_LUT
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/SEG7_LUT_8.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SEG7_LUT_8
+# 
+# Top level modules:
+# 	SEG7_LUT_8
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/DM9000A_IF.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DM9000A_IF
+# 
+# Top level modules:
+# 	DM9000A_IF
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/Img_RAM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Img_RAM
+# 
+# Top level modules:
+# 	Img_RAM
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_NIOS_CTRL.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module VGA_NIOS_CTRL
+# 
+# Top level modules:
+# 	VGA_NIOS_CTRL
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_OSD_RAM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module VGA_OSD_RAM
+# 
+# Top level modules:
+# 	VGA_OSD_RAM
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/AUDIO_DAC_FIFO.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module AUDIO_DAC_FIFO
+# 
+# Top level modules:
+# 	AUDIO_DAC_FIFO
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/FIFO_16_256.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_16_256
+# 
+# Top level modules:
+# 	FIFO_16_256
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sysid_qsys_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_sysid_qsys_0
+# 
+# Top level modules:
+# 	system_0_sysid_qsys_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cfi_flash_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_cfi_flash_0
+# 
+# Top level modules:
+# 	system_0_cfi_flash_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_tri_state_bridge_0_pinSharer_0
+# 
+# Top level modules:
+# 	system_0_tri_state_bridge_0_pinSharer_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/ISP1362_IF.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ISP1362_IF
+# 
+# Top level modules:
+# 	ISP1362_IF
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_CLK.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_SD_CLK
+# 
+# Top level modules:
+# 	system_0_SD_CLK
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_SD_DAT.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_SD_DAT
+# 
+# Top level modules:
+# 	system_0_SD_DAT
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_switch_pio.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_switch_pio
+# 
+# Top level modules:
+# 	system_0_switch_pio
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_button_pio.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_button_pio
+# 
+# Top level modules:
+# 	system_0_button_pio
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_green.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_led_green
+# 
+# Top level modules:
+# 	system_0_led_green
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_led_red.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_led_red
+# 
+# Top level modules:
+# 	system_0_led_red
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_lcd_16207_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_lcd_16207_0
+# 
+# Top level modules:
+# 	system_0_lcd_16207_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_timer_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_timer_0
+# 
+# Top level modules:
+# 	system_0_timer_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_uart_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_uart_0_tx
+# -- Compiling module system_0_uart_0_rx_stimulus_source
+# -- Compiling module system_0_uart_0_rx
+# -- Compiling module system_0_uart_0_regs
+# -- Compiling module system_0_uart_0
+# 
+# Top level modules:
+# 	system_0_uart_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_jtag_uart_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_jtag_uart_0_sim_scfifo_w
+# -- Compiling module system_0_jtag_uart_0_scfifo_w
+# -- Compiling module system_0_jtag_uart_0_sim_scfifo_r
+# -- Compiling module system_0_jtag_uart_0_scfifo_r
+# -- Compiling module system_0_jtag_uart_0
+# 
+# Top level modules:
+# 	system_0_jtag_uart_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_epcs_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_epcs_controller_sub
+# -- Compiling module tornado_system_0_epcs_controller_atom
+# -- Compiling module system_0_epcs_controller
+# 
+# Top level modules:
+# 	system_0_epcs_controller
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_sdram_0_input_efifo_module
+# -- Compiling module system_0_sdram_0
+# 
+# Top level modules:
+# 	system_0_sdram_0
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_sdram_0_test_component.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_sdram_0_test_component_ram_module
+# -- Compiling module system_0_sdram_0_test_component
+# 
+# Top level modules:
+# 	system_0_sdram_0_test_component
+# vlog -vlog01compat -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/VGA_Controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module VGA_Controller
+# 
+# Top level modules:
+# 	VGA_Controller
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/I2C_AV_Config.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C_AV_Config
+# 
+# Top level modules:
+# 	I2C_AV_Config
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/I2C_Controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C_Controller
+# 
+# Top level modules:
+# 	I2C_Controller
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/SDRAM_PLL.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SDRAM_PLL
+# 
+# Top level modules:
+# 	SDRAM_PLL
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/Audio_PLL.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Audio_PLL
+# 
+# Top level modules:
+# 	Audio_PLL
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/de2_net.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DE2_NET
+# 
+# Top level modules:
+# 	DE2_NET
+# vlog -vlog01compat -work work +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET {C:/altera/fpga-quaternions/bkp/DE2_NET/reset_delay.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Reset_Delay
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/reset_delay.v(12): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	Reset_Delay
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_irq_mapper.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_irq_mapper
+# 
+# Top level modules:
+# 	system_0_irq_mapper
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_width_adapter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_width_adapter
+# 
+# Top level modules:
+# 	altera_merlin_width_adapter
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_uncompressor.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_burst_uncompressor
+# 
+# Top level modules:
+# 	altera_merlin_burst_uncompressor
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_arbitrator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_arbitrator
+# -- Compiling module altera_merlin_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_arbitrator
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_rsp_xbar_mux_001
+# 
+# Top level modules:
+# 	system_0_rsp_xbar_mux_001
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_rsp_xbar_mux
+# 
+# Top level modules:
+# 	system_0_rsp_xbar_mux
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux_006.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_rsp_xbar_demux_006
+# 
+# Top level modules:
+# 	system_0_rsp_xbar_demux_006
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_rsp_xbar_demux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_rsp_xbar_demux
+# 
+# Top level modules:
+# 	system_0_rsp_xbar_demux
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_mux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_cmd_xbar_mux
+# 
+# Top level modules:
+# 	system_0_cmd_xbar_mux
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_cmd_xbar_demux_001
+# 
+# Top level modules:
+# 	system_0_cmd_xbar_demux_001
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_cmd_xbar_demux.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_cmd_xbar_demux
+# 
+# Top level modules:
+# 	system_0_cmd_xbar_demux
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_burst_adapter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_burst_adapter_burstwrap_increment
+# -- Compiling module altera_merlin_burst_adapter_adder
+# -- Compiling module altera_merlin_burst_adapter_subtractor
+# -- Compiling module altera_merlin_burst_adapter_min
+# -- Compiling module altera_merlin_burst_adapter
+# -- Compiling module altera_merlin_burst_adapter_uncompressed_only
+# -- Compiling module altera_merlin_burst_adapter_full
+# 
+# Top level modules:
+# 	altera_merlin_burst_adapter
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_traffic_limiter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_traffic_limiter
+# 
+# Top level modules:
+# 	altera_merlin_traffic_limiter
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_024.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_id_router_024_default_decode
+# -- Compiling module system_0_id_router_024
+# 
+# Top level modules:
+# 	system_0_id_router_024
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_006.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_id_router_006_default_decode
+# -- Compiling module system_0_id_router_006
+# 
+# Top level modules:
+# 	system_0_id_router_006
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_003.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_id_router_003_default_decode
+# -- Compiling module system_0_id_router_003
+# 
+# Top level modules:
+# 	system_0_id_router_003
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_id_router_001_default_decode
+# -- Compiling module system_0_id_router_001
+# 
+# Top level modules:
+# 	system_0_id_router_001
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_id_router.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_id_router_default_decode
+# -- Compiling module system_0_id_router
+# 
+# Top level modules:
+# 	system_0_id_router
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router_001.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_addr_router_001_default_decode
+# -- Compiling module system_0_addr_router_001
+# 
+# Top level modules:
+# 	system_0_addr_router_001
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_addr_router.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_addr_router_default_decode
+# -- Compiling module system_0_addr_router
+# 
+# Top level modules:
+# 	system_0_addr_router
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_slave_agent
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv(584): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv(469): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv(470): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv(471): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# 
+# ** Warning: C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_agent.sv(34): (vlog-2186) SystemVerilog testbench feature
+# 
+# (randomization, coverage or assertion) detected in the design.
+# 
+# These features are only supported in Questasim.
+# 
+# 
+# Top level modules:
+# 	altera_merlin_slave_agent
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_agent.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_master_agent
+# 
+# Top level modules:
+# 	altera_merlin_master_agent
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_slave_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_slave_translator
+# 
+# Top level modules:
+# 	altera_merlin_slave_translator
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_master_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_master_translator
+# 
+# Top level modules:
+# 	altera_merlin_master_translator
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_aggregator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_tristate_controller_aggregator
+# 
+# Top level modules:
+# 	altera_tristate_controller_aggregator
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_tristate_controller_translator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_tristate_controller_translator
+# 
+# Top level modules:
+# 	altera_tristate_controller_translator
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/altera_merlin_std_arbitrator_core.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module altera_merlin_std_arbitrator_core
+# -- Compiling module altera_merlin_std_arb_adder
+# 
+# Top level modules:
+# 	altera_merlin_std_arbitrator_core
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_arbiter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_tri_state_bridge_0_pinSharer_0_arbiter
+# 
+# Top level modules:
+# 	system_0_tri_state_bridge_0_pinSharer_0_arbiter
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_pinSharer_0_pin_sharer.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_tri_state_bridge_0_pinSharer_0_pin_sharer
+# 
+# Top level modules:
+# 	system_0_tri_state_bridge_0_pinSharer_0_pin_sharer
+# vlog -sv -work system_0 +incdir+C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/system_0_tri_state_bridge_0_bridge_0.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module system_0_tri_state_bridge_0_bridge_0
+# 
+# Top level modules:
+# 	system_0_tri_state_bridge_0_bridge_0
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0
+# -- Compiling architecture rtl of system_0
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+# -- Compiling architecture rtl of system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo
+# -- Compiling architecture rtl of system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rsp_fifo
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo
+# -- Compiling architecture rtl of system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent_rdata_fifo
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo
+# -- Compiling architecture rtl of system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rsp_fifo
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo
+# -- Compiling architecture rtl of system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent_rdata_fifo
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent
+# -- Compiling architecture rtl of system_0_cpu_0_jtag_debug_module_translator_avalon_universal_slave_0_agent
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent
+# -- Compiling architecture rtl of system_0_sdram_0_s1_translator_avalon_universal_slave_0_agent
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent
+# -- Compiling architecture rtl of system_0_cfi_flash_0_uas_translator_avalon_universal_slave_0_agent
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_width_adapter
+# -- Compiling architecture rtl of system_0_width_adapter
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_001.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_width_adapter_001
+# -- Compiling architecture rtl of system_0_width_adapter_001
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_002.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_width_adapter_002
+# -- Compiling architecture rtl of system_0_width_adapter_002
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_width_adapter_003.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_width_adapter_003
+# -- Compiling architecture rtl of system_0_width_adapter_003
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_instruction_master_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cpu_0_instruction_master_translator
+# -- Compiling architecture rtl of system_0_cpu_0_instruction_master_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_data_master_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cpu_0_data_master_translator
+# -- Compiling architecture rtl of system_0_cpu_0_data_master_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_burst_adapter
+# -- Compiling architecture rtl of system_0_burst_adapter
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_burst_adapter_001.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_burst_adapter_001
+# -- Compiling architecture rtl of system_0_burst_adapter_001
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cpu_0_jtag_debug_module_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cpu_0_jtag_debug_module_translator
+# -- Compiling architecture rtl of system_0_cpu_0_jtag_debug_module_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sdram_0_s1_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sdram_0_s1_translator
+# -- Compiling architecture rtl of system_0_sdram_0_s1_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_epcs_controller_epcs_control_port_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_epcs_controller_epcs_control_port_translator
+# -- Compiling architecture rtl of system_0_epcs_controller_epcs_control_port_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_cfi_flash_0_uas_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_cfi_flash_0_uas_translator
+# -- Compiling architecture rtl of system_0_cfi_flash_0_uas_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sysid_qsys_0_control_slave_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sysid_qsys_0_control_slave_translator
+# -- Compiling architecture rtl of system_0_sysid_qsys_0_control_slave_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_wg_0_avalon_slave_0_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_wg_0_avalon_slave_0_translator
+# -- Compiling architecture rtl of system_0_wg_0_avalon_slave_0_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_jtag_uart_0_avalon_jtag_slave_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_jtag_uart_0_avalon_jtag_slave_translator
+# -- Compiling architecture rtl of system_0_jtag_uart_0_avalon_jtag_slave_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_uart_0_s1_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_uart_0_s1_translator
+# -- Compiling architecture rtl of system_0_uart_0_s1_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_timer_0_s1_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_timer_0_s1_translator
+# -- Compiling architecture rtl of system_0_timer_0_s1_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_lcd_16207_0_control_slave_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_lcd_16207_0_control_slave_translator
+# -- Compiling architecture rtl of system_0_lcd_16207_0_control_slave_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_led_red_s1_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_led_red_s1_translator
+# -- Compiling architecture rtl of system_0_led_red_s1_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_switch_pio_s1_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_switch_pio_s1_translator
+# -- Compiling architecture rtl of system_0_switch_pio_s1_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_isp1362_hc_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_isp1362_hc_translator
+# -- Compiling architecture rtl of system_0_isp1362_hc_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_audio_0_avalon_slave_0_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_audio_0_avalon_slave_0_translator
+# -- Compiling architecture rtl of system_0_audio_0_avalon_slave_0_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_vga_0_avalon_slave_0_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_vga_0_avalon_slave_0_translator
+# -- Compiling architecture rtl of system_0_vga_0_avalon_slave_0_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_seg7_display_avalon_slave_0_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_seg7_display_avalon_slave_0_translator
+# -- Compiling architecture rtl of system_0_seg7_display_avalon_slave_0_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_sram_0_avalon_slave_0_translator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_sram_0_avalon_slave_0_translator
+# -- Compiling architecture rtl of system_0_sram_0_avalon_slave_0_translator
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_rst_controller
+# -- Compiling architecture rtl of system_0_rst_controller
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/system_0_rst_controller_002.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity system_0_rst_controller_002
+# -- Compiling architecture rtl of system_0_rst_controller_002
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg32
+# -- Compiling architecture Behavior of reg32
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/reg32_av.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg32_av
+# -- Compiling architecture Structure of reg32_av
+# vcom -93 -work system_0 {C:/altera/fpga-quaternions/bkp/DE2_NET/system_0/synthesis/submodules/wgen.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity wgen
+# -- Compiling architecture a_wgen of wgen
+# 
+vcom -reportprogress 300 -work work C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc
+# -- Compiling architecture behavior of calc
+vcom -reportprogress 300 -work work C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vcom -reportprogress 300 -work work C:/altera/fpga-quaternions/bkp/DE2_NET/hw/reg32_clr.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity reg32_clr
+# -- Compiling architecture Behavior of reg32_clr
+vcom -reportprogress 300 -work work C:/altera/fpga-quaternions/bkp/DE2_NET/hw/reg32_float.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity reg32_float
+# -- Compiling architecture Behavior of reg32_float
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+run 1000ns
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
+restart -f
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc
+# -- Compiling architecture behavior of calc
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
+restart -f
+# Break in Process line__77 at C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd line 97
+step
+# Break in Process line__77 at C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd line 98
+step
+# Break in Process line__77 at C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd line 99
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+# Break in Process line__77 at C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd line 119
+step -over
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc
+# -- Compiling architecture behavior of calc
+vcom -work work -O0 C:/altera/fpga-quaternions/bkp/DE2_NET/hw/calc_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package fixed_float_types
+# -- Loading package fixed_pkg
+# -- Compiling entity calc_tb
+# -- Compiling architecture behavior of calc_tb
+vsim work.calc_tb
+# vsim work.calc_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee_proposed.fixed_float_types
+# Loading ieee.math_real(body)
+# Loading ieee_proposed.fixed_pkg(body)
+# Loading work.calc_tb(behavior)
+# Loading work.calc(behavior)
+# Loading work.reg32_clr(behavior)
+# Loading work.reg32_float(behavior)
+add wave -position insertpoint  \
+sim:/calc_tb/DUT/clock \
+sim:/calc_tb/DUT/reset \
+sim:/calc_tb/DUT/chipselect \
+sim:/calc_tb/DUT/regselect \
+sim:/calc_tb/DUT/write_en \
+sim:/calc_tb/DUT/read_en \
+sim:/calc_tb/DUT/writedataint \
+sim:/calc_tb/DUT/readdataint \
+sim:/calc_tb/DUT/writedata \
+sim:/calc_tb/DUT/readdata \
+sim:/calc_tb/DUT/write_enable_reg_0 \
+sim:/calc_tb/DUT/write_enable_reg_1 \
+sim:/calc_tb/DUT/write_enable_reg_2 \
+sim:/calc_tb/DUT/r32_o_0 \
+sim:/calc_tb/DUT/writedata_2 \
+sim:/calc_tb/DUT/r32_o_1 \
+sim:/calc_tb/DUT/r32_o_2 \
+sim:/calc_tb/DUT/mult
+run 1000ns
