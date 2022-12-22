@@ -1,6 +1,6 @@
 # fpga-quaternions
 
-O projeto está hospedado em [fpga-quaternions](https://github.com/oirebir/fpga-quaternions)
+O projeto está hospedado em (fpga-quaternions)[https://github.com/oirebir/fpga-quaternions]
 
 Este projeto tem a intenção de fazer uso da placa Cyclone II
 da Altera para calcular o deslocamento de um corpo, mas fazendo uso de
@@ -21,22 +21,22 @@ ter alterado o source code aqui presente.
 ### 1.1 - Quartus
 
 Arquivos em VHDL importantes ao projeto estão dentro de
-["fpga/quat"](fpga/quat).
+("fpga/quat")[fpga/quat].
 
-[calc_tb](fpga/quat/calc_tb.vhd) - Esta é a testbench do projeto para uma multiplicação simples
+(calc_tb)[fpga/quat/calc_tb.vhd] - Esta é a testbench do projeto para uma multiplicação simples
 
-[calc](fpga/quat/calc.vhd) - Contém o encapsulamento dos registradores e arquitetura para
+(calc)[fpga/quat/calc.vhd] - Contém o encapsulamento dos registradores e arquitetura para
 multiplicar dois quaternions de uma única dimensão
     
-[reg32_clr](fpga/quat/reg32_clr.vhd) - Registrador "self clear" de 32 bits; Registrador ponto fixo,
+(reg32_clr)[fpga/quat/reg32_clr.vhd] - Registrador "self clear" de 32 bits; Registrador ponto fixo,
 sinalizado, de 32 bits. Entrada e saída são no formato:
 
 		bit:  (1)	(0)		(-1 a -29)
 		    (Sinal)(Parte inteira).(Valores frácionários)
 
-[fixed_float_types_c](fpga/quat/fixed_float_types_c.vhd)
-[fixed_pkg_c](fpga/quat/fixed_pkg_c.vhd)
-[float_pkg_c](fpga/quat/fixed_pkg_c.vhd)
+(fixed_float_types_c)[fpga/quat/fixed_float_types_c.vhd]
+(fixed_pkg_c)[fpga/quat/fixed_pkg_c.vhd]
+(float_pkg_c)[fpga/quat/fixed_pkg_c.vhd]
 
 Arquivos da biblioteca que implementam o tipo usado para cálculo: sfixed;
 
@@ -71,10 +71,10 @@ porgramação através do eclipse.
 
 Os arquivos estão misturados na pasta raíz do projeto, mas importam
 
-[system_0.qsys](fpga/system_0.qsys) - Possui as netlists e configurações de componentes feitas no
+(system_0.qsys)[fpga/system_0.qsys] - Possui as netlists e configurações de componentes feitas no
 qsys.
 
-[system_0.SOPCINFO](fpga/system_0_sopcinfo) - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
+(system_0.SOPCINFO)[fpga/system_0_sopcinfo] - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
 
 ### 1.2.1 - Configurações
 
@@ -97,7 +97,7 @@ Em seguida, clique em "Generate"
 
 ### 1.3 - Eclipse
 
-Os arquivos fonte principais pro Eclipse estão em ["fpga/software/server1"] (fpga/software/server1), sendo o principal deles [iniche_init.c](fpga/sowftware/server1/iniche_init.c), onde o servidor por Socket é criado (função SSSInitialTas(k)).
+Os arquivos fonte principais pro Eclipse estão em ("fpga/software/server1") [fpga/software/server1], sendo o principal deles (iniche_init.c)[fpga/sowftware/server1/iniche_init.c], onde o servidor por Socket é criado (função SSSInitialTask()).
 
 É PRECISO ALTERAR O IP E PORTA DO SERVIDOR NO ARQUIVO "iniche_init.c", as linhas que cumprem essa função, possuem os respectivos comentátios no código.
     
