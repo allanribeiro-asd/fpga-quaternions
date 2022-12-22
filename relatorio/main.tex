@@ -27,22 +27,20 @@
 
 	A intenção era fazer o uso de FPGA para cálculo do
 deslocamento de uma partícula no tempo fazendo uso da abstração de
-quaternions, que evita problemas algébricos, diferentemente da
+quaternios, que evita problemas algébricos, diferentemente da
 abordagem dos ângulos de Euler.
 
 	Fez se o uso dos dados de giroscópio e acelerômtetros de um
-smartphone, descritos em um csv, fazendo-se a amostragem em tempo da
-leitura da aceleração das variações, em eixo x, y e z. Os dados são
-então filtrados de string para ponto flutuante, processados por um
-socket, escrito em python, que por sua vez realiza a conexão com a
-placa.
+smartphone, e suas respectivas leituras descritas em um arquivo csv, 
+fazendo-se a amostragem em tempo da leitura da aceleração das variações, 
+em eixo x, y e z. Os dados são então filtrados de string para ponto flutuante, 
+processados por um socket, escrito em python, que por sua vez realiza 
+a conexão com a placa.
 
 	Na placa Cyclone II, foram escritos arquivos em VHDL que fazem
 a abstração do uso de registradores para guardar um quaternion, sendo
-descrito como o valor normalizado de dimensão única. Foram usados 2
-registradores, um como buffer, e outro que acumula as operações subse-
-quentes, devolvendo o resultante da multiplicação de todos os
-quaternions recebidos.
+descrito como o valor normalizado de dimensão única. Foram usados 3
+registradores, um de controle das operações, um como buffer, e outro que acumula o resultado das operações, devolvendo o resultante da multiplicação de todos os quaternios recebidos.
 
 	Sem sucesso, o presente relatório dá visão para problemas que
 futuros desenvolvedores terão, se usada a mesma abordagem. Dentre os
@@ -50,13 +48,11 @@ inúmeros, lista-se o empecilho principal: uma operação efetiva de
 multiplicação. Os procedimentos são detalhados abaixo.
 
 	Alguns pontos importantes que leitores devem saber é que a
-estrutura para a multiplicação dos quaternions em sí está pronta,
+estrutura para a multiplicação dos quaternios em sí está pronta,
 sendo necessária a correção das operações. Um testbench também foi
 elaborado para uso com os sources disponíveis, e está funcional. O
 parsing dos dados também foi realizado, e as respectivas funções estão
 prontas, além de um envio efetivo realizado.
-
-\newpage
 
 \section{Desenvolvimento do projeto}
 
@@ -70,35 +66,35 @@ captura e exportação dos dados em CSV, um formato padrão em texto de
 armazenamento de dados.
 
 	Os dados foram exportados e disponibilizados num arquivo, que
-por sua vez é processada pelo servidor, que mais tarde alimenta a
-placa com os dados. A formatação transforma a tupla de valores de
-string (tempo, qx, qy e qz) em pontos flutuantes com a mesma
+por sua vez é processado pelo servidor, que mais tarde alimenta a
+placa com os mesmos. A formatação transforma a 4-tupla de valores de
+string (tempo, qx, qy e qz) em pontos fixos, com a mesma
 quantidade de casas decimais. Isso é importante para facilitar a
-entrada e armazenamento dos dados em placa. Mais tarde, serão
+entrada e armazenamento dos dados na placa. Mais tarde, serão
 codificados novamente em string para envio efetivo pela rede.
 
 \subsection{Conexão de rede}
 
 	A conexão em sí foi construída em 2 partes. Primeiro, um
 servidor em python espera por uma conexão em socket, que roda em um
-computador à parte. Chamar-se-à de servidor. O servidor, após filtrar
-os pontos, os envia em tupla à placa, um após o outro. Uma vez
-enviados, espera por uma tupla do mesmo tipo da placa.
+computador à parte, aqui referido como servidor. O servidor, após filtrar
+os pontos, os envia em 4-tupla à placa, um após o outro. Uma vez
+enviados, espera por uma tupla do mesmo tipo vinda da placa.
 
 	A conexão TCP/IP com a placa Altera DE2 Cyclone II, cliente,
-foi projetada com base no projeto "Wave Gen" realizado pelo aluno
+foi projetada com base no projeto "VHDL FPU" realizado pelo aluno
 Luciano Bonzatto , no segundo semestre de 2022. Estabelecida com
 sucesso, é necessário a especificação do endereço de servidor a
 contatar.
 
 	Importante notar que a placa recebe uma string, e não uma
 tupla. Futuros esforços devem ser concentrados na conversão da string
-recebida, novamente para uma tupla, e em seguida em ponto flutuante.
+recebida, novamente para uma tupla, e em seguida em ponto fixo.
 
 	Os dados são, por fim, escritos em 3 registradores internos da
 placa, um como indicador de operação (load e mult), um como buffer, e
 um terceiro acumulador de operações, que é lido ao final das operações
-com todos os quaternions desejados, e é devolvido ao servidor.
+com todos os quaternios desejados, esse é o resultado devolvido ao servidor.
 
 \subsection{Multiplicação}
 
@@ -126,9 +122,9 @@ testes de outras operações, e os resultados também são incorretos,
 porém consistentes.
 
 	Devido à falta de suporte a esse tipo de sinal por parte do
-qsys, foi preciso utilizar portas do tipo \texttt{std\_logic\_vector}
+Qsys, foi preciso utilizar portas do tipo \texttt{std\_logic\_vector}
 para o recebimento dos valores e a própria FPGA faz a cópia desse
-valor para um sinal do tipo "sfixed". Partimos do pressuposto que,
+valor para um sinal do tipo \texttt{sfixed}. Partimos do pressuposto que,
 como os valores são sinalizados e entre 0 e 1, sempre teríamos dois
 bits iniciais, o primeiro para o sinal e o segundo para a parte
 inteira do valor. O restante é a parte decimal do valor, ou seja,
@@ -137,10 +133,9 @@ utilizando um sinal com o ponto fixo entre o segundo e terceiro MSB do
 bit.
 
 	Foi feita a tentativa de abstrair outra forma de cálculo:
-receber os dados em binário, e faze r a operação bit a bit. Outro
-problema apareceu aqui através da  Os principais problemas residem na
-abstração usada para fazer a multiplicação entre os pontos. No caso de
-um dos números serem negativos, a multiplicação em complemento de 2
+receber os dados em binário, e fazer a operação bit a bit. Outro
+problema apareceu aqui, advindo da abstração usada para fazer a multiplicação entre os pontos. No caso de
+um dos números ser negativo, a multiplicação em complemento de 2
 não foi implementada com sucesso. Resolvido este problema, a
 multiplicação deve funcionar efetivamente.
 
@@ -149,7 +144,7 @@ fazendo-se shift dos bits, multiplicando-os, e retornando à posição
 original. Ocorreram os mesmos problemas da abordagem por complemento
 de 2.
 
-\newpage
+
 %==========================================================================
 \section{Conclusão e recomendações gerais}
 %==========================================================================
