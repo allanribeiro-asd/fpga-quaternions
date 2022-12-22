@@ -34,9 +34,9 @@ sinalizado, de 32 bits. Entrada e saída são no formato:
 		bit:  (1)	(0)		(-1 a -29)
 		    (Sinal)(Parte inteira).(Valores frácionários)
 
-[fixed_float_types_c](fpga/quat/fixed_float_types_c.vhd)
-[fixed_pkg_c](fpga/quat/fixed_pkg_c.vhd)
-[float_pkg_c](fpga/quat/fixed_pkg_c.vhd)
+[fixed_float_types_c](fpga/quat/fixed_float_types_c.vhdl)
+[fixed_pkg_c](fpga/quat/fixed_pkg_c.vhdl)
+[float_pkg_c](fpga/quat/fixed_pkg_c.vhdl)
 
 Arquivos da biblioteca que implementam o tipo usado para cálculo: sfixed;
 
@@ -74,7 +74,7 @@ Os arquivos estão misturados na pasta raíz do projeto, mas importam
 [system_0.qsys](fpga/system_0.qsys) - Possui as netlists e configurações de componentes feitas no
 qsys.
 
-[system_0.SOPCINFO](fpga/system_0_sopcinfo) - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
+[system_0.sopcinfo](fpga/system_0.sopcinfo) - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
 
 ### 1.2.1 - Configurações
 
@@ -97,7 +97,7 @@ Em seguida, clique em "Generate"
 
 ### 1.3 - Eclipse
 
-Os arquivos fonte principais pro Eclipse estão em ["fpga/software/server1"] (fpga/software/server1), sendo o principal deles [iniche_init.c](fpga/sowftware/server1/iniche_init.c), onde o servidor por Socket é criado (função SSSInitialTas(k)).
+Os arquivos fonte principais pro Eclipse estão em [fpga/software/server1](fpga/software/server1), sendo o principal deles [iniche_init.c](fpga/software/server1/iniche_init.c), onde o servidor por Socket é criado (função SSSInitialTas(k)).
 
 É PRECISO ALTERAR O IP E PORTA DO SERVIDOR NO ARQUIVO "iniche_init.c", as linhas que cumprem essa função, possuem os respectivos comentátios no código.
     
