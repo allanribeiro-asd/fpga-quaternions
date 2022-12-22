@@ -103,7 +103,7 @@ ACDS_VERSION := 13.0sp1
 # BUILD_NUMBER: 232
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/altera/vhdl_fpu/DE2_NET/system_0.sopcinfo
+SOPC_FILE := C:/altera/fpga-quaternions/fpga/system_0.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

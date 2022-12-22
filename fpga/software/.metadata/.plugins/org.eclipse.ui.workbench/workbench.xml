@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="35" version="2.0">
+<workbench progressCount="26" version="2.0">
 <workbenchAdvisor/>
 <window height="520" maximized="true" width="1024" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -13,14 +13,14 @@
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="167" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="86" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="129" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="76" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.cdt.make.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -31,23 +31,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="iniche_init.c" partName="iniche_init.c" path="C:/altera/vhdl_fpu/DE2_NET/software/server1/iniche_init.c" title="iniche_init.c" tooltip="server1/iniche_init.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/server1/iniche_init.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7910" selectionTopPixel="3475"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="osportco.c" partName="osportco.c" path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/src/nios2/osportco.c" title="osportco.c" tooltip="server1_bsp/iniche/src/nios2/osportco.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/server1_bsp/iniche/src/nios2/osportco.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="50" selectionOffset="7483" selectionTopPixel="4688"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" partName="system.h" path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/system.h" title="system.h" tooltip="server1_bsp/system.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/server1_bsp/system.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="11" selectionOffset="13891" selectionTopPixel="8700"/>
+<editor activePart="true" focus="true" id="org.eclipse.ui.DefaultTextEditor" name="create-this-bsp" partName="create-this-bsp" path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/create-this-bsp" title="create-this-bsp" tooltip="server1_bsp/create-this-bsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/server1_bsp/create-this-bsp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="437" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -59,9 +49,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (40 items)"/>
-<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (42 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="108" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="504"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -80,7 +68,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="com.altera.sbtgui.ui.cPerspective">
+<perspectives activePart="org.eclipse.ui.DefaultTextEditor" activePerspective="com.altera.sbtgui.ui.cPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -282,61 +270,10 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/server1/iniche_init.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/server1_bsp/iniche/src/nios2/osportco.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/server1/iniche_init.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/server1_bsp/system.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/server1_bsp/create-this-bsp"/>
 </editors>
-<item historyLabel="iniche_init.c" index="0">
-<position/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
-<position/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
-<position/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
-<position info="not_deleted" x="14238" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
-<position info="not_deleted" x="7187" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
+<item active="true" historyLabel="create-this-bsp" index="0">
 <position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="0">
-<position info="not_deleted" x="6766" y="0"/>
-</item>
-<item historyLabel="osportco.c" index="1">
-<position info="not_deleted" x="7483" y="50"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="6766" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="7238" y="0"/>
-</item>
-<item historyLabel="osportco.c" index="1">
-<position info="not_deleted" x="7483" y="50"/>
-</item>
-<item historyLabel="system.h" index="3">
-<position info="not_deleted" x="13891" y="11"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="7238" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="7610" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="8779" y="0"/>
-</item>
-<item historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="8863" y="0"/>
-</item>
-<item active="true" historyLabel="iniche_init.c" index="2">
-<position info="not_deleted" x="7927" y="90"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -356,6 +293,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="create-this-bsp" tooltip="server1_bsp/create-this-bsp">
+<persistable path="/server1_bsp/create-this-bsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="settings.bsp" tooltip="server1_bsp/settings.bsp">
+<persistable path="/server1_bsp/settings.bsp"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system.h" tooltip="server1_bsp/system.h">
 <persistable path="/server1_bsp/system.h"/>
 </file>
@@ -394,12 +337,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="alt_sys_init.c" tooltip="hello_world_bsp/alt_sys_init.c">
 <persistable path="/hello_world_bsp/alt_sys_init.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello_led.c" tooltip="hello_world/hello_led.c">
-<persistable path="/hello_world/hello_led.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="settings.bsp" tooltip="hello_world_bsp/settings.bsp">
-<persistable path="/hello_world_bsp/settings.bsp"/>
 </file>
 </mruList>
 </workbench>

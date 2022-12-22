@@ -87,11 +87,11 @@ ACDS_VERSION := 13.0sp1
 
 # Quartus Generated JDI File. Required for resolving node instance ID's with 
 # design component names. 
-JDI_FILE := C:/altera/vhdl_fpu/DE2_NET/DE2_NET.jdi
+JDI_FILE := C:/altera/fpga-quaternions/fpga/DE2_NET.jdi
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := C:/altera/vhdl_fpu/DE2_NET/system_0.sopcinfo
+SOPCINFO_FILE := C:/altera/fpga-quaternions/fpga/system_0.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -156,9 +156,9 @@ SOPC_SYSID_FLAG += --sidp=0x1a82108
 ELF_PATCH_FLAG  += --sidp 0x1a82108
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1671639825
-SOPC_SYSID_FLAG += --timestamp=1671639825
-ELF_PATCH_FLAG  += --timestamp 1671639825
+# setting SOPC_TIMESTAMP is 1671663468
+SOPC_SYSID_FLAG += --timestamp=1671663468
+ELF_PATCH_FLAG  += --timestamp 1671663468
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

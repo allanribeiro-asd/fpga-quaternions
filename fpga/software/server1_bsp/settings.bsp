@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>21/12/2022 14:25:50</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1671639950529</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\altera\vhdl_fpu\DE2_NET\software\server1_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Dec 21, 2022 9:03:43 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1671663823234</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\altera\fpga-quaternions\fpga\software\server1_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\altera\vhdl_fpu\DE2_NET\system_0.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>C:\altera\fpga-quaternions\fpga\system_0.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>

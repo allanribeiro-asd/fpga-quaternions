@@ -4,6 +4,14 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.275454385;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.275454385.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.389959786;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.609064466">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/h"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/h/nios2"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/nios2"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/UCOSII/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/HAL/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/drivers/inc"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/inc"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/src/h"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/src/h/nios2"/>
@@ -247,6 +255,14 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.275454385;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.275454385.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.886624299;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1373511398">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/h"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/h/nios2"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/iniche/src/nios2"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/UCOSII/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/HAL/inc"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/"/>
+<includePath path="C:/altera/fpga-quaternions/fpga/software/server1_bsp/drivers/inc"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/inc"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/src/h"/>
 <includePath path="C:/altera/vhdl_fpu/DE2_NET/software/server1_bsp/iniche/src/h/nios2"/>

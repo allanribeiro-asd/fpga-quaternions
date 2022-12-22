@@ -17,5 +17,10 @@
  <library expandedCategories="Project,Library" />
  <window width="1600" height="870" x="0" y="0" />
  <hdlexample language="VERILOG" />
- <generation synthesis="VHDL" simulation="NONE" block_symbol_file="1" />
+ <generation
+   synthesis="VHDL"
+   simulation="NONE"
+   block_symbol_file="1"
+   testbench_system="NONE"
+   testbench_simulation="VHDL" />
 </preferences>

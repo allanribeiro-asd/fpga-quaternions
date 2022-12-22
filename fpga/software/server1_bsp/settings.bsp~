@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>21/12/2022 10:21:40</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1671625300712</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\vhdl_fpu\DE2_NET\software\server1_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\vhdl_fpu\DE2_NET\system_0.sopcinfo</SopcDesignFile>
+        <BspGeneratedTimeStamp>21/12/2022 14:25:50</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1671639950529</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\altera\vhdl_fpu\DE2_NET\software\server1_bsp</BspGeneratedLocation>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <SopcDesignFile>C:\altera\vhdl_fpu\DE2_NET\system_0.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu_0</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -1679,54 +1679,6 @@
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
-                <SettingName>altera_avalon_uart_driver.enable_small_driver</SettingName>
-                <Identifier>ALTERA_AVALON_UART_SMALL</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Small-footprint (polled mode) driver</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
-                <SettingName>altera_avalon_uart_driver.enable_ioctl</SettingName>
-                <Identifier>ALTERA_AVALON_UART_USE_IOCTL</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Enable driver ioctl() support. This feature is not compatible with the 'small' driver; ioctl() support will not be compiled if either the UART 'enable_small_driver' or HAL 'enable_reduced_device_drivers' settings are enabled.</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
-                <SettingName>altera_avalon_jtag_uart_driver.enable_small_driver</SettingName>
-                <Identifier>ALTERA_AVALON_JTAG_UART_SMALL</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Small-footprint (polled mode) driver</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
-                <SettingName>altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</SettingName>
-                <Identifier>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</Identifier>
-                <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
-                <DefaultValue>false</DefaultValue>
-                <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</Description>
-                <Restrictions>none</Restrictions>
-                <Enabled>false</Enabled>
-                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-        </Setting>
-        <Setting>
                 <SettingName>altera_iniche.iniche_default_if</SettingName>
                 <Identifier>INICHE_DEFAULT_IF</Identifier>
                 <Type>QuotedString</Type>
@@ -1798,10 +1750,58 @@
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
+        <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_small_driver</SettingName>
+                <Identifier>ALTERA_AVALON_UART_SMALL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Small-footprint (polled mode) driver</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_uart_driver.enable_ioctl</SettingName>
+                <Identifier>ALTERA_AVALON_UART_USE_IOCTL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Enable driver ioctl() support. This feature is not compatible with the 'small' driver; ioctl() support will not be compiled if either the UART 'enable_small_driver' or HAL 'enable_reduced_device_drivers' settings are enabled.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_jtag_uart_driver.enable_small_driver</SettingName>
+                <Identifier>ALTERA_AVALON_JTAG_UART_SMALL</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Small-footprint (polled mode) driver</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</SettingName>
+                <Identifier>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
         <MemoryMap>
-                <slaveDescriptor>web_fpu_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000003F</addressRange>
-                <addressSpan>64</addressSpan>
+                <slaveDescriptor>quat_0</slaveDescriptor>
+                <addressRange>0x00000000 - 0x0000000F</addressRange>
+                <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>

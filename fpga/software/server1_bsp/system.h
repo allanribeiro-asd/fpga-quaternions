@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'system_0'
- * SOPC Builder design path: C:/altera/vhdl_fpu/DE2_NET/system_0.sopcinfo
+ * SOPC Builder design path: C:/altera/fpga-quaternions/fpga/system_0.sopcinfo
  *
- * Generated: Wed Dec 21 14:25:51 BRST 2022
+ * Generated: Wed Dec 21 21:03:44 BRST 2022
  */
 
 /*
@@ -619,7 +619,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1671639825
+#define SYSID_QSYS_0_TIMESTAMP 1671663468
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

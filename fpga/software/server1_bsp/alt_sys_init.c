@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'system_0'
- * SOPC Builder design path: C:/altera/vhdl_fpu/DE2_NET/system_0.sopcinfo
+ * SOPC Builder design path: C:/altera/fpga-quaternions/fpga/system_0.sopcinfo
  *
- * Generated: Wed Dec 21 13:10:43 BRST 2022
+ * Generated: Wed Dec 21 21:03:44 BRST 2022
  */
 
 /*
