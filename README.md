@@ -1,5 +1,7 @@
 # fpga-quaternions
 
+O projeto está hospedado em (fpga-quaternions)[https://github.com/oirebir/fpga-quaternions]
+
 Este projeto tem a intenção de fazer uso da placa Cyclone II
 da Altera para calcular o deslocamento de um corpo, mas fazendo uso de
 quaternions. Infelizmente, ângulos de Euler tem alguns problemas
@@ -7,14 +9,16 @@ matemáticos.
 
 # Uso rápido
 
-Rode o seguinte comando em um terminal:
+Para executar na placa, vá direto à "2 - Enviando e Rodando"
 
-## Compilando
+Se for necessário recompilar, siga os passos abaixo
+
+## 1 - Compilando
 
 Todos os passos são descritos considerando que o usuário pode, ou não,
 ter alterado o source code aqui presente.
 
-## 1 - Quartus
+### 1.1 - Quartus
 
 Arquivos em VHDL importantes ao projeto estão dentro de
 ("fpga/quat")[fpga/quat].
@@ -36,7 +40,7 @@ sinalizado, de 32 bits. Entrada e saída são no formato:
 
 Arquivos da biblioteca que implementam o tipo usado para cálculo: sfixed;
 
-### 1.1 Compilação
+### 1.1.1 Compilação
 
 Abra o "DE2_NET.qpf"
 
@@ -60,7 +64,7 @@ Para cada uma das bibliotecas, fixed_float_types_c, fixed_pkg_c, float_pkg_c, fa
 
 Clique apply
 
-## 2 - Qsys
+### 1.2 - Qsys
 
 Qsys é responsável por gerar os componentes, e sintetizar os elementos para
 porgramação através do eclipse.
@@ -72,7 +76,7 @@ qsys.
 
 (system_0.SOPCINFO)[fpga/system_0_sopcinfo] - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
 
-### 2.1 - Configurações
+### 1.2.1 - Configurações
 
 Abra o Qsys
 
@@ -91,13 +95,13 @@ Em "Synthesis", escolha "VHDL" e marque a opção "Create block symbol file"
 
 Em seguida, clique em "Generate"
 
-## 3 - Eclipse
+### 1.3 - Eclipse
 
 Os arquivos fonte principais pro Eclipse estão em ("fpga/software/server1") [fpga/software/server1], sendo o principal deles (iniche_init.c)[fpga/sowftware/server1/iniche_init.c], onde o servidor por Socket é criado (função SSSInitialTask()).
 
 É PRECISO ALTERAR O IP E PORTA DO SERVIDOR NO ARQUIVO "iniche_init.c", as linhas que cumprem essa função, possuem os respectivos comentátios no código.
     
-### 3.1 - Compilação
+### 1.3.1 - Compilação
 
 Mude o workspace para o seu diretório local: <caminho até fpga-quaternions>\fpga\software
 
@@ -129,7 +133,7 @@ Na parte inferior, selecione um do erros, dê CTRL+A, e em seguida DEL
 
 Dê build, e veja se existe um ".elf". Este é seu binário.
 
-## Enviando e rodando
+## 2 - Enviando e rodando
 
 A placa precisa ficar conectada por USB ao computador durante todo o
 processo (intel). A conexão de rede, se configurada corretamente, usará

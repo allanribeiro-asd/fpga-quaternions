@@ -91,7 +91,7 @@ recebida, novamente para uma tupla, e em seguida em ponto fixo.
 	Os dados são, por fim, escritos em 3 registradores internos da
 placa, um como indicador de operação (load e mult), um como buffer, e
 um terceiro acumulador de operações, que é lido ao final das operações
-com todos os quaternios desejados, esse é o resultado devolvido ao servidor.
+com todos os quaternios desejados. Esse é o resultado devolvido ao servidor.
 
 \subsection{Multiplicação}
 
@@ -106,6 +106,15 @@ mesa, a tentativa de multiplicar 0.5 por 0.5 resulta no deslocamento
 errôneo dos bits.
 
 \begin{footnotesize} \begin{verbatim}
+
+	Registrador de 32 bits
+
+	00.000000000000000000000000000000
+	|| \ Parte decimal
+	||
+	| \ Parte inteira
+	|
+	 \ Sinal
 
 	0.5 * 0.5 = 0b0010 * 0b0010 = 0b0001 = 0.25 (caso ideal)
 
@@ -129,12 +138,15 @@ utilizando um sinal com o ponto fixo entre o segundo e terceiro MSB do
 \texttt{std\_logic\_vector} a cópia pode ser feita diretamente, bit a
 bit.
 
-	Foi feita a tentativa de abstrair outra forma de cálculo:
-receber os dados em binário, e fazer a operação bit a bit. Outro
-problema apareceu aqui, advindo da abstração usada para fazer a multiplicação entre os pontos. No caso de
-um dos números ser negativo, a multiplicação em complemento de 2
-não foi implementada com sucesso. Resolvido este problema, a
-multiplicação deve funcionar efetivamente.
+	Foram feitas outras 2 tentativa de abstrair o cálculo: Receber
+os dados como ponto flutuante, converter para binário, e operar, ou
+mesmo receber os dados em binário, e fazer a operação bit a bit. Outro
+problema apareceu aqui, advindo da abstração usada para fazer a
+multiplicação entre os pontos. No caso de um dos números ser negativo,
+a multiplicação em complemento de 2 não foi implementada com sucesso.
+Resolvido este problema, a multiplicação deve funcionar efetivamente.
+Além disso, python não suporta a escrita dos tipos em binário puro.
+Apenas como string, e a representação não é satisfatória.
 
 	Outra tentativa consistiu em trabalhar com inteiros,
 fazendo-se shift dos bits, multiplicando-os, e retornando à posição
@@ -147,12 +159,15 @@ de 2.
 %==========================================================================
 
 	O projeto teve avanços, e está perto de estar completo.
-Novamente, a conexão de rede funciona. A multiplicação também, mas existem erros na
-operação.
+Novamente, a conexão de rede funciona. A multiplicação também, mas
+existem erros na operação.
 
-	Como recomendações gerais para futuros uso do projeto, troque
-a versão da placa para evitar problemas de licença, problemas de
-compilação e geração de componentes/circuitos (Qsys).
+	Como recomendações gerais para futuros uso do projeto, tem-se:
+trocar a versão da placa para evitar problemas de licença, problemas
+de compilação e geração de componentes/circuitos (Qsys). Adaptar um
+ambiente GNU/Linux para uso (o Windows possui problemas de caminhos.
+Será necessário várias edições de arquivos manualmente, para correções
+dos respectivos problemas), e uso de rede local (um roteador basta).
 
 	A forma como a multiplicação foi feita é dependente da
 biblioteca ieee\_proposed, representada pelos arquivos
@@ -170,6 +185,8 @@ referências, como uma área obscura para se implementar. Sem sucesso,
 algumas recomendações são: implementar uma lógica de complemento de 2
 funcional, uso de outro tipo preferível (real não é sintetizável), ou
 mesmo uso de outros formátos numéricos mais simples de representar.
+Por fim, se o usuário achar quaiser referências a respeito,
+divulgue-as.
 
 
 \end{document}
