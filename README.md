@@ -27,7 +27,7 @@ multiplicar dois quaternions de uma única dimensão
 (reg32_clr)[fpga/quat/reg32_clr.vhd] - Registrador "self clear" de 32 bits; Registrador ponto fixo,
 sinalizado, de 32 bits. Entrada e saída são no formato:
 
-		bit:  (1)	(0)		(-1 a -30)
+		bit:  (1)	(0)		(-1 a -29)
 		    (Sinal)(Parte inteira).(Valores frácionários)
 
 (fixed_float_types_c)[fpga/quat/fixed_float_types_c.vhd]
@@ -70,11 +70,11 @@ Os arquivos estão misturados na pasta raíz do projeto, mas importam
 (system_0.qsys)[fpga/system_0.qsys] - Possui as netlists e configurações de componentes feitas no
 qsys.
 
-(system_0.SOPCINFO)[fpga/system_0_sopcinfo] - Possuem macros usadas para gerar o BSP do eclipse efetivamente
+(system_0.SOPCINFO)[fpga/system_0_sopcinfo] - Possuem macros usadas para gerar o BSP do Eclipse efetivamente
 
 ### 2.1 - Configurações
 
-Abra o qsys
+Abra o Qsys
 
 Aponte o arquivo system_0.qsys
 
@@ -133,7 +133,7 @@ Dê build, e veja se existe um ".elf". Este é seu binário.
 
 A placa precisa ficar conectada por USB ao computador durante todo o
 processo (intel). A conexão de rede, se configurada corretamente, usará
-dhcp para conectar ao servidor. Mais nenhuma configuração é necessária
+DHCP para conectar ao servidor. Mais nenhuma configuração é necessária
 
 No Quartus, na parte superior, em tools, selecione "Programmer"
 
